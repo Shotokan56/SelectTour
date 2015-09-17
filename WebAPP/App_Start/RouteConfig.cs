@@ -16,7 +16,7 @@ namespace WebAPP
             routes.MapRoute(
                 name: "GUI",
                 url: "{controller}/{action}/{id}",
-                defaults: new { area = "GUI", controller = "Home", action = "Index", id = UrlParameter.Optional },
+                defaults: new { area = "GUI", controller = "Home", action = "Home", id = UrlParameter.Optional },
                 namespaces: new[] { "WebAPP.Areas.GUI.Controllers" }
              ).DataTokens["area"] = "GUI";
         }

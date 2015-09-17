@@ -10,15 +10,34 @@ namespace WebAPP.Areas.GUI.Controllers
     {
         //
         // GET: /GUI/Home/
-        public ActionResult Index()
+        public ActionResult Home()
         {
+            ViewBag.Page = "Home";
             return View();
-            //return Redirect("CMS/Login");
         }
 
-        public ActionResult Index2()
+        public ActionResult PackageTour()
         {
+            ViewBag.Page = "PackageTour";
             return View();
         }
-	}
+
+        public ActionResult SelectTour()
+        {
+            ViewBag.Page = "SelectTour";
+            return View();
+        }
+
+        public ActionResult CustomizedTour()
+        {
+            ViewBag.Page = "CustomizedTour";
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Page = "Contact";
+            return View();
+        }
+    }
 }

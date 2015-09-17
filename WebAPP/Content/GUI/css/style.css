@@ -29,7 +29,7 @@ html {
 body {
     font-family: Lato,Arial,Verdana;
     font-size: 14px;
-    background-color: #f1f1f1;
+    background-color: #f7f7f7;
 }
 
 #preloader {
@@ -2914,35 +2914,6 @@ blockquote {
                         color: #111;
                     }
 
-        .sales-item .home-sales-text .hr {
-            margin-top: 20px;
-        }
-
-        .sales-item .home-sales-text .price-box {
-            margin-top: 30px;
-            line-height: 28px;
-        }
-
-            .sales-item .home-sales-text .price-box .price {
-                color: #999;
-                font-size: 14px;
-                font-family: 'Open sans';
-                display: block;
-            }
-
-                .sales-item .home-sales-text .price-box .price del {
-                    margin-left: 3px;
-                }
-
-                .sales-item .home-sales-text .price-box .price.special-price {
-                    font-size: 30px;
-                    color: #25ab4b;
-                }
-
-                    .sales-item .home-sales-text .price-box .price.special-price small {
-                        color: #999;
-                        font-size: 14px;
-                    }
 
 .destinations {
     margin-top: 30px;
@@ -12552,41 +12523,267 @@ footer .copyright {
     footer .copyright, footer .ul-ft {
         font-size: 13px;
     }
-
-    .exmenu li {
-        float: left;
-    }
-
-    .post {
-        border-bottom: 1px solid #f2f2f2;
-        margin-bottom: 30px;
-        padding-bottom: 5px;
-    }
-
-    .row .row {
-        width: auto;
-        max-width: none;
-        min-width: 0;
-        margin: 0 -10px;
-        zoom: 1;
-    }
-
-    .columns {
-        float: left;
-        min-height: 1px;
-        padding: 0 10px;
-        position: relative;
-        margin-bottom: 20px;
-    }
-
-    .postimg img {
-        padding: 9px;
-        border: 1px solid #eee;
-        background: #fff;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        max-width: 100%;
-        height: auto;
-    }
 }
+
+.exmenu li {
+    float: left;
+}
+
+.post {
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+}
+
+.row .row {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    margin: 0 -10px;
+    zoom: 1;
+}
+
+.columns {
+    float: left;
+    min-height: 1px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.postimg img {
+    padding: 9px;
+    border: 1px solid #eee;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.caption {
+    border-bottom: 1px dotted #D63D00;
+    margin: 0px 5px 15px 0px;
+
+}
+
+    .caption span {
+        font-size: 25px;
+        text-transform: uppercase;
+    }
+
+.content {
+    /*border-bottom: 1px solid #D63D00;*/
+}
+
+.row {
+    /*margin: 0px !important;*/
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 10px 0px;
+}
+
+.post {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.posttitle a, .posttitle a:visited {
+    color: #393A00;
+}
+
+
+/* Button */
+.button, .button:visited, input[type="submit"], button {
+    padding: 6px 13px 9px 13px;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: normal;
+}
+
+    .button, .button:visited, input[type="submit"] {
+        background: #d63d00;
+        color: #fff;
+        border: 0;
+    }
+
+        .button:hover, input[type="submit"]:hover {
+            background: #ed4300;
+            color: #fff;
+            border: 0;
+        }
+
+.entry-content a {
+    text-decoration: none;
+}
+
+.shrink img {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+    .shrink img:hover {
+        border: solid 1px #d63d00;
+        box-shadow: 2px 2px 2px 2px;
+    }
+
+.posttitle a {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    font-size: 25px;
+}
+
+    .posttitle a:hover {
+        color: #d63d00;
+        cursor: pointer;
+    }
+
+.entry-content ul li {
+    margin-bottom: 8px;
+}
+
+.price {
+    color: red;
+    font-family: 'Open sans';
+}
+
+
+.post .row {
+    padding: 15px 0px;
+}
+
+.right-block {
+    background-color: #EAEAEA;
+    margin-bottom: 15px;
+}
+
+    .right-block .row {
+        margin-bottom: 5px;
+    }
+
+    .right-block img {
+        width: 30%;
+        padding: 10px;
+        margin: 3px;
+    }
+/*Slide*/
+.captionOrange, .captionBlack {
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.captionOrange {
+    background: #EB5100;
+    background-color: rgba(235, 81, 0, 0.6);
+}
+
+.captionBlack {
+    font-size: 16px;
+    background: #000;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+a.captionOrange, A.captionOrange:active, A.captionOrange:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+    a.captionOrange:hover {
+        color: #eb5100;
+        text-decoration: underline;
+        background-color: #eeeeee;
+        background-color: rgba(238, 238, 238, 0.7);
+    }
+
+.bricon {
+    background: url(../img/browser-icons.png);
+}
+
+.jssorb01 {
+    position: absolute;
+}
+
+    .jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
+        position: absolute;
+        /* size of bullet elment */
+        width: 12px;
+        height: 12px;
+        filter: alpha(opacity=70);
+        opacity: .7;
+        overflow: hidden;
+        cursor: pointer;
+        border: #000 1px solid;
+    }
+
+    .jssorb01 div {
+        background-color: gray;
+    }
+
+        .jssorb01 div:hover, .jssorb01 .av:hover {
+            background-color: #d3d3d3;
+        }
+
+    .jssorb01 .av {
+        background-color: #fff;
+    }
+
+    .jssorb01 .dn, .jssorb01 .dn:hover {
+        background-color: #555555;
+    }
+
+.jssora02l, .jssora02r {
+    display: block;
+    position: absolute;
+    /* size of arrow element */
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    background: url(../../../content/images/a01.png) no-repeat;
+    overflow: hidden;
+}
+
+.jssora02l {
+    background-position: -3px -33px;
+}
+
+.jssora02r {
+    background-position: -63px -33px;
+}
+
+.jssora02l:hover {
+    background-position: -123px -33px;
+}
+
+.jssora02r:hover {
+    background-position: -183px -33px;
+}
+
+.jssora02l.jssora02ldn {
+    background-position: -3px -33px;
+}
+
+.jssora02r.jssora02rdn {
+    background-position: -63px -33px;
+}
+/*End Slide*/
+
+
+.current-menu-parent {
+                    background-color: #DB531A;
+                    border-color: #DB531A;
+                }
+
+
+

@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="~/Content/GUI/css/library/jquery.mb.YTPlayer.min.css">
     <link rel="stylesheet" href="~/Content/GUI/css/style.css">
 
+    <link rel="stylesheet" href="~/Content/BootstrapPaginator/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="~/Content/BootstrapPaginator/css/pagination.css" />
+    <link rel="stylesheet" href="~/Content/BootstrapPaginator/css/documentation.css" />
+    <link rel="stylesheet" href="~/Content/BootstrapPaginator/css/highlight.js/sunburst.css" />
+
 
     <script type="text/javascript" src="~/Content/GUI/js/library/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -22,9 +27,15 @@
     <script type="text/javascript" src="~/Content/GUI/js/library/parallax.min.js"></script>
     <script type="text/javascript" src="~/Content/GUI/js/library/jquery.nicescroll.js"></script>
     <script type="text/javascript" src="~/Content/GUI/js/library/jquery.ui.touch-punch.min.js"></script>
-    <script type="text/javascript" src="~/Content/GUI/js/library/jquery.mb.YTPlayer.min.js"></script>
-    <script type="text/javascript" src="~/Content/GUI/js/library/SmoothScroll.js"></script>
     <script type="text/javascript" src="~/Content/GUI/js/script.js"></script>
+
+    <script type="text/javascript" src="~/Content/GUI/js/library/jssor.js"></script>
+    <script type="text/javascript" src="~/Content/GUI/js/library/jssor.slider.js"></script>
+
+    <script type="text/javascript" src="~/Content/BootstrapPaginator/src/bootstrap-paginator.js" ></script>
+    <script type="text/javascript" src="~/Content/BootstrapPaginator/lib/highlight.pack.js"></script>
+    <script type="text/javascript" src="~/Content/BootstrapPaginator/lib/jquery.history.js"></script>
+
     <title>@Page.Title</title>
 </head>
 
@@ -36,7 +47,7 @@
         </div>
     </div>
 </div>
-<div id="wrap">
+<div id="wrap" class="background">
     <header id="header" class="header">
         <div class="container">
             <div class="logo float-left">
@@ -53,69 +64,80 @@
                 </div>
             </div>
         </div>
-        @*MENU*@
+
+        @*--------------MENU------------------*@
         <div class="container">
-            <nav class="navigation nav-c" id="navigation" data-menu-type="1200">
+            <nav class="nav-desktop nav-c" id="navigation" data-menu-type="1200">
                 <ul class="menu-list text-uppercase">
-                    <li class="current-menu-parent">
-                        <a href="#" title="">Home</a>
+                    <li id="Home">
+                        <a href="Home" title="Home" >Home</a>
                     </li>
-                    <li>
-                        <a href="#">Package Tour</a>
+                    <li id ="PackageTour">
+                        <a href="PackageTour" title="Package Tour" >Package Tour</a>
                     </li>
-                    <li>
-                        <a href="#" title="">Select Tour</a>
+                    <li id ="SelectTour">
+                        <a href="SelectTour" title="Select Tour" >Select Tour</a>
                     </li>
-                    <li>
-                        <a href="#" title="">Customized Tour</a>
+                    <li id ="CustomizedTour">
+                        <a href="CustomizedTour" title="Customized Tour" >Customized Tour</a>
                     </li>
-                    <li>
-                        <a href="#" title="">Contact</a>
+                    <li id="Contact">
+                        <a href="Contact" title="Contact" >Contact</a>
                     </li>
                 </ul>
             </nav>
         </div>
+        @*--------------END MENU------------------*@
     </header>
-    <section class="container">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            </ol>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="~/Content/GUI/images/cruise/slide/img-1.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h3>@*Caption Text*@</h3>
-                    </div>
+    @*------------------SLIDE -----------------------*@
+    <section class="container">
+        <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 1170px; height: 250px; overflow: hidden; border: 1px solid #eb5100">
+
+            <!-- Loading Screen -->
+            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+                background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
                 </div>
-                <div class="item">
-                    <img src="~/Content/GUI/images/cruise/slide/img-2.jpg" alt="...">
-                    <div class="carousel-caption">
-                        <h3>@*Caption Text*@</h3>
-                    </div>
+                <div style="position: absolute; display: block; background: url(../../Content/images/loading.gif) no-repeat center center;
+                top: 0px; left: 0px;width: 100%;height:100%;">
                 </div>
-                @*<div class="item">
-                        <img src="~/Content/GUI/images/cruise/slide/img-3.jpg" alt="...">
-                        <div class="carousel-caption">
-                            <h3>Caption Text</h3>
-                        </div>
-                    </div>*@
             </div>
 
-            <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div> <!-- Carousel -->
+            <!-- Slides Container -->
+            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;">
+                <div>
+                    <img u="image" src="~/Content/images/slide1.jpg" />
+                    <div u=caption t="*" class="captionOrange" style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">
+                        mobile ready, touch swipe
+                    </div>
+                </div>
+                <div>
+                    <img u="image" src="~/Content/images/slide2.jpg" />
+                    <div u=caption t="*" class="captionOrange" style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">
+                        finger catchable right to left
+                    </div>
+                </div>
+                <div>
+                    <img u="image" src="~/Content/images/slide3.jpg" />
+                    <div u=caption t="*" class="captionOrange" style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">
+                        responsive, scale smoothly
+                    </div>
+                </div>
+            </div>
+
+            <div u="navigator" class="jssorb01" style="bottom: 16px; right: 10px;">
+                <div u="prototype"></div>
+            </div>
+            <span u="arrowleft" class="jssora02l" style="top: 123px; left: 8px;">
+            </span>
+            <span u="arrowright" class="jssora02r" style="top: 123px; right: 8px;">
+            </span>
+            <a style="display: none" href="http://www.jssor.com">Bootstrap Slider</a>
+        </div>
     </section>
+    @*------------------END SLIDE------------------*@
+
     <section class="container" style="padding: 20px 0px">
         <body>
             <div class="col-sm-9">
@@ -123,18 +145,31 @@
             </div>
             <div class="col-sm-3">
 
-                <div class="col-sm-12 destinations-item " style="padding: 0px;">
-                    <figure class="destinations-img" style="outline: 1px solid #D63C00;"><a href="#" title=""><img src="~/Content/GUI/images/tripadvisor_banner.jpg" alt=""></a></figure>
+                <div class="col-sm-12 destinations-item right-block" style="padding: 0px;">
+                    <figure class="destinations-img" @*style="outline: 1px solid #D63C00;"*@><a href="#" title=""><img src="~/Content/GUI/images/tripadvisor_banner.jpg" alt=""></a></figure>
                 </div>
-                <div class="col-sm-12" style="outline: 1px solid #D63C00; margin-top: 15px; padding: 0px;">
-                    <div class="col-sm-12 text-center" style="outline: 1px solid #D63C00; padding: 3px;">Meet Our Experts</div>
+
+                <div class="col-sm-12 right-block" style="padding: 0px;">
+                    <div class="col-sm-12 text-center" style="border-bottom: 1px solid #DAD7D7; margin-bottom: 5px; padding: 3px;">Meet Our Experts</div>
+
                     <div class=" col-sm-4" style="padding: 5px">
-                        <span class="glyphicon glyphicon-earphone" style="font-size: 60px;"></span>
+                        <span class="glyphicon glyphicon-earphone" style="font-size: 50px; margin: 17px 0px 0px 15px;"></span>
                     </div>
                     <div class="col-sm-8" style="padding: 10px">
                         <div class="row">MS. Minh</div>
                         <div class="row">Tel: (+84) 6886 999</div>
                         <div class="row">Email: abc@Examle.com</div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12 right-block" style=" padding: 0px;">
+                    <div class="col-sm-12 text-center" style="border-bottom: 1px solid #DAD7D7; margin-bottom: 5px; padding: 3px;">Follow us on</div>
+
+                    <div class="col-sm-12" style="padding: 10px">
+                        <img  src="~/Content/images/facebook_circle_color.png" />
+                        <img src="~/Content/images/google-plus.png" />
+                        <img src="~/Content/images/twitter_circle_color.png" />
                     </div>
                 </div>
             </div>
@@ -171,10 +206,103 @@
 
 
 <script>
-    jQuery(document).ready(function ($) {
-        $(".menu-list > li").on("click", function () {
+    jQuery(document).ready(function($) {
+            var page = '@Html.Raw(@ViewBag.Page)';
             $(".current-menu-parent").removeClass("current-menu-parent");
-            $(this).addClass("current-menu-parent");
-        });
+            $("#" + page).addClass("current-menu-parent");
+    })
+</script>
+
+@*---------------SLIDE------------------*@
+<script>
+    $(document).ready(function() {
+        var _CaptionTransitions = [
+         //CLIP|LR
+         { $Duration: 900, $Clip: 3, $Easing: $JssorEasing$.$EaseInOutCubic },
+         //CLIP|TB
+         { $Duration: 900, $Clip: 12, $Easing: $JssorEasing$.$EaseInOutCubic },
+
+         //ZMF|10
+         { $Duration: 600, $Zoom: 11, $Easing: { $Zoom: $JssorEasing$.$EaseInExpo, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 },
+
+         //ZML|R
+         { $Duration: 600, x: -0.6, $Zoom: 11, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $Opacity: 2 },
+         //ZML|B
+         { $Duration: 600, y: -0.6, $Zoom: 11, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $Opacity: 2 },
+
+         //ZMS|B
+         { $Duration: 700, y: -0.6, $Zoom: 1, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $Opacity: 2 },
+
+         //RTT|10
+         { $Duration: 700, $Zoom: 11, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseInExpo, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInExpo }, $Opacity: 2, $Round: { $Rotate: 0.8 } },
+
+         //RTTL|R
+         { $Duration: 700, x: -0.6, $Zoom: 11, $Rotate: 1, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $Opacity: 2, $Round: { $Rotate: 0.8 } },
+         //RTTL|B
+         { $Duration: 700, y: -0.6, $Zoom: 11, $Rotate: 1, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $Opacity: 2, $Round: { $Rotate: 0.8 } },
+
+         //RTTS|R
+         { $Duration: 700, x: -0.6, $Zoom: 1, $Rotate: 1, $Easing: { $Left: $JssorEasing$.$EaseInQuad, $Zoom: $JssorEasing$.$EaseInQuad, $Rotate: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseOutQuad }, $Opacity: 2, $Round: { $Rotate: 1.2 } },
+         //RTTS|B
+         { $Duration: 700, y: -0.6, $Zoom: 1, $Rotate: 1, $Easing: { $Top: $JssorEasing$.$EaseInQuad, $Zoom: $JssorEasing$.$EaseInQuad, $Rotate: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseOutQuad }, $Opacity: 2, $Round: { $Rotate: 1.2 } },
+
+         //R|IB
+         { $Duration: 900, x: -0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutBack }, $Opacity: 2 },
+         //B|IB
+         { $Duration: 900, y: -0.6, $Easing: { $Top: $JssorEasing$.$EaseInOutBack }, $Opacity: 2 },
+
+        ];
+
+        var options = {
+            $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+            $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+            $AutoPlayInterval: 3000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+            $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+            $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+            $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+            $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+            $SlideWidth: 1200,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+            $SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+            $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+            $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+            $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+            $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+            $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+            $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+            $CaptionSliderOptions: {                            //[Optional] Options which specifies how to animate caption
+                $Class: $JssorCaptionSlider$,                   //[Required] Class to create instance to animate caption
+                $CaptionTransitions: _CaptionTransitions,       //[Required] An array of caption transitions to play caption, see caption transition section at jssor slideshow transition builder
+                $PlayInMode: 1,                                 //[Optional] 0 None (no play), 1 Chain (goes after main slide), 3 Chain Flatten (goes after main slide and flatten all caption animations), default value is 1
+                $PlayOutMode: 3                                 //[Optional] 0 None (no play), 1 Chain (goes before main slide), 3 Chain Flatten (goes before main slide and flatten all caption animations), default value is 1
+            },
+
+            $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                $AutoCenter: 0,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                $SpacingX: 10,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                $SpacingY: 10,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+            },
+
+            $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+            }
+        };
+        var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+        //responsive code begin
+
+        //$(window).bind("load", ScaleSlider);
+        //$(window).bind("resize", ScaleSlider);
+        //$(window).bind("orientationchange", ScaleSlider);
+        //responsive code end
+
     })
 </script>
