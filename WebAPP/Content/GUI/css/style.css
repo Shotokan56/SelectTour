@@ -9756,7 +9756,7 @@ footer {
     .ul-ft ul li {
         border-right: 1px #b7c3ce solid;
         margin: 2px 0px;
-        padding: 0px 10px
+        padding: 0px 10px;
     }
 
         .ul-ft ul li:last-child {
@@ -12555,5 +12555,38 @@ footer .copyright {
 
     .exmenu li {
         float: left;
+    }
+
+    .post {
+        border-bottom: 1px solid #f2f2f2;
+        margin-bottom: 30px;
+        padding-bottom: 5px;
+    }
+
+    .row .row {
+        width: auto;
+        max-width: none;
+        min-width: 0;
+        margin: 0 -10px;
+        zoom: 1;
+    }
+
+    .columns {
+        float: left;
+        min-height: 1px;
+        padding: 0 10px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .postimg img {
+        padding: 9px;
+        border: 1px solid #eee;
+        background: #fff;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        max-width: 100%;
+        height: auto;
     }
 }
