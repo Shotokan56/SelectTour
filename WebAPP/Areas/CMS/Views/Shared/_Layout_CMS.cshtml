@@ -1,0 +1,121 @@
+﻿@using Resources
+@using WebAPP.Areas.CMS.Models
+@using WebAPP.Common
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>System Admin</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    @Styles.Render("~/bundles/style")
+    @Scripts.Render("~/bundles/script")
+    
+    @Styles.Render("~/bundles/BootstrapPaginatorStyle")
+    @Scripts.Render("~/bundles/BootstrapPaginatorJs")
+
+    <script src="~/Content/CMS/Script/Layout.js"></script>
+    <link href="~/Content/CMS/Style/Layout.css" rel="stylesheet" />
+
+    @{
+        var user = (UserViewModel)HttpContext.Current.Session["User"];
+        var ui = new UI();
+        var lstLabel = ui.GetLabelForPage(user.LanguaeId, (int)Pages.Layout);
+        var success = @ViewBag.Success;
+    }
+</head>
+<body class=" theme-blue">
+    @*<input type="hidden" value="@ViewBag.Success" id="Success" />*@
+    @Html.Hidden("Success", (object)success)
+    <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="" href="index.html">
+                <span class="navbar-brand">
+                    <span class="fa fa-paper-plane"></span>
+                    @lstLabel.First(o => o.LabelKey == LabelResources.CompanyNameLayout).LabelName
+                </span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse" style="height: 1px;">
+            <ul id="main-menu" class="nav navbar-nav navbar-right">
+                <li class="dropdown hidden-xs">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user padding-right-small" style="position:relative;top: 3px;"></span> @user.UserName
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./">My Account</a></li>
+                        @*<li class="divider"></li>
+                            <li><a href="./">Users</a></li>
+                            <li><a href="./">Security</a></li>
+                            <li><a tabindex="-1" href="./">Payments</a></li>*@
+                        <li class="divider"></li>
+                        <li><a tabindex="-1" href="~/CMS/Login/Logout">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sidebar-nav">
+        <ul>
+            @*=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=User Management+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+*@
+            <li>
+                <a href="#" data-target=".dashboard-menu" class="nav-header" data-toggle="collapse">
+                    <i class="fa fa-fw fa-user"></i>
+                    @lstLabel.First(o => o.LabelKey == LabelResources.UserManagement).LabelName
+                    <i class="fa fa-collapse"></i>
+                </a>
+            </li>
+            @*-------------------------------------*@
+            <li>
+                <ul class="dashboard-menu nav nav-list collapse in">
+                    <li>
+                        <a href="~/CMS/UserManagement/Index">
+                            <span class="fa fa-caret-right"></span>
+                            @lstLabel.First(o => o.LabelKey == LabelResources.UserList).LabelName
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="~/CMS/UserManagement/NewUser">
+                            <span class="fa fa-caret-right"></span>
+                            @lstLabel.First(o => o.LabelKey == LabelResources.NewUserText).LabelName
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="fa fa-caret-right"></span>
+                            @lstLabel.First(o => o.LabelKey == LabelResources.RoleManagement).LabelName
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            @*-------------------------------------*@
+            <li>
+                <a href="#" class="nav-header">
+                    <i class="fa fa-fw fa-comment"></i> Faq
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="alert alert-success right" id="success-alert" style="position: absolute; display: none">
+            <strong>Success! </strong>
+        </div>
+        @RenderBody()
+    </div>
+
+   
+</body>
+</html>
+
+
+

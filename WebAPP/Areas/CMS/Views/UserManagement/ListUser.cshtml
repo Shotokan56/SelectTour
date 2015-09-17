@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "ListUser";
+    Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
+}
+
+
+<h2>ListUser</h2>
+
+<p class="pull-right">
+    @Html.ActionLink("Create New", "NewUserPatial", "UserManagement", null, new { @class = "btn btn-success modal-link", @datamodal = "" })
+</p>
+<div id="lstReplace">
+    @{ Html.RenderAction("InitListUser", "UserManagement"); }
+</div>
+
+ <!-- modal placeholder-->
+<div id='myModal' class='modal fade in'>
+    <div id="modal-dialog" class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+</div>
+
+<div id="pager">
+
+</div>
+@Html.Hidden("ItemPerPage", 2)
+    <script type="text/javascript">
+        //Set size popup
+        $(function () {
+            $(".modal-link").on("click", function (e) {
+                $("#modal-dialog").removeClass();
+                $("#modal-dialog").addClass("modal-dialog");
+                $("#modal-dialog").addClass("size50");
+            });
+        });
+
+        //Pager
+        $(function () {
+            var options = {
+                currentPage: 1,
+                totalPages: 10,
+                onPageChanged: function (e, oldPage, newPage) {
+                    LoadDataList(oldPage, newPage);
+                }
+            }
+            $('#pager').bootstrapPaginator(options);
+        });
+
+        function LoadDataList(oldPage, newPage) {
+            var itemPerPage = $("#ItemPerPage").val();
+            if (itemPerPage < 1){
+                console.log("ItemPerPage Error");
+                return;
+            }
+
+            var inputData = {
+                currentPage: newPage,
+                itemPerPage: itemPerPage
+            }
+
+            $.ajax({
+                url: "GetDataList",
+                type: "POST",
+                data: inputData,
+                success: function (result) {
+                    //if (result.success) {
+                        $("#lstReplace").html(result);
+                    //} else {
+                    //    if (result.Message != "" || result.Message != "undefined")
+                    //        alert(result.Message);
+                    //}
+                }
+                ,error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
+
+
+
+    </script>

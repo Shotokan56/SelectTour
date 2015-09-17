@@ -1,0 +1,74 @@
+﻿@model IEnumerable<WebAPP.Models.User>
+<table class="table">
+    <tr>
+        <th class="col-md-3">
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th class="col-md-2">
+            @Html.DisplayNameFor(model => model.Lock)
+        </th>
+        <th class="col-md-5">
+            @Html.DisplayNameFor(model => model.Roles)
+        </th>
+        <th class="col-md-2">Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Roles)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.UserId }, new { @datamodal = "" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.UserId }, new { onclick = "return confirm('Bạn muốn xóa " + item.UserName + "?');" })
+            </td>
+        </tr>
+    }
+</table>
+
+<script type="text/javascript">
+    $(function () {
+        $.ajaxSetup({ cache: false });
+        $("a[datamodal]").on("click", function (e) {
+            $("#myModalContent").load(this.href, function () {
+                $("#myModal").modal({
+                    keyboard: true
+                }, "show");
+                bindForm(this);
+            });
+            return false;
+        });
+    });
+
+    function bindForm(dialog) {
+        $("form", dialog).submit(function () {
+            $.ajax({
+                url: this.action,
+                type: this.method,
+                data: $(this).serialize(),
+                success: function (result) {
+                    if (result.success) {
+                        $("#myModal").modal("hide");
+                        $("#lstReplace").load(result.url);
+                    } else {
+                        $("#myModalContent").html(result);
+                        bindForm(dialog);
+                        if (result.Message != "" || result.Message != "undefined")
+                            alert(result.Message);
+                    }
+                }
+                //,error: function (jqXhr, textStatus, errorThrown) {
+                //    console.log(errorThrown);
+                //}
+            });
+            return false;
+        });
+    }
+</script>

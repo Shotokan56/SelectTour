@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebAPPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Label">
+    <Key>
+      <PropertyRef Name="Label_ID" />
+    </Key>
+    <Property Name="Label_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LabelKey" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="LabelName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Language_ID" Type="int" Nullable="false" />
+    <Property Name="Page_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Language_ID" />
+    </Key>
+    <Property Name="Language_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LanguageName" Type="nvarchar" MaxLength="250" />
+    <Property Name="LanguageCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="Page_ID" />
+    </Key>
+    <Property Name="Page_ID" Type="int" Nullable="false" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PassWord" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Lock" Type="bit" Nullable="false" />
+    <Property Name="Roles" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <Function Name="sp_GetDataFromTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TableName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CurrentPage" Type="int" Mode="In" />
+    <Parameter Name="ItemPerPage" Type="int" Mode="In" />
+    <Parameter Name="OrderBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="RecordCount" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="WebAPPModelStoreContainer">
+    <EntitySet Name="Label" EntityType="Self.Label" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Page" EntityType="Self.Page" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

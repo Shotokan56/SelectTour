@@ -1,0 +1,64 @@
+﻿
+<head>
+    @using Resources    @using WebAPP.Common
+    @model WebAPP.Areas.CMS.Models.UserViewModel
+    @{
+        var ui = new UI();
+        var lstLabel = ui.GetLabelForPage(Model.LanguaeId, (int)Pages.Login);
+
+    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN SYSTEM</title>
+
+    <!-- styles -->
+    <link href="~/Content/CMS/Script/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/CMS/Style/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="~/Content/CMS/Style/typica-login.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-1.11.1.js"></script>
+    <script src="~/Content/CMS/Script/backstretch.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="login-wraper">
+            @using (Html.BeginForm("Verify", "Login", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form login-form" }))
+            {
+                <legend>
+                    @lstLabel.First(o => o.LabelKey == LabelResources.SignInTo).LabelName
+                    <span class="blue">@lstLabel.First(o => o.LabelKey == LabelResources.AppName).LabelName</span>
+                </legend>
+                <div class="body">
+                    <label>@lstLabel.First(o => o.LabelKey == LabelResources.UserName).LabelName</label>
+                    @Html.TextBoxFor(m => m.UserName, new { @Style = "height: 30px;" })
+                    <label>@lstLabel.First(o => o.LabelKey == LabelResources.PassWord).LabelName</label>
+                    @Html.PasswordFor(m => m.PassWord, new { @Style = "height: 30px;" })
+                </div>
+
+                <div> @Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })</div>
+                <div class="footer">
+                    <label class="checkbox inline">
+                        @*<input type="checkbox" id="inlineCheckbox1" value="option1"> Remember me*@
+                        @Html.CheckBoxFor(m => m.RememberMe, new { })@lstLabel.First(o => o.LabelKey == LabelResources.Remember).LabelName
+                    </label>
+                    <button type="submit" class="btn btn-success">@lstLabel.First(o => o.LabelKey == LabelResources.LoginText).LabelName</button>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+
+<script>
+    jQuery(document).ready(function ($) {
+
+        $.backstretch([
+          "/Content/images/bg1.png",
+          "/Content/images/bg2.png"
+        ], { duration: 3000, fade: 750 });
+
+    });
+
+</script>
+

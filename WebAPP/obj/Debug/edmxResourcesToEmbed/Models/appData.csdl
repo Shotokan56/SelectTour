@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebAPPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Label">
+    <Key>
+      <PropertyRef Name="Label_ID" />
+    </Key>
+    <Property Name="Label_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LabelKey" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LabelName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Language_ID" Type="Int32" Nullable="false" />
+    <Property Name="Page_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Language_ID" />
+    </Key>
+    <Property Name="Language_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="LanguageCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="Page_ID" />
+    </Key>
+    <Property Name="Page_ID" Type="Int32" Nullable="false" />
+    <Property Name="PageName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PassWord" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lock" Type="Boolean" Nullable="false" />
+    <Property Name="Roles" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="WebAPPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Labels" EntityType="Self.Label" />
+    <EntitySet Name="Languages" EntityType="Self.Language" />
+    <EntitySet Name="Pages" EntityType="Self.Page" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <FunctionImport Name="sp_GetDataFromTable">
+      <Parameter Name="TableName" Mode="In" Type="String" />
+      <Parameter Name="CurrentPage" Mode="In" Type="Int32" />
+      <Parameter Name="ItemPerPage" Mode="In" Type="Int32" />
+      <Parameter Name="OrderBy" Mode="In" Type="String" />
+      <Parameter Name="RecordCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>
