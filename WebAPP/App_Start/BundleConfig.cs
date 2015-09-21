@@ -36,6 +36,18 @@ namespace WebAPP
                       "~/Content/BootstrapPaginator/lib/highlight.pack.js",
                       "~/Content/BootstrapPaginator/lib/jquery.history.js"
                       ));
+
+            //Date-Time
+            bundles.Add(new ScriptBundle("~/bundles/BootstrapDatetimeJs").Include(
+                     "~/Content/Bootstrap-DateTime/moment-with-locales.js",
+                     "~/Content/Bootstrap-DateTime/bootstrap-datetimepicker.js"
+
+                     ));
+
+            bundles.Add(new ScriptBundle("~/bundles/BootstrapDatetimeStyle").Include(
+                     "~/Content/Bootstrap-DateTime/bootstrap-datetimepicker.css"
+                     ));
+
         }
     }
 }

@@ -41,5 +41,22 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="sp_GetDataFromTable" FunctionName="WebAPPModel.Store.sp_GetDataFromTable" />
+    <EntitySetMapping Name="References">
+      <EntityTypeMapping TypeName="WebAPPModel.Reference">
+        <MappingFragment StoreEntitySet="Reference">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReferenceValues">
+      <EntityTypeMapping TypeName="WebAPPModel.ReferenceValue">
+        <MappingFragment StoreEntitySet="ReferenceValue">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ReferenceId" ColumnName="ReferenceId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

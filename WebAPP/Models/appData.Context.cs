@@ -31,6 +31,8 @@ namespace WebAPP.Models
         public virtual DbSet<Language> Languages { get; set; }
         public virtual DbSet<Page> Pages { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Reference> References { get; set; }
+        public virtual DbSet<ReferenceValue> ReferenceValues { get; set; }
     
         public virtual int sp_GetDataFromTable(string tableName, Nullable<int> currentPage, Nullable<int> itemPerPage, string orderBy, ObjectParameter recordCount)
         {

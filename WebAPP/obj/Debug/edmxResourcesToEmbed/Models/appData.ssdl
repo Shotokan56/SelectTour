@@ -25,6 +25,21 @@
     <Property Name="Page_ID" Type="int" Nullable="false" />
     <Property Name="PageName" Type="nvarchar" MaxLength="250" />
   </EntityType>
+  <EntityType Name="Reference">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReferenceValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ReferenceId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="UserId" />
@@ -46,6 +61,8 @@
     <EntitySet Name="Label" EntityType="Self.Label" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Page" EntityType="Self.Page" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReferenceValue" EntityType="Self.ReferenceValue" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

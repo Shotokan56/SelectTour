@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\1LUU_TRU\CODE\WebAPP\WebAPP\Models\appData.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\1LUU_TRU\CODE\SelectTour\WebAPP\Models\appData.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

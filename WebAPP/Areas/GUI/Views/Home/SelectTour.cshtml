@@ -3,17 +3,95 @@
     ViewBag.Title = "SelectTour";
     Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
 }
+<div class="layer1">
+    <p class="heading">VN01 VietNam Essential (7 day / 6 night) </p>
+    <div class="content">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>@Html.CheckBox("peoples") 02 pepples</td>
+                    <td>@Html.CheckBox("peoples") 03 - 05 pepples</td>
+                    <td>@Html.CheckBox("peoples") 06 - 09 pepples</td>
+                </tr>
+                <tr>
+                    <td style="color: red;">$1000</td>
+                    <td>$1500</td>
+                    <td>$2000</td>
+                </tr>
+            </tbody>
+        </table>
 
-<section class="content">
+        <div style="height: 200px; overflow: auto;">
+            <p>VIETNAMTOUR CO.,LTD is a fully licensed, local tour operator, and since its establishment 2007 has been providing the best of travel services to thousands of satisfied customers from around the world.</p>
+
+            <p>Need assistance in building an itinerary for Vietnam (or elsewhere in Indochina)? Our team of professional agents will guide you in creating the trip of a lifetime.</p>
+            <p>Looking for a truly authentic, travel experience above and beyond the ordinary? Look no further than Vietnamtour for exactly this kind of assistance and planning.</p>
+
+            <p>Our goal is to give you a seamless and rewarding journey here in Vietnam from the culture-rich Northern Provinces to the vibrant expanses of Southern Vietnam and including the Imperial Center and nearby Coastal Resorts</p>
+            <p>As well as to discover the wonders of our Indochinese neighbors: Laos and Cambodia</p>
+
+            <p>VIETNAMTOUR CO.,LTD is your secure and reliable partner-in-travel in this region of Southeast Asia. Travelling with us means that you can open "your door to Indochina"</p>
+        </div>
+
+
+    </div>
+
+    <p class="heading">VN01 VietNam Essential (7 day / 6 night)</p>
+    <div class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit orem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+
+    <p class="heading">VN01 VietNam Essential (7 day / 6 night)</p>
+    <div class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit orem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+</div>
+
+
+<section class="layer1" style="margin-top: 20px;">
     <div class="caption">
         <span>
-            Enquiry
+            Tour Summary
         </span>
     </div>
-    <article class="post">
-        <div class="row">
-        </div>
-    </article>
-
+    <div class="">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th class="col-md-7">Tour</th>
+                <th>Number of pepples</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>VN01 VietNam Essential (7 day / 6 night)</td>
+                <td>3-6</td>
+                <td>$2000</td>
+            </tr>
+            <tr>
+                <td>VN01 VietNam Essential (7 day / 6 night)</td>
+                <td>3-6</td>
+                <td>$2000</td>
+            </tr>
+            <tr>
+                <td>VN01 VietNam Essential (7 day / 6 night)</td>
+                <td>3-6</td>
+                <td>$2000</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row" style="padding-right: 14px;">
+        <span class="pull-right"><b>Total</b>: $0000</span>
+    </div>
+    <div class="row" style="padding-right: 14px; padding-top: 10px;">
+        <a class="button pull-right" style="margin-left: 10px" href="single.html">Print</a>
+        <a class="button pull-right" href="single.html">Book</a>
+    </div>
 </section>
-
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery(".content").hide();
+        //toggle the componenet with class msg_body
+        jQuery(".heading").click(function () {
+            jQuery(this).next(".content").slideToggle(500);
+        });
+    });
+</script>

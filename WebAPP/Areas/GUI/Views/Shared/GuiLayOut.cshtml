@@ -1,13 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Home Page</title>
+    @*<title>Home Page</title>*@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="~/Content/GUI/css/library/bootstrap.min.css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400%7COpen+Sans:300,400,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="~/Content/GUI/css/library/font-awesome.min.css">
-    <link rel="stylesheet" href="~/Content/GUI/css/library/bootstrap.min.css">
     <link rel="stylesheet" href="~/Content/GUI/css/library/jquery-ui.min.css">
     <link rel="stylesheet" href="~/Content/GUI/css/library/owl.carousel.css">
     <link rel="stylesheet" href="~/Content/GUI/css/library/jquery.mb.YTPlayer.min.css">
@@ -36,7 +37,6 @@
     <script type="text/javascript" src="~/Content/BootstrapPaginator/lib/highlight.pack.js"></script>
     <script type="text/javascript" src="~/Content/BootstrapPaginator/lib/jquery.history.js"></script>
 
-    <title>@Page.Title</title>
 </head>
 
 <div id="preloader">
@@ -70,19 +70,22 @@
             <nav class="nav-desktop nav-c" id="navigation" data-menu-type="1200">
                 <ul class="menu-list text-uppercase">
                     <li id="Home">
-                        <a href="Home" title="Home" >Home</a>
+                        <a href="Home/Home" title="Home">Home</a>
                     </li>
-                    <li id ="PackageTour">
-                        <a href="PackageTour" title="Package Tour" >Package Tour</a>
+                    <li id="PackageTour">
+                        <a href="/Home/PackageTour" title="Package Tour">Package Tour</a>
+                    </li>
+                    <li id="PackageTourEnquiry">
+                        <a href="/Home/PackageTourEnquiry" title="Package Tour">Package Tour Enquiry</a>
                     </li>
                     <li id ="SelectTour">
-                        <a href="SelectTour" title="Select Tour" >Select Tour</a>
+                        <a href="/Home/SelectTour" title="Select Tour" >Select Tour</a>
                     </li>
                     <li id ="CustomizedTour">
-                        <a href="CustomizedTour" title="Customized Tour" >Customized Tour</a>
+                        <a href="/Home/CustomizedTour" title="Customized Tour" >Customized Tour</a>
                     </li>
                     <li id="Contact">
-                        <a href="Contact" title="Contact" >Contact</a>
+                        <a href="/Home/ Contact" title="Contact" >Contact</a>
                     </li>
                 </ul>
             </nav>

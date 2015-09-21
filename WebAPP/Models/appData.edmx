@@ -30,6 +30,21 @@
           <Property Name="Page_ID" Type="int" Nullable="false" />
           <Property Name="PageName" Type="nvarchar" MaxLength="250" />
         </EntityType>
+        <EntityType Name="Reference">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReferenceValue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ReferenceId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserId" />
@@ -51,6 +66,8 @@
           <EntitySet Name="Label" EntityType="Self.Label" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Page" EntityType="Self.Page" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReferenceValue" EntityType="Self.ReferenceValue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -104,7 +121,24 @@
             <Parameter Name="OrderBy" Mode="In" Type="String" />
             <Parameter Name="RecordCount" Mode="InOut" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="References" EntityType="WebAPPModel.Reference" />
+          <EntitySet Name="ReferenceValues" EntityType="WebAPPModel.ReferenceValue" />
         </EntityContainer>
+        <EntityType Name="Reference">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ReferenceValue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ReferenceId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -151,6 +185,23 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="sp_GetDataFromTable" FunctionName="WebAPPModel.Store.sp_GetDataFromTable" />
+          <EntitySetMapping Name="References">
+            <EntityTypeMapping TypeName="WebAPPModel.Reference">
+              <MappingFragment StoreEntitySet="Reference">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReferenceValues">
+            <EntityTypeMapping TypeName="WebAPPModel.ReferenceValue">
+              <MappingFragment StoreEntitySet="ReferenceValue">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ReferenceId" ColumnName="ReferenceId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

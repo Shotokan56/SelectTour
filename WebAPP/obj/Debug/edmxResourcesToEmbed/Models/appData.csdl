@@ -47,5 +47,22 @@
       <Parameter Name="OrderBy" Mode="In" Type="String" />
       <Parameter Name="RecordCount" Mode="InOut" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="References" EntityType="WebAPPModel.Reference" />
+    <EntitySet Name="ReferenceValues" EntityType="WebAPPModel.ReferenceValue" />
   </EntityContainer>
+  <EntityType Name="Reference">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ReferenceValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ReferenceId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

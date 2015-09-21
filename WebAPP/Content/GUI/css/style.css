@@ -1986,7 +1986,7 @@ blockquote {
     margin: 0;
     position: absolute;
     top: 0;
-    right: 15px;
+    /*right: 15px;*/
     z-index: 99999;
     text-align: right;
 }
@@ -12616,7 +12616,11 @@ ul {
             border: 0;
         }
 
-.entry-content a {
+.entry-content.nav-desktop a {
+    text-decoration: none;
+}
+
+.form-group a {
     text-decoration: none;
 }
 
@@ -12786,4 +12790,56 @@ a.captionOrange, A.captionOrange:active, A.captionOrange:visited {
                 }
 
 
+
+/*input*/
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+.layer1 {
+margin: 0;
+padding: 0;
+width: 100%;
+}
+
+.heading {
+margin: 1px;
+color: #fff;
+padding: 3px 10px;
+cursor: pointer;
+position: relative;
+background-color:#c30;
+}
+.content {
+padding: 5px 10px;
+background-color:#fafafa;
+}
+p { padding: 5px 0; }
 
