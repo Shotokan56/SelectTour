@@ -32,21 +32,21 @@ namespace WebAPP.Areas.CMS.Controllers
             return PartialView("NewUserPatial", new RegisterAccountViewModel());
         }
 
-        /// <summary>
-        /// return ra list
-        /// </summary>
-        /// <returns></returns>
-        //public ActionResult InitListUser()
-        //{
+        //<summary>
+        //return ra list
+        //</summary>
+        //<returns></returns>
+        public ActionResult InitListUser()
+        {
 
-        //    using (WebAPPEntities myContext = new WebAPPEntities())
-        //    {
-        //        System.Data.Objects.ObjectParameter output = new System.Data.Objects.ObjectParameter("CustomerCount", typeof(int));
-        //        myContext.GetCustomerCount(output);
-        //        Console.WriteLine(output.Value);
-        //    }
-        //    //return PartialView("ListUserPatial", db.Users.OrderBy(o => o.UserId).Skip(0).Take(2).ToList());
-        //}
+            //using (WebAPPEntities myContext = new WebAPPEntities())
+            //{
+            //    System.Data.Objects.ObjectParameter output = new System.Data.Objects.ObjectParameter("CustomerCount", typeof(int));
+            //    myContext.GetCustomerCount(output);
+            //    Console.WriteLine(output.Value);
+            //}
+            return PartialView("ListUserPatial", db.Users.OrderBy(o => o.UserId).Skip(0).Take(2).ToList());
+        }
 
         [HttpPost]
         public ActionResult GetDataList(int currentPage, int itemPerPage)

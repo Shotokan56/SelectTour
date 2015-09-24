@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebAPP.Areas.CMS.Models.SelectTourViewModel>
+
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectTourName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectTourDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectTourDestination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectTourPrice)
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectTourName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectTourDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectTourDestination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectTourPrice)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SelectTourId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SelectTourId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="pull-right" style="padding-right: 10px">
+    <div id="pager" class="pull-right">
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    //Pager
+    $(function () {
+        var options = {
+            currentPage: 1,
+            totalPages: 10,
+            onPageChanged: function (e, oldPage, newPage) {
+                //LoadDataList(oldPage, newPage);
+            }
+        }
+        $('#pager').bootstrapPaginator(options);
+    });
+</script>

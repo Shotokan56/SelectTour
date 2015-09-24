@@ -26,12 +26,16 @@
                 @Html.DisplayFor(modelItem => item.Roles)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.UserId }, new { @datamodal = "" }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.UserId }, new { onclick = "return confirm('Bạn muốn xóa " + item.UserName + "?');" })
+                @Html.ActionLink("Edit", "Edit", new {id = item.UserId}, new {@datamodal = ""}) |
+                @Html.ActionLink("Delete", "Delete", new {id = item.UserId}, new {onclick = "return confirm('Bạn muốn xóa " + item.UserName + "?');"})
             </td>
         </tr>
     }
 </table>
+
+<div id="pager">
+
+</div>
 
 <script type="text/javascript">
     $(function () {

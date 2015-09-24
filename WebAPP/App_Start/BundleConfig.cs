@@ -21,7 +21,8 @@ namespace WebAPP
                        "~/Content/CMS/Script/lib/jQuery-Knob/js/jquery.knob.js",
                        "~/Content/CMS/Script/lib/bootstrap/js/bootstrap.js",
                        "~/Scripts/modernizr-2.6.2.js",
-                       "~/Scripts/respond.js"
+                       "~/Scripts/respond.js",
+                       "~/Content/tinymce/tinymce.min.js"
                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/BootstrapPaginatorStyle").Include(

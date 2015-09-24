@@ -10,7 +10,10 @@
 
     @Styles.Render("~/bundles/style")
     @Scripts.Render("~/bundles/script")
-    
+
+    @Styles.Render("~/bundles/BootstrapPaginatorStyle")
+    @Scripts.Render("~/bundles/BootstrapPaginatorJs")
+
     @Styles.Render("~/bundles/BootstrapPaginatorStyle")
     @Scripts.Render("~/bundles/BootstrapPaginatorJs")
 
@@ -20,7 +23,7 @@
     @{
         var user = (UserViewModel)HttpContext.Current.Session["User"];
         var ui = new UI();
-        var lstLabel = ui.GetLabelForPage(user.LanguaeId, (int)Pages.Layout);
+        //var lstLabel = ui.GetLabelForPage(user.LanguaeId, (int)Pages.Layout);
         var success = @ViewBag.Success;
     }
 </head>
@@ -38,7 +41,8 @@
             <a class="" href="index.html">
                 <span class="navbar-brand">
                     <span class="fa fa-paper-plane"></span>
-                    @lstLabel.First(o => o.LabelKey == LabelResources.CompanyNameLayout).LabelName
+                    @*@lstLabel.First(o => o.LabelKey == LabelResources.CompanyNameLayout).LabelName*@
+                    Viet Select Tour
                 </span>
             </a>
         </div>
@@ -46,7 +50,7 @@
             <ul id="main-menu" class="nav navbar-nav navbar-right">
                 <li class="dropdown hidden-xs">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-user padding-right-small" style="position:relative;top: 3px;"></span> @user.UserName
+                        <span class="glyphicon glyphicon-user padding-right-small" style="position:relative;top: 3px;"></span> UserName
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu">
@@ -65,45 +69,145 @@
 
     <div class="sidebar-nav">
         <ul>
-            @*=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=User Management+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+*@
+            @*=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=Manage Package Tour+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+*@
             <li>
-                <a href="#" data-target=".dashboard-menu" class="nav-header" data-toggle="collapse">
-                    <i class="fa fa-fw fa-user"></i>
-                    @lstLabel.First(o => o.LabelKey == LabelResources.UserManagement).LabelName
+                <a href="#" data-target=".1" class="nav-header" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-lock"></i>
+                    Manage Package Tour
                     <i class="fa fa-collapse"></i>
                 </a>
             </li>
             @*-------------------------------------*@
             <li>
-                <ul class="dashboard-menu nav nav-list collapse in">
+                <ul class="1 nav nav-list collapse in">
                     <li>
-                        <a href="~/CMS/UserManagement/Index">
+                        <a href="~/CMS/ManagePackageTour/AllPackageTour">
                             <span class="fa fa-caret-right"></span>
-                            @lstLabel.First(o => o.LabelKey == LabelResources.UserList).LabelName
+                            All Package Tour
                         </a>
                     </li>
 
                     <li>
-                        <a href="~/CMS/UserManagement/NewUser">
+                        <a href="~/CMS/ManagePackageTour/TrashedPackageTours">
                             <span class="fa fa-caret-right"></span>
-                            @lstLabel.First(o => o.LabelKey == LabelResources.NewUserText).LabelName
+                            Trashed Tours
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="~/CMS/ManagePackageTour/AllBookedTours">
                             <span class="fa fa-caret-right"></span>
-                            @lstLabel.First(o => o.LabelKey == LabelResources.RoleManagement).LabelName
+                            Booked Tours
                         </a>
                     </li>
                 </ul>
             </li>
             @*-------------------------------------*@
             <li>
-                <a href="#" class="nav-header">
-                    <i class="fa fa-fw fa-comment"></i> Faq
+                <a href="#" data-target=".2" class="nav-header" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-list"></i>
+                    Manage Select Tour
+                    <i class="fa fa-collapse"></i>
                 </a>
             </li>
+            <ul class="2 nav nav-list collapse in">
+                <li>
+                    <a href="~/CMS/ManageSelectTour/AllSelectTour">
+                        <span class="fa fa-caret-right"></span>
+                        All Select Tours
+                    </a>
+                </li>
+
+                <li>
+                    <a href="~/CMS/ManageSelectTour/TrashedSelectTours">
+                        <span class="fa fa-caret-right"></span>
+                        Trashed Select Tours
+                    </a>
+                </li>
+
+                <li>
+                    <a href="~/CMS/ManageSelectTour/BookedSelectTours">
+                        <span class="fa fa-caret-right"></span>
+                        Booked Select Tours
+                    </a>
+                </li>
+            </ul>
+            @*-------------------------------------*@
+            <li>
+                <a href="#" data-target=".3" class="nav-header" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-plane"></i>
+                    Manage Customized Tour
+                    <i class="fa fa-collapse"></i>
+                </a>
+            </li>
+            <ul class="3 nav nav-list collapse in">
+                <li>
+                    <a href="~/CMS/ManageCustomizedTour/AllCustomizedTours">
+                        <span class="fa fa-caret-right"></span>
+                        All Customized Tours
+                    </a>
+                </li>
+
+                <li>
+                    <a href="~/CMS/ManageCustomizedTour/TrashedCustomizedTours">
+                        <span class="fa fa-caret-right"></span>
+                        Customized Tours
+                    </a>
+                </li>
+            </ul>
+            @*-------------------------------------*@
+            <li>
+                <a href="" data-target=".4" class="nav-header" >
+                    <i class="glyphicon glyphicon-picture"></i>
+                    Image Slide
+                </a>
+            </li>
+            @*-------------------------------------*@
+            <li>
+                <a data-target=".5" class="nav-header" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-user"></i>
+                    Manage Agency
+                    <i class="fa fa-collapse"></i>
+                </a>
+            </li>
+            <ul class="5 nav nav-list collapse in">
+                <li>
+                    <a href="~/CMS/Agencies/AllAgencies">
+                        <span class="fa fa-caret-right"></span>
+                        All Agencies
+                    </a>
+                </li>
+
+                <li>
+                    <a href="~/CMS/Agencies/TrashedAgencies">
+                        <span class="fa fa-caret-right"></span>
+                        Trashed Agencies
+                    </a>
+                </li>
+            </ul>
+            @*-------------------------------------*@
+            <li>
+                <a data-target=".6" class="nav-header" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-earphone"></i>
+                    Manage Contact
+                    <i class="fa fa-collapse"></i>
+                </a>
+            </li>
+            <ul class="6 nav nav-list collapse in">
+                <li>
+                    <a href="~/CMS/Contact/AllContact">
+                        <span class="fa fa-caret-right"></span>
+                        All Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a href="~/CMS/Contact/TrashedContact">
+                        <span class="fa fa-caret-right"></span>
+                        Trashed Contact 
+                    </a>
+                </li>
+            </ul>
         </ul>
     </div>
     <div class="content">
@@ -113,7 +217,7 @@
         @RenderBody()
     </div>
 
-   
+
 </body>
 </html>
 

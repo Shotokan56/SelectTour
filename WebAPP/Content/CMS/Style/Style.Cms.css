@@ -32,3 +32,8 @@
     width: 80%;
     left: 10%;
 }
+
+.headControl div {
+    padding: 0px;
+    padding-bottom: 20px;
+}
