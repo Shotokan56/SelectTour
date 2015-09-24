@@ -1,23 +1,17 @@
-﻿@model IEnumerable<WebAPP.Areas.CMS.Models.PackageTourBookedViewModel>
+﻿@model IEnumerable<WebAPP.Areas.CMS.Models.Contact>
 
 @{
-    ViewBag.Title = "Booked Tour";
+    ViewBag.Title = "Trashed Contact";
     Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
 }
 
 <table class="table table-bordered table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.FullName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DepartureDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TourClass)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContactName)
+            @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>Action</th>
     </tr>
@@ -26,19 +20,13 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.FullName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DepartureDate)
+                @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TourClass)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ContactName)
-            </td>
-            <td>
-                @Html.ActionLink("Details", "DetailsBooked", new {/* id=item.PrimaryKey */})
+                @Html.ActionLink("Restore", "Restore", new {/* id=item.PrimaryKey */}) 
             </td>
         </tr>
     }

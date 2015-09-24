@@ -1,23 +1,29 @@
-﻿@model IEnumerable<WebAPP.Areas.CMS.Models.PackageTourBookedViewModel>
-
+﻿@model IEnumerable<WebAPP.Areas.CMS.Models.SelectTourViewModel>
 @{
-    ViewBag.Title = "Booked Tour";
+    ViewBag.Title = "AllSelectTour";
     Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
 }
+
+<div class="form-group headControl">
+    <div class="col-md-5">
+    </div>
+    <label class="col-md-2 control-label">Search:</label>
+    <div class="col-md-5">@Html.TextBox("Search")</div>
+</div>
 
 <table class="table table-bordered table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.SelectTourName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DepartureDate)
+            @Html.DisplayNameFor(model => model.SelectTourDuration)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TourClass)
+            @Html.DisplayNameFor(model => model.SelectTourDestination)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ContactName)
+            @Html.DisplayNameFor(model => model.SelectTourPrice)
         </th>
         <th>Action</th>
     </tr>
@@ -26,19 +32,19 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.SelectTourName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DepartureDate)
+                @Html.DisplayFor(modelItem => item.SelectTourDuration)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TourClass)
+                @Html.DisplayFor(modelItem => item.SelectTourDestination)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ContactName)
+                @Html.DisplayFor(modelItem => item.SelectTourPrice)
             </td>
             <td>
-                @Html.ActionLink("Details", "DetailsBooked", new {/* id=item.PrimaryKey */})
+                @Html.ActionLink("Restore", "Restore", new { id = item.SelectTourId })
             </td>
         </tr>
     }
@@ -64,3 +70,4 @@
         $('#pager').bootstrapPaginator(options);
     });
 </script>
+

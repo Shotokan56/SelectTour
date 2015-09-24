@@ -4,10 +4,9 @@
     Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
 }
 
-<div id="small-form" class="form-horizontal">
-    <div class="form-group">
+    <div class="form-group headControl">
         <div class="col-md-5">
-            @Html.ActionLink("Add New Tour", "Addnewtour", "ManageSelectTour", null, new { @class = "btn btn-default", @datamodal = "" })
+            @Html.ActionLink("Add New Tour", "CreateNew", "ManageSelectTour", null, new { @class = "btn btn-default", @datamodal = "" })
         </div>
         <label class="col-md-2 control-label">Search:</label>
         <div class="col-md-5">@Html.TextBox("Search")</div>
@@ -16,5 +15,4 @@
     <div id="lstReplace" class="form-group">
         @{ Html.RenderAction("ListSelectTourPatial", "ManageSelectTour"); }
     </div>
-</div>
 
