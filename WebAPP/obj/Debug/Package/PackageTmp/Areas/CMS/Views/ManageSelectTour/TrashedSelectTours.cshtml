@@ -1,0 +1,73 @@
+﻿@model IEnumerable<WebAPP.Areas.CMS.Models.SelectTourViewModel>
+@{
+    ViewBag.Title = "AllSelectTour";
+    Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
+}
+
+<div class="form-group headControl">
+    <div class="col-md-5">
+    </div>
+    <label class="col-md-2 control-label">Search:</label>
+    <div class="col-md-5">@Html.TextBox("Search")</div>
+</div>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectTourName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectTourDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectTourDestination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectTourPrice)
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectTourName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectTourDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectTourDestination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectTourPrice)
+            </td>
+            <td>
+                @Html.ActionLink("Restore", "Restore", new { id = item.SelectTourId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="pull-right" style="padding-right: 10px">
+    <div id="pager" class="pull-right">
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    //Pager
+    $(function () {
+        var options = {
+            currentPage: 1,
+            totalPages: 10,
+            onPageChanged: function (e, oldPage, newPage) {
+                //LoadDataList(oldPage, newPage);
+            }
+        }
+        $('#pager').bootstrapPaginator(options);
+    });
+</script>
+

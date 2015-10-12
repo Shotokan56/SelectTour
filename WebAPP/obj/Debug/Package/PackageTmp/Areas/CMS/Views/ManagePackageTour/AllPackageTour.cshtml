@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "AllPackageTour";
+    Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
+}
+
+    <div class="form-group headControl">
+        <div class="col-md-5">
+            @Html.ActionLink("Add New Tour", "Addnewtour", "ManagePackageTour", null, new {@class = "btn btn-default", @datamodal = ""})
+        </div>
+        <label class="col-md-2 control-label">Search:</label>
+        <div class="col-md-5">@Html.TextBox("Search")</div>
+    </div>
+
+    <div id="lstReplace" class="form-group">
+        @{ Html.RenderAction("ListPackageTourPatial", "ManagePackageTour"); }
+    </div>
+
+

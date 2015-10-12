@@ -1,0 +1,315 @@
+﻿@model WebAPP.Areas.GUI.Models.SelectTourViewModel
+@{
+    ViewBag.Title = "CustomizedTour";
+    Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
+}
+
+<section class="content">
+    <span>Vietnam's colour, chaos and natural beauty bring a new adventure every day. Feel your senses come alive as you walk Hanoi's crazy streets, visit the other-worldly villages of Sapa and sail on majestic Halong Bay. Vietnam's food, people, sights and history keep even the most seasoned traveller coming back for more. Vietnam's colour, chaos and natural beauty bring a new adventure every day. Feel your senses come alive as you walk Hanoi's crazy streets, visit the other-worldly villages of Sapa and sail on majestic Halong Bay. Vietnam's food, people, sights and history keep even the most seasoned traveller coming back for more. Vietnam's colour, chaos and natural beauty bring a new adventure every day. Feel your senses come alive as you walk Hanoi's crazy streets, visit the other-worldly villages of Sapa and sail on majestic Halong Bay. Vietnam's food, people, sights and history keep even the most seasoned traveller coming back for more.</span>
+
+    <div class="caption" style="margin-top: 20px;">
+        <span class="">1. Contact Information</span>
+    </div>
+    <div class="form-horizontal" style="margin-top: 20px;">
+        <div class="form-group">
+            <span class="col-md-2 " style="padding-top: 5px;">Your Name:</span>
+            <div class="col-md-4" style="padding: 0px;">
+                @Html.TextBox("Test")
+            </div>
+            <span class="col-md-2 " style="padding-top: 5px;">Gender:</span>
+            <div class="col-md-4">
+                @Html.DropDownList("Test", new SelectList(Model.ListTourClass, "Id", "Name"))
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2 " style="padding-top: 5px;">Email:</span>
+            <div class="col-md-4" style="padding: 0px;">
+                @Html.TextBox("Test")
+            </div>
+            <span class="col-md-2 " style="padding-top: 5px;">Nationality:</span>
+            <div class="col-md-4">
+                @Html.DropDownList("Test", new SelectList(Model.ListTourClass, "Id", "Name"), "Select your country")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2 " style="padding-top: 5px;">Address:</span>
+            <div class="col-md-4" style="padding: 0px;">
+                @Html.TextBox("Test")
+            </div>
+            <span class="col-md-2 " style="padding-top: 5px;">Phone:</span>
+            <div class="col-md-4">
+                @Html.TextBox("Test")
+            </div>
+        </div>
+    </div>
+
+    <div class="caption" style="margin-top: 20px;">
+        <span class="">2. Travel Information</span>
+    </div>
+    <div class="form-horizontal" style="margin-top: 20px;">
+        <div class="form-group">
+            <span class="col-md-2 " style="padding-top: 5px;">Arrival Date:</span>
+            <div class="col-md-4" style="padding: 0px;">
+                @Html.TextBox("ArrivalDate")
+                <script type="text/javascript">
+                    $(function () {
+                        $(function () {
+                            $("#ArrivalDate").datetimepicker({
+                                useCurrent: true,
+                                calendarWeeks: true,
+                                viewMode: "days",
+                                format: "DD/MM/YYYY",
+                                locale: "en",
+                                showTodayButton: true
+                            });
+                        });
+                    });
+                </script>
+            </div>
+            <span class="col-md-2 " style="padding-top: 5px;">Departure Date:</span>
+            <div class="col-md-4">
+                @Html.TextBox("DepartureDate")
+                <script type="text/javascript">
+                    $(function () {
+                        $(function () {
+                            $("#DepartureDate").datetimepicker({
+                                useCurrent: true,
+                                calendarWeeks: true,
+                                viewMode: "days",
+                                format: "DD/MM/YYYY",
+                                locale: "en",
+                                showTodayButton: true
+                            });
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="col-md-12 " style="margin-bottom: 5px;">Number Of Travel Partners (include your self):</strong>
+            <div class="col-md-3">@Html.DropDownList("TravelPart1", new SelectList(Model.ListTourClass, "Id", "Name"), "--------")</div>
+            <div class="col-md-3">@Html.DropDownList("TravelPart2", new SelectList(Model.ListTourClass, "Id", "Name"), "--------")</div>
+            <div class="col-md-3">@Html.DropDownList("TravelPart3", new SelectList(Model.ListTourClass, "Id", "Name"), "--------")</div>
+            <div class="col-md-3">@Html.DropDownList("TravelPart4", new SelectList(Model.ListTourClass, "Id", "Name"), "--------")</div>
+        </div>
+
+        <div class="form-group">
+            <strong class="col-md-12 " style="margin-bottom: 5px;">Accommodation Style:</strong>
+            <div class="col-md-12">@Html.RadioButton("Test", "") Best value, clean and comfortable (eg 3 star)</div>
+            <div class="col-md-12">@Html.RadioButton("Test", "")High standard, good range of facility (eg 4 star)</div>
+            <div class="col-md-12">@Html.RadioButton("Test", "")The very best luxury (eg 5 star)</div>
+            <div class="col-md-12">@Html.RadioButton("Test", "")Unsure</div>
+        </div>
+
+        <div class="form-group">
+            <strong class="col-md-12 " style="margin-bottom: 5px;">Model of transportation used for in-country travel?:</strong>
+            <div class="col-md-3">@Html.CheckBox("Test") Airplane</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Car/Bus</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Motobike</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Train</div>
+        </div>
+
+        <div class="form-group">
+            <strong class="col-md-12 " style="margin-bottom: 5px;">Preferred type of programme?</strong>
+            <div class="col-md-3">@Html.CheckBox("Test") Airplane</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Car/Bus</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Motobike</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Train</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") Airplane</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Car/Bus</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Motobike</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Train</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") Airplane</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Car/Bus</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Motobike</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Train</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") Airplane</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Car/Bus</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Motobike</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Train</div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-1">Other:</div>
+            <div class="col-md-11">
+                @Html.TextBox("Test")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="col-md-12">Meals to be included in your itinerary ?</strong>
+            <div class="col-md-3">@Html.CheckBox("Test") Breakfast</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Lunch</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Dinner</div>
+        </div>
+    </div>
+
+
+    <div class="caption" style="margin-top: 20px;">
+        <span class="">3. Where would you like to visit?</span>
+    </div>
+    <div class="form-horizontal" style="margin-top: 20px;">
+        <div class="form-group">
+            <strong class="col-md-12">VIETNAM</strong>
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+
+
+            <strong class="col-md-12" style="margin-top: 10px;">CAMBODIA</strong>
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+
+            <strong class="col-md-12" style="margin-top: 10px;">LAOS</strong>
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+
+
+            <strong class="col-md-12" style="margin-top: 10px;">MYANMAR(BURMA)</strong>
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") HaNoi</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Hue</div>
+            <div class="col-md-3">@Html.CheckBox("Test") SaiGon</div>
+            <div class="col-md-3">@Html.CheckBox("Test") DaNang</div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">Other Place:</div>
+            <div class="col-md-12">
+                @Html.TextBox("Test")
+            </div>
+        </div>
+    </div>
+
+
+    <div class="caption" style="margin-top: 20px;">
+        <span class="">4. Where would you like to visit?</span>
+    </div>
+<div class="form-horizontal" style="margin-top: 20px;">
+    <div class="form-group">
+        <div class="col-md-5">Other Special requests:</div>
+        <div class="col-md-12">
+            @Html.TextArea("test", null, new {@style = "height:70px;"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-3">Modes of payment:</div>
+        <div class="col-md-4">
+            @Html.DropDownList("Test", new SelectList(Model.ListTourClass, "Id", "Name"), "------------ ")
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-3">Where did you hear about us:</div>
+        <div class="col-md-4">
+            @Html.DropDownList("Test", new SelectList(Model.ListTourClass, "Id", "Name"), "------------ ")
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-3">Security Code:</div>
+        <div class="col-md-4">
+            @Html.TextBox("test")
+        </div>
+    </div>
+</div>
+    <div class="form-group">
+        <div class="col-md-12" style="padding: 0px;">
+            <a class="button pull-right" style="margin-left: 10px" href="single.html">Submit</a>
+        </div>
+    </div>
+</section>

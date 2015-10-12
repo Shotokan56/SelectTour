@@ -36,9 +36,18 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ReferenceId" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Slide">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Link" Type="nvarchar(max)" />
+    <Property Name="Text" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -49,6 +58,12 @@
     <Property Name="PassWord" Type="nvarchar" MaxLength="250" Nullable="false" />
     <Property Name="Lock" Type="bit" Nullable="false" />
     <Property Name="Roles" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="250" />
+    <Property Name="FamilyName" Type="nvarchar" MaxLength="250" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="250" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <Function Name="sp_GetDataFromTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="TableName" Type="nvarchar" Mode="In" />
@@ -63,6 +78,7 @@
     <EntitySet Name="Page" EntityType="Self.Page" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ReferenceValue" EntityType="Self.ReferenceValue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slide" EntityType="Self.Slide" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "PackageTour";
+    Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
+}
+
+<section class="content">
+    <div class="caption">
+        <span>
+            PackageTour
+        </span>
+    </div>
+    <article class="post">
+        <div class=" row">
+            <div class="postimg col-md-4 shrink img">
+                <img alt="" src="~/Content/images/post3.jpg">
+            </div>
+            <div class="col-md-8">
+                <div class="entry-content">
+                    <span class="posttitle">
+                        <a href="single.html">The Best VietNam - Cambodia - 17 days.</a>
+                    </span>
+                    <ul>
+                        <li>
+                            The sensational ruins of Angkor may be the main attraction, but Cambodia’s exquisite temples, secluded beaches, charming villages and magical markets deserve lots of attention too.
+                        </li>
+                        <li>
+                            17 day, 18 night -
+                            <span class="price">$1259</span>
+                        </li>
+                        <li>
+                            Destination : Ha Noi - Sapa - Hue - Ha Long - Da Nang
+                        </li>
+                    </ul>
+
+                    <a class="button pull-right" href="single.html">View Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+
+        <div class=" row">
+            <div class="postimg col-md-4 shrink img">
+                <img alt="" src="~/Content/images/post3.jpg">
+            </div>
+            <div class="col-md-8">
+                <div class="entry-content">
+                    <span class="posttitle">
+                        <a href="single.html">The Best VietNam - Cambodia - 17 days.</a>
+                    </span>
+                    <ul>
+                        <li>
+                            The sensational ruins of Angkor may be the main attraction, but Cambodia’s exquisite temples, secluded beaches, charming villages and magical markets deserve lots of attention too.
+                        </li>
+                        <li>
+                            17 day, 18 night -
+                            <span class="price">$1259</span>
+                        </li>
+                        <li>
+                            Destination : Ha Noi - Sapa - Hue - Ha Long - Da Nang
+                        </li>
+                    </ul>
+
+                    <a class="button pull-right" href="single.html">View Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+
+        <div class="row">
+            <div class="postimg col-md-4 shrink img">
+                <img alt="" src="~/Content/images/post3.jpg">
+            </div>
+            <div class="col-md-8">
+                <div class="entry-content">
+                    <span class="posttitle">
+                        <a href="single.html">The Best VietNam - Cambodia - 17 days.</a>
+                    </span>
+                    <ul>
+                        <li>
+                            The sensational ruins of Angkor may be the main attraction, but Cambodia’s exquisite temples, secluded beaches, charming villages and magical markets deserve lots of attention too.
+                        </li>
+                        <li>
+                            17 day, 18 night -
+                            <span class="price">$1259</span>
+                        </li>
+                        <li>
+                            Destination : Ha Noi - Sapa - Hue - Ha Long - Da Nang
+                        </li>
+                    </ul>
+
+                    <a class="button pull-right" href="single.html">View Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </article>
+    <div class="pull-right">
+        <div id="pager">
+
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    //Pager
+    $(function () {
+        var options = {
+            currentPage: 1,
+            totalPages: 10,
+            onPageChanged: function (e, oldPage, newPage) {
+                LoadDataList(oldPage, newPage);
+            }
+        }
+        $('#pager').bootstrapPaginator(options);
+    });
+</script>
+

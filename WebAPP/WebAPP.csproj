@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,6 +44,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -55,6 +58,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -62,12 +66,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -108,6 +109,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -193,10 +195,10 @@
     <Compile Include="Areas\CMS\Controllers\ContactController.cs" />
     <Compile Include="Areas\CMS\Controllers\CustomizedTourController.cs" />
     <Compile Include="Areas\CMS\Controllers\HomeController.cs" />
+    <Compile Include="Areas\CMS\Controllers\ImageSlideController.cs" />
     <Compile Include="Areas\CMS\Controllers\LoginController.cs" />
     <Compile Include="Areas\CMS\Controllers\ManagePackageTourController.cs" />
     <Compile Include="Areas\CMS\Controllers\ManageSelectTourController.cs" />
-    <Compile Include="Areas\CMS\Controllers\UserManagementController.cs" />
     <Compile Include="Areas\CMS\Models\AgencyListViewModel.cs" />
     <Compile Include="Areas\CMS\Models\Contact.cs" />
     <Compile Include="Areas\CMS\Models\CustomizedTourListViewModel.cs" />
@@ -248,6 +250,9 @@
     <Compile Include="Models\ReferenceValue.cs">
       <DependentUpon>appData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Slide.cs">
+      <DependentUpon>appData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs">
       <DependentUpon>appData.tt</DependentUpon>
     </Compile>
@@ -256,10 +261,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-3.3.2-dist\css\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-3.3.2-dist\css\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-3.3.2-dist\css\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap-3.3.2-dist\css\bootstrap.css" />
+    <Content Include="Content\bootstrap-3.3.2-dist\css\bootstrap.css.map" />
     <Content Include="Content\bootstrap-3.3.2-dist\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-3.3.2-dist\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-3.3.2-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap-3.3.2-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap-3.3.2-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bootstrap-3.3.2-dist\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\bootstrap-3.3.2-dist\js\bootstrap.js" />
     <Content Include="Content\bootstrap-3.3.2-dist\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap-3.3.2-dist\js\npm.js" />
@@ -317,16 +328,23 @@
     <Content Include="Content\CMS\Script\bootstrap.min.css" />
     <Content Include="Content\CMS\Script\jquery.js" />
     <Content Include="Content\CMS\Script\Layout.js" />
+    <Content Include="Content\CMS\Script\lib\.DS_Store" />
     <Content Include="Content\CMS\Script\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\CMS\Script\lib\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="Content\CMS\Script\lib\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Content\CMS\Script\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\CMS\Script\lib\bootstrap\css\bootstrap.css.map" />
     <Content Include="Content\CMS\Script\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\CMS\Script\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\CMS\Script\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\CMS\Script\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\CMS\Script\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\CMS\Script\lib\bootstrap\js\bootstrap.js" />
     <Content Include="Content\CMS\Script\lib\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\CMS\Script\lib\fancy-zoom\css\fancyzoom.css" />
     <Content Include="Content\CMS\Script\lib\fancy-zoom\img\closebox.png" />
     <Content Include="Content\CMS\Script\lib\fancy-zoom\index.html" />
+    <Content Include="Content\CMS\Script\lib\fancy-zoom\src\fancyzoom.coffee" />
     <Content Include="Content\CMS\Script\lib\fancy-zoom\src\fancyzoom.js" />
     <Content Include="Content\CMS\Script\lib\flot\API.txt" />
     <Content Include="Content\CMS\Script\lib\flot\examples\ajax.html" />
@@ -336,6 +354,14 @@
     <Content Include="Content\CMS\Script\lib\flot\examples\arrow-right.gif" />
     <Content Include="Content\CMS\Script\lib\flot\examples\arrow-up.gif" />
     <Content Include="Content\CMS\Script\lib\flot\examples\basic.html" />
+    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth-1.json" />
+    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth-2.json" />
+    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth-3.json" />
+    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth-4.json" />
+    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth-5.json" />
+    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth.json" />
+    <Content Include="Content\CMS\Script\lib\flot\examples\data-japan-gdp-growth.json" />
+    <Content Include="Content\CMS\Script\lib\flot\examples\data-usa-gdp-growth.json" />
     <Content Include="Content\CMS\Script\lib\flot\examples\graph-types.html" />
     <Content Include="Content\CMS\Script\lib\flot\examples\hs-2004-27-a-large_web.jpg" />
     <Content Include="Content\CMS\Script\lib\flot\examples\image.html" />
@@ -376,12 +402,44 @@
     <Content Include="Content\CMS\Script\lib\flot\jquery.flot.threshold.js" />
     <Content Include="Content\CMS\Script\lib\flot\jquery.js" />
     <Content Include="Content\CMS\Script\lib\flot\LICENSE.txt" />
+    <Content Include="Content\CMS\Script\lib\flot\Makefile" />
     <Content Include="Content\CMS\Script\lib\flot\NEWS.txt" />
     <Content Include="Content\CMS\Script\lib\flot\PLUGINS.txt" />
     <Content Include="Content\CMS\Script\lib\flot\README.txt" />
     <Content Include="Content\CMS\Script\lib\font-awesome\css\font-awesome.css" />
     <Content Include="Content\CMS\Script\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\CMS\Script\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\core.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\icons.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\larger.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\list.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\mixins.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\path.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\spinning.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\stacked.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\less\variables.less" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_core.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_list.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_path.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_spinning.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\.DS_Store" />
     <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\changelog.txt" />
     <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\demos\agenda-views.html" />
     <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\demos\basic-views.html" />
@@ -404,6 +462,7 @@
     <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\demos\default.html" />
     <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\demos\external-dragging.html" />
     <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\demos\gcal.html" />
+    <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\demos\json-events.php" />
     <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\demos\json.html" />
     <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\demos\selectable.html" />
     <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\demos\theme.html" />
@@ -418,6 +477,8 @@
     <Content Include="Content\CMS\Script\lib\jquery-1.11.1.min.js" />
     <Content Include="Content\CMS\Script\lib\jQuery-Knob\index.html" />
     <Content Include="Content\CMS\Script\lib\jQuery-Knob\js\jquery.knob.js" />
+    <Content Include="Content\CMS\Script\lib\jQuery-Knob\knob.jquery.json" />
+    <Content Include="Content\CMS\Script\lib\jQuery-Knob\README.md" />
     <Content Include="Content\CMS\Script\lib\jquery.imagesloaded.min.js" />
     <Content Include="Content\CMS\Script\lib\jquery.isotope.min.js" />
     <Content Include="Content\CMS\Script\lib\jquery.masonry.min.js" />
@@ -441,8 +502,16 @@
     <Content Include="Content\GUI\css\library\owl.carousel.css" />
     <Content Include="Content\GUI\css\style.css" />
     <Content Include="Content\GUI\css\StyleSheet1.css" />
+    <Content Include="Content\GUI\fonts\fontAwesome\fontawesome-webfont78ce.eot" />
     <Content Include="Content\GUI\fonts\fontAwesome\fontawesome-webfont78ce.svg" />
+    <Content Include="Content\GUI\fonts\fontAwesome\fontawesome-webfont78ce.ttf" />
+    <Content Include="Content\GUI\fonts\fontAwesome\fontawesome-webfont78ce.woff" />
+    <Content Include="Content\GUI\fonts\fontAwesome\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\GUI\fonts\glyphicons\glyphicons-halflings-regular.eot" />
     <Content Include="Content\GUI\fonts\glyphicons\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\GUI\fonts\glyphicons\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\GUI\fonts\glyphicons\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\GUI\fonts\glyphicons\glyphicons-halflings-regulard41d.eot" />
     <Content Include="Content\GUI\images\404.png" />
     <Content Include="Content\GUI\images\background\bg-1.jpg" />
     <Content Include="Content\GUI\images\background\bg-10.html" />
@@ -609,6 +678,7 @@
     <Content Include="Content\GUI\images\icon\icon-user.png" />
     <Content Include="Content\GUI\images\logo-banner.png" />
     <Content Include="Content\GUI\images\logo-footer.png" />
+    <Content Include="Content\GUI\images\logo-header.gif" />
     <Content Include="Content\GUI\images\logo-header.png" />
     <Content Include="Content\GUI\images\magazine\img-1.jpg" />
     <Content Include="Content\GUI\images\magazine\img-2.jpg" />
@@ -651,12 +721,22 @@
     <Content Include="Content\GUI\js\library\jquery.nicescroll.js" />
     <Content Include="Content\GUI\js\library\jquery.ui.touch-punch.min.js" />
     <Content Include="Content\GUI\js\library\jquery.validate.min.js" />
+    <Content Include="Content\GUI\js\library\jssor.js" />
+    <Content Include="Content\GUI\js\library\jssor.slider.js" />
     <Content Include="Content\GUI\js\library\owl.carousel.min.js" />
     <Content Include="Content\GUI\js\library\parallax.min.js" />
     <Content Include="Content\GUI\js\library\SmoothScroll.js" />
     <Content Include="Content\GUI\js\script.js" />
+    <Content Include="Content\GUI\Lastone\styles\color.css" />
+    <Content Include="Content\GUI\Lastone\styles\flexslider.css" />
+    <Content Include="Content\GUI\Lastone\styles\inner.css" />
+    <Content Include="Content\GUI\Lastone\styles\layerslider.css" />
+    <Content Include="Content\GUI\Lastone\styles\layout.css" />
+    <Content Include="Content\GUI\Lastone\styles\prettyPhoto.css" />
+    <Content Include="Content\GUI\Lastone\styles\style.css" />
     <Content Include="Content\GUI\popup\images\hotel\img-4.html" />
     <Content Include="Content\GUI\popup\popup-room.html" />
+    <Content Include="Content\images\a01.png" />
     <Content Include="Content\images\facebook_circle_color.png" />
     <Content Include="Content\images\google-plus.png" />
     <Content Include="Content\images\loading-icons\images.txt" />
@@ -670,9 +750,50 @@
     <Content Include="Content\images\loading-icons\loading7.gif" />
     <Content Include="Content\images\loading-icons\loading8.gif" />
     <Content Include="Content\images\loading-icons\loading9.gif" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\post3.jpg" />
     <Content Include="Content\images\slide1.jpg" />
     <Content Include="Content\images\slide2.jpg" />
+    <Content Include="Content\images\slide3.jpg" />
     <Content Include="Content\images\twitter_circle_color.png" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\.gitignore" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\css\fileinput.css" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\css\fileinput.min.css" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\examples\index.html" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\img\loading-sm.gif" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\img\loading.gif" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput.min.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_ar.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_bg.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_cr.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_cz.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_da.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_de.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_el.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_es.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_fa.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_fr.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_hu.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_it.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_ja.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_LANG.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_nl.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_pl.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_pt-BR.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_pt.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_ro.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_ru.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_sk.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_th.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_tr.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_uk.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_zh-TW.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\fileinput_locale_zh.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\plugins\canvas-to-blob.js" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\js\plugins\canvas-to-blob.min.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\tinymce\langs\readme.md" />
     <Content Include="Content\tinymce\license.txt" />
     <Content Include="Content\tinymce\plugins\advlist\plugin.min.js" />
     <Content Include="Content\tinymce\plugins\anchor\plugin.min.js" />
@@ -738,8 +859,14 @@
     <Content Include="Content\tinymce\plugins\wordcount\plugin.min.js" />
     <Content Include="Content\tinymce\skins\lightgray\content.inline.min.css" />
     <Content Include="Content\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
     <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce.eot" />
     <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Content\tinymce\skins\lightgray\img\anchor.gif" />
     <Content Include="Content\tinymce\skins\lightgray\img\loader.gif" />
     <Content Include="Content\tinymce\skins\lightgray\img\object.gif" />
@@ -751,7 +878,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Models\appData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>appData.edmx</DependentUpon>
@@ -769,66 +895,6 @@
     <Content Include="Areas\CMS\Views\Home\Index.cshtml" />
     <Content Include="Areas\CMS\Views\Login\Login.cshtml" />
     <Content Include="Areas\CMS\Views\Shared\_Layout_CMS.cshtml" />
-    <Content Include="Areas\CMS\Views\UserManagement\ListUser.cshtml" />
-    <Content Include="Areas\CMS\Views\UserManagement\ListUserPatial.cshtml" />
-    <Content Include="Areas\CMS\Views\UserManagement\NewUser.cshtml" />
-    <Content Include="Areas\CMS\Views\UserManagement\NewUserPatial.cshtml" />
-    <Content Include="Content\bootstrap-3.3.2-dist\css\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap-3.3.2-dist\css\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-3.3.2-dist\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-3.3.2-dist\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\bootstrap-3.3.2-dist\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\bootstrap-3.3.2-dist\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Content\CMS\Script\lib\.DS_Store" />
-    <Content Include="Content\CMS\Script\lib\bootstrap\css\bootstrap-theme.css.map" />
-    <Content Include="Content\CMS\Script\lib\bootstrap\css\bootstrap.css.map" />
-    <Content Include="Content\CMS\Script\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\CMS\Script\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\CMS\Script\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\CMS\Script\lib\fancy-zoom\src\fancyzoom.coffee" />
-    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth-1.json" />
-    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth-2.json" />
-    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth-3.json" />
-    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth-4.json" />
-    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth-5.json" />
-    <Content Include="Content\CMS\Script\lib\flot\examples\data-eu-gdp-growth.json" />
-    <Content Include="Content\CMS\Script\lib\flot\examples\data-japan-gdp-growth.json" />
-    <Content Include="Content\CMS\Script\lib\flot\examples\data-usa-gdp-growth.json" />
-    <Content Include="Content\CMS\Script\lib\flot\Makefile" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\bordered-pulled.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\core.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\fixed-width.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\font-awesome.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\icons.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\larger.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\list.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\mixins.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\path.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\rotated-flipped.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\spinning.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\stacked.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\less\variables.less" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\font-awesome.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_bordered-pulled.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_core.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_fixed-width.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_icons.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_larger.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_list.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_mixins.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_path.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_rotated-flipped.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_spinning.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_stacked.scss" />
-    <Content Include="Content\CMS\Script\lib\font-awesome\scss\_variables.scss" />
-    <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\.DS_Store" />
-    <Content Include="Content\CMS\Script\lib\fullcalendar-1.6.4\demos\json-events.php" />
-    <Content Include="Content\CMS\Script\lib\jQuery-Knob\knob.jquery.json" />
-    <Content Include="Content\CMS\Script\lib\jQuery-Knob\README.md" />
     <Content Include="Scripts\jquery-1.11.1.min.map" />
     <Content Include="Areas\GUI\Views\Home\Home.cshtml" />
     <Content Include="Areas\GUI\Views\Shared\GuiLayOut.cshtml" />
@@ -839,14 +905,6 @@
     <Content Include="Models\appData.edmx.diagram">
       <DependentUpon>appData.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\GUI\fonts\fontAwesome\fontawesome-webfont78ce.eot" />
-    <Content Include="Content\GUI\fonts\fontAwesome\fontawesome-webfont78ce.ttf" />
-    <Content Include="Content\GUI\fonts\fontAwesome\fontawesome-webfont78ce.woff" />
-    <Content Include="Content\GUI\fonts\fontAwesome\fontawesome-webfontd41d.eot" />
-    <Content Include="Content\GUI\fonts\glyphicons\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\GUI\fonts\glyphicons\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\GUI\fonts\glyphicons\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\GUI\fonts\glyphicons\glyphicons-halflings-regulard41d.eot" />
     <Content Include="Areas\GUI\Views\Home\PackageTour.cshtml" />
     <Content Include="Areas\GUI\Views\Home\SelectTour.cshtml" />
     <Content Include="Areas\GUI\Views\Home\CustomizedTour.cshtml" />
@@ -857,13 +915,6 @@
     <Content Include="Areas\CMS\Views\ManageSelectTour\ListSelectTourPatial.cshtml" />
     <Content Include="Areas\CMS\Views\ManageSelectTour\AllSelectTour.cshtml" />
     <Content Include="Areas\CMS\Views\ManagePackageTour\Addnewtour.cshtml" />
-    <Content Include="Content\tinymce\langs\readme.md" />
-    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
-    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
-    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
-    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce.eot" />
-    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce.ttf" />
-    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Areas\CMS\Views\ManagePackageTour\TrashedPackageTours.cshtml" />
     <Content Include="Areas\CMS\Views\ManagePackageTour\DetailsBooked.cshtml" />
     <Content Include="Areas\CMS\Views\ManagePackageTour\AllBookedTours.cshtml" />
@@ -879,6 +930,20 @@
     <Content Include="Areas\CMS\Views\Contact\AllContact.cshtml" />
     <Content Include="Areas\CMS\Views\Contact\TrashedContact.cshtml" />
     <Content Include="Areas\CMS\Views\Contact\Detail.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageSlide\ImageSlideIndex.cshtml" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\bower.json" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\CHANGE.md" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\composer.json" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\LICENSE.md" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\nuget\build.bat" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\nuget\Package.nuspec" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\package.json" />
+    <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\README.md" />
+    <Content Include="Areas\CMS\Views\ImageSlide\_listImage.cshtml" />
+    <Content Include="Areas\GUI\Views\Shared\SlideBanner.cshtml" />
+    <Content Include="Areas\GUI\Views\Home\Register.cshtml" />
+    <Content Include="Areas\GUI\Views\Home\_Login.cshtml" />
+    <None Include="Properties\PublishProfiles\VietSelectTour.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af-ZA.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af.js" />

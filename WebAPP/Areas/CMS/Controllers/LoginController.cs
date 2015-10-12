@@ -19,14 +19,16 @@ namespace WebAPP.Areas.CMS.Controllers
 
         public ActionResult Index(UserViewModel userVm)
         {
-            var appLogin = Request.Cookies["AppLogin"];
-            userVm.PassWord = "1";
-            userVm.RememberMe = true;
-            if (appLogin != null)
-            {
-                userVm.UserName = appLogin.Values["UserName"];
-            }
-            return View("Login", userVm);
+            //var appLogin = Request.Cookies["AppLogin"];
+            //userVm.PassWord = "1";
+            //userVm.RememberMe = true;
+            //if (appLogin != null)
+            //{
+            //    userVm.UserName = appLogin.Values["UserName"];
+            //}
+            //return View("Login", userVm);
+
+            return RedirectToAction("AllPackageTour", "ManagePackageTour");
         }
 
         [HttpPost]
@@ -75,7 +77,7 @@ namespace WebAPP.Areas.CMS.Controllers
             return Index(new UserViewModel());
         }
         
-        private bool Validate(UserViewModel userVm)
+        public bool Validate(UserViewModel userVm)
         {
 
             if (string.IsNullOrEmpty(userVm.UserName) || string.IsNullOrWhiteSpace(userVm.UserName))

@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "ImageSlideIndex";
+    Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
+}
+<head>
+    <link href="~/Content/kartik-v-bootstrap-fileinput-629ec20/css/fileinput.min.css" rel="stylesheet" />
+    <script src="~/Content/kartik-v-bootstrap-fileinput-629ec20/js/plugins/canvas-to-blob.min.js"></script>
+    <script src="~/Content/kartik-v-bootstrap-fileinput-629ec20/js/fileinput.min.js"></script>
+</head>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-md-1">Text</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control text-box single-line col-md-8" id="Text" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-1">File</label>
+        <div class="col-md-10">
+            <input id="input-id" type="file" class="file" data-preview-file-type="text">
+        </div>
+    </div>
+</div>
+
+<div class="form-group" id="table">
+    @{ Html.RenderAction("GetList", "ImageSlide"); }
+</div>
+
+<script>
+    $("#input-id").fileinput({
+        uploadUrl: '@Url.Action("UploadFile","ImageSlide")',
+        allowedFileExtension: ['jpeg'],
+        maxFileSize: 5000000,
+        showUpload: true,
+        uploadAsync: false,
+        uploadExtraData: function () {
+            return {
+                text: $("#Text").val()
+            };
+        }
+    });
+
+    $("#input-id").on('filebatchuploadsuccess', function(event, data, previewId, index) {
+        var url = '@Url.Action("GetList", "ImageSlide")';
+        $.get(url, function(data) {
+            $("#table").html(data);
+        });
+    });
+</script>
+

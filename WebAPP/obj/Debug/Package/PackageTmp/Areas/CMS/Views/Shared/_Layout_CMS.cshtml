@@ -1,0 +1,225 @@
+﻿@using Resources
+@using WebAPP.Areas.CMS.Models
+@using WebAPP.Common
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>System Admin</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    @Styles.Render("~/bundles/style")
+    @Scripts.Render("~/bundles/script")
+
+    @Styles.Render("~/bundles/BootstrapPaginatorStyle")
+    @Scripts.Render("~/bundles/BootstrapPaginatorJs")
+
+    @Styles.Render("~/bundles/BootstrapPaginatorStyle")
+    @Scripts.Render("~/bundles/BootstrapPaginatorJs")
+
+    <script src="~/Content/CMS/Script/Layout.js"></script>
+    <link href="~/Content/CMS/Style/Layout.css" rel="stylesheet" />
+
+    @{
+        var user = (UserViewModel)HttpContext.Current.Session["User"];
+        var ui = new UI();
+        //var lstLabel = ui.GetLabelForPage(user.LanguaeId, (int)Pages.Layout);
+        var success = @ViewBag.Success;
+    }
+</head>
+<body class=" theme-blue">
+    @*<input type="hidden" value="@ViewBag.Success" id="Success" />*@
+    @Html.Hidden("Success", (object)success)
+    <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="" href="index.html">
+                <span class="navbar-brand">
+                    <span class="fa fa-paper-plane"></span>
+                    @*@lstLabel.First(o => o.LabelKey == LabelResources.CompanyNameLayout).LabelName*@
+                    Viet Select Tour
+                </span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse" style="height: 1px;">
+            <ul id="main-menu" class="nav navbar-nav navbar-right">
+                <li class="dropdown hidden-xs">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user padding-right-small" style="position:relative;top: 3px;"></span> UserName
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./">My Account</a></li>
+                        @*<li class="divider"></li>
+                            <li><a href="./">Users</a></li>
+                            <li><a href="./">Security</a></li>
+                            <li><a tabindex="-1" href="./">Payments</a></li>*@
+                        <li class="divider"></li>
+                        <li><a tabindex="-1" href="~/CMS/Login/Logout">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sidebar-nav">
+        <ul>
+            @*=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=Manage Package Tour+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+*@
+            <li>
+                <a href="#" data-target=".1" class="nav-header" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-lock"></i>
+                    Manage Package Tour
+                    <i class="fa fa-collapse"></i>
+                </a>
+            </li>
+            @*-------------------------------------*@
+            <li>
+                <ul class="1 nav nav-list collapse in">
+                    <li>
+                        <a href="~/CMS/ManagePackageTour/AllPackageTour">
+                            <span class="fa fa-caret-right"></span>
+                            All Package Tour
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="~/CMS/ManagePackageTour/TrashedPackageTours">
+                            <span class="fa fa-caret-right"></span>
+                            Trashed Tours
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="~/CMS/ManagePackageTour/AllBookedTours">
+                            <span class="fa fa-caret-right"></span>
+                            Booked Tours
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            @*-------------------------------------*@
+            <li>
+                <a href="#" data-target=".2" class="nav-header" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-list"></i>
+                    Manage Select Tour
+                    <i class="fa fa-collapse"></i>
+                </a>
+            </li>
+            <ul class="2 nav nav-list collapse in">
+                <li>
+                    <a href="~/CMS/ManageSelectTour/AllSelectTour">
+                        <span class="fa fa-caret-right"></span>
+                        All Select Tours
+                    </a>
+                </li>
+
+                <li>
+                    <a href="~/CMS/ManageSelectTour/TrashedSelectTours">
+                        <span class="fa fa-caret-right"></span>
+                        Trashed Select Tours
+                    </a>
+                </li>
+
+                <li>
+                    <a href="~/CMS/ManageSelectTour/BookedSelectTours">
+                        <span class="fa fa-caret-right"></span>
+                        Booked Select Tours
+                    </a>
+                </li>
+            </ul>
+            @*-------------------------------------*@
+            <li>
+                <a href="#" data-target=".3" class="nav-header" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-plane"></i>
+                    Manage Customized Tour
+                    <i class="fa fa-collapse"></i>
+                </a>
+            </li>
+            <ul class="3 nav nav-list collapse in">
+                <li>
+                    <a href="~/CMS/CustomizedTour/AllCustomizedTours">
+                        <span class="fa fa-caret-right"></span>
+                        All Customized Tours
+                    </a>
+                </li>
+
+                <li>
+                    <a href="~/CMS/CustomizedTour/TrashedCustomizedTours">
+                        <span class="fa fa-caret-right"></span>
+                        Trashed Tours
+                    </a>
+                </li>
+            </ul>
+            @*-------------------------------------*@
+            <li>
+                <a href="" data-target=".4" class="nav-header" >
+                    <i class="glyphicon glyphicon-picture"></i>
+                    Image Slide
+                </a>
+            </li>
+            @*-------------------------------------*@
+            <li>
+                <a data-target=".5" class="nav-header" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-user"></i>
+                    Manage Agency
+                    <i class="fa fa-collapse"></i>
+                </a>
+            </li>
+            <ul class="5 nav nav-list collapse in">
+                <li>
+                    <a href="~/CMS/Agencies/AllAgencies">
+                        <span class="fa fa-caret-right"></span>
+                        All Agencies
+                    </a>
+                </li>
+
+                <li>
+                    <a href="~/CMS/Agencies/TrashedAgencies">
+                        <span class="fa fa-caret-right"></span>
+                        Trashed Agencies
+                    </a>
+                </li>
+            </ul>
+            @*-------------------------------------*@
+            <li>
+                <a data-target=".6" class="nav-header" data-toggle="collapse">
+                    <i class="glyphicon glyphicon-earphone"></i>
+                    Manage Contact
+                    <i class="fa fa-collapse"></i>
+                </a>
+            </li>
+            <ul class="6 nav nav-list collapse in">
+                <li>
+                    <a href="~/CMS/Contact/AllContact">
+                        <span class="fa fa-caret-right"></span>
+                        All Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a href="~/CMS/Contact/TrashedContact">
+                        <span class="fa fa-caret-right"></span>
+                        Trashed Contact 
+                    </a>
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="alert alert-success right" id="success-alert" style="position: absolute; display: none">
+            <strong>Success! </strong>
+        </div>
+        @RenderBody()
+    </div>
+
+
+</body>
+</html>
+
+
+
