@@ -17,13 +17,14 @@
     @Styles.Render("~/bundles/BootstrapPaginatorStyle")
     @Scripts.Render("~/bundles/BootstrapPaginatorJs")
 
+    @Styles.Render("~/bundles/BootstrapDatetimeStyle")
+    @Scripts.Render("~/bundles/BootstrapDatetimeJs")
     <script src="~/Content/CMS/Script/Layout.js"></script>
     <link href="~/Content/CMS/Style/Layout.css" rel="stylesheet" />
 
     @{
         var user = (UserViewModel)HttpContext.Current.Session["User"];
         var ui = new UI();
-        //var lstLabel = ui.GetLabelForPage(user.LanguaeId, (int)Pages.Layout);
         var success = @ViewBag.Success;
     }
 </head>

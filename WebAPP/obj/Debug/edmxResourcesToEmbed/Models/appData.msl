@@ -74,5 +74,65 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PackageTours">
+      <EntityTypeMapping TypeName="WebAPPModel.PackageTour">
+        <MappingFragment StoreEntitySet="PackageTour">
+          <ScalarProperty Name="Special" ColumnName="Special" />
+          <ScalarProperty Name="Remove" ColumnName="Remove" />
+          <ScalarProperty Name="AgencyPrice1" ColumnName="AgencyPrice1" />
+          <ScalarProperty Name="AgencyPrice2" ColumnName="AgencyPrice2" />
+          <ScalarProperty Name="GuestPrice" ColumnName="GuestPrice" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="SortDescription" ColumnName="SortDescription" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ActivityLevel" ColumnName="ActivityLevel" />
+          <ScalarProperty Name="TourStyle" ColumnName="TourStyle" />
+          <ScalarProperty Name="TourRoute" ColumnName="TourRoute" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="TourName" ColumnName="TourName" />
+          <ScalarProperty Name="TourId" ColumnName="TourId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SelectTours">
+      <EntityTypeMapping TypeName="WebAPPModel.SelectTour">
+        <MappingFragment StoreEntitySet="SelectTour">
+          <ScalarProperty Name="Special" ColumnName="Special" />
+          <ScalarProperty Name="Remove" ColumnName="Remove" />
+          <ScalarProperty Name="GuestPrice" ColumnName="GuestPrice" />
+          <ScalarProperty Name="AgencyPrice" ColumnName="AgencyPrice" />
+          <ScalarProperty Name="GuestDeluxl69" ColumnName="GuestDeluxl69" />
+          <ScalarProperty Name="GuestDeluxl35" ColumnName="GuestDeluxl35" />
+          <ScalarProperty Name="GuestDeluxl2" ColumnName="GuestDeluxl2" />
+          <ScalarProperty Name="GuestSuperior69" ColumnName="GuestSuperior69" />
+          <ScalarProperty Name="GuestSuperior35" ColumnName="GuestSuperior35" />
+          <ScalarProperty Name="GuestSuperior2" ColumnName="GuestSuperior2" />
+          <ScalarProperty Name="GuestStandard69" ColumnName="GuestStandard69" />
+          <ScalarProperty Name="GuestStandard35" ColumnName="GuestStandard35" />
+          <ScalarProperty Name="GuestStandard2" ColumnName="GuestStandard2" />
+          <ScalarProperty Name="Agency2Deluxl69" ColumnName="Agency2Deluxl69" />
+          <ScalarProperty Name="Agency2Deluxl35" ColumnName="Agency2Deluxl35" />
+          <ScalarProperty Name="Agency2Deluxl2" ColumnName="Agency2Deluxl2" />
+          <ScalarProperty Name="Agency2Superior69" ColumnName="Agency2Superior69" />
+          <ScalarProperty Name="Agency2Superior35" ColumnName="Agency2Superior35" />
+          <ScalarProperty Name="Agency2Superior2" ColumnName="Agency2Superior2" />
+          <ScalarProperty Name="Agency2Standard69" ColumnName="Agency2Standard69" />
+          <ScalarProperty Name="Agency2Standard35" ColumnName="Agency2Standard35" />
+          <ScalarProperty Name="Agency2Standard2" ColumnName="Agency2Standard2" />
+          <ScalarProperty Name="AgencyDeluxl69" ColumnName="AgencyDeluxl69" />
+          <ScalarProperty Name="AgencyDeluxl35" ColumnName="AgencyDeluxl35" />
+          <ScalarProperty Name="AgencyDeluxl2" ColumnName="AgencyDeluxl2" />
+          <ScalarProperty Name="AgencySuperior69" ColumnName="AgencySuperior69" />
+          <ScalarProperty Name="AgencySuperior35" ColumnName="AgencySuperior35" />
+          <ScalarProperty Name="AgencySuperior2" ColumnName="AgencySuperior2" />
+          <ScalarProperty Name="AgencyStandard69" ColumnName="AgencyStandard69" />
+          <ScalarProperty Name="AgencyStandard35" ColumnName="AgencyStandard35" />
+          <ScalarProperty Name="AgencyStandard2" ColumnName="AgencyStandard2" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="TourName" ColumnName="TourName" />
+          <ScalarProperty Name="SelectTourId" ColumnName="SelectTourId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

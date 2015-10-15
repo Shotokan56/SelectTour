@@ -1987,7 +1987,6 @@ blockquote {
     position: absolute;
     top: 0;
     /*right: 15px;*/
-    z-index: -1;
     text-align: right;
 }
 

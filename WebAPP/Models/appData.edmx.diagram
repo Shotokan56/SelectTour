@@ -12,6 +12,8 @@
         <EntityTypeShape EntityType="WebAPPModel.ReferenceValue" Width="1.5" PointX="5.375" PointY="3.75" />
         <EntityTypeShape EntityType="WebAPPModel.Slide" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="WebAPPModel.User" Width="1.5" PointX="3.375" PointY="3.625" />
+        <EntityTypeShape EntityType="WebAPPModel.PackageTour" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="WebAPPModel.SelectTour" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

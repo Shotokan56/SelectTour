@@ -203,7 +203,6 @@
     <Compile Include="Areas\CMS\Models\Contact.cs" />
     <Compile Include="Areas\CMS\Models\CustomizedTourListViewModel.cs" />
     <Compile Include="Areas\CMS\Models\PackageTourViewModel.cs" />
-    <Compile Include="Areas\CMS\Models\SelectTourViewModel.cs" />
     <Compile Include="Areas\CMS\Models\TravelerInfo.cs" />
     <Compile Include="Areas\CMS\Models\UserViewModel.cs" />
     <Compile Include="Areas\GUI\Controllers\HomeController.cs" />
@@ -241,6 +240,9 @@
     <Compile Include="Models\Language.cs">
       <DependentUpon>appData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PackageTour.cs">
+      <DependentUpon>appData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Page.cs">
       <DependentUpon>appData.tt</DependentUpon>
     </Compile>
@@ -248,6 +250,9 @@
       <DependentUpon>appData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ReferenceValue.cs">
+      <DependentUpon>appData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SelectTour.cs">
       <DependentUpon>appData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Slide.cs">

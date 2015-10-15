@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Resources;
 using WebAPP.Areas.CMS.Models;
+using WebAPP.Common;
 using WebAPP.Models;
 using SelectTourViewModel = WebAPP.Areas.GUI.Models.SelectTourViewModel;
 
@@ -78,6 +80,8 @@ namespace WebAPP.Areas.GUI.Controllers
         [HttpPost]
         public ActionResult Register(User obj)
         {
+            obj.Lock = true;
+            obj.PassWord = Hashing.HashPassword(obj.PassWord);
             db.Users.Add(obj);
             db.SaveChanges();
             return RedirectToAction("Home");
@@ -92,44 +96,76 @@ namespace WebAPP.Areas.GUI.Controllers
         public ActionResult Login(UserViewModel obj)
         {
             ModelState.Clear();
-            if (! new WebAPP.Areas.CMS.Controllers.LoginController().Validate(obj))
+            if (!Validate(obj))
             {
                 return PartialView("_Login", obj);
             }
 
-            var objDbUser = db.Users.FirstOrDefault(o => o.UserName == userVm.UserName);
+            var objDbUser = db.Users.FirstOrDefault(o => o.UserName == obj.UserName 
+                                                      && o.Roles != Common.SecurityRoles.Admin.ToString()
+                                                      && o.Lock == false);
 
             if (objDbUser == null)
             {
                 ModelState.AddModelError("Message", TextMessage.LoginController_Validate_NotValid);
-                return View("Login", userVm);
+                return PartialView("_Login", obj);
             }
 
-            //Mapper.CreateMap<User, UserViewModel>();
-            //var userViewModel = Mapper.Map<User>(user);
-
-            if (!Hashing.VerifyHashedPassword(objDbUser.PassWord, userVm.PassWord) || string.IsNullOrEmpty(objDbUser.Roles))
+           
+            if (!Hashing.VerifyHashedPassword(objDbUser.PassWord, obj.PassWord))
             {
                 ModelState.AddModelError("Message", TextMessage.LoginController_Validate_NotValid);
-                return View("Login", userVm);
+                return PartialView("_Login", obj);
             }
             else
             {
-                userVm.Roles = objDbUser.Roles;
-                Session.Add("User", userVm);
-                if (userVm.RememberMe)
-                {
-                    var cookie = new HttpCookie("AppLogin");
-                    cookie.Values.Add("UserName", userVm.UserName);
-                    cookie.Expires = DateTime.Now.AddDays(15);
-                    Response.Cookies.Add(cookie);
-                }
-                return RedirectToAction("index", "Home");
+                obj.Roles = objDbUser.Roles;
+                Session.Add("User", obj);
+                return null;
             }
-
-            return PartialView("_Login", new UserViewModel());
         }
 
+        public ActionResult Logout()
+        {
+            Session.Remove("User");
+            return RedirectToAction("Home");
+        }
 
+        private bool Validate(UserViewModel userVm)
+        {
+
+            if (string.IsNullOrEmpty(userVm.UserName) || string.IsNullOrWhiteSpace(userVm.UserName))
+            {
+                ModelState.AddModelError("Message", TextMessage.LoginController_Validate_UserName);
+            }
+
+            if (string.IsNullOrEmpty(userVm.PassWord) || string.IsNullOrWhiteSpace(userVm.PassWord))
+            {
+                ModelState.AddModelError("Message", TextMessage.LoginController_Validate_PassWord);
+            }
+            return ModelState.IsValid;
+        }
+
+        public ActionResult CheckUser()
+        {
+            if (Session["User"] == null)
+            {
+                return Json(new { html = "<a href=\"Javascript:ViewLogin()\">Login</a>" });
+            }
+            else
+            {
+                var user = (UserViewModel)Session["User"];
+                if (Session["User"] != null && user.Roles == Common.SecurityRoles.Member.ToString())
+                {
+                    return Json(new { html = "<a href =\"/Home/Logout\">Logout " + user.UserName + "</a>" });
+
+                }
+                else
+                {
+                    return Json(new { html = "<a href=\"Javascript:ViewLogin()\">Login</a>" });
+
+                }
+            }
+        }
     }
 }

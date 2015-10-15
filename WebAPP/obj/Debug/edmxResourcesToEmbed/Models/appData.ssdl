@@ -18,6 +18,25 @@
     <Property Name="LanguageName" Type="nvarchar" MaxLength="250" />
     <Property Name="LanguageCode" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="PackageTour">
+    <Key>
+      <PropertyRef Name="TourId" />
+    </Key>
+    <Property Name="TourId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TourName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Duration" Type="nvarchar" MaxLength="250" />
+    <Property Name="TourRoute" Type="nvarchar" MaxLength="250" />
+    <Property Name="TourStyle" Type="int" />
+    <Property Name="ActivityLevel" Type="nvarchar" MaxLength="250" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="SortDescription" Type="nvarchar(max)" />
+    <Property Name="Detail" Type="ntext" />
+    <Property Name="AgencyPrice2" Type="float" />
+    <Property Name="AgencyPrice1" Type="float" />
+    <Property Name="GuestPrice" Type="float" />
+    <Property Name="Remove" Type="bit" />
+    <Property Name="Special" Type="bit" />
+  </EntityType>
   <EntityType Name="Page">
     <Key>
       <PropertyRef Name="Page_ID" />
@@ -39,6 +58,45 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ReferenceId" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SelectTour">
+    <Key>
+      <PropertyRef Name="SelectTourId" />
+    </Key>
+    <Property Name="SelectTourId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TourName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Detail" Type="ntext" />
+    <Property Name="AgencyStandard2" Type="float" />
+    <Property Name="AgencyStandard35" Type="float" />
+    <Property Name="AgencyStandard69" Type="float" />
+    <Property Name="AgencySuperior2" Type="float" />
+    <Property Name="AgencySuperior35" Type="float" />
+    <Property Name="AgencySuperior69" Type="float" />
+    <Property Name="AgencyDeluxl2" Type="float" />
+    <Property Name="AgencyDeluxl35" Type="float" />
+    <Property Name="AgencyDeluxl69" Type="float" />
+    <Property Name="Agency2Standard2" Type="float" />
+    <Property Name="Agency2Standard35" Type="float" />
+    <Property Name="Agency2Standard69" Type="float" />
+    <Property Name="Agency2Superior2" Type="float" />
+    <Property Name="Agency2Superior35" Type="float" />
+    <Property Name="Agency2Superior69" Type="float" />
+    <Property Name="Agency2Deluxl2" Type="float" />
+    <Property Name="Agency2Deluxl35" Type="float" />
+    <Property Name="Agency2Deluxl69" Type="float" />
+    <Property Name="GuestStandard2" Type="float" />
+    <Property Name="GuestStandard35" Type="float" />
+    <Property Name="GuestStandard69" Type="float" />
+    <Property Name="GuestSuperior2" Type="float" />
+    <Property Name="GuestSuperior35" Type="float" />
+    <Property Name="GuestSuperior69" Type="float" />
+    <Property Name="GuestDeluxl2" Type="float" />
+    <Property Name="GuestDeluxl35" Type="float" />
+    <Property Name="GuestDeluxl69" Type="float" />
+    <Property Name="AgencyPrice" Type="float" />
+    <Property Name="GuestPrice" Type="float" />
+    <Property Name="Remove" Type="bit" />
+    <Property Name="Special" Type="bit" />
   </EntityType>
   <EntityType Name="Slide">
     <Key>
@@ -75,9 +133,11 @@
   <EntityContainer Name="WebAPPModelStoreContainer">
     <EntitySet Name="Label" EntityType="Self.Label" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PackageTour" EntityType="Self.PackageTour" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Page" EntityType="Self.Page" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ReferenceValue" EntityType="Self.ReferenceValue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SelectTour" EntityType="Self.SelectTour" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Slide" EntityType="Self.Slide" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

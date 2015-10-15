@@ -77,7 +77,7 @@ namespace WebAPP.Areas.CMS.Controllers
             return Index(new UserViewModel());
         }
         
-        public bool Validate(UserViewModel userVm)
+        private bool Validate(UserViewModel userVm)
         {
 
             if (string.IsNullOrEmpty(userVm.UserName) || string.IsNullOrWhiteSpace(userVm.UserName))

@@ -9,11 +9,16 @@ namespace WebAPP.Common
         public const int KhongHoatDong = 2;
     }
 
+    public class ReferenceId
+    {
+        public const int TourStyle = 2;
+    }
+
     public enum SecurityRoles
     {
         [EnumMember]
-        Admin = 1,
+        Admin,
         [EnumMember]
-        Agency = 2,
+        Member,
     }
 }

@@ -23,6 +23,25 @@
           <Property Name="LanguageName" Type="nvarchar" MaxLength="250" />
           <Property Name="LanguageCode" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="PackageTour">
+          <Key>
+            <PropertyRef Name="TourId" />
+          </Key>
+          <Property Name="TourId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TourName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Duration" Type="nvarchar" MaxLength="250" />
+          <Property Name="TourRoute" Type="nvarchar" MaxLength="250" />
+          <Property Name="TourStyle" Type="int" />
+          <Property Name="ActivityLevel" Type="nvarchar" MaxLength="250" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="SortDescription" Type="nvarchar(max)" />
+          <Property Name="Detail" Type="ntext" />
+          <Property Name="AgencyPrice2" Type="float" />
+          <Property Name="AgencyPrice1" Type="float" />
+          <Property Name="GuestPrice" Type="float" />
+          <Property Name="Remove" Type="bit" />
+          <Property Name="Special" Type="bit" />
+        </EntityType>
         <EntityType Name="Page">
           <Key>
             <PropertyRef Name="Page_ID" />
@@ -44,6 +63,45 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ReferenceId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SelectTour">
+          <Key>
+            <PropertyRef Name="SelectTourId" />
+          </Key>
+          <Property Name="SelectTourId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TourName" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Detail" Type="ntext" />
+          <Property Name="AgencyStandard2" Type="float" />
+          <Property Name="AgencyStandard35" Type="float" />
+          <Property Name="AgencyStandard69" Type="float" />
+          <Property Name="AgencySuperior2" Type="float" />
+          <Property Name="AgencySuperior35" Type="float" />
+          <Property Name="AgencySuperior69" Type="float" />
+          <Property Name="AgencyDeluxl2" Type="float" />
+          <Property Name="AgencyDeluxl35" Type="float" />
+          <Property Name="AgencyDeluxl69" Type="float" />
+          <Property Name="Agency2Standard2" Type="float" />
+          <Property Name="Agency2Standard35" Type="float" />
+          <Property Name="Agency2Standard69" Type="float" />
+          <Property Name="Agency2Superior2" Type="float" />
+          <Property Name="Agency2Superior35" Type="float" />
+          <Property Name="Agency2Superior69" Type="float" />
+          <Property Name="Agency2Deluxl2" Type="float" />
+          <Property Name="Agency2Deluxl35" Type="float" />
+          <Property Name="Agency2Deluxl69" Type="float" />
+          <Property Name="GuestStandard2" Type="float" />
+          <Property Name="GuestStandard35" Type="float" />
+          <Property Name="GuestStandard69" Type="float" />
+          <Property Name="GuestSuperior2" Type="float" />
+          <Property Name="GuestSuperior35" Type="float" />
+          <Property Name="GuestSuperior69" Type="float" />
+          <Property Name="GuestDeluxl2" Type="float" />
+          <Property Name="GuestDeluxl35" Type="float" />
+          <Property Name="GuestDeluxl69" Type="float" />
+          <Property Name="AgencyPrice" Type="float" />
+          <Property Name="GuestPrice" Type="float" />
+          <Property Name="Remove" Type="bit" />
+          <Property Name="Special" Type="bit" />
         </EntityType>
         <EntityType Name="Slide">
           <Key>
@@ -80,9 +138,11 @@
         <EntityContainer Name="WebAPPModelStoreContainer">
           <EntitySet Name="Label" EntityType="Self.Label" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackageTour" EntityType="Self.PackageTour" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Page" EntityType="Self.Page" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ReferenceValue" EntityType="Self.ReferenceValue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SelectTour" EntityType="Self.SelectTour" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Slide" EntityType="Self.Slide" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -130,6 +190,8 @@
           <EntitySet Name="ReferenceValues" EntityType="WebAPPModel.ReferenceValue" />
           <EntitySet Name="Slides" EntityType="WebAPPModel.Slide" />
           <EntitySet Name="Users" EntityType="WebAPPModel.User" />
+          <EntitySet Name="PackageTours" EntityType="WebAPPModel.PackageTour" />
+          <EntitySet Name="SelectTours" EntityType="WebAPPModel.SelectTour" />
         </EntityContainer>
         <EntityType Name="Reference">
           <Key>
@@ -170,6 +232,64 @@
           <Property Name="CompanyName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PackageTour">
+          <Key>
+            <PropertyRef Name="TourId" />
+          </Key>
+          <Property Name="TourId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TourName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Duration" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TourRoute" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TourStyle" Type="Int32" />
+          <Property Name="ActivityLevel" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="SortDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GuestPrice" Type="Double" />
+          <Property Name="AgencyPrice2" Type="Double" />
+          <Property Name="AgencyPrice1" Type="Double" />
+          <Property Name="Remove" Type="Boolean" />
+          <Property Name="Special" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SelectTour">
+          <Key>
+            <PropertyRef Name="SelectTourId" />
+          </Key>
+          <Property Name="SelectTourId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TourName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AgencyStandard2" Type="Double" />
+          <Property Name="AgencyStandard35" Type="Double" />
+          <Property Name="AgencyStandard69" Type="Double" />
+          <Property Name="AgencySuperior2" Type="Double" />
+          <Property Name="AgencySuperior35" Type="Double" />
+          <Property Name="AgencySuperior69" Type="Double" />
+          <Property Name="AgencyDeluxl2" Type="Double" />
+          <Property Name="AgencyDeluxl35" Type="Double" />
+          <Property Name="AgencyDeluxl69" Type="Double" />
+          <Property Name="Agency2Standard2" Type="Double" />
+          <Property Name="Agency2Standard35" Type="Double" />
+          <Property Name="Agency2Standard69" Type="Double" />
+          <Property Name="Agency2Superior2" Type="Double" />
+          <Property Name="Agency2Superior35" Type="Double" />
+          <Property Name="Agency2Superior69" Type="Double" />
+          <Property Name="Agency2Deluxl2" Type="Double" />
+          <Property Name="Agency2Deluxl35" Type="Double" />
+          <Property Name="Agency2Deluxl69" Type="Double" />
+          <Property Name="GuestStandard2" Type="Double" />
+          <Property Name="GuestStandard35" Type="Double" />
+          <Property Name="GuestStandard69" Type="Double" />
+          <Property Name="GuestSuperior2" Type="Double" />
+          <Property Name="GuestSuperior35" Type="Double" />
+          <Property Name="GuestSuperior69" Type="Double" />
+          <Property Name="GuestDeluxl2" Type="Double" />
+          <Property Name="GuestDeluxl35" Type="Double" />
+          <Property Name="GuestDeluxl69" Type="Double" />
+          <Property Name="AgencyPrice" Type="Double" />
+          <Property Name="GuestPrice" Type="Double" />
+          <Property Name="Remove" Type="Boolean" />
+          <Property Name="Special" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -247,6 +367,66 @@
                 <ScalarProperty Name="PassWord" ColumnName="PassWord" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackageTours">
+            <EntityTypeMapping TypeName="WebAPPModel.PackageTour">
+              <MappingFragment StoreEntitySet="PackageTour">
+                <ScalarProperty Name="Special" ColumnName="Special" />
+                <ScalarProperty Name="Remove" ColumnName="Remove" />
+                <ScalarProperty Name="AgencyPrice1" ColumnName="AgencyPrice1" />
+                <ScalarProperty Name="AgencyPrice2" ColumnName="AgencyPrice2" />
+                <ScalarProperty Name="GuestPrice" ColumnName="GuestPrice" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="SortDescription" ColumnName="SortDescription" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ActivityLevel" ColumnName="ActivityLevel" />
+                <ScalarProperty Name="TourStyle" ColumnName="TourStyle" />
+                <ScalarProperty Name="TourRoute" ColumnName="TourRoute" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="TourName" ColumnName="TourName" />
+                <ScalarProperty Name="TourId" ColumnName="TourId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SelectTours">
+            <EntityTypeMapping TypeName="WebAPPModel.SelectTour">
+              <MappingFragment StoreEntitySet="SelectTour">
+                <ScalarProperty Name="Special" ColumnName="Special" />
+                <ScalarProperty Name="Remove" ColumnName="Remove" />
+                <ScalarProperty Name="GuestPrice" ColumnName="GuestPrice" />
+                <ScalarProperty Name="AgencyPrice" ColumnName="AgencyPrice" />
+                <ScalarProperty Name="GuestDeluxl69" ColumnName="GuestDeluxl69" />
+                <ScalarProperty Name="GuestDeluxl35" ColumnName="GuestDeluxl35" />
+                <ScalarProperty Name="GuestDeluxl2" ColumnName="GuestDeluxl2" />
+                <ScalarProperty Name="GuestSuperior69" ColumnName="GuestSuperior69" />
+                <ScalarProperty Name="GuestSuperior35" ColumnName="GuestSuperior35" />
+                <ScalarProperty Name="GuestSuperior2" ColumnName="GuestSuperior2" />
+                <ScalarProperty Name="GuestStandard69" ColumnName="GuestStandard69" />
+                <ScalarProperty Name="GuestStandard35" ColumnName="GuestStandard35" />
+                <ScalarProperty Name="GuestStandard2" ColumnName="GuestStandard2" />
+                <ScalarProperty Name="Agency2Deluxl69" ColumnName="Agency2Deluxl69" />
+                <ScalarProperty Name="Agency2Deluxl35" ColumnName="Agency2Deluxl35" />
+                <ScalarProperty Name="Agency2Deluxl2" ColumnName="Agency2Deluxl2" />
+                <ScalarProperty Name="Agency2Superior69" ColumnName="Agency2Superior69" />
+                <ScalarProperty Name="Agency2Superior35" ColumnName="Agency2Superior35" />
+                <ScalarProperty Name="Agency2Superior2" ColumnName="Agency2Superior2" />
+                <ScalarProperty Name="Agency2Standard69" ColumnName="Agency2Standard69" />
+                <ScalarProperty Name="Agency2Standard35" ColumnName="Agency2Standard35" />
+                <ScalarProperty Name="Agency2Standard2" ColumnName="Agency2Standard2" />
+                <ScalarProperty Name="AgencyDeluxl69" ColumnName="AgencyDeluxl69" />
+                <ScalarProperty Name="AgencyDeluxl35" ColumnName="AgencyDeluxl35" />
+                <ScalarProperty Name="AgencyDeluxl2" ColumnName="AgencyDeluxl2" />
+                <ScalarProperty Name="AgencySuperior69" ColumnName="AgencySuperior69" />
+                <ScalarProperty Name="AgencySuperior35" ColumnName="AgencySuperior35" />
+                <ScalarProperty Name="AgencySuperior2" ColumnName="AgencySuperior2" />
+                <ScalarProperty Name="AgencyStandard69" ColumnName="AgencyStandard69" />
+                <ScalarProperty Name="AgencyStandard35" ColumnName="AgencyStandard35" />
+                <ScalarProperty Name="AgencyStandard2" ColumnName="AgencyStandard2" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="TourName" ColumnName="TourName" />
+                <ScalarProperty Name="SelectTourId" ColumnName="SelectTourId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
