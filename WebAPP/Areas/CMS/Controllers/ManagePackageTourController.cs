@@ -140,9 +140,9 @@ namespace WebAPP.Areas.CMS.Controllers
                  //|| (o.Date != null && o.Date.Value.ToString("dd/MM/yyyy").Contains(search))
                  || o.SortDescription.Contains(search)
                  //|| o.Detail.Contains(search)
-                 || (o.GuestPrice != null && o.GuestPrice.ToString().Contains(search))
-                 || (o.AgencyPrice2 != null && o.AgencyPrice2.ToString().Contains(search))
-                 || (o.AgencyPrice1 != null && o.AgencyPrice1.ToString().Contains(search))
+                 || (o.GuestPrice != null ? o.GuestPrice.ToString().Contains(search): 1==1)
+                 //|| (o.AgencyPrice2 != null && o.AgencyPrice2.ToString().Contains(search))
+                 //|| (o.AgencyPrice1 != null && o.AgencyPrice1.ToString().Contains(search))
                  )).ToList();
 
             var total = Math.Round((double)(data.Count()) / itemPerPage, 0) + 1;
