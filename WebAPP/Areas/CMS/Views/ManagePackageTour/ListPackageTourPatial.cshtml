@@ -34,8 +34,15 @@
                 @item.Special.ToString()
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {id = item.TourId}) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TourId }, new { onclick = "return confirm('Are you sure to delete this item ?');" }) 
+                @if (item.Remove == true)
+                {
+                    @Html.ActionLink("Restore", "Restore", new { id = item.TourId }, new { onclick = "return confirm('Are you sure to restore this item ?');" })
+                }
+                else
+                {
+                    @(Html.ActionLink("Edit", "Edit", new {id = item.TourId})) @Html.Label(" | ")
+                    @(Html.ActionLink("Delete", "Delete", new {id = item.TourId}, new {onclick = "return confirm('Are you sure to delete this item ?');"}))
+                }
             </td>
         </tr>
     }

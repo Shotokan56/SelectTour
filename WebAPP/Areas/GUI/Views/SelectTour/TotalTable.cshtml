@@ -1,0 +1,44 @@
+﻿@model  WebAPP.Areas.GUI.Models.TotalTable
+
+
+<section class="layer1" style="margin-top: 20px;">
+    <div class="caption">
+        <span>
+            Tour Summary
+        </span>
+    </div>
+    <div class="">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Tour Name</th>
+                    <th>Class</th>
+                    <th>People</th>
+                    <th>Price ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.DataRows)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TourName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Level)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.People)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row" style="padding-right: 14px;">
+        <span class="pull-right"><b>Total</b>: $@Model.TotalPrice</span>
+    </div>
+</section>

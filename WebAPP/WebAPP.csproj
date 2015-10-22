@@ -60,6 +60,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -191,7 +192,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\CMS\CMSAreaRegistration.cs" />
-    <Compile Include="Areas\CMS\Controllers\AgenciesController.cs" />
+    <Compile Include="Areas\CMS\Controllers\UserController.cs" />
     <Compile Include="Areas\CMS\Controllers\ContactController.cs" />
     <Compile Include="Areas\CMS\Controllers\CustomizedTourController.cs" />
     <Compile Include="Areas\CMS\Controllers\HomeController.cs" />
@@ -199,15 +200,22 @@
     <Compile Include="Areas\CMS\Controllers\LoginController.cs" />
     <Compile Include="Areas\CMS\Controllers\ManagePackageTourController.cs" />
     <Compile Include="Areas\CMS\Controllers\ManageSelectTourController.cs" />
-    <Compile Include="Areas\CMS\Models\AgencyListViewModel.cs" />
     <Compile Include="Areas\CMS\Models\Contact.cs" />
     <Compile Include="Areas\CMS\Models\CustomizedTourListViewModel.cs" />
+    <Compile Include="Areas\CMS\Models\ImageViewModel.cs" />
+    <Compile Include="Areas\CMS\Models\SelectTourViewModel.cs" />
+    <Compile Include="Areas\CMS\Models\Status.cs" />
     <Compile Include="Areas\CMS\Models\PackageTourViewModel.cs" />
     <Compile Include="Areas\CMS\Models\TravelerInfo.cs" />
     <Compile Include="Areas\CMS\Models\UserViewModel.cs" />
     <Compile Include="Areas\GUI\Controllers\HomeController.cs" />
+    <Compile Include="Areas\GUI\Controllers\PackageController.cs" />
+    <Compile Include="Areas\GUI\Controllers\SelectTourController.cs" />
     <Compile Include="Areas\GUI\GUIAreaRegistration.cs" />
+    <Compile Include="Areas\GUI\Models\HomeViewModel.cs" />
+    <Compile Include="Areas\GUI\Models\PackageTourViewModel.cs" />
     <Compile Include="Areas\GUI\Models\SelectTourViewModel.cs" />
+    <Compile Include="Areas\GUI\Models\TotalTable.cs" />
     <Compile Include="Common\BaseController.cs" />
     <Compile Include="Common\CustomAuthorizeUserAttribute.cs" />
     <Compile Include="Common\Enum.cs" />
@@ -233,6 +241,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>appData.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\BookingEnquiry.cs">
+      <DependentUpon>appData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomizedTour.cs">
+      <DependentUpon>appData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Label.cs">
       <DependentUpon>appData.tt</DependentUpon>
@@ -253,6 +267,9 @@
       <DependentUpon>appData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SelectTour.cs">
+      <DependentUpon>appData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SelectTourBooked.cs">
       <DependentUpon>appData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Slide.cs">
@@ -910,8 +927,8 @@
     <Content Include="Models\appData.edmx.diagram">
       <DependentUpon>appData.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\GUI\Views\Home\PackageTour.cshtml" />
-    <Content Include="Areas\GUI\Views\Home\SelectTour.cshtml" />
+    <Content Include="Areas\GUI\Views\Package\PackageTour.cshtml" />
+    <Content Include="Areas\GUI\Views\SelectTour\SelectTour.cshtml" />
     <Content Include="Areas\GUI\Views\Home\CustomizedTour.cshtml" />
     <Content Include="Areas\GUI\Views\Home\Contact.cshtml" />
     <Content Include="Areas\GUI\Views\Home\PackageTourEnquiry.cshtml" />
@@ -920,18 +937,13 @@
     <Content Include="Areas\CMS\Views\ManageSelectTour\ListSelectTourPatial.cshtml" />
     <Content Include="Areas\CMS\Views\ManageSelectTour\AllSelectTour.cshtml" />
     <Content Include="Areas\CMS\Views\ManagePackageTour\Addnewtour.cshtml" />
-    <Content Include="Areas\CMS\Views\ManagePackageTour\TrashedPackageTours.cshtml" />
     <Content Include="Areas\CMS\Views\ManagePackageTour\DetailsBooked.cshtml" />
-    <Content Include="Areas\CMS\Views\ManagePackageTour\AllBookedTours.cshtml" />
     <Content Include="Areas\CMS\Views\ManageSelectTour\CreateNew.cshtml" />
     <Content Include="Areas\CMS\Views\ManageSelectTour\TrashedSelectTours.cshtml" />
     <Content Include="Areas\CMS\Views\ManageSelectTour\BookedSelectTours.cshtml" />
     <Content Include="Areas\CMS\Views\ManageSelectTour\DetailBooked.cshtml" />
     <Content Include="Areas\CMS\Views\CustomizedTour\AllCustomizedTours.cshtml" />
     <Content Include="Areas\CMS\Views\CustomizedTour\TrashedCustomizedTours.cshtml" />
-    <Content Include="Areas\CMS\Views\Agencies\AllAgencies.cshtml" />
-    <Content Include="Areas\CMS\Views\Agencies\TrashedAgencies.cshtml" />
-    <Content Include="Areas\CMS\Views\Agencies\AddNew.cshtml" />
     <Content Include="Areas\CMS\Views\Contact\AllContact.cshtml" />
     <Content Include="Areas\CMS\Views\Contact\TrashedContact.cshtml" />
     <Content Include="Areas\CMS\Views\Contact\Detail.cshtml" />
@@ -948,6 +960,11 @@
     <Content Include="Areas\GUI\Views\Shared\SlideBanner.cshtml" />
     <Content Include="Areas\GUI\Views\Home\Register.cshtml" />
     <Content Include="Areas\GUI\Views\Home\_Login.cshtml" />
+    <Content Include="Areas\CMS\Views\User\AllUser.cshtml" />
+    <Content Include="Areas\CMS\Views\User\ListUserPatial.cshtml" />
+    <Content Include="Areas\CMS\Views\User\AddAndEditUser.cshtml" />
+    <Content Include="Areas\GUI\Views\Package\ListPackageTourPatialView.cshtml" />
+    <Content Include="Areas\GUI\Views\SelectTour\TotalTable.cshtml" />
     <None Include="Properties\PublishProfiles\VietSelectTour.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af-ZA.js" />

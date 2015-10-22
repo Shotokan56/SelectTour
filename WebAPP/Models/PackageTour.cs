@@ -28,5 +28,6 @@ namespace WebAPP.Models
         public Nullable<double> AgencyPrice1 { get; set; }
         public Nullable<bool> Remove { get; set; }
         public Nullable<bool> Special { get; set; }
+        public string Image { get; set; }
     }
 }

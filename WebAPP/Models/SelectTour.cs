@@ -23,30 +23,33 @@ namespace WebAPP.Models
         public Nullable<double> AgencySuperior2 { get; set; }
         public Nullable<double> AgencySuperior35 { get; set; }
         public Nullable<double> AgencySuperior69 { get; set; }
-        public Nullable<double> AgencyDeluxl2 { get; set; }
-        public Nullable<double> AgencyDeluxl35 { get; set; }
-        public Nullable<double> AgencyDeluxl69 { get; set; }
         public Nullable<double> Agency2Standard2 { get; set; }
         public Nullable<double> Agency2Standard35 { get; set; }
         public Nullable<double> Agency2Standard69 { get; set; }
         public Nullable<double> Agency2Superior2 { get; set; }
         public Nullable<double> Agency2Superior35 { get; set; }
         public Nullable<double> Agency2Superior69 { get; set; }
-        public Nullable<double> Agency2Deluxl2 { get; set; }
-        public Nullable<double> Agency2Deluxl35 { get; set; }
-        public Nullable<double> Agency2Deluxl69 { get; set; }
         public Nullable<double> GuestStandard2 { get; set; }
         public Nullable<double> GuestStandard35 { get; set; }
         public Nullable<double> GuestStandard69 { get; set; }
         public Nullable<double> GuestSuperior2 { get; set; }
         public Nullable<double> GuestSuperior35 { get; set; }
         public Nullable<double> GuestSuperior69 { get; set; }
-        public Nullable<double> GuestDeluxl2 { get; set; }
-        public Nullable<double> GuestDeluxl35 { get; set; }
-        public Nullable<double> GuestDeluxl69 { get; set; }
-        public Nullable<double> AgencyPrice { get; set; }
-        public Nullable<double> GuestPrice { get; set; }
         public Nullable<bool> Remove { get; set; }
         public Nullable<bool> Special { get; set; }
+        public Nullable<int> Style { get; set; }
+        public string Duration { get; set; }
+        public string TourRoute { get; set; }
+        public Nullable<double> AgencyDeluxe2 { get; set; }
+        public Nullable<double> AgencyDeluxe35 { get; set; }
+        public Nullable<double> AgencyDeluxe69 { get; set; }
+        public Nullable<double> Agency2Deluxe2 { get; set; }
+        public Nullable<double> Agency2Deluxe35 { get; set; }
+        public Nullable<double> Agency2Deluxe69 { get; set; }
+        public Nullable<double> GuestDeluxe2 { get; set; }
+        public Nullable<double> GuestDeluxe35 { get; set; }
+        public Nullable<double> GuestDeluxe69 { get; set; }
+        public string Image { get; set; }
+        public string SortDescription { get; set; }
     }
 }

@@ -18,5 +18,6 @@ namespace WebAPP.Models
         public string Name { get; set; }
         public string Link { get; set; }
         public string Text { get; set; }
+        public Nullable<int> Category { get; set; }
     }
 }

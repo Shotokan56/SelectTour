@@ -1987,7 +1987,6 @@ blockquote {
     position: absolute;
     top: 0;
     /*right: 15px;*/
-    z-index: 99999;
     text-align: right;
 }
 
@@ -12565,7 +12564,6 @@ footer .copyright {
 .caption {
     border-bottom: 1px dotted #D63D00;
     margin: 0px 5px 15px 0px;
-
 }
 
     .caption span {
@@ -12674,7 +12672,7 @@ ul {
         margin-bottom: 5px;
     }
 
-    .right-block img {
+    #social img {
         width: 30%;
         padding: 10px;
         margin: 3px;
@@ -12785,9 +12783,9 @@ a.captionOrange, A.captionOrange:active, A.captionOrange:visited {
 
 
 .current-menu-parent {
-                    background-color: #DB531A;
-                    border-color: #DB531A;
-                }
+    background-color: #DB531A;
+    border-color: #DB531A;
+}
 
 
 
@@ -12824,22 +12822,39 @@ button, input, optgroup, select, textarea {
 }
 
 .layer1 {
-margin: 0;
-padding: 0;
-width: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 .heading {
-margin: 1px;
-color: #fff;
-padding: 3px 10px;
-cursor: pointer;
-position: relative;
-background-color:#c30;
+    margin: 1px;
+    color: #fff;
+    padding: 3px 10px;
+    cursor: pointer;
+    position: relative;
+    background-color: #c30;
 }
-.content {
-padding: 5px 10px;
-background-color:#fafafa;
-}
-p { padding: 5px 0; }
 
+.content {
+    padding: 5px 10px;
+    background-color: #fafafa;
+}
+
+p {
+    padding: 5px 0;
+}
+
+.pa {
+    margin-bottom: 20px;
+    background-color: rgba(255, 165, 0, 0.48);
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-box-shadow: 7px 9px 28px -6px rgba(255,162,0,0.78);
+    -moz-box-shadow: 7px 9px 28px -6px rgba(255,162,0,0.78);
+    box-shadow: 7px 9px 28px -6px rgba(255,162,0,0.78);
+}
+
+#CDSWIDDMO {
+    width: auto !important;
+}

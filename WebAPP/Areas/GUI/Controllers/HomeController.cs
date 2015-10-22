@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Resources;
 using WebAPP.Areas.CMS.Models;
+using WebAPP.Areas.GUI.Models;
 using WebAPP.Common;
 using WebAPP.Models;
 using SelectTourViewModel = WebAPP.Areas.GUI.Models.SelectTourViewModel;
@@ -17,7 +18,15 @@ namespace WebAPP.Areas.GUI.Controllers
         public ActionResult Home()
         {
             ViewBag.Page = "Home";
-            return View();
+            var model = new HomeViewModel
+            {
+                LstPackageTour =
+                    db.PackageTours.Where(o => o.Special == true).OrderByDescending(o => o.TourId).Take(3).ToList(),
+                LstSelectTour =
+                    db.SelectTours.Where(o => o.Special == true).OrderByDescending(o => o.SelectTourId).Take(3).ToList(),
+                User = (UserViewModel)Session["User"]
+            };
+            return View(model);
         }
 
         public ActionResult PackageTour()
@@ -26,41 +35,7 @@ namespace WebAPP.Areas.GUI.Controllers
             return View();
         }
 
-        public ActionResult PackageTourEnquiry()
-        {
-            var model = new SelectTourViewModel()
-            {
-                ListTourClass = new List<ReferenceValue>()
-            };
-
-            model.ListTourClass.Add(new ReferenceValue() { Id = 1, Name = "test", ReferenceId = 1 });
-            ViewBag.Page = "PackageTourEnquiry";
-            return View(model);
-        }
-
-        public ActionResult SelectTour()
-        {
-            ViewBag.Page = "SelectTour";
-            var model = new SelectTourViewModel()
-            {
-                ListTourClass = new List<ReferenceValue>()
-            };
-
-            model.ListTourClass.Add(new ReferenceValue() {Id = 1,Name = "test",ReferenceId = 1});
-            return View(model);
-        }
-
-        public ActionResult CustomizedTour()
-        {
-            var model = new SelectTourViewModel()
-            {
-                ListTourClass = new List<ReferenceValue>()
-            };
-            ViewBag.Page = "CustomizedTour";
-            return View(model);
-        }
-
-        public ActionResult Contact()
+       public ActionResult Contact()
         {
             ViewBag.Page = "Contact";
             return View();
@@ -68,7 +43,7 @@ namespace WebAPP.Areas.GUI.Controllers
 
         public ActionResult GetSlide()
         {
-            return PartialView("../Shared/SlideBanner", db.Slides.ToList());
+            return PartialView("../Shared/SlideBanner", db.Slides.Where(o => o.Category == ImageCategory.Slide).ToList());
         }
 
         public ActionResult Register()
@@ -101,8 +76,8 @@ namespace WebAPP.Areas.GUI.Controllers
                 return PartialView("_Login", obj);
             }
 
-            var objDbUser = db.Users.FirstOrDefault(o => o.UserName == obj.UserName 
-                                                      && o.Roles != Common.SecurityRoles.Admin.ToString()
+            var objDbUser = db.Users.FirstOrDefault(o => o.UserName == obj.UserName
+                                                      && o.Roles != Common.SecurityRoles.Admin
                                                       && o.Lock == false);
 
             if (objDbUser == null)
@@ -111,7 +86,7 @@ namespace WebAPP.Areas.GUI.Controllers
                 return PartialView("_Login", obj);
             }
 
-           
+
             if (!Hashing.VerifyHashedPassword(objDbUser.PassWord, obj.PassWord))
             {
                 ModelState.AddModelError("Message", TextMessage.LoginController_Validate_NotValid);
@@ -155,7 +130,7 @@ namespace WebAPP.Areas.GUI.Controllers
             else
             {
                 var user = (UserViewModel)Session["User"];
-                if (Session["User"] != null && user.Roles == Common.SecurityRoles.Member.ToString())
+                if (Session["User"] != null && user.Roles != Common.SecurityRoles.Admin)
                 {
                     return Json(new { html = "<a href =\"/Home/Logout\">Logout " + user.UserName + "</a>" });
 
@@ -163,7 +138,6 @@ namespace WebAPP.Areas.GUI.Controllers
                 else
                 {
                     return Json(new { html = "<a href=\"Javascript:ViewLogin()\">Login</a>" });
-
                 }
             }
         }

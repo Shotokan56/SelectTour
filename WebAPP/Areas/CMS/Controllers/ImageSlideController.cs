@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebAPP.Areas.CMS.Models;
+using WebAPP.Common;
 using WebAPP.Models;
 
 namespace WebAPP.Areas.CMS.Controllers
@@ -13,16 +15,24 @@ namespace WebAPP.Areas.CMS.Controllers
         private WebAPPEntities db = new WebAPPEntities();
         public ActionResult ImageSlideIndex()
         {
-            return View();
+            var model = new ImageViewModel()
+            {
+                LstCategory = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.ImageCategory).ToList(),
+            };
+            return View(model);
         }
 
         public ActionResult GetList()
         {
-            return PartialView("_listImage", db.Slides.ToList());
+            var model = new ImageViewModel()
+            {
+                LstImage = db.Slides.ToList()
+            };
+            return PartialView("_listImage",model);
         }
 
         [HttpPost]
-        public ActionResult UploadFile(string text)
+        public ActionResult UploadFile(string text, int category)
         {
             var obj = new Slide()
             {
@@ -32,13 +42,19 @@ namespace WebAPP.Areas.CMS.Controllers
 
             if (file != null && file.ContentLength > 0)
             {
-                obj.Name = "Slide_" + DateTime.Now.ToString("MMddyyyyHHmmssfff")+"_"+ file.FileName;
+                if(category == ImageCategory.Slide)
+                obj.Name = "Slide_" + DateTime.Now.ToString("MMddyyyyHHmmssfff")+"."+ file.FileName.Split('.')[1];
+
+                if (category == ImageCategory.Tour)
+                    obj.Name = "Tour_" + DateTime.Now.ToString("MMddyyyyHHmmssfff") + "." + file.FileName.Split('.')[1];
+
 
                 if (!Directory.Exists(Server.MapPath("~/Upload/Slide")))
                     Directory.CreateDirectory(Server.MapPath("~/Upload/Slide"));
 
-                obj.Link = "/Upload/Slide" + obj.Name;
-                file.SaveAs(obj.Link);
+                obj.Link = "/Upload/Slide/" + obj.Name;
+                file.SaveAs(Server.MapPath("~/Upload/Slide") +"/"+ obj.Name);
+                obj.Category = category;
                 db.Slides.Add(obj);
                 db.SaveChanges();
             }
@@ -52,7 +68,7 @@ namespace WebAPP.Areas.CMS.Controllers
             db.Slides.Remove(objDelete);
             db.SaveChanges();
 
-            if (objDelete != null) System.IO.File.Delete(objDelete.Link);
+            if (objDelete != null) System.IO.File.Delete(Server.MapPath("~/Upload/Slide") + "/" + objDelete.Name);
             return RedirectToAction("ImageSlideIndex");
         }
     }

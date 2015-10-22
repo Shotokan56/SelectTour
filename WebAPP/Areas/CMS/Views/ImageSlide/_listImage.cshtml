@@ -1,20 +1,23 @@
-﻿@model IEnumerable<WebAPP.Models.Slide>
+﻿@model WebAPP.Areas.CMS.Models.ImageViewModel
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Link)
+            Link            
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Text)
+            Text
+        </th>
+        <th>
+            View
         </th>
         <th>Action</th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.LstImage) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
@@ -26,7 +29,10 @@
             @Html.DisplayFor(modelItem => item.Text)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            <img style="width: 200px" alt="" src="@item.Link">
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>

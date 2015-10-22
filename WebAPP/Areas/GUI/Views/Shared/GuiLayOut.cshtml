@@ -74,13 +74,13 @@
                         <a href="/Home/Home" title="Home">Home</a>
                     </li>
                     <li id="PackageTour">
-                        <a href="/Home/PackageTour" title="Package Tour">Package Tour</a>
+                        <a href="/Package/PackageTour" title="Package Tour">Package Tour</a>
                     </li>
-                    <li id="PackageTourEnquiry">
+                    @*<li id="PackageTourEnquiry">
                         <a href="/Home/PackageTourEnquiry" title="Package Tour">Package Tour Enquiry</a>
-                    </li>
+                    </li>*@
                     <li id="SelectTour">
-                        <a href="/Home/SelectTour" title="Select Tour">Select Tour</a>
+                        <a href="/SelectTour/SelectTour" title="Select Tour">Select Tour</a>
                     </li>
                     <li id="CustomizedTour">
                         <a href="/Home/CustomizedTour" title="Customized Tour">Customized Tour</a>
@@ -91,7 +91,7 @@
                 </ul>
             </nav>
         </div>
-        @*--------------END MENU------------------*@
+    @*--------------END MENU------------------*@
     </header>
 
     @*------------------SLIDE -----------------------*@
@@ -220,7 +220,7 @@
     }
 
     $("#loginbtn").on("click", function() {
-        var url = '@Url.Action("Login")';
+        var url = '@Url.Action("Login","Home")';
         var param = $("#loginform").serializeArray();
 
         $.ajax({
@@ -232,7 +232,8 @@
                 if (data === "") {
                     $("#login").modal("hide");
                 }
-                CheckUser();
+                //CheckUser();
+                window.location.href = "/Home/Home";
             }
         });
     });

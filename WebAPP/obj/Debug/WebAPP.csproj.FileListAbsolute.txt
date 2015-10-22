@@ -140,7 +140,6 @@ D:\1LUU_TRU\CODE\Du lịch\WebAPP\bin\Microsoft.Owin.Security.OAuth.xml
 D:\1LUU_TRU\CODE\Du lịch\WebAPP\bin\Microsoft.Owin.Security.Google.xml
 D:\1LUU_TRU\CODE\Du lịch\WebAPP\bin\Microsoft.Owin.Security.Twitter.xml
 D:\1LUU_TRU\CODE\Du lịch\WebAPP\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\1LUU_TRU\CODE\SelectTour\WebAPP\obj\Debug\WebAPP.csprojResolveAssemblyReference.cache
 D:\1LUU_TRU\CODE\SelectTour\WebAPP\bin\roslyn\csc.exe
 D:\1LUU_TRU\CODE\SelectTour\WebAPP\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 D:\1LUU_TRU\CODE\SelectTour\WebAPP\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -211,3 +210,4 @@ D:\1LUU_TRU\CODE\SelectTour\WebAPP\bin\Microsoft.Owin.Security.Twitter.xml
 D:\1LUU_TRU\CODE\SelectTour\WebAPP\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\1LUU_TRU\CODE\SelectTour\WebAPP\obj\Debug\WebAPP.dll
 D:\1LUU_TRU\CODE\SelectTour\WebAPP\obj\Debug\WebAPP.pdb
+D:\1LUU_TRU\CODE\SelectTour\WebAPP\obj\Debug\WebAPP.csprojResolveAssemblyReference.cache

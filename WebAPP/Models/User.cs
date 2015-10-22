@@ -14,10 +14,9 @@ namespace WebAPP.Models
     
     public partial class User
     {
-        public int UserId { get; set; }
         public string UserName { get; set; }
         public string PassWord { get; set; }
-        public bool Lock { get; set; }
+        public Nullable<bool> Lock { get; set; }
         public string Roles { get; set; }
         public string Email { get; set; }
         public string FirstName { get; set; }
@@ -25,5 +24,7 @@ namespace WebAPP.Models
         public string CompanyName { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
+        public Nullable<bool> Remove { get; set; }
+        public int User_Id { get; set; }
     }
 }

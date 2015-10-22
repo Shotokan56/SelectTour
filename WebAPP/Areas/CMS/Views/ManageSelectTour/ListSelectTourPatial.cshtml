@@ -1,63 +1,54 @@
-﻿@model IEnumerable<WebAPP.Areas.CMS.Models.SelectTourViewModel>
+﻿@model  WebAPP.Areas.CMS.Models.SelectTourListViewModel
 
-
+@Html.HiddenFor(o => o.TotalPage)
 <table class="table table-bordered table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SelectTourName)
+            Select Tour Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SelectTourDuration)
+            Duration
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SelectTourDestination)
+            Route
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SelectTourPrice)
+            Special
         </th>
         <th>Action</th>
     </tr>
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.LstSelectTour)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.SelectTourName)
+                @Html.DisplayFor(modelItem => item.TourName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SelectTourDuration)
+                @Html.DisplayFor(modelItem => item.Duration)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SelectTourDestination)
+                @Html.DisplayFor(modelItem => item.TourRoute)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SelectTourPrice)
+                @item.Special.ToString()
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.SelectTourId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.SelectTourId })
+                @if (item.Remove == true)
+                {
+                    @Html.ActionLink("Restore", "Restore", new { id = item.SelectTourId }, new { onclick = "return confirm('Are you sure to restore this item ?');" })
+                }
+                else
+                {
+                    @(Html.ActionLink("Edit", "Edit", new { id = item.SelectTourId })) @Html.Label(" | ")
+                    @(Html.ActionLink("Delete", "Delete", new { id = item.SelectTourId }, new { onclick = "return confirm('Are you sure to delete this item ?');" }))
+                }
             </td>
         </tr>
     }
 
 </table>
 
-<div class="pull-right" style="padding-right: 10px">
-    <div id="pager" class="pull-right">
 
-    </div>
-</div>
 
-<script type="text/javascript">
-    //Pager
-    $(function () {
-        var options = {
-            currentPage: 1,
-            totalPages: 10,
-            onPageChanged: function (e, oldPage, newPage) {
-                //LoadDataList(oldPage, newPage);
-            }
-        }
-        $('#pager').bootstrapPaginator(options);
-    });
-</script>
+

@@ -1,0 +1,52 @@
+﻿@using WebAPP.Common
+@model WebAPP.Areas.GUI.Models.PackageTourViewModel
+@Html.HiddenFor(o => o.TotalPage)
+@foreach (var item in Model.LstPackageTour)
+{
+    <div class=" row">
+        <div class="postimg col-md-4 shrink img">
+            <img alt="" src="@item.Image">
+        </div>
+        <div class="col-md-8">
+            <div class="entry-content">
+                <span class="posttitle">
+                    <a href="/Home/DetailPackageTour/@item.TourId">@item.TourName</a>
+                </span>
+                <ul>
+                    <li>
+                        @item.SortDescription
+                    </li>
+                    <li>
+                        @item.Duration
+                        <span class="price">
+                            - $
+                            @if (Model.User != null
+                            && (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
+                            {
+                                @item.AgencyPrice1
+                            }
+                            else
+                            {
+                                if (Model.User != null
+                                 && Model.User.Roles.Contains(SecurityRoles.Agency2.ToString()))
+                                {
+                                    @item.AgencyPrice2
+                                }
+                                else
+                                {
+                                    @item.GuestPrice
+                                }
+                            }
+                        </span>
+                    </li>
+                    <li>
+                        Destination : @item.TourRoute
+                    </li>
+                </ul>
+
+                <a class="button pull-right" href="/Home/DetailPackageTour/@item.TourId">View Detail</a>
+            </div>
+        </div>
+    </div>
+            <div class="clear"></div>
+}

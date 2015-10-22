@@ -5,78 +5,175 @@
     Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
 }
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("CreateAndEdit", "ManageSelectTour", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(o=>o.SelectTourId)
         <div class="form-group">
-            @Html.LabelFor(model => model.SelectTourName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SelectTourName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SelectTourName, "", new { @class = "text-danger" })
+            <label class="control-label col-md-2">Tour Name</label>
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.TourName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TourName, "", new { @class = "text-danger" })
+            </div>
+            @Html.LabelFor(model => model.Style, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.Style, new SelectList(Model.LstTourStyle, "Id", "Name"), new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Style, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Duration, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Duration, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Duration, "", new {@class = "text-danger"})
+            </div>
+            @Html.LabelFor(model => model.Special, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Special, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Special, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SelectTourDuration, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Tour Route</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SelectTourDuration, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SelectTourDuration, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.TourRoute, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.TourRoute, "", new {@class = "text-danger"})
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SelectTourDestination, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SelectTourDestination, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SelectTourDestination, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SelectTourPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SelectTourPrice, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SelectTourPrice, "", new { @class = "text-danger" })
+                @Html.TextAreaFor(model => model.Detail, new { @class = "form-control", @rows = "8" })
+                @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @rows="8" } )
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <h4 style="margin-top: 30px">Price for agencies</h4>
-        <br/>
-        <div class="form-group">
-            @Html.LabelFor(model => model.Agency1, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Agency1, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Agency1, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <h4 style="margin-top: 30px">Price for agencies lever 1</h4>
+        <br />
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Agency2, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Agency2, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Agency2, "", new { @class = "text-danger" })
-            </div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th class="">Hotel</th>
+                    <th>2 people</th>
+                    <th>3 -> 5 pepple</th>
+                    <th>6 -> 9 pepple</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Standard</td>
+                    <td>@Html.EditorFor(model => model.AgencyStandard2, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.AgencyStandard35, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.AgencyStandard69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                </tr>
+                <tr>
+                    <td>Superor</td>
+                    <td>@Html.EditorFor(model => model.AgencySuperior2, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.AgencySuperior35, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.AgencySuperior69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                </tr>
+                <tr>
+                    <td>Deluxe</td>
+                    <td>@Html.EditorFor(model => model.AgencyDeluxe2, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.AgencySuperior35, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.AgencySuperior69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
+
+        <h4 style="margin-top: 30px">Price for agencies lever 2</h4>
+        <br />
+
         <div class="form-group">
-            @Html.LabelFor(model => model.Agency3, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Agency3, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Agency3, "", new { @class = "text-danger" })
-            </div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th class="">Hotel</th>
+                    <th>2 people</th>
+                    <th>3 -> 5 pepple</th>
+                    <th>6 -> 9 pepple</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Standard</td>
+                    <td>@Html.EditorFor(model => model.Agency2Standard2, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency2Standard35, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency2Standard69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                </tr>
+                <tr>
+                    <td>Superor</td>
+                    <td>@Html.EditorFor(model => model.Agency2Superior2, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency2Superior35, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency2Superior69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                </tr>
+                <tr>
+                    <td>Deluxe</td>
+                    <td>@Html.EditorFor(model => model.Agency2Deluxe2, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency2Superior35, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency2Superior69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
+
+        <h4 style="margin-top: 30px">Price for agencies guest</h4>
+        <br />
+
+        <div class="form-group">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="">Hotel</th>
+                        <th>2 people</th>
+                        <th>3 -> 5 pepple</th>
+                        <th>6 -> 9 pepple</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Standard</td>
+                        <td>@Html.EditorFor(model => model.GuestStandard2, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td>@Html.EditorFor(model => model.GuestStandard35, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td>@Html.EditorFor(model => model.GuestStandard69, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    </tr>
+                    <tr>
+                        <td>Superor</td>
+                        <td>@Html.EditorFor(model => model.GuestSuperior2, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td>@Html.EditorFor(model => model.GuestSuperior35, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td>@Html.EditorFor(model => model.GuestSuperior69, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    </tr>
+                    <tr>
+                        <td>Deluxe</td>
+                        <td>@Html.EditorFor(model => model.GuestDeluxe2, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td>@Html.EditorFor(model => model.GuestDeluxe35, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td>@Html.EditorFor(model => model.GuestDeluxe69, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        @Html.HiddenFor(model => model.Remove)
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10 pull-right">

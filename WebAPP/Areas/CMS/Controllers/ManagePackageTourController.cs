@@ -17,7 +17,7 @@ namespace WebAPP.Areas.CMS.Controllers
         public ActionResult AllPackageTour()
         {
 
-            return View();
+            return View(new StatusModel());
         }
 
 
@@ -29,6 +29,7 @@ namespace WebAPP.Areas.CMS.Controllers
             };
             return View(objView);
         }
+
 
         public ActionResult Edit(int id)
         {
@@ -50,6 +51,7 @@ namespace WebAPP.Areas.CMS.Controllers
                     AgencyPrice2 = objPackageTour.AgencyPrice2,
                     AgencyPrice1 = objPackageTour.AgencyPrice1,
                     Special = objPackageTour.Special,
+                    Image = objPackageTour.Image,
                     LstTourStyle = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.TourStyle).ToList(),
                 };
                 return View("Addnewtour", objPackageTourViewModel);
@@ -62,6 +64,7 @@ namespace WebAPP.Areas.CMS.Controllers
             }
         }
 
+
         public ActionResult Delete(int id)
         {
             try
@@ -71,8 +74,7 @@ namespace WebAPP.Areas.CMS.Controllers
                 //db.PackageTours.Remove(objDelete);
                 //db.SaveChanges();
 
-                Mapper.CreateMap<PackageTourViewModel, PackageTour>();
-                var objSave = Mapper.Map<PackageTour>(db.PackageTours.First(o => o.TourId == id));
+                var objSave = db.PackageTours.First(o => o.TourId == id);
                 objSave.Remove = true;
                 db.PackageTours.Add(objSave);
                 db.Entry(objSave).State = EntityState.Modified;
@@ -86,6 +88,7 @@ namespace WebAPP.Areas.CMS.Controllers
                 throw new System.ArgumentException(ex.Message);
             }
         }
+
 
         [ValidateInput(false)]
         public ActionResult CreateAndEdit(PackageTourViewModel obj)
@@ -119,6 +122,7 @@ namespace WebAPP.Areas.CMS.Controllers
 
         }
 
+
         private void Validate(PackageTourViewModel obj)
         {
             ModelState.Clear();
@@ -126,23 +130,30 @@ namespace WebAPP.Areas.CMS.Controllers
                 ModelState.AddModelError("TourName", "Tour Name is required !");
         }
 
-        public ActionResult ListPackageTourPatial(int currentPage, int itemPerPage, string search)
+
+        public ActionResult ListPackageTourPatial(int currentPage, int itemPerPage, string search, string status)
         {
-            var data = new List<PackageTour>();
-            if(string.IsNullOrEmpty(search))
-                data = db.PackageTours.Where(o => o.Remove == null || o.Remove == false).ToList();
-            else
+            var data = status == "Trashed" ? db.PackageTours.Where(o => o.Remove == true).ToList() 
+                                       : db.PackageTours.Where(o => o.Remove == null || o.Remove == false).ToList();
+
+            return PartialView(GetListData(data, currentPage, itemPerPage, search));
+        }
+
+
+        private PackageTourListViewModel GetListData(List<PackageTour> data, int currentPage, int itemPerPage, string search)
+        {
+            if (!string.IsNullOrEmpty(search))
                 data = db.PackageTours.Where(o => (o.Remove == null || o.Remove == false)
-                 &&( o.TourName.Contains(search) 
-                 //|| o.Duration.Contains(search)
+                 && (o.TourName.Contains(search)
+                 || o.Duration.Contains(search)
                  || o.TourRoute.Contains(search)
                  || o.ActivityLevel.Contains(search)
-                 //|| (o.Date != null && o.Date.Value.ToString("dd/MM/yyyy").Contains(search))
+                 //|| (o.Date != null && o.Date.Value.ToShortDateString().Contains(search))
                  || o.SortDescription.Contains(search)
                  //|| o.Detail.Contains(search)
-                 || (o.GuestPrice != null ? o.GuestPrice.ToString().Contains(search): 1==1)
-                 //|| (o.AgencyPrice2 != null && o.AgencyPrice2.ToString().Contains(search))
-                 //|| (o.AgencyPrice1 != null && o.AgencyPrice1.ToString().Contains(search))
+                 || (o.GuestPrice != null && o.GuestPrice.ToString().Contains(search))
+                 || (o.AgencyPrice2 != null && o.AgencyPrice2.ToString().Contains(search))
+                 || (o.AgencyPrice1 != null && o.AgencyPrice1.ToString().Contains(search))
                  )).ToList();
 
             var total = Math.Round((double)(data.Count()) / itemPerPage, 0) + 1;
@@ -151,23 +162,45 @@ namespace WebAPP.Areas.CMS.Controllers
             {
                 LstPackageTour = data.OrderByDescending(o => o.Special)
                                 .ThenByDescending(o => o.TourId)
-                                .Skip((currentPage-1) * itemPerPage)
+                                .Skip((currentPage - 1) * itemPerPage)
                                 .Take(itemPerPage).ToList(),
                 TotalPage = (int)total
             };
-
-            return PartialView(viewModel);
+            return viewModel;
         }
+
 
         public ActionResult TrashedPackageTours()
         {
-            return View();
+            return View("AllPackageTour", new StatusModel() {Status = "Trashed"});
         }
+
+
+        public ActionResult Restore(int id)
+        {
+            try
+            {
+                var objSave = db.PackageTours.First(o => o.TourId == id);
+                objSave.Remove = false;
+                db.PackageTours.Add(objSave);
+                db.Entry(objSave).State = EntityState.Modified;
+
+                db.SaveChanges();
+
+                return RedirectToAction("TrashedPackageTours");
+            }
+            catch (Exception ex)
+            {
+                throw new System.ArgumentException(ex.Message);
+            }
+        }
+
 
         public ActionResult AllBookedTours()
         {
             return null;
         }
+
 
         public ActionResult DetailsBooked()
         {

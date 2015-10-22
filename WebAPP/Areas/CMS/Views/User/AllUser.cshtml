@@ -1,0 +1,74 @@
+﻿@model WebAPP.Areas.CMS.Models.StatusModel
+@{
+    ViewBag.Title = "All User";
+    Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
+}
+
+<div class="form-group headControl">
+    <div class="col-md-5">
+        @if (Model.Status != "Trashed")
+            {
+            @Html.ActionLink("New User", "AddAndEditUser", "User", null, new { @class = "btn btn-default", @datamodal = "" })
+        }
+    </div>
+    <label class="col-md-2 control-label">Search:</label>
+    <div class="col-md-5">@Html.TextBox("Search")</div>
+</div>
+
+<div id="lstReplace" class="form-group">
+</div>
+<div class="pull-right" style="padding-right: 10px">
+    <div id="pager" class="pull-right">
+
+    </div>
+</div>
+
+@Html.HiddenFor(o => o.Status)
+<script>
+    $(document).ready(function () {
+        LoadDataList(0, 1);
+
+        $('#Search').keyup(function (e) {
+            if (e.keyCode == 13) {
+                LoadDataList(0, 1);
+            }
+        });
+    });
+
+
+    function LoadDataList(oldPage, newPage) {
+        var itemPerPage = 20;
+
+        var inputData = {
+            currentPage: newPage,
+            itemPerPage: itemPerPage,
+            search: $("#Search").val(),
+            status: $("#Status").val()
+        }
+
+        $.ajax({
+            url: "ListUserPatial",
+            type: "POST",
+            data: inputData,
+            success: function (result) {
+                //if (result.success) {
+                $("#lstReplace").html(result);
+
+                var options = {
+                    currentPage: newPage,
+                    totalPages: $("#TotalPage").val(),
+                    onPageChanged: function (e, oldPage, newPage) {
+                        LoadDataList(oldPage, newPage, $("#Search").val());
+                    },
+                    itemContainerClass: function (type, page, current) {
+                        return (page === current) ? "active" : "pointer-cursor";
+                    }
+                }
+                $('#pager').bootstrapPaginator(options);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    }
+</script>

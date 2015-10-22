@@ -1,103 +1,81 @@
-﻿
+﻿@using WebAPP.Common
+@model WebAPP.Areas.GUI.Models.HomeViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
 }
 
+<div class="pa">
+    <h4>About Us</h4>
+    <div class="">
+        The sensational ruins of Angkor may be the main attraction, but Cambodia’s exquisite temples, secluded beaches, charming villages and magical markets deserve lots of attention too.
+    </div>
+</div>
+
+<div class="pa">
+    <h4>Indochina</h4>
+    <div class="">
+        The sensational ruins of Angkor may be the main attraction, but Cambodia’s exquisite temples, secluded beaches, charming villages and magical markets deserve lots of attention too.
+    </div>
+</div>
+
 <section class="content">
     <div class="caption">
-        <span >
+        <span>
             Special Package Tour Offer
         </span>
     </div>
+
     <article class="post">
-        <div class=" row">
-            <div class="postimg col-md-4 shrink img">
-                <img alt="" src="~/Content/images/post3.jpg">
-            </div>
-            <div class="col-md-8">
-                <div class="entry-content">
-                    <span class="posttitle">
-                        <a href="single.html">The Best VietNam - Cambodia - 17 days.</a>
-                    </span>
-                    <ul>
-                        <li>
-                            The sensational ruins of Angkor may be the main attraction, but Cambodia’s exquisite temples, secluded beaches, charming villages and magical markets deserve lots of attention too.
-                        </li>
-                        <li>
-                            17 day, 18 night -
-                            <span class="price">$1259</span>
-                        </li>
-                        <li>
-                            Destination : Ha Noi - Sapa - Hue - Ha Long - Da Nang
-                        </li>
-                    </ul>
+        @foreach (var item in Model.LstPackageTour)
+        {
+            <div class=" row">
+                <div class="postimg col-md-4 shrink img">
+                    <img alt="" src="@item.Image">
+                </div>
+                <div class="col-md-8">
+                    <div class="entry-content">
+                        <span class="posttitle">
+                            <a href="/Home/DetailPackageTour/@item.TourId">@item.TourName</a>
+                        </span>
+                        <ul>
+                            <li>
+                                @item.SortDescription
+                            </li>
+                            <li>
+                                @item.Duration
+                                <span class="price">- $
+                                    @if (Model.User != null 
+                                        && (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
+                                    {
+                                        @item.AgencyPrice1
+                                    }
+                                    else
+                                    {
+                                        if (Model.User != null
+                                         && Model.User.Roles.Contains(SecurityRoles.Agency2.ToString()))
+                                        {
+                                            @item.AgencyPrice2
+                                        }
+                                        else
+                                        {
+                                            @item.GuestPrice
+                                        }
+                                    }
+                                </span>
+                            </li>
+                            <li>
+                                Destination : @item.TourRoute
+                            </li>
+                        </ul>
 
-                    <a class="button pull-right" href="single.html">View Detail</a>
+                        <a class="button pull-right" href="/Home/DetailPackageTour/@item.TourId">View Detail</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="clear"></div>
-
-
-        <div class=" row">
-            <div class="postimg col-md-4 shrink img">
-                <img alt="" src="~/Content/images/post3.jpg">
-            </div>
-            <div class="col-md-8">
-                <div class="entry-content">
-                    <span class="posttitle">
-                        <a href="single.html">The Best VietNam - Cambodia - 17 days.</a>
-                    </span>
-                    <ul>
-                        <li>
-                            The sensational ruins of Angkor may be the main attraction, but Cambodia’s exquisite temples, secluded beaches, charming villages and magical markets deserve lots of attention too.
-                        </li>
-                        <li>
-                            17 day, 18 night -
-                            <span class="price">$1259</span>
-                        </li>
-                        <li>
-                            Destination : Ha Noi - Sapa - Hue - Ha Long - Da Nang
-                        </li>
-                    </ul>
-
-                    <a class="button pull-right" href="single.html">View Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-
-
-        <div class="row">
-            <div class="postimg col-md-4 shrink img">
-                <img alt="" src="~/Content/images/post3.jpg">
-            </div>
-            <div class="col-md-8">
-                <div class="entry-content">
-                    <span class="posttitle">
-                        <a href="single.html">The Best VietNam - Cambodia - 17 days.</a>
-                    </span>
-                    <ul>
-                        <li>
-                            The sensational ruins of Angkor may be the main attraction, but Cambodia’s exquisite temples, secluded beaches, charming villages and magical markets deserve lots of attention too.
-                        </li>
-                        <li>
-                            17 day, 18 night -
-                            <span class="price">$1259</span>
-                        </li>
-                        <li>
-                            Destination : Ha Noi - Sapa - Hue - Ha Long - Da Nang
-                        </li>
-                    </ul>
-
-                    <a class="button pull-right" href="single.html">View Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
+            <div class="clear"></div>
+        }
     </article>
-
 </section>
 
 
@@ -107,91 +85,36 @@
         <span class="">Special Select Tour Offer</span>
     </div>
     <article class="post">
-        <div class=" row">
-            <div class="postimg col-md-4 shrink img">
-                <img alt="" src="~/Content/images/post3.jpg">
-            </div>
-            <div class="col-md-8">
-                <div class="entry-content">
-                    <span class="posttitle">
-                        <a href="single.html">The Best VietNam - Cambodia - 17 days.</a>
-                    </span>
-                    <ul>
-                        <li>
-                            The sensational ruins of Angkor may be the main attraction, but Cambodia’s exquisite temples, secluded beaches, charming villages and magical markets deserve lots of attention too.
-                        </li>
-                        <li>
-                            17 day, 18 night -
-                            <span class="price">$1259</span>
-                        </li>
-                        <li>
-                            Destination : Ha Noi - Sapa - Hue - Ha Long - Da Nang
-                        </li>
-                    </ul>
+        @foreach (var item in Model.LstSelectTour)
+        {
+            <div class=" row">
+                <div class="postimg col-md-4 shrink img">
+                    <img alt="" src="@item.Image">
+                </div>
+                <div class="col-md-8">
+                    <div class="entry-content">
+                        <span class="posttitle">
+                            <a href="/Home/DetailSelectTour/@item.SelectTourId">@item.TourName</a>
+                        </span>
+                        <ul>
+                            <li>
+                                @item.SortDescription
+                            </li>
+                            <li>
+                                @item.Duration
+                                <span class="price">$1259</span>
+                            </li>
+                            <li>
+                                Destination : @item.TourRoute
+                            </li>
+                        </ul>
 
-                    <a class="button pull-right" href="single.html">View Detail</a>
+                        <a class="button pull-right" href="/Home/DetailSelectTour/@item.SelectTourId">View Detail</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="clear"></div>
-
-
-        <div class=" row">
-            <div class="postimg col-md-4 shrink img">
-                <img alt="" src="~/Content/images/post3.jpg">
-            </div>
-            <div class="col-md-8">
-                <div class="entry-content">
-                    <span class="posttitle">
-                        <a href="single.html">The Best VietNam - Cambodia - 17 days.</a>
-                    </span>
-                    <ul>
-                        <li>
-                            The sensational ruins of Angkor may be the main attraction, but Cambodia’s exquisite temples, secluded beaches, charming villages and magical markets deserve lots of attention too.
-                        </li>
-                        <li>
-                            17 day, 18 night -
-                            <span class="price">$1259</span>
-                        </li>
-                        <li>
-                            Destination : Ha Noi - Sapa - Hue - Ha Long - Da Nang
-                        </li>
-                    </ul>
-
-                    <a class="button pull-right" href="single.html">View Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-
-
-        <div class="row">
-            <div class="postimg col-md-4 shrink img">
-                <img alt="" src="~/Content/images/post3.jpg">
-            </div>
-            <div class="col-md-8">
-                <div class="entry-content">
-                    <span class="posttitle">
-                        <a href="single.html">The Best VietNam - Cambodia - 17 days.</a>
-                    </span>
-                    <ul>
-                        <li>
-                            The sensational ruins of Angkor may be the main attraction, but Cambodia’s exquisite temples, secluded beaches, charming villages and magical markets deserve lots of attention too.
-                        </li>
-                        <li>
-                            17 day, 18 night -
-                            <span class="price">$1259</span>
-                        </li>
-                        <li>
-                            Destination : Ha Noi - Sapa - Hue - Ha Long - Da Nang
-                        </li>
-                    </ul>
-
-                    <a class="button pull-right" href="single.html">View Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
+            <div class="clear"></div>
+        }
     </article>
 
 </section>

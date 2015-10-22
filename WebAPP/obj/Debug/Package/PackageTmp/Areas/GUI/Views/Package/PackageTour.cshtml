@@ -1,0 +1,65 @@
+﻿public class PackageTourViewModel
+@using WebAPP.Common
+@model WebAPP.Areas.GUI.Models.PackageTourViewModel
+@{
+    ViewBag.Title = "Package Tour";
+    Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
+}
+
+<section class="content">
+    <div class="caption">
+        <span>
+            Package Tour
+        </span>
+    </div>
+    <article class="post" id="lstReplace">
+        
+    </article>
+    <div class="pull-right">
+        <div id="pager">
+
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        LoadDataList(0, 1);
+    });
+    
+
+    function LoadDataList(oldPage, newPage) {
+        var itemPerPage = 6;
+
+        var inputData = {
+            currentPage: newPage,
+            itemPerPage: itemPerPage
+        }
+
+        $.ajax({
+            url: "ListPackageTourPatialView",
+            type: "POST",
+            data: inputData,
+            success: function (result) {
+                $("#lstReplace").html(result);
+
+                var options = {
+                    currentPage: newPage,
+                    totalPages: $("#TotalPage").val(),
+                    onPageChanged: function (e, oldPage, newPage) {
+                        LoadDataList(oldPage, newPage, $("#Search").val());
+                    },
+                    itemContainerClass: function (type, page, current) {
+                        return (page === current) ? "active" : "pointer-cursor";
+                    }
+                }
+                $('#pager').bootstrapPaginator(options);
+                window.scrollTo(1, 1);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    }
+</script>
+

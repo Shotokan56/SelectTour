@@ -1,5 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="WebAPPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BookingEnquiry">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="BookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Gender" Type="bit" Nullable="false" />
+    <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="250" />
+    <Property Name="Country" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PackageTourId" Type="int" />
+    <Property Name="SelectTourId" Type="int" />
+    <Property Name="DepartureDate" Type="datetime" />
+    <Property Name="TourClass" Type="int" />
+    <Property Name="Adults" Type="int" />
+    <Property Name="Children" Type="int" />
+    <Property Name="Infants" Type="int" />
+    <Property Name="BillingOption" Type="nvarchar" MaxLength="250" />
+    <Property Name="AdditionalPlans" Type="ntext" />
+    <Property Name="WhereHear" Type="nvarchar" MaxLength="250" />
+    <Property Name="Remove" Type="bit" />
+  </EntityType>
+  <EntityType Name="CustomizedTour">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Gender" Type="bit" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="ArrivalDate" Type="datetime" />
+    <Property Name="DepartureDate" Type="datetime" />
+    <Property Name="Adults" Type="int" />
+    <Property Name="Child" Type="int" />
+    <Property Name="Baby" Type="int" />
+    <Property Name="Seniors" Type="int" />
+    <Property Name="AccommodationStyle" Type="nvarchar" MaxLength="250" />
+    <Property Name="ModesOfTransportation" Type="nvarchar" MaxLength="250" />
+    <Property Name="PreferredType" Type="nvarchar" MaxLength="250" />
+    <Property Name="MealsIncluded" Type="nvarchar" MaxLength="250" />
+    <Property Name="WhereVisit" Type="nvarchar" MaxLength="250" />
+    <Property Name="MoreMessages" Type="ntext" />
+    <Property Name="Payment" Type="nvarchar" MaxLength="250" />
+    <Property Name="WhereHear" Type="nvarchar" MaxLength="250" />
+    <Property Name="Remove" Type="bit" />
+  </EntityType>
   <EntityType Name="Label">
     <Key>
       <PropertyRef Name="Label_ID" />
@@ -36,6 +88,7 @@
     <Property Name="GuestPrice" Type="float" />
     <Property Name="Remove" Type="bit" />
     <Property Name="Special" Type="bit" />
+    <Property Name="Image" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="Page">
     <Key>
@@ -65,6 +118,9 @@
     </Key>
     <Property Name="SelectTourId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TourName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Style" Type="int" />
+    <Property Name="Duration" Type="nvarchar" MaxLength="250" />
+    <Property Name="TourRoute" Type="nvarchar" MaxLength="500" />
     <Property Name="Detail" Type="ntext" />
     <Property Name="AgencyStandard2" Type="float" />
     <Property Name="AgencyStandard35" Type="float" />
@@ -72,31 +128,44 @@
     <Property Name="AgencySuperior2" Type="float" />
     <Property Name="AgencySuperior35" Type="float" />
     <Property Name="AgencySuperior69" Type="float" />
-    <Property Name="AgencyDeluxl2" Type="float" />
-    <Property Name="AgencyDeluxl35" Type="float" />
-    <Property Name="AgencyDeluxl69" Type="float" />
+    <Property Name="AgencyDeluxe2" Type="float" />
+    <Property Name="AgencyDeluxe35" Type="float" />
+    <Property Name="AgencyDeluxe69" Type="float" />
     <Property Name="Agency2Standard2" Type="float" />
     <Property Name="Agency2Standard35" Type="float" />
     <Property Name="Agency2Standard69" Type="float" />
     <Property Name="Agency2Superior2" Type="float" />
     <Property Name="Agency2Superior35" Type="float" />
     <Property Name="Agency2Superior69" Type="float" />
-    <Property Name="Agency2Deluxl2" Type="float" />
-    <Property Name="Agency2Deluxl35" Type="float" />
-    <Property Name="Agency2Deluxl69" Type="float" />
+    <Property Name="Agency2Deluxe2" Type="float" />
+    <Property Name="Agency2Deluxe35" Type="float" />
+    <Property Name="Agency2Deluxe69" Type="float" />
     <Property Name="GuestStandard2" Type="float" />
     <Property Name="GuestStandard35" Type="float" />
     <Property Name="GuestStandard69" Type="float" />
     <Property Name="GuestSuperior2" Type="float" />
     <Property Name="GuestSuperior35" Type="float" />
     <Property Name="GuestSuperior69" Type="float" />
-    <Property Name="GuestDeluxl2" Type="float" />
-    <Property Name="GuestDeluxl35" Type="float" />
-    <Property Name="GuestDeluxl69" Type="float" />
-    <Property Name="AgencyPrice" Type="float" />
-    <Property Name="GuestPrice" Type="float" />
+    <Property Name="GuestDeluxe2" Type="float" />
+    <Property Name="GuestDeluxe35" Type="float" />
+    <Property Name="GuestDeluxe69" Type="float" />
     <Property Name="Remove" Type="bit" />
     <Property Name="Special" Type="bit" />
+    <Property Name="Image" Type="nvarchar" MaxLength="1000" />
+    <Property Name="SortDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SelectTourBooked">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Json" Type="ntext" />
   </EntityType>
   <EntityType Name="Slide">
     <Key>
@@ -106,15 +175,16 @@
     <Property Name="Name" Type="nvarchar" MaxLength="250" />
     <Property Name="Link" Type="nvarchar(max)" />
     <Property Name="Text" Type="nvarchar" MaxLength="500" />
+    <Property Name="Category" Type="int" />
   </EntityType>
   <EntityType Name="User">
     <Key>
-      <PropertyRef Name="UserId" />
+      <PropertyRef Name="User_Id" />
     </Key>
-    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="250" Nullable="false" />
     <Property Name="PassWord" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="Lock" Type="bit" Nullable="false" />
+    <Property Name="Lock" Type="bit" />
     <Property Name="Roles" Type="nvarchar" MaxLength="500" />
     <Property Name="Email" Type="nvarchar" MaxLength="250" />
     <Property Name="FirstName" Type="nvarchar" MaxLength="250" />
@@ -122,6 +192,7 @@
     <Property Name="CompanyName" Type="nvarchar" MaxLength="250" />
     <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
     <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Remove" Type="bit" />
   </EntityType>
   <Function Name="sp_GetDataFromTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="TableName" Type="nvarchar" Mode="In" />
@@ -131,6 +202,8 @@
     <Parameter Name="RecordCount" Type="int" Mode="InOut" />
   </Function>
   <EntityContainer Name="WebAPPModelStoreContainer">
+    <EntitySet Name="BookingEnquiry" EntityType="Self.BookingEnquiry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomizedTour" EntityType="Self.CustomizedTour" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Label" EntityType="Self.Label" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PackageTour" EntityType="Self.PackageTour" Schema="dbo" store:Type="Tables" />
@@ -138,6 +211,7 @@
     <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ReferenceValue" EntityType="Self.ReferenceValue" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SelectTour" EntityType="Self.SelectTour" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SelectTourBooked" EntityType="Self.SelectTourBooked" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Slide" EntityType="Self.Slide" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

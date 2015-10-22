@@ -3,19 +3,14 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using WebAPP.Common;
+using WebAPP.Models;
 
 namespace WebAPP.Areas.CMS.Models
 {
-    public class UserViewModel
+    public class UserViewModel:User
     {
-            public int UserId { get; set; }
-            public string UserName { get; set; }
-            public string PassWord { get; set; }
-            public bool Lock { get; set; }
-            public string Roles { get; set; }
-
-
             //Add new
             
             public string Message { get; set; }
@@ -30,5 +25,14 @@ namespace WebAPP.Areas.CMS.Models
             }
     }
 
-    
+    public class UserListView
+    {
+            public List<User> LstUser { get; set; }
+            public int TotalPage { get; set; }
+    }
+
+    public class UserEditView:User
+    {
+        public List<SelectListItem> LstRoles { get; set; }
+    }
 }
