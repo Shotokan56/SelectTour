@@ -163,7 +163,12 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default pull-right"/>
+
+                    @*<div class="row" style="padding-right: 14px; padding-top: 10px;">*@
+                        <a class="button pull-right" style="margin-left: 10px" href="single.html">Print</a>
+                        <a class="button pull-right" id="btnBook">Book</a>
+                    @*</div>*@
+
                 </div>
             </div>
         </div>
@@ -195,12 +200,46 @@
             });
             $("#selected").val(JSON.stringify(selected));
 
-
             $.ajax({
                 url: "GetTotalTable",
                 type: "POST",
                 data: {
                     tbString: $("#selected").val()
+                },
+                success: function (result) {
+                    $("#TotalReplace").html(result);
+
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        });
+
+        $("#btnBook").on("click", function () {
+            if ($("#Name").val() == "" || $("#Email").val() == "" || $("#Address").val() == "" || $("#Phone").val() == "" || $("#selected").val() == "") {
+                alert("you must complete the information");
+                return;
+            }
+
+            $.ajax({
+                url: "BookSelectTour",
+                type: "POST",
+                data: {
+                    data: {
+                        name: $("#Name").val(),
+                        gender: $("#gender").val(),
+                        email: $("#Email").val(),
+                        nationality: $("#Nationality").val(),
+                        address: $("#Address").val(),
+                        phone: $("#Phone").val(),
+                        selected: $("#selected").val()
+
+                    },
+                    success: function (result) {
+                        alert("Success");
+
+                    },
                 },
                 success: function (result) {
                     $("#TotalReplace").html(result);
