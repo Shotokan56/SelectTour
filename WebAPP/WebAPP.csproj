@@ -208,10 +208,13 @@
     <Compile Include="Areas\CMS\Models\PackageTourViewModel.cs" />
     <Compile Include="Areas\CMS\Models\TravelerInfo.cs" />
     <Compile Include="Areas\CMS\Models\UserViewModel.cs" />
+    <Compile Include="Areas\GUI\Controllers\CustomizedController.cs" />
     <Compile Include="Areas\GUI\Controllers\HomeController.cs" />
     <Compile Include="Areas\GUI\Controllers\PackageController.cs" />
     <Compile Include="Areas\GUI\Controllers\SelectTourController.cs" />
     <Compile Include="Areas\GUI\GUIAreaRegistration.cs" />
+    <Compile Include="Areas\GUI\Models\CustomizedViewModel.cs" />
+    <Compile Include="Areas\GUI\Models\Enquiry.cs" />
     <Compile Include="Areas\GUI\Models\HomeViewModel.cs" />
     <Compile Include="Areas\GUI\Models\PackageTourViewModel.cs" />
     <Compile Include="Areas\GUI\Models\SelectTourViewModel.cs" />
@@ -929,9 +932,9 @@
     </Content>
     <Content Include="Areas\GUI\Views\Package\PackageTour.cshtml" />
     <Content Include="Areas\GUI\Views\SelectTour\SelectTour.cshtml" />
-    <Content Include="Areas\GUI\Views\Home\CustomizedTour.cshtml" />
+    <Content Include="Areas\GUI\Views\Customized\CustomizedTour.cshtml" />
     <Content Include="Areas\GUI\Views\Home\Contact.cshtml" />
-    <Content Include="Areas\GUI\Views\Home\PackageTourEnquiry.cshtml" />
+    <Content Include="Areas\GUI\Views\Package\Enquire.cshtml" />
     <Content Include="Areas\CMS\Views\ManagePackageTour\AllPackageTour.cshtml" />
     <Content Include="Areas\CMS\Views\ManagePackageTour\ListPackageTourPatial.cshtml" />
     <Content Include="Areas\CMS\Views\ManageSelectTour\ListSelectTourPatial.cshtml" />
@@ -965,6 +968,7 @@
     <Content Include="Areas\CMS\Views\User\AddAndEditUser.cshtml" />
     <Content Include="Areas\GUI\Views\Package\ListPackageTourPatialView.cshtml" />
     <Content Include="Areas\GUI\Views\SelectTour\TotalTable.cshtml" />
+    <Content Include="Areas\GUI\Views\Package\DetailPackageTour.cshtml" />
     <None Include="Properties\PublishProfiles\VietSelectTour.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af-ZA.js" />

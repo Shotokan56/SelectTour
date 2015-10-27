@@ -1,0 +1,210 @@
+﻿@model WebAPP.Areas.GUI.Models.EnquireView
+@{
+    ViewBag.Title = "Package Tour Enquire";
+    Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
+}
+<head>
+    @Styles.Render("~/bundles/BootstrapDatetimeStyle")
+    @Scripts.Render("~/bundles/BootstrapDatetimeJs")
+    <title>Select Tour</title>
+</head>
+@using (Html.BeginForm("SaveEnquire", "Package", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    <input type="hidden" value="@Model.PackageTour.TourId" name="PackageTourId" id="PackageTourId" />
+    <section class="content">
+        <div class="caption">
+            <span>
+            Enquire
+        </span>
+        </div>
+        <article class="post">
+            <div class="">
+                Thanks for your interest in Viet Select Tour. For a fast response, please submit this basic Quick Enquiry form below by clicking "Submit", and we'll get back to you by e-mail within 12 to 24 hours (in working days).
+            </div>
+
+            <h3 class="attribute" style="color: #DB531A">Your tour information</h3>
+
+            <div class="form-horizontal">
+                <div class="form-group" style="margin-bottom: 5px;">
+                    <span class="col-md-2 ">Tour Name:</span>
+                    <span class="">@Model.PackageTour.TourName</span>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 5px;">
+                    <span class="col-md-2">Tour Duration:</span>
+                    <span class="control-label">@Model.PackageTour.Duration</span>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 5px;">
+                    <span class="col-md-2 ">Tour Roules:</span>
+                    <span class="control-label">@Model.PackageTour.TourRoute</span>
+                </div>
+            </div>
+
+
+            <div class="form-horizontal" style="margin-top: 20px;">
+                <div class="form-group">
+                    <span class="col-md-2 ">Departure Date:</span>
+                    <div class="col-md-3" style="padding: 0px;">
+                        @Html.TextBox("DepartureDate")
+                        <script type="text/javascript">
+                            $(function() {
+                                $(function() {
+                                    $("#DepartureDate").datetimepicker({
+                                        useCurrent: true,
+                                        calendarWeeks: true,
+                                        viewMode: "days",
+                                        format: "DD/MM/YYYY",
+                                        locale: "en",
+                                        showTodayButton: true
+                                    });
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 ">Tour Class:</span>
+                    <div class="col-md-3" style="padding: 0px;">@Html.DropDownList("TourClass", new SelectList(Model.ListClass, "Id", "Name"))</div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-12 " style="margin-bottom: 10px;">Number Of Travel Partners (include your self):</span>
+                    <div class="col-md-1">Adults</div>
+                    <div class="col-md-1" style="margin-right: 20px;">@Html.TextBox("Adults")</div>
+                    <div class="col-md-2">Baby 0-2 yrs</div>
+                    <div class="col-md-1" style="margin-right: 20px;">@Html.TextBox("Baby0_2")</div>
+                    <div class="col-md-2">Child 2-11 yrs</div>
+                    <div class="col-md-1" style="margin-right: 20px;">@Html.TextBox("Child2_11")</div>
+                    <div class="col-md-1">Seniors</div>
+                    <div class="col-md-1" style="margin-right: 20px;">@Html.TextBox("Seniors")</div>
+                </div>
+            </div>
+
+
+            <div class="form-horizontal" style="margin-top: 20px;">
+                <div class="form-group">
+                    <span class="col-md-2 ">Billing Options:</span>
+                    <div class="col-md-2" style="padding: 0px;">
+                        @Html.RadioButton("BillingOptions", "BankTransfer") Bank Transfer
+                    </div>
+                    <div class="col-md-2" style="padding: 0px;">
+                        @Html.RadioButton("BillingOptions", "Creadit Card") Creadit Card
+                    </div>
+                    <div class="col-md-2" style="padding: 0px;">
+                        @Html.RadioButton("BillingOptions", "Other") Other
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-horizontal" style="margin-top: 20px;">
+                <div class="form-group">
+                    <span class="col-md-12 " style="margin-bottom: 10px;">What additional plans or ideas do you have for your itinerary?</span>
+                    <div class="col-md-12" style="">
+                        @Html.TextArea("AdditionalPlans", null, new {@Style = "height:100px"})
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal" style="margin-top: 20px;">
+                <div class="form-group">
+                    <span class="col-md-12 " style="margin-bottom: 10px;">Where did you hear about us?</span>
+                    <div class="col-md-12" style="">
+                        @Html.TextBox("WhereHear")
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="post">
+            <h3 class="attribute" style="color: #DB531A">Your Contact information</h3>
+
+            <div class="form-horizontal" style="margin-top: 20px;">
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;">Full Name:</span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @Html.TextBox("FullName")
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 ">Billing Options:</span>
+                    <div class="col-md-1" style="padding: 0px;">
+                        @Html.RadioButton("Gender", "Male") Male
+                    </div>
+                    <div class="col-md-1" style="padding: 0px;">
+                        @Html.RadioButton("Gender", "Female") Famale
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 ">Date Of Birth:</span>
+                    <div class="col-md-3" style="padding: 0px;">
+                        @Html.TextBox("DateOfBirth")
+                        <script type="text/javascript">
+                            $(function() {
+                                $(function() {
+                                    $("#DateOfBirth").datetimepicker({
+                                        useCurrent: true,
+                                        calendarWeeks: true,
+                                        viewMode: "days",
+                                        format: "DD/MM/YYYY",
+                                        locale: "en",
+                                        showTodayButton: true
+                                    });
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;">Address:</span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @Html.TextBox("Address")
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;">City:</span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @Html.TextBox("City")
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;">Country:</span>
+                    <div class="col-md-3" style="padding: 0px;">
+                        @Html.DropDownList("Country", new SelectList(Model.ListCountry, "Id", "Name"), "--------")
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;">Email:</span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @Html.TextBox("Email")
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;">Phone:</span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @Html.TextBox("Phone")
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;"></span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @*<a class="button pull-right" style="margin-left: 10px">Submit</a>*@
+                        <input type="submit" value="Save" class="button pull-right" />
+                        @*<a class="button pull-right" href="single.html">Reset</a>*@
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+}
+

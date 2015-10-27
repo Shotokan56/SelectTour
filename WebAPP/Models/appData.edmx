@@ -11,7 +11,7 @@
           </Key>
           <Property Name="BookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FullName" Type="nvarchar" MaxLength="250" Nullable="false" />
-          <Property Name="Gender" Type="bit" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="City" Type="nvarchar" MaxLength="250" />
@@ -23,9 +23,10 @@
           <Property Name="DepartureDate" Type="datetime" />
           <Property Name="TourClass" Type="int" />
           <Property Name="Adults" Type="int" />
-          <Property Name="Children" Type="int" />
-          <Property Name="Infants" Type="int" />
-          <Property Name="BillingOption" Type="nvarchar" MaxLength="250" />
+          <Property Name="Baby0_2" Type="nchar" MaxLength="10" />
+          <Property Name="Child2_11" Type="int" />
+          <Property Name="Seniors" Type="int" />
+          <Property Name="BillingOptions" Type="nvarchar" MaxLength="250" />
           <Property Name="AdditionalPlans" Type="ntext" />
           <Property Name="WhereHear" Type="nvarchar" MaxLength="250" />
           <Property Name="Remove" Type="bit" />
@@ -36,7 +37,7 @@
           </Key>
           <Property Name="BookingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FullName" Type="nvarchar" MaxLength="250" />
-          <Property Name="Gender" Type="bit" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="250" />
           <Property Name="Address" Type="nvarchar(max)" />
           <Property Name="Nationality" Type="nvarchar" MaxLength="250" />
@@ -265,10 +266,10 @@
           <EntitySet Name="Slides" EntityType="WebAPPModel.Slide" />
           <EntitySet Name="PackageTours" EntityType="WebAPPModel.PackageTour" />
           <EntitySet Name="SelectTours" EntityType="WebAPPModel.SelectTour" />
-          <EntitySet Name="BookingEnquiries" EntityType="WebAPPModel.BookingEnquiry" />
-          <EntitySet Name="CustomizedTours" EntityType="WebAPPModel.CustomizedTour" />
           <EntitySet Name="Users" EntityType="WebAPPModel.User" />
           <EntitySet Name="SelectTourBookeds" EntityType="WebAPPModel.SelectTourBooked" />
+          <EntitySet Name="BookingEnquiries" EntityType="WebAPPModel.BookingEnquiry" />
+          <EntitySet Name="CustomizedTours" EntityType="WebAPPModel.CustomizedTour" />
         </EntityContainer>
         <EntityType Name="Reference">
           <Key>
@@ -357,58 +358,6 @@
           <Property Name="Image" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="SortDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="BookingEnquiry">
-          <Key>
-            <PropertyRef Name="BookId" />
-          </Key>
-          <Property Name="BookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FullName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Gender" Type="Boolean" Nullable="false" />
-          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Country" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="PackageTourId" Type="Int32" />
-          <Property Name="SelectTourId" Type="Int32" />
-          <Property Name="DepartureDate" Type="DateTime" Precision="3" />
-          <Property Name="TourClass" Type="Int32" />
-          <Property Name="Adults" Type="Int32" />
-          <Property Name="Children" Type="Int32" />
-          <Property Name="Infants" Type="Int32" />
-          <Property Name="BillingOption" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="AdditionalPlans" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="WhereHear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Remove" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="CustomizedTour">
-          <Key>
-            <PropertyRef Name="BookingId" />
-          </Key>
-          <Property Name="BookingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FullName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Gender" Type="Boolean" />
-          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Nationality" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ArrivalDate" Type="DateTime" Precision="3" />
-          <Property Name="DepartureDate" Type="DateTime" Precision="3" />
-          <Property Name="Adults" Type="Int32" />
-          <Property Name="Child" Type="Int32" />
-          <Property Name="Baby" Type="Int32" />
-          <Property Name="Seniors" Type="Int32" />
-          <Property Name="AccommodationStyle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="ModesOfTransportation" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="PreferredType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="MealsIncluded" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="WhereVisit" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="MoreMessages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Payment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="WhereHear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Remove" Type="Boolean" />
-        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="User_Id" />
@@ -438,6 +387,59 @@
           <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Json" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BookingEnquiry">
+          <Key>
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Name="BookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PackageTourId" Type="Int32" />
+          <Property Name="SelectTourId" Type="Int32" />
+          <Property Name="DepartureDate" Type="DateTime" Precision="3" />
+          <Property Name="TourClass" Type="Int32" />
+          <Property Name="Adults" Type="Int32" />
+          <Property Name="Baby0_2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Child2_11" Type="Int32" />
+          <Property Name="Seniors" Type="Int32" />
+          <Property Name="BillingOptions" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AdditionalPlans" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WhereHear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Remove" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CustomizedTour">
+          <Key>
+            <PropertyRef Name="BookingId" />
+          </Key>
+          <Property Name="BookingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nationality" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ArrivalDate" Type="DateTime" Precision="3" />
+          <Property Name="DepartureDate" Type="DateTime" Precision="3" />
+          <Property Name="Adults" Type="Int32" />
+          <Property Name="Child" Type="Int32" />
+          <Property Name="Baby" Type="Int32" />
+          <Property Name="Seniors" Type="Int32" />
+          <Property Name="AccommodationStyle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ModesOfTransportation" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PreferredType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MealsIncluded" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="WhereVisit" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MoreMessages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Payment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="WhereHear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Remove" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -566,15 +568,48 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="WebAPPModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="Remove" ColumnName="Remove" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Roles" ColumnName="Roles" />
+                <ScalarProperty Name="Lock" ColumnName="Lock" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SelectTourBookeds">
+            <EntityTypeMapping TypeName="WebAPPModel.SelectTourBooked">
+              <MappingFragment StoreEntitySet="SelectTourBooked">
+                <ScalarProperty Name="Json" ColumnName="Json" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="BookingEnquiries">
             <EntityTypeMapping TypeName="WebAPPModel.BookingEnquiry">
               <MappingFragment StoreEntitySet="BookingEnquiry">
                 <ScalarProperty Name="Remove" ColumnName="Remove" />
                 <ScalarProperty Name="WhereHear" ColumnName="WhereHear" />
                 <ScalarProperty Name="AdditionalPlans" ColumnName="AdditionalPlans" />
-                <ScalarProperty Name="BillingOption" ColumnName="BillingOption" />
-                <ScalarProperty Name="Infants" ColumnName="Infants" />
-                <ScalarProperty Name="Children" ColumnName="Children" />
+                <ScalarProperty Name="BillingOptions" ColumnName="BillingOptions" />
+                <ScalarProperty Name="Seniors" ColumnName="Seniors" />
+                <ScalarProperty Name="Child2_11" ColumnName="Child2_11" />
+                <ScalarProperty Name="Baby0_2" ColumnName="Baby0_2" />
                 <ScalarProperty Name="Adults" ColumnName="Adults" />
                 <ScalarProperty Name="TourClass" ColumnName="TourClass" />
                 <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
@@ -617,38 +652,6 @@
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="BookingId" ColumnName="BookingId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="WebAPPModel.User">
-              <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
-                <ScalarProperty Name="Remove" ColumnName="Remove" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-                <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Roles" ColumnName="Roles" />
-                <ScalarProperty Name="Lock" ColumnName="Lock" />
-                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SelectTourBookeds">
-            <EntityTypeMapping TypeName="WebAPPModel.SelectTourBooked">
-              <MappingFragment StoreEntitySet="SelectTourBooked">
-                <ScalarProperty Name="Json" ColumnName="Json" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

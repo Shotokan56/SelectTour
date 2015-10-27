@@ -16,7 +16,7 @@ namespace WebAPP.Models
     {
         public int BookId { get; set; }
         public string FullName { get; set; }
-        public bool Gender { get; set; }
+        public string Gender { get; set; }
         public System.DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
@@ -28,9 +28,10 @@ namespace WebAPP.Models
         public Nullable<System.DateTime> DepartureDate { get; set; }
         public Nullable<int> TourClass { get; set; }
         public Nullable<int> Adults { get; set; }
-        public Nullable<int> Children { get; set; }
-        public Nullable<int> Infants { get; set; }
-        public string BillingOption { get; set; }
+        public string Baby0_2 { get; set; }
+        public Nullable<int> Child2_11 { get; set; }
+        public Nullable<int> Seniors { get; set; }
+        public string BillingOptions { get; set; }
         public string AdditionalPlans { get; set; }
         public string WhereHear { get; set; }
         public Nullable<bool> Remove { get; set; }

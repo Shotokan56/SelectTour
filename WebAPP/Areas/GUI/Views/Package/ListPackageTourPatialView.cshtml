@@ -5,12 +5,12 @@
 {
     <div class=" row">
         <div class="postimg col-md-4 shrink img">
-            <img alt="" src="@item.Image">
-        </div>
+            <a href="/Package/DetailPackageTour/@item.TourId"><img alt="" src="@item.Image"></a>
+</div>
         <div class="col-md-8">
             <div class="entry-content">
                 <span class="posttitle">
-                    <a href="/Home/DetailPackageTour/@item.TourId">@item.TourName</a>
+                    <a href="/Package/DetailPackageTour/@item.TourId">@item.TourName</a>
                 </span>
                 <ul>
                     <li>
@@ -44,7 +44,7 @@
                     </li>
                 </ul>
 
-                <a class="button pull-right" href="/Home/DetailPackageTour/@item.TourId">View Detail</a>
+                <a class="button pull-right" href="/Package/DetailPackageTour/@item.TourId">View Detail</a>
             </div>
         </div>
     </div>

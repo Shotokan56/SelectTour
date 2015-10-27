@@ -10,4 +10,10 @@ namespace WebAPP.Areas.GUI.Models
         public UserViewModel User { get; set; }
         public int TotalPage { get; set; }
     }
+
+    public class PackageTourDetailViewModel:PackageTour
+    {
+        public string StyleName { get; set; }
+        public UserViewModel User { get; set; }
+    }
 }

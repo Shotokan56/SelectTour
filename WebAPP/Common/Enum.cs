@@ -20,6 +20,10 @@ namespace WebAPP.Common
         public const int TourStyle = 2;
         public const int ImageCategory = 3;
         public const int Nationality = 1003;
+        public const int Class = 1004;
+        public const int Payment = 1005;
+        public const int Accommodation = 1006;
+        public const int Transportation = 1007;
     }
 
     public class SecurityRoles

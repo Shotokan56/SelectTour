@@ -1,0 +1,210 @@
+﻿@model WebAPP.Areas.GUI.Models.CustomizedViewModel
+@{
+    ViewBag.Title = "CustomizedTour";
+    Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
+}
+
+<section class="content">
+    <span>We are proud to offer tailor made holidays, and are able to come up with interesting programs for individual traveler, family, friends, school groups, clubs, societies, associations etc. In case you don't find an option that matches your expectations or you want to follow your own itinerary, then do not hesitate to fill out the customized form and return it to us. We’ll gladly work out a trip to meet your expectations and we’ll get back to you within 24 hours. Thank you very much for your interest in our services.</span>
+
+    <div class="caption" style="margin-top: 20px;">
+        <span class="">1. Contact Information</span>
+    </div>
+    <div class="form-horizontal" style="margin-top: 20px;">
+        <div class="form-group">
+            <span class="col-md-2 " style="padding-top: 5px;">Your Name:</span>
+            <div class="col-md-4" style="padding: 0px;">
+                @Html.TextBoxFor(o=>o.FullName)
+            </div>
+            <span class="col-md-2 " style="padding-top: 5px;">Gender:</span>
+            <div class="col-md-4">
+                <select id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Famale">Famale</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2 " style="padding-top: 5px;">Email:</span>
+            <div class="col-md-4" style="padding: 0px;">
+                @Html.TextBoxFor(o=>o.Email)
+            </div>
+            <span class="col-md-2 " style="padding-top: 5px;">Nationality:</span>
+            <div class="col-md-4">
+                @Html.DropDownListFor(o=>o.Nationality, new SelectList(Model.ListNationality, "Id", "Name"), "Select your country")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2 " style="padding-top: 5px;">Address:</span>
+            <div class="col-md-4" style="padding: 0px;">
+                @Html.TextBoxFor(o=>o.Address)
+            </div>
+            <span class="col-md-2 " style="padding-top: 5px;">Phone:</span>
+            <div class="col-md-4">
+                @Html.TextBoxFor(o=>o.Phone)
+            </div>
+        </div>
+    </div>
+
+    <div class="caption" style="margin-top: 20px;">
+        <span class="">2. Travel Information</span>
+    </div>
+    <div class="form-horizontal" style="margin-top: 20px;">
+        <div class="form-group">
+            <span class="col-md-2 " style="padding-top: 5px;">Arrival Date:</span>
+            <div class="col-md-4" style="padding: 0px;">
+                @Html.TextBoxFor(o=>o.ArrivalDate)
+                <script type="text/javascript">
+                    $(function () {
+                        $(function () {
+                            $("#ArrivalDate").datetimepicker({
+                                useCurrent: true,
+                                calendarWeeks: true,
+                                viewMode: "days",
+                                format: "DD/MM/YYYY",
+                                locale: "en",
+                                showTodayButton: true
+                            });
+                        });
+                    });
+                </script>
+            </div>
+            <span class="col-md-2 " style="padding-top: 5px;">Departure Date:</span>
+            <div class="col-md-4">
+                @Html.TextBoxFor(o => o.DepartureDate)
+                <script type="text/javascript">
+                    $(function () {
+                        $(function () {
+                            $("#DepartureDate").datetimepicker({
+                                useCurrent: true,
+                                calendarWeeks: true,
+                                viewMode: "days",
+                                format: "DD/MM/YYYY",
+                                locale: "en",
+                                showTodayButton: true
+                            });
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-12 " style="margin-bottom: 10px;">Number Of Travel Partners (include your self):</span>
+            <div class="col-md-1">Adults:</div>
+            <div class="col-md-1" style="margin-right: 20px;">@Html.TextBoxFor(o => o.Adults)</div>
+            <div class="col-md-2">Baby 0-2 yrs:</div>
+            <div class="col-md-1" style="margin-right: 20px;">@Html.TextBoxFor(o => o.Baby)</div>
+            <div class="col-md-2">Child 2-11 yrs:</div>
+            <div class="col-md-1" style="margin-right: 20px;">@Html.TextBoxFor(o => o.Child)</div>
+            <div class="col-md-1">Seniors:</div>
+            <div class="col-md-1" style="margin-right: 20px;">@Html.TextBoxFor(o => o.Seniors)</div>
+        </div>
+
+        <div class="form-group">
+            <strong class="col-md-12 " style="margin-bottom: 5px;">Accommodation Style:</strong>
+            @foreach (var item in Model.ListAccommodation)
+            {
+                <div class="col-md-12">@Html.RadioButtonFor(o => o.AccommodationStyle, item.Name)@item.Name</div>
+            }
+
+        </div>
+
+        <div class="form-group">
+            <strong class="col-md-12 " style="margin-bottom: 5px;">Model of transportation used for in-country travel?:</strong>
+            @foreach (var item in Model.ListTransportation)
+            {
+                <div class="col-md-3">@Html.CheckBox("Transportation") @item.Name</div>
+            }
+        </div>
+
+        <div class="form-group">
+            <strong class="col-md-12 " style="margin-bottom: 5px;">Preferred type of programme?</strong>
+            <div class="col-md-3">@Html.CheckBox("Test") Airplane</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Car/Bus</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Motobike</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Train</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") Airplane</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Car/Bus</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Motobike</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Train</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") Airplane</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Car/Bus</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Motobike</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Train</div>
+
+            <div class="col-md-3">@Html.CheckBox("Test") Airplane</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Car/Bus</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Motobike</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Train</div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-1">Other:</div>
+            <div class="col-md-11">
+                @Html.TextBox("Test")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong class="col-md-12">Meals to be included in your itinerary ?</strong>
+            <div class="col-md-3">@Html.CheckBox("Test") Breakfast</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Lunch</div>
+            <div class="col-md-3">@Html.CheckBox("Test") Dinner</div>
+        </div>
+    </div>
+
+
+    <div class="caption" style="margin-top: 20px;">
+        <span class="">3. Where would you like to visit?</span>
+    </div>
+    <div class="form-horizontal" style="margin-top: 20px;">
+            <div class="col-md-2">Other Place:</div>
+        <div class="col-md-10">
+            @Html.TextAreaFor(o=>o.WhereVisit)
+        </div>
+    </div>
+
+
+    <div class="caption" style="margin-top: 20px;">
+        <span class="">4. More Messsage?</span>
+    </div>
+<div class="form-horizontal" style="margin-top: 20px;">
+    <div class="form-group">
+        <div class="col-md-5">Other Special requests:</div>
+        <div class="col-md-12">
+            @Html.TextAreaFor(o=>o.MoreMessages)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-3">Modes of payment:</div>
+        <div class="col-md-4">
+            @Html.DropDownListFor(o=>o.Payment, new SelectList(Model.ListPayment, "Id", "Name"), "------------ ")
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-3">Where did you hear about us:</div>
+        <div class="col-md-4">
+            @*@Html.DropDownList("Test", new SelectList(Model.ListTourClass, "Id", "Name"), "------------ ")*@
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-3">Security Code:</div>
+        <div class="col-md-4">
+            @Html.TextBox("test")
+        </div>
+    </div>
+</div>
+    <div class="form-group">
+        <div class="col-md-12" style="padding: 0px;">
+            <a class="button pull-right" style="margin-left: 10px" href="single.html">Submit</a>
+        </div>
+    </div>
+</section>

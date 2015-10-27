@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d46b0971b27a4d5093f700b7ff6f9762" Name="Diagram1" ZoomLevel="97">
+      <Diagram DiagramId="d46b0971b27a4d5093f700b7ff6f9762" Name="Diagram1" ZoomLevel="97" ShowGrid="true" SnapToGrid="false">
         <EntityTypeShape EntityType="WebAPPModel.Label" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WebAPPModel.Language" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WebAPPModel.Page" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
@@ -13,10 +13,10 @@
         <EntityTypeShape EntityType="WebAPPModel.Slide" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="WebAPPModel.PackageTour" Width="1.5" PointX="5.375" PointY="6.75" />
         <EntityTypeShape EntityType="WebAPPModel.SelectTour" Width="3" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="WebAPPModel.BookingEnquiry" Width="1.5" PointX="0.75" PointY="9.75" />
-        <EntityTypeShape EntityType="WebAPPModel.CustomizedTour" Width="1.5" PointX="2.75" PointY="9.75" />
         <EntityTypeShape EntityType="WebAPPModel.User" Width="1.5" PointX="3" PointY="3.75" />
         <EntityTypeShape EntityType="WebAPPModel.SelectTourBooked" Width="1.5" PointX="7.375" PointY="9.75" />
+        <EntityTypeShape EntityType="WebAPPModel.BookingEnquiry" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="WebAPPModel.CustomizedTour" Width="1.5" PointX="0.75" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

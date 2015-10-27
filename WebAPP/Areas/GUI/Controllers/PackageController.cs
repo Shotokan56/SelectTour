@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
+using AutoMapper;
 using WebAPP.Areas.CMS.Models;
+using WebAPP.Areas.GUI.Models;
+using WebAPP.Common;
 using WebAPP.Models;
 using PackageTourViewModel = WebAPP.Areas.GUI.Models.PackageTourViewModel;
 
@@ -30,6 +33,38 @@ namespace WebAPP.Areas.GUI.Controllers
             };
 
             return PartialView(viewModel);
+        }
+
+        public ActionResult DetailPackageTour(int id)
+        {
+            var obj = db.PackageTours.First(o => o.TourId == id);
+            Mapper.CreateMap<PackageTour, PackageTourDetailViewModel>();
+            var packageTourDetail = Mapper.Map<PackageTourDetailViewModel>(obj);
+            packageTourDetail.StyleName = db.ReferenceValues.First(o => o.Id == obj.TourStyle).Name;
+            packageTourDetail.User = (UserViewModel) Session["User"];
+
+            return View(packageTourDetail);
+        }
+
+        public ActionResult Enquire(int id)
+        {
+            var obj = new EnquireView()
+            {
+                PackageTour = db.PackageTours.First(o => o.TourId == id),
+                ListClass = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.Class).ToList(),
+                ListCountry = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.Nationality).ToList()
+            };
+            return View(obj);
+        }
+
+        public ActionResult SaveEnquire(BookingEnquiry obj)
+        {
+            db.BookingEnquiries.Add(obj);
+            db.SaveChanges();
+            return RedirectToAction("DetailPackageTour",new
+            {
+                id= obj.PackageTourId
+            });
         }
     }
 }

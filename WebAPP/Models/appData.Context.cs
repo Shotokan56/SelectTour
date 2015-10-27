@@ -35,10 +35,10 @@ namespace WebAPP.Models
         public virtual DbSet<Slide> Slides { get; set; }
         public virtual DbSet<PackageTour> PackageTours { get; set; }
         public virtual DbSet<SelectTour> SelectTours { get; set; }
-        public virtual DbSet<BookingEnquiry> BookingEnquiries { get; set; }
-        public virtual DbSet<CustomizedTour> CustomizedTours { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<SelectTourBooked> SelectTourBookeds { get; set; }
+        public virtual DbSet<BookingEnquiry> BookingEnquiries { get; set; }
+        public virtual DbSet<CustomizedTour> CustomizedTours { get; set; }
     
         public virtual int sp_GetDataFromTable(string tableName, Nullable<int> currentPage, Nullable<int> itemPerPage, string orderBy, ObjectParameter recordCount)
         {
