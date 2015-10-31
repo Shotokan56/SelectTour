@@ -1,0 +1,13 @@
+﻿@model List<WebAPP.Models.SelectTour>
+
+<div class="container">
+    <h4>
+        <p class="text-center">Tour Booking Information</p></h4>
+    @foreach (var item in Model)
+    {
+        <p class="heading">@item.TourName (@item.Duration)</p>
+        <div class="row">
+            @Html.Raw(item.Detail)
+        </div>
+    }
+</div>

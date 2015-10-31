@@ -1,0 +1,104 @@
+﻿@using WebAPP.Common
+@model WebAPP.Areas.GUI.Models.PackageTourDetailViewModel
+@{
+    ViewBag.Title = "Select Tour Detail";
+    Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
+}
+
+<section class="content">
+    <div class="caption">
+        <span class="">@Model.TourName</span>
+    </div>
+    <article class="post">
+        <div class="row">
+            <div class="postimg col-md-6 shrink img">
+                <img alt="@Model.TourName" title="@Model.TourName" src="@Model.Image">
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <p class="col-md-4">
+                        <b>Tour Duration:</b>
+                    </p>
+                    <p class="col-md-8">@Model.Duration</p>
+                </div>
+
+                <div class="row">
+                    <p class="col-md-4">
+                        <b>Tour Route:</b>
+                    </p>
+                    <p class="col-md-8">@Model.TourRoute</p>
+                </div>
+
+                <div class="row">
+                    <p class="col-md-4">
+                        <b>Date:</b>
+                    </p>
+                    @if (@Model.Date == null || @Model.Date == new DateTime())
+                    {
+                        <p class="col-md-8">No fixed departure dates. You may go whenever you wish</p>
+                    }
+                    else
+                    {
+                        <p class="col-md-8">@Model.Date</p>
+                    }
+                </div>
+
+                <div class="row">
+                    <p class="col-md-4">
+                        <b>Tour Style:</b>
+                    </p>
+                    <p class="col-md-8">@Model.StyleName</p>
+                </div>
+
+                <div class="row">
+                    <p class="col-md-4">
+                        <b>Activity Lever:</b>
+                    </p>
+                    <p class="col-md-8">@Model.ActivityLevel</p>
+                </div>
+
+                <div class="row">
+                    <p class="col-md-4">
+                        <b>Price from:</b>
+                    </p>
+                    <p class="col-md-8">
+                        $
+                        @if (Model.User != null
+                             && (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
+                        {
+                            @Model.AgencyPrice1
+                        }
+                        else
+                        {
+                            if (Model.User != null
+                                && Model.User.Roles.Contains(SecurityRoles.Agency2.ToString()))
+                            {
+                                @Model.AgencyPrice2
+                            }
+                            else
+                            {
+                                @Model.GuestPrice
+                            }
+                        }
+                    </p>
+                </div>
+
+                <a class="button pull-right" href="/Package/Enquire/@Model.TourId">Enquire now</a>
+            </div>
+        </div>
+
+        <div class="row" style="padding: 5px 10px 5px 15px !important">
+            @Html.Raw(Model.Detail)
+        </div>
+    </article>
+</section>
+
+<style>
+    p {
+        padding: 0px;
+    }
+
+    .row {
+        padding: 0px !important;
+    }
+</style>

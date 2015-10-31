@@ -1,0 +1,62 @@
+﻿@model WebAPP.Areas.CMS.Models.ContactListViewModel
+
+@Html.HiddenFor(o => o.TotalPage)
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Content
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model.LstContact)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @if (item.Remove == true)
+                {
+                    @Html.ActionLink("Restore", "Restore", new { id = item.Id }, new { onclick = "return confirm('Are you sure to restore this item ?');" })
+                }
+                else
+                {
+                    @(Html.ActionLink("Delete", "Remove", new { id = item.Id }, new { onclick = "return confirm('Are you sure to delete this item ?');" }))
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+

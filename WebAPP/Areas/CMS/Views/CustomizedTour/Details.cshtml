@@ -1,0 +1,149 @@
+﻿@model WebAPP.Models.CustomizedTour
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
+}
+
+<div class="form-horizontal">
+    <h4>Customized Information</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="control-label col-md-2" style="font-weight: bold">Full Name</label>
+        <div class="col-md-10">
+            @Model.FullName
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"style="font-weight: bold">Gender</label>
+        <div class="col-md-10">
+            @Model.Gender
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"style="font-weight: bold">Email</label>
+        <div class="col-md-10">
+            @Model.Email
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"style="font-weight: bold">Address</label>
+        <div class="col-md-10">
+            @Model.Address
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"style="font-weight: bold">Nationality</label>
+        <div class="col-md-10">
+            @Model.Nationality
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"style="font-weight: bold">Phone</label>
+        <div class="col-md-10">
+            @Model.Phone
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"style="font-weight: bold">Arrival Date</label>
+        <div class="col-md-10">
+            @string.Format("{0:dd/MM/yyyy}", Model.ArrivalDate)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"style="font-weight: bold">Departure Date</label>
+        <div class="col-md-10">
+            @string.Format("{0:dd/MM/yyyy}", Model.DepartureDate)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <span class="col-md-12 " style="margin-bottom: 10px; font-weight: bold">Number Of Travel Partners (include your self):</span>
+        <div class="col-md-1">Adults</div>
+        <div class="col-md-1" style="margin-right: 20px;">@Model.Adults</div>
+        <div class="col-md-2">Baby 0-2 yrs</div>
+        <div class="col-md-1" style="margin-right: 20px;">@Model.Baby</div>
+        <div class="col-md-2">Child 2-11 yrs</div>
+        <div class="col-md-1" style="margin-right: 20px;">@Model.Child</div>
+        <div class="col-md-1">Seniors</div>
+        <div class="col-md-1" style="margin-right: 20px;">@Model.Seniors</div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3"style="font-weight: bold">Accommodation Style</label>
+        <div class="col-md-9">
+            @Model.AccommodationStyle
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3"style="font-weight: bold">Model of transportation used for in-country travel</label>
+        <div class="col-md-9">
+            @Model.ModesOfTransportation
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3" style="font-weight: bold">Preferred type of programme</label>
+        <div class="col-md-9">
+            @Model.PreferredType
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3" style="font-weight: bold">Meals to be included in your itinerary</label>
+        <div class="col-md-9">
+            @Model.MealsIncluded
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3" style="font-weight: bold">WHERE WOULD YOU LIKE TO VISIT</label>
+        <div class="col-md-9">
+            @Model.WhereVisit
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3" style="font-weight: bold">MORE MESSSAGE</label>
+        <div class="col-md-9">
+            @Model.MoreMessages
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3" style="font-weight: bold">Modes of payment</label>
+        <div class="col-md-9">
+            @Model.Payment
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3" style="font-weight: bold">Where did you hear about us</label>
+        <div class="col-md-9">
+            @Model.WhereHear
+        </div>
+    </div>
+
+    <div class="form-group">
+        <span class="col-md-2 " style="margin-bottom: 10px;"></span>
+        <div class="col-md-8" style="padding: 0px;">
+            @*<input type="submit" value="Save" class="button pull-right"/>*@
+            @Html.ActionLink("Remove", "Remove", new { id = @Model.BookingId }, new { @class = "button pull-right" })
+        </div>
+    </div>
+</div>
+
+<style>
+    .control-label {
+        padding-top: 0px !important;
+    }
+</style>

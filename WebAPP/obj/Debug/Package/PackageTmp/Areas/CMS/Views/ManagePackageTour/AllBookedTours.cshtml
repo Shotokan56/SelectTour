@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Booked Tours";
+    Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
+}
+
+
+<div id="lstReplace" class="form-group">
+    @*@{ Html.RenderAction("ListPackageTourPatial", "ManagePackageTour"); }*@
+</div>
+<div class="pull-right" style="padding-right: 10px">
+    <div id="pager" class="pull-right">
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        LoadDataList(0, 1);
+    });
+
+    function LoadDataList(oldPage, newPage) {
+        var itemPerPage = 20;
+
+        var inputData = {
+            currentPage: newPage,
+            itemPerPage: itemPerPage
+        }
+
+        $.ajax({
+            url: "ListBookedPatial",
+            type: "POST",
+            data: inputData,
+            success: function (result) {
+                //if (result.success) {
+                $("#lstReplace").html(result);
+
+                var options = {
+                    currentPage: newPage,
+                    totalPages: $("#TotalPage").val(),
+                    onPageChanged: function (e, oldPage, newPage) {
+                        LoadDataList(oldPage, newPage);
+                    },
+                    itemContainerClass: function (type, page, current) {
+                        return (page === current) ? "active" : "pointer-cursor";
+                    }
+                }
+                $('#pager').bootstrapPaginator(options);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    }
+</script>
+

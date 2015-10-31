@@ -1,0 +1,119 @@
+﻿@model WebAPP.Areas.CMS.Models.BookedSelectViewModel
+@{
+    ViewBag.Title = "Details Booked";
+    Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
+    var objData = Model.objData;
+    var totalTable = Model.TotalTable;
+}
+
+<section class="layer1" style="margin-top: 20px;">
+    <div class="caption">
+        <h3 class="attribute" style="color: #DB531A">
+            Tour Summary
+        </h3>
+    </div>
+    <div class="">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Tour Name</th>
+                    <th>Class</th>
+                    <th>People</th>
+                    <th>Price ($)</th>
+                    <th>Single Supplement</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in totalTable.DataRows)
+                {
+                    <tr>
+                        <td>
+                            @item.TourName
+                        </td>
+                        <td>
+                            @item.Level
+                        </td>
+                        <td>
+                            @item.People
+                        </td>
+                        <td>
+                            @item.Price
+                        </td>
+                        @if (item.SingleSupplement == "True")
+                        {
+                            <td>Yes</td>
+                        }
+                        else
+                        {
+                            <td>No</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row" style="padding-right: 14px;">
+        <span class="pull-right"><b>Total</b>: $@totalTable.TotalPrice</span>
+    </div>
+</section>
+
+<article class="post">
+    <div class="caption">
+        <h3 class="attribute" style="color: #DB531A">
+            Booking Information
+        </h3>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-2" style="font-weight: bold">Full Name:</label>
+
+        <div class="col-md-4">
+            @objData.Name
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-md-2" style="font-weight: bold">Gender:</label>
+
+        <div class="col-md-4">
+            @objData.Gender
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-md-2" style="font-weight: bold">Email:</label>
+
+        <div class="col-md-4">
+            @objData.Email
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-2" style="font-weight: bold">Nationality:</label>
+
+        <div class="col-md-4">
+            @objData.Nationality
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-md-2" style="font-weight: bold">Address:</label>
+
+        <div class="col-md-4">
+            @objData.Address
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-md-2" style="font-weight: bold">Phone:</label>
+
+        <div class="col-md-4">
+            @objData.Phone
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-offset-2 col-md-10">
+            <a class="button pull-right" id="" href="/CMS/ManageSelectTour/Remove?id=@objData.ID">Remove</a>
+        </div>
+    </div>
+</article>
+

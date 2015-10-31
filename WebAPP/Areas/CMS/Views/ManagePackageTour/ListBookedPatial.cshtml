@@ -1,0 +1,45 @@
+﻿@model WebAPP.Areas.CMS.Models.BookedEnquiryViewModel
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Departure Date
+        </th>
+        <th>
+            Tour Class
+        </th>
+        <th>
+            Contact Name
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model.LstBookingEnquiry)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PackageTourName)
+            </td>
+            <td>
+                @if (item.DepartureDate != null)
+                {
+                    @item.DepartureDate.Value.ToString("dd/MM/yyyy")
+                }
+            </td>
+            <td>
+                @item.TourClassName
+            </td>
+            <td>
+                @item.FullName
+            </td>
+            <td>
+                @Html.ActionLink("Details", "DetailsBooked", new { id = item.BookId }) |
+                @Html.ActionLink("Remove", "Remove", new { id = item.BookId })
+            </td>
+        </tr>
+    }
+
+</table>
