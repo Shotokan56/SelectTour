@@ -57,8 +57,16 @@ namespace WebAPP.Areas.GUI.Controllers
             return View(obj);
         }
 
+
         public ActionResult SaveEnquire(BookingEnquiry obj)
         {
+            var country = "";
+            if (!string.IsNullOrEmpty(obj.Country))
+                country = db.ReferenceValues.First(o => o.Id == int.Parse(obj.Country)).Name;
+
+            obj.PackageTourName = db.PackageTours.First(o => o.TourId == obj.PackageTourId).TourName;
+            obj.TourClassName = db.ReferenceValues.First(o => o.Id == obj.TourClass).Name;
+            obj.Country = country;
             db.BookingEnquiries.Add(obj);
             db.SaveChanges();
             return RedirectToAction("DetailPackageTour",new

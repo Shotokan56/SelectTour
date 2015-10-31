@@ -31,12 +31,12 @@
         {
             <div class=" row">
                 <div class="postimg col-md-4 shrink img">
-                    <img alt="" src="@item.Image">
+                    <a href="/Package/DetailPackageTour/@item.TourId"><img alt="" src="@item.Image"></a>
                 </div>
                 <div class="col-md-8">
                     <div class="entry-content">
                         <span class="posttitle">
-                            <a href="/Home/DetailPackageTour/@item.TourId">@item.TourName</a>
+                            <a href="/Package/DetailPackageTour/@item.TourId">@item.TourName</a>
                         </span>
                         <ul>
                             <li>
@@ -44,9 +44,10 @@
                             </li>
                             <li>
                                 @item.Duration
-                                <span class="price">- $
-                                    @if (Model.User != null 
-                                        && (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
+                                <span class="price">
+                                    - $
+                                    @if (Model.User != null
+&& (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
                                     {
                                         @item.AgencyPrice1
                                     }
@@ -69,7 +70,7 @@
                             </li>
                         </ul>
 
-                        <a class="button pull-right" href="/Home/DetailPackageTour/@item.TourId">View Detail</a>
+                        <a class="button pull-right" href="/Package/DetailPackageTour/@item.TourId">View Detail</a>
                     </div>
                 </div>
             </div>
@@ -89,12 +90,12 @@
         {
             <div class=" row">
                 <div class="postimg col-md-4 shrink img">
-                    <img alt="" src="@item.Image">
+                    <a href="/SelectTour/DetailSelectTour/@item.SelectTourId"><img alt="" src="@item.Image"></a>
                 </div>
                 <div class="col-md-8">
                     <div class="entry-content">
                         <span class="posttitle">
-                            <a href="/Home/DetailSelectTour/@item.SelectTourId">@item.TourName</a>
+                            <a href="/SelectTour/DetailSelectTour/@item.SelectTourId">@item.TourName</a>
                         </span>
                         <ul>
                             <li>
@@ -102,14 +103,33 @@
                             </li>
                             <li>
                                 @item.Duration
-                                <span class="price">$1259</span>
+                                <span class="price">
+                                    - $
+                                    @if (Model.User != null
+&& (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
+                                    {
+                                        @item.AgencyStandard2
+                                    }
+                                    else
+                                    {
+                                        if (Model.User != null
+                                         && Model.User.Roles.Contains(SecurityRoles.Agency2.ToString()))
+                                        {
+                                            @item.Agency2Standard2
+                                        }
+                                        else
+                                        {
+                                            @item.GuestStandard2
+                                        }
+                                    }
+                                </span>
                             </li>
                             <li>
                                 Destination : @item.TourRoute
                             </li>
                         </ul>
 
-                        <a class="button pull-right" href="/Home/DetailSelectTour/@item.SelectTourId">View Detail</a>
+                        <a class="button pull-right" href="/SelectTour/DetailSelectTour/@item.SelectTourId">View Detail</a>
                     </div>
                 </div>
             </div>

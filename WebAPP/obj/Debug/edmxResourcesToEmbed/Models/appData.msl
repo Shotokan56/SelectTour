@@ -122,19 +122,54 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="WebAPPModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Remove" ColumnName="Remove" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Lock" ColumnName="Lock" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SelectTourBookeds">
+      <EntityTypeMapping TypeName="WebAPPModel.SelectTourBooked">
+        <MappingFragment StoreEntitySet="SelectTourBooked">
+          <ScalarProperty Name="Remove" ColumnName="Remove" />
+          <ScalarProperty Name="Json" ColumnName="Json" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="BookingEnquiries">
       <EntityTypeMapping TypeName="WebAPPModel.BookingEnquiry">
         <MappingFragment StoreEntitySet="BookingEnquiry">
+          <ScalarProperty Name="TourClassName" ColumnName="TourClassName" />
+          <ScalarProperty Name="PackageTourName" ColumnName="PackageTourName" />
           <ScalarProperty Name="Remove" ColumnName="Remove" />
           <ScalarProperty Name="WhereHear" ColumnName="WhereHear" />
           <ScalarProperty Name="AdditionalPlans" ColumnName="AdditionalPlans" />
-          <ScalarProperty Name="BillingOption" ColumnName="BillingOption" />
-          <ScalarProperty Name="Infants" ColumnName="Infants" />
-          <ScalarProperty Name="Children" ColumnName="Children" />
+          <ScalarProperty Name="BillingOptions" ColumnName="BillingOptions" />
+          <ScalarProperty Name="Seniors" ColumnName="Seniors" />
+          <ScalarProperty Name="Child2_11" ColumnName="Child2_11" />
+          <ScalarProperty Name="Baby0_2" ColumnName="Baby0_2" />
           <ScalarProperty Name="Adults" ColumnName="Adults" />
           <ScalarProperty Name="TourClass" ColumnName="TourClass" />
           <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
-          <ScalarProperty Name="SelectTourId" ColumnName="SelectTourId" />
           <ScalarProperty Name="PackageTourId" ColumnName="PackageTourId" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -176,35 +211,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="WebAPPModel.User">
-        <MappingFragment StoreEntitySet="User">
-          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="WebAPPModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
           <ScalarProperty Name="Remove" ColumnName="Remove" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-          <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Roles" ColumnName="Roles" />
-          <ScalarProperty Name="Lock" ColumnName="Lock" />
-          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SelectTourBookeds">
-      <EntityTypeMapping TypeName="WebAPPModel.SelectTourBooked">
-        <MappingFragment StoreEntitySet="SelectTourBooked">
-          <ScalarProperty Name="Json" ColumnName="Json" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using AutoMapper;
 using WebAPP.Areas.CMS.Models;
+using WebAPP.Areas.GUI.Models;
 using WebAPP.Common;
 using WebAPP.Models;
+using SelectTourViewModel = WebAPP.Areas.CMS.Models.SelectTourViewModel;
 
 namespace WebAPP.Areas.CMS.Controllers
 {
@@ -204,23 +207,54 @@ namespace WebAPP.Areas.CMS.Controllers
 
         public ActionResult BookedSelectTours()
         {
-            //var obj = new SelectTourViewModel()
-            //{
-            //    SelectTourName = "Best Holidays to Asia with authentic",
-            //    Contact = "125 Quan Thanh",
-            //    Email = "Examble@abc.com.vn",
-            //};
-            //var data = new List<SelectTourViewModel>();
-            //data.Add(obj);
-            //data.Add(obj);
-            //data.Add(obj);
-            //return View(data);
-            return null;
+            return View();
         }
 
-        public ActionResult DetailBooked()
+        public ActionResult ListBookedPatial(int currentPage, int itemPerPage)
         {
-            return View();
+            var data = db.SelectTourBookeds.Where(o => o.Remove == null || o.Remove == false);
+            var total = Math.Round((double)(data.Count()) / itemPerPage, 0) + 1;
+
+            var viewModel = new ListBookedSelectViewModel()
+            {
+                lstData = data.OrderByDescending(o => o.ID)
+                                .Skip((currentPage - 1) * itemPerPage)
+                                .Take(itemPerPage).ToList(),
+                TotalPage = (int)total
+            };
+
+            return PartialView(viewModel);
+        }
+
+        public ActionResult DetailsBooked(int id)
+        {
+            var objData = db.SelectTourBookeds.First(o => o.ID == id);
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            var lstRow = serializer.Deserialize<List<TotalRow>>(objData.Json);
+
+            var table = new TotalTable()
+            {
+                DataRows = lstRow,
+                TotalPrice = lstRow.Sum(i => i.Price)
+            };
+
+            var obj = new BookedSelectViewModel()
+            {
+                objData = objData,
+                TotalTable = table
+            };
+            return View(obj);
+        }
+
+        public ActionResult Remove(int id)
+        {
+            var objSave = db.SelectTourBookeds.First(o => o.ID == id);
+            objSave.Remove = true;
+            db.SelectTourBookeds.Add(objSave);
+            db.Entry(objSave).State = EntityState.Modified;
+
+            db.SaveChanges();
+            return RedirectToAction("BookedSelectTours");
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿@model  WebAPP.Areas.GUI.Models.TotalTable
-
-
 <section class="layer1" style="margin-top: 20px;">
     <div class="caption">
         <span>
@@ -15,6 +13,7 @@
                     <th>Class</th>
                     <th>People</th>
                     <th>Price ($)</th>
+                    <th>Single Supplement</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +32,14 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Price)
                         </td>
+                        @if (item.SingleSupplement == "True")
+                        {
+                            <td>Yes</td>
+                        }
+                        else
+                        {
+                            <td>No</td>
+                        }
                     </tr>
                 }
             </tbody>

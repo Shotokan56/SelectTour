@@ -1,0 +1,41 @@
+﻿@model WebAPP.Areas.CMS.Models.ListBookedSelectViewModel
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            Full Name
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            Address
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model.lstData)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.Phone
+            </td>
+            <td>
+                @item.Address
+            </td>
+            <td>
+                @Html.ActionLink("Details", "DetailsBooked", new { id = item.ID }) |
+                @Html.ActionLink("Remove", "Remove", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

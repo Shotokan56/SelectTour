@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using WebAPP.Models;
 
 namespace WebAPP.Areas.CMS.Models
 {
-    public class Contact : TravelerInfo
+    public class ContactListViewModel
     {
-        [Display(Name = "Title")]
-        public string Title { get; set; }
-        [Display(Name = "Content")]
-        public string Content { get; set; }
+        public List<Contact> LstContact { get; set; }
+        public int TotalPage { get; set; }
     }
 }

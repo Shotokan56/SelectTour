@@ -24,7 +24,6 @@ namespace WebAPP.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public Nullable<int> PackageTourId { get; set; }
-        public Nullable<int> SelectTourId { get; set; }
         public Nullable<System.DateTime> DepartureDate { get; set; }
         public Nullable<int> TourClass { get; set; }
         public Nullable<int> Adults { get; set; }
@@ -35,5 +34,7 @@ namespace WebAPP.Models
         public string AdditionalPlans { get; set; }
         public string WhereHear { get; set; }
         public Nullable<bool> Remove { get; set; }
+        public string PackageTourName { get; set; }
+        public string TourClassName { get; set; }
     }
 }

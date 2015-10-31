@@ -118,8 +118,6 @@ namespace WebAPP.Areas.CMS.Controllers
                 obj.Message = ex.ToString();
                 return View("Addnewtour", obj);
             }
-
-
         }
 
 
@@ -198,16 +196,45 @@ namespace WebAPP.Areas.CMS.Controllers
 
         public ActionResult AllBookedTours()
         {
-            return null;
-        }
-
-
-        public ActionResult DetailsBooked()
-        {
-
             return View();
         }
 
+        public ActionResult ListBookedPatial(int currentPage, int itemPerPage)
+        {
+            var data = db.BookingEnquiries.Where(o=>o.Remove == null || o.Remove == false);
+            var total = Math.Round((double)(data.Count()) / itemPerPage, 0) + 1;
 
+            var viewModel = new BookedEnquiryViewModel()
+            {
+                LstBookingEnquiry = data.OrderByDescending(o => o.PackageTourId)
+                                .Skip((currentPage - 1) * itemPerPage)
+                                .Take(itemPerPage).ToList(),
+                TotalPage = (int)total 
+            };
+
+            return PartialView(viewModel);
+        }
+
+        public ActionResult DetailsBooked(int id)
+        {
+            var objEnquiry = db.BookingEnquiries.First(o => o.BookId == id);
+            var obj = new BookedEnquiryDetailViewModel()
+            {
+                ObjEnquiry = objEnquiry,
+                PackageTour = db.PackageTours.First(o => o.TourId == objEnquiry.PackageTourId)
+            };
+            return View(obj);
+        }
+
+        public ActionResult Remove(int id)
+        {
+            var objSave = db.BookingEnquiries.First(o => o.BookId == id);
+            objSave.Remove = true;
+            db.BookingEnquiries.Add(objSave);
+            db.Entry(objSave).State = EntityState.Modified;
+
+            db.SaveChanges();
+            return RedirectToAction("AllBookedTours");
+        }
     }
 }

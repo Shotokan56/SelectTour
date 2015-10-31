@@ -200,6 +200,8 @@
     <Compile Include="Areas\CMS\Controllers\LoginController.cs" />
     <Compile Include="Areas\CMS\Controllers\ManagePackageTourController.cs" />
     <Compile Include="Areas\CMS\Controllers\ManageSelectTourController.cs" />
+    <Compile Include="Areas\CMS\Models\BookedEnquiryViewModel.cs" />
+    <Compile Include="Areas\CMS\Models\BookedSelectViewModel.cs" />
     <Compile Include="Areas\CMS\Models\Contact.cs" />
     <Compile Include="Areas\CMS\Models\CustomizedTourListViewModel.cs" />
     <Compile Include="Areas\CMS\Models\ImageViewModel.cs" />
@@ -245,6 +247,9 @@
       <DependentUpon>appData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\BookingEnquiry.cs">
+      <DependentUpon>appData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs">
       <DependentUpon>appData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomizedTour.cs">
@@ -944,11 +949,9 @@
     <Content Include="Areas\CMS\Views\ManageSelectTour\CreateNew.cshtml" />
     <Content Include="Areas\CMS\Views\ManageSelectTour\TrashedSelectTours.cshtml" />
     <Content Include="Areas\CMS\Views\ManageSelectTour\BookedSelectTours.cshtml" />
-    <Content Include="Areas\CMS\Views\ManageSelectTour\DetailBooked.cshtml" />
     <Content Include="Areas\CMS\Views\CustomizedTour\AllCustomizedTours.cshtml" />
     <Content Include="Areas\CMS\Views\CustomizedTour\TrashedCustomizedTours.cshtml" />
     <Content Include="Areas\CMS\Views\Contact\AllContact.cshtml" />
-    <Content Include="Areas\CMS\Views\Contact\TrashedContact.cshtml" />
     <Content Include="Areas\CMS\Views\Contact\Detail.cshtml" />
     <Content Include="Areas\CMS\Views\ImageSlide\ImageSlideIndex.cshtml" />
     <Content Include="Content\kartik-v-bootstrap-fileinput-629ec20\bower.json" />
@@ -969,6 +972,14 @@
     <Content Include="Areas\GUI\Views\Package\ListPackageTourPatialView.cshtml" />
     <Content Include="Areas\GUI\Views\SelectTour\TotalTable.cshtml" />
     <Content Include="Areas\GUI\Views\Package\DetailPackageTour.cshtml" />
+    <Content Include="Areas\GUI\Views\SelectTour\Print.cshtml" />
+    <Content Include="Areas\CMS\Views\ManagePackageTour\AllBookedTours.cshtml" />
+    <Content Include="Areas\CMS\Views\ManagePackageTour\ListBookedPatial.cshtml" />
+    <Content Include="Areas\CMS\Views\ManageSelectTour\ListBookedPatial.cshtml" />
+    <Content Include="Areas\CMS\Views\ManageSelectTour\DetailsBooked.cshtml" />
+    <Content Include="Areas\CMS\Views\CustomizedTour\CustomizedPatial.cshtml" />
+    <Content Include="Areas\CMS\Views\CustomizedTour\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Contact\ListContactPatial.cshtml" />
     <None Include="Properties\PublishProfiles\VietSelectTour.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af-ZA.js" />

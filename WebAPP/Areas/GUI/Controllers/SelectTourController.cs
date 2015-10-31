@@ -32,6 +32,7 @@ namespace WebAPP.Areas.GUI.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult GetTotalTable(string tbString)
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
@@ -46,17 +47,51 @@ namespace WebAPP.Areas.GUI.Controllers
             return PartialView("TotalTable", returnObj);
         }
 
+        [ValidateInput(false)]
         public ActionResult BookSelectTour(string name, string gender, string email, string nationality, string address, string phone, string selected)
         {
             try
             {
+                var objSave = new SelectTourBooked()
+                {
+                    Address = address,
+                    Email = email,
+                    Json = selected,
+                    Nationality = nationality,
+                    Phone = phone,
+                    Name = name,
+                    Gender = gender
+                };
 
+                db.SelectTourBookeds.Add(objSave);
+                db.SaveChanges();
                 return Json(new {});
             }
             catch (Exception )
             {
                 throw;
             }
+        }
+
+        [HttpPost]
+        public ActionResult Print(string tourId)
+        {
+            var ids = tourId.Split(';');
+            var lstSelectTour = db.SelectTours.ToList();
+            var lstSelect = new List<SelectTour>();
+            foreach (var item in ids)
+            {
+                if (!string.IsNullOrEmpty(item))
+                {
+                   var add = lstSelectTour.First(o => o.SelectTourId == Int32.Parse(item));
+                    if (!lstSelect.Contains(add))
+                    {
+                        lstSelect.Add(add);
+                    }
+                }
+            }
+
+            return PartialView("Print", lstSelect);
         }
     }
 }

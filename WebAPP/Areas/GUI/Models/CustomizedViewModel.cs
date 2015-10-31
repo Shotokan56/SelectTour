@@ -6,11 +6,15 @@ using WebAPP.Models;
 
 namespace WebAPP.Areas.GUI.Models
 {
-    public class CustomizedViewModel:CustomizedTour
+    public class CustomizedViewModel : CustomizedTour
     {
         public List<ReferenceValue> ListNationality { get; set; }
         public List<ReferenceValue> ListPayment { get; set; }
         public List<ReferenceValue> ListAccommodation { get; set; }
         public List<ReferenceValue> ListTransportation { get; set; }
+
+        public List<ReferenceValue> ListPreferredType { get; set; }
+        public List<ReferenceValue> ListMealsIncluded { get; set; }
+        public List<ReferenceValue> ListWhereDidHear { get; set; }
     }
 }

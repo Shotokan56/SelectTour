@@ -24,6 +24,9 @@ namespace WebAPP.Common
         public const int Payment = 1005;
         public const int Accommodation = 1006;
         public const int Transportation = 1007;
+        public const int PreferredType  = 1008;
+        public const int MealsIncluded = 1009;
+        public const int WhereDidHear = 1010;
     }
 
     public class SecurityRoles

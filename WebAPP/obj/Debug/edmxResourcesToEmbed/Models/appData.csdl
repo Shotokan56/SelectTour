@@ -41,10 +41,11 @@
     <EntitySet Name="Slides" EntityType="WebAPPModel.Slide" />
     <EntitySet Name="PackageTours" EntityType="WebAPPModel.PackageTour" />
     <EntitySet Name="SelectTours" EntityType="WebAPPModel.SelectTour" />
-    <EntitySet Name="BookingEnquiries" EntityType="WebAPPModel.BookingEnquiry" />
-    <EntitySet Name="CustomizedTours" EntityType="WebAPPModel.CustomizedTour" />
     <EntitySet Name="Users" EntityType="WebAPPModel.User" />
     <EntitySet Name="SelectTourBookeds" EntityType="WebAPPModel.SelectTourBooked" />
+    <EntitySet Name="BookingEnquiries" EntityType="WebAPPModel.BookingEnquiry" />
+    <EntitySet Name="CustomizedTours" EntityType="WebAPPModel.CustomizedTour" />
+    <EntitySet Name="Contacts" EntityType="WebAPPModel.Contact" />
   </EntityContainer>
   <EntityType Name="Reference">
     <Key>
@@ -133,58 +134,6 @@
     <Property Name="Image" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="SortDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="BookingEnquiry">
-    <Key>
-      <PropertyRef Name="BookId" />
-    </Key>
-    <Property Name="BookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FullName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Gender" Type="Boolean" Nullable="false" />
-    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Address" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Country" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Phone" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="PackageTourId" Type="Int32" />
-    <Property Name="SelectTourId" Type="Int32" />
-    <Property Name="DepartureDate" Type="DateTime" Precision="3" />
-    <Property Name="TourClass" Type="Int32" />
-    <Property Name="Adults" Type="Int32" />
-    <Property Name="Children" Type="Int32" />
-    <Property Name="Infants" Type="Int32" />
-    <Property Name="BillingOption" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="AdditionalPlans" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="WhereHear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Remove" Type="Boolean" />
-  </EntityType>
-  <EntityType Name="CustomizedTour">
-    <Key>
-      <PropertyRef Name="BookingId" />
-    </Key>
-    <Property Name="BookingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FullName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Gender" Type="Boolean" />
-    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Nationality" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ArrivalDate" Type="DateTime" Precision="3" />
-    <Property Name="DepartureDate" Type="DateTime" Precision="3" />
-    <Property Name="Adults" Type="Int32" />
-    <Property Name="Child" Type="Int32" />
-    <Property Name="Baby" Type="Int32" />
-    <Property Name="Seniors" Type="Int32" />
-    <Property Name="AccommodationStyle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="ModesOfTransportation" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="PreferredType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="MealsIncluded" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="WhereVisit" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="MoreMessages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Payment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="WhereHear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Remove" Type="Boolean" />
-  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="User_Id" />
@@ -214,5 +163,73 @@
     <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Json" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Remove" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BookingEnquiry">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="BookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PackageTourId" Type="Int32" />
+    <Property Name="DepartureDate" Type="DateTime" Precision="3" />
+    <Property Name="TourClass" Type="Int32" />
+    <Property Name="Adults" Type="Int32" />
+    <Property Name="Baby0_2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Child2_11" Type="Int32" />
+    <Property Name="Seniors" Type="Int32" />
+    <Property Name="BillingOptions" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="AdditionalPlans" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WhereHear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Remove" Type="Boolean" />
+    <Property Name="PackageTourName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TourClassName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CustomizedTour">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nationality" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ArrivalDate" Type="DateTime" Precision="3" />
+    <Property Name="DepartureDate" Type="DateTime" Precision="3" />
+    <Property Name="Adults" Type="Int32" />
+    <Property Name="Child" Type="Int32" />
+    <Property Name="Baby" Type="Int32" />
+    <Property Name="Seniors" Type="Int32" />
+    <Property Name="AccommodationStyle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ModesOfTransportation" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PreferredType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MealsIncluded" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="WhereVisit" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MoreMessages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Payment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="WhereHear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Remove" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Remove" Type="Boolean" />
   </EntityType>
 </Schema>

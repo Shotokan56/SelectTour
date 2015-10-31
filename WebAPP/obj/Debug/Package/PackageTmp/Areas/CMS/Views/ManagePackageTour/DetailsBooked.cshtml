@@ -1,166 +1,164 @@
-﻿@model WebAPP.Areas.CMS.Models.PackageTourBookedDetailViewModel
-
+﻿@model WebAPP.Areas.CMS.Models.BookedEnquiryDetailViewModel
 @{
-    ViewBag.Title = "DetailsBooked";
+    ViewBag.Title = "Package Tour Enquire";
     Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
 }
+<head>
+    @Styles.Render("~/bundles/BootstrapDatetimeStyle")
+    @Scripts.Render("~/bundles/BootstrapDatetimeJs")
+</head>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+<section class="">
+        
+        <article class="post">
+            <h3 class="attribute" style="color: #DB531A">Your tour information</h3>
 
-    <div class="form-horizontal">
-        <h4>Tour Information</h4>
-        <hr />
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            <div class="form-horizontal">
+                <div class="form-group" style="margin-bottom: 5px;">
+                    <span class="col-md-2 " style="font-weight: bold">Tour Name:</span>
+                    <span class="">@Model.PackageTour.TourName</span>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Length, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Length, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Length, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="form-group" style="margin-bottom: 5px;">
+                    <span class="col-md-2"  style="font-weight: bold">Tour Duration:</span>
+                    <span class="control-label">@Model.PackageTour.Duration</span>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Route, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Route, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Route, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DepartureDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-2">
-                @Html.EditorFor(model => model.DepartureDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DepartureDate, "", new { @class = "text-danger" })
-            </div>
-
-            @Html.LabelFor(model => model.TourClass, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-2">
-                @Html.EditorFor(model => model.TourClass, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TourClass, "", new { @class = "text-danger" })
-            </div>
-
-            @Html.LabelFor(model => model.BillingOption, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-2">
-                @Html.EditorFor(model => model.BillingOption, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BillingOption, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.Label("Number of travelers", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-1">
-                @Html.EditorFor(model => model.Adults, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Adults, "", new { @class = "text-danger" })
-            </div>
-
-            @Html.LabelFor(model => model.Childs, htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-1">
-                @Html.EditorFor(model => model.Childs, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Childs, "", new { @class = "text-danger" })
-            </div>
-
-            @Html.LabelFor(model => model.Baby, htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-1">
-                @Html.EditorFor(model => model.Baby, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Baby, "", new { @class = "text-danger" })
-            </div>
-
-            @Html.LabelFor(model => model.Seniors, htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-1">
-                @Html.EditorFor(model => model.Seniors, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Seniors, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AdditionalPlansOrIdeas, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.AdditionalPlansOrIdeas, new { @class = "form-control", @row = "4" })
-                @Html.ValidationMessageFor(model => model.AdditionalPlansOrIdeas, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        @*--------------------*@
-        <h4 style="margin-top: 40px;">Traveler Information</h4>
-        <hr />
-        <div class="form-group">
-            @Html.LabelFor(model => model.FullName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
-            </div>
-
-            @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.RadioButtonFor(model => model.Gender, 0) Female
-                    @Html.RadioButtonFor(model => model.Gender, 1) Male
-                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                <div class="form-group" style="margin-bottom: 5px;">
+                    <span class="col-md-2 "  style="font-weight: bold">Tour Roules:</span>
+                    <span class="control-label">@Model.PackageTour.TourRoute</span>
                 </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
-            </div>
+            <div class="form-horizontal" style="margin-top: 20px;">
+                <div class="form-group">
+                    <span class="col-md-2 "  style="font-weight: bold">Departure Date:</span>
+                    <div class="col-md-3" style="padding: 0px;">
+                        @if(Model.ObjEnquiry.DepartureDate != null)
+                        {
+                            Model.ObjEnquiry.DepartureDate.Value.ToString("dd/MM/yyyy");
+                        }
+                    </div>
+                </div>
 
-            @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="form-group">
+                    <span class="col-md-2 "  style="font-weight: bold">Tour Class:</span>
+                    <div class="col-md-3" style="padding: 0px;">@Model.ObjEnquiry.TourClassName</div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-
-            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <div class="pull-right">
-                    @Html.ActionLink("Close", "TrashedBookedTours", "ManagePackageTour", null, new { @class = "btn btn-default", @datamodal = "" })
+                <div class="form-group">
+                    <span class="col-md-12 " style="margin-bottom: 10px; font-weight: bold">Number Of Travel Partners (include your self):</span>
+                    <div class="col-md-1">Adults</div>
+                    <div class="col-md-1" style="margin-right: 20px;">@Model.ObjEnquiry.Adults</div>
+                    <div class="col-md-2">Baby 0-2 yrs</div>
+                    <div class="col-md-1" style="margin-right: 20px;">@Model.ObjEnquiry.Baby0_2</div>
+                    <div class="col-md-2">Child 2-11 yrs</div>
+                    <div class="col-md-1" style="margin-right: 20px;">@Model.ObjEnquiry.Child2_11</div>
+                    <div class="col-md-1">Seniors</div>
+                    <div class="col-md-1" style="margin-right: 20px;">@Model.ObjEnquiry.Seniors</div>
                 </div>
             </div>
-        </div>
-    </div>
-}
+
+
+            <div class="form-horizontal" style="margin-top: 20px;">
+                <div class="form-group">
+                    <span class="col-md-2 " style="font-weight: bold">Billing Options:</span>
+                    <div class="col-md-10" style="padding: 0px;">
+                       @Model.ObjEnquiry.BillingOptions
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-horizontal" style="margin-top: 20px;">
+                <div class="form-group">
+                    <span class="col-md-12 " style="margin-bottom: 10px;font-weight: bold">What additional plans or ideas do you have for your itinerary?</span>
+                    <div class="col-md-12" style="">
+                        @Model.ObjEnquiry.AdditionalPlans
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal" style="margin-top: 20px;">
+                <div class="form-group">
+                    <span class="col-md-12 " style="margin-bottom: 10px;font-weight: bold">Where did you hear about us?</span>
+                    <div class="col-md-12" style="">
+                        @Model.ObjEnquiry.WhereHear
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="post">
+            <h3 class="attribute" style="color: #DB531A">Contact information</h3>
+
+            <div class="form-horizontal" style="margin-top: 20px;">
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;font-weight: bold">Full Name:</span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @Model.ObjEnquiry.FullName
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="font-weight: bold">Billing Options:</span>
+                    <div class="col-md-1" style="padding: 0px;">
+                        @Model.ObjEnquiry.Gender
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="font-weight: bold">Date Of Birth:</span>
+                    <div class="col-md-3" style="padding: 0px;">
+                            @Model.ObjEnquiry.DateOfBirth.ToString("dd/MM/yyyy")
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;font-weight: bold">Address:</span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @Model.ObjEnquiry.Address
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;font-weight: bold">City:</span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @Model.ObjEnquiry.City
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;font-weight: bold">Country:</span>
+                    <div class="col-md-3" style="padding: 0px;">
+                        @Model.ObjEnquiry.Country
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;font-weight: bold">Email:</span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @Model.ObjEnquiry.Email
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;font-weight: bold">Phone:</span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @Model.ObjEnquiry.Phone
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="col-md-2 " style="margin-bottom: 10px;"></span>
+                    <div class="col-md-8" style="padding: 0px;">
+                        @*<input type="submit" value="Save" class="button pull-right"/>*@
+                        @Html.ActionLink("Remove","Remove", new { id = @Model.ObjEnquiry.BookId }, new {@class = "button pull-right" })
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
 

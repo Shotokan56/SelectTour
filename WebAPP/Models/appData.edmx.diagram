@@ -17,6 +17,7 @@
         <EntityTypeShape EntityType="WebAPPModel.SelectTourBooked" Width="1.5" PointX="7.375" PointY="9.75" />
         <EntityTypeShape EntityType="WebAPPModel.BookingEnquiry" Width="1.5" PointX="9.375" PointY="9.75" />
         <EntityTypeShape EntityType="WebAPPModel.CustomizedTour" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="WebAPPModel.Contact" Width="1.5" PointX="11.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

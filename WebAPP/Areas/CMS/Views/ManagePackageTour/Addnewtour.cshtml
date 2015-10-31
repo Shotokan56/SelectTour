@@ -56,7 +56,12 @@
             </div>
             @Html.LabelFor(model => model.Special, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-4">
-                @Html.EditorFor(model => model.Special, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.EditorFor(model => model.Special, new { htmlAttributes = new { @class = "form-control" } })*@
+                <select class="form-control list-box tri-state" id="Special" name="Special">
+                    @*<option selected="selected" value="">Not Set</option>*@
+                    <option value="true">Yes</option>
+                    <option value="false" selected="selected">No</option>
+                </select>
                 @Html.ValidationMessageFor(model => model.Special, "", new { @class = "text-danger" })
             </div>
         </div>

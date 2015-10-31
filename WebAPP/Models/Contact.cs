@@ -12,16 +12,15 @@ namespace WebAPP.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SelectTourBooked
+    public partial class Contact
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
-        public string Gender { get; set; }
-        public string Nationality { get; set; }
-        public string Address { get; set; }
         public string Phone { get; set; }
-        public string Json { get; set; }
+        public string Address { get; set; }
+        public string Email { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
         public Nullable<bool> Remove { get; set; }
     }
 }

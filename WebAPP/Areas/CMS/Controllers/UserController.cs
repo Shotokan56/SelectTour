@@ -168,12 +168,12 @@ namespace WebAPP.Areas.CMS.Controllers
         }
 
 
-        private List<SelectListItem> GetRoles()
+        public List<SelectListItem> GetRoles()
         {
             var lst = new List<SelectListItem>();
             lst.Add(new SelectListItem() { Text = "Admin", Value = "Admin" });
-            lst.Add(new SelectListItem() { Text = "Agency 1", Value = "Agency1" });
-            lst.Add(new SelectListItem() { Text = "Agency 2", Value = "Agency2" });
+            lst.Add(new SelectListItem() { Text = "TO", Value = "Agency1" });
+            lst.Add(new SelectListItem() { Text = "TA", Value = "Agency2" });
             return lst;
         }
 

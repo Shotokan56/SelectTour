@@ -13,6 +13,7 @@ namespace WebAPP.Areas.GUI.Models
         public string TourId { get; set; }
         public string TourName { get; set;}
         public double Price { get; set; }
+        public string SingleSupplement { get; set; }
     }
 
 

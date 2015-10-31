@@ -39,6 +39,7 @@ namespace WebAPP.Models
         public virtual DbSet<SelectTourBooked> SelectTourBookeds { get; set; }
         public virtual DbSet<BookingEnquiry> BookingEnquiries { get; set; }
         public virtual DbSet<CustomizedTour> CustomizedTours { get; set; }
+        public virtual DbSet<Contact> Contacts { get; set; }
     
         public virtual int sp_GetDataFromTable(string tableName, Nullable<int> currentPage, Nullable<int> itemPerPage, string orderBy, ObjectParameter recordCount)
         {

@@ -1,67 +1,64 @@
-﻿@model IEnumerable<WebAPP.Areas.CMS.Models.CustomizedTourListViewModel>
+﻿@model WebAPP.Areas.CMS.Models.StatusModel
 
 @{
     ViewBag.Title = "AllCustomizedTours";
     Layout = "~/Areas/CMS/Views/Shared/_Layout_CMS.cshtml";
 }
 
-<table class="table table-bordered table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ContactName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArrivalDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DepartureDate)
-        </th>
-        <th>Action</th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ContactName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrivalDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartureDate)
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
-                @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
-            </td>
-        </tr>
-    }
-
-</table>
-
+<div id="lstReplace" class="form-group">
+</div>
 <div class="pull-right" style="padding-right: 10px">
     <div id="pager" class="pull-right">
 
     </div>
 </div>
 
-<script type="text/javascript">
-    //Pager
-    $(function () {
-        var options = {
-            currentPage: 1,
-            totalPages: 10,
-            onPageChanged: function (e, oldPage, newPage) {
-                //LoadDataList(oldPage, newPage);
+@Html.HiddenFor(o => o.Status)
+
+<script>
+    $(document).ready(function () {
+        LoadDataList(0, 1);
+
+        $('#Search').keyup(function (e) {
+            if (e.keyCode == 13) {
+                LoadDataList(0, 1);
             }
-        }
-        $('#pager').bootstrapPaginator(options);
+        });
     });
+
+
+    function LoadDataList(oldPage, newPage) {
+        var itemPerPage = 20;
+
+        var inputData = {
+            currentPage: newPage,
+            itemPerPage: itemPerPage,
+            //search: $("#Search").val(),
+            status: $("#Status").val()
+        }
+
+        $.ajax({
+            url: "ListCustomizedPatial",
+            type: "POST",
+            data: inputData,
+            success: function (result) {
+                $("#lstReplace").html(result);
+
+                var options = {
+                    currentPage: newPage,
+                    totalPages: $("#TotalPage").val(),
+                    onPageChanged: function (e, oldPage, newPage) {
+                        LoadDataList(oldPage, newPage, $("#Search").val());
+                    },
+                    itemContainerClass: function (type, page, current) {
+                        return (page === current) ? "active" : "pointer-cursor";
+                    }
+                }
+                $('#pager').bootstrapPaginator(options);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    }
 </script>

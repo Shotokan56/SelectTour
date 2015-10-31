@@ -1,0 +1,48 @@
+﻿@model  WebAPP.Areas.CMS.Models.CustomizedTourListViewModel
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            Contact Name
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Arrival Date
+        </th>
+        <th>
+            Departure Date
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model.LstCustomizedTour)
+    {
+        <tr>
+            <td>
+                 @item.FullName
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+               @string.Format("{0:dd/MM/yyyy}", item.ArrivalDate)
+            </td>
+            <td>
+               @string.Format("{0:dd/MM/yyyy}", item.DepartureDate)
+            </td>
+            <td>
+                @if (item.Remove == true)
+                {
+                    @Html.ActionLink("Restore", "Restore", new {id = item.BookingId}, new {onclick = "return confirm('Are you sure to restore this item ?');"})
+                }
+                else
+                {
+                    @(Html.ActionLink("Details", "Details", new {id = item.BookingId})) @Html.Label(" | ")
+                    @(Html.ActionLink("Delete", "Delete", new {id = item.BookingId}))
+                }
+            </td>
+        </tr>
+    }
+
+</table>

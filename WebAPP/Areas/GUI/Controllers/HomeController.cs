@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Resources;
+using WebAPP.Areas.CMS.Controllers;
 using WebAPP.Areas.CMS.Models;
 using WebAPP.Areas.GUI.Models;
 using WebAPP.Common;
@@ -48,7 +49,11 @@ namespace WebAPP.Areas.GUI.Controllers
 
         public ActionResult Register()
         {
-            return View();
+            var objView = new UserEditView()
+            {
+                LstRoles = new UserController().GetRoles().Where(o=>o.Value != "Admin").ToList()
+            };
+            return View(objView);
         }
 
 
@@ -140,6 +145,39 @@ namespace WebAPP.Areas.GUI.Controllers
                     return Json(new { html = "<a href=\"Javascript:ViewLogin()\">Login</a>" });
                 }
             }
+        }
+
+        public ActionResult SaveContact(WebAPP.Models.Contact obj)
+        {
+            if (CheckValidateContact(obj))
+            {
+                db.Contacts.Add(obj);
+                db.SaveChanges();
+                return RedirectToAction("Contact");
+            }
+            else
+            {
+                return View("Contact", obj);
+            }
+        }
+
+        private bool CheckValidateContact(WebAPP.Models.Contact obj)
+        {
+            ModelState.Clear();
+            if (string.IsNullOrEmpty(obj.Name))
+                ModelState.AddModelError("Name", "Name is required !");
+            if (string.IsNullOrEmpty(obj.Email))
+                ModelState.AddModelError("Email", "Email is required !");
+            if (string.IsNullOrEmpty(obj.Title))
+                ModelState.AddModelError("Title", "Title is required !");
+            if (string.IsNullOrEmpty(obj.Address))
+                ModelState.AddModelError("Address", "Address is required !");
+            if (string.IsNullOrEmpty(obj.Phone))
+                ModelState.AddModelError("Phone", "Phone is required !");
+            if (string.IsNullOrEmpty(obj.Content))
+                ModelState.AddModelError("Content", "Content is required !");
+
+            return ModelState.IsValid;
         }
     }
 }
