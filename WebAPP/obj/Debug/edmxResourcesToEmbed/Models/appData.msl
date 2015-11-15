@@ -61,12 +61,45 @@
     <EntitySetMapping Name="PackageTours">
       <EntityTypeMapping TypeName="WebAPPModel.PackageTour">
         <MappingFragment StoreEntitySet="PackageTour">
+          <ScalarProperty Name="GuestSingleSupplementDeluxe" ColumnName="GuestSingleSupplementDeluxe" />
+          <ScalarProperty Name="GuestSingleSupplementSuperior" ColumnName="GuestSingleSupplementSuperior" />
+          <ScalarProperty Name="GuestSingleSupplementStandard" ColumnName="GuestSingleSupplementStandard" />
+          <ScalarProperty Name="Agency2SingleSupplementDeluxe" ColumnName="Agency2SingleSupplementDeluxe" />
+          <ScalarProperty Name="Agency2SingleSupplementSuperior" ColumnName="Agency2SingleSupplementSuperior" />
+          <ScalarProperty Name="Agency2SingleSupplementStandard" ColumnName="Agency2SingleSupplementStandard" />
+          <ScalarProperty Name="Agency1SingleSupplementDeluxe" ColumnName="Agency1SingleSupplementDeluxe" />
+          <ScalarProperty Name="Agency1SingleSupplementSuperior" ColumnName="Agency1SingleSupplementSuperior" />
+          <ScalarProperty Name="Agency1SingleSupplementStandard" ColumnName="Agency1SingleSupplementStandard" />
+          <ScalarProperty Name="GuestDeluxe69" ColumnName="GuestDeluxe69" />
+          <ScalarProperty Name="GuestDeluxe35" ColumnName="GuestDeluxe35" />
+          <ScalarProperty Name="GuestDeluxe2" ColumnName="GuestDeluxe2" />
+          <ScalarProperty Name="GuestSuperior69" ColumnName="GuestSuperior69" />
+          <ScalarProperty Name="GuestSuperior35" ColumnName="GuestSuperior35" />
+          <ScalarProperty Name="GuestSuperior2" ColumnName="GuestSuperior2" />
+          <ScalarProperty Name="GuestStandard69" ColumnName="GuestStandard69" />
+          <ScalarProperty Name="GuestStandard35" ColumnName="GuestStandard35" />
+          <ScalarProperty Name="GuestStandard2" ColumnName="GuestStandard2" />
+          <ScalarProperty Name="Agency2Deluxe69" ColumnName="Agency2Deluxe69" />
+          <ScalarProperty Name="Agency2Deluxe35" ColumnName="Agency2Deluxe35" />
+          <ScalarProperty Name="Agency2Deluxe2" ColumnName="Agency2Deluxe2" />
+          <ScalarProperty Name="Agency2Superior69" ColumnName="Agency2Superior69" />
+          <ScalarProperty Name="Agency2Superior35" ColumnName="Agency2Superior35" />
+          <ScalarProperty Name="Agency2Superior2" ColumnName="Agency2Superior2" />
+          <ScalarProperty Name="Agency2Standard69" ColumnName="Agency2Standard69" />
+          <ScalarProperty Name="Agency2Standard35" ColumnName="Agency2Standard35" />
+          <ScalarProperty Name="Agency2Standard2" ColumnName="Agency2Standard2" />
+          <ScalarProperty Name="AgencyDeluxe69" ColumnName="AgencyDeluxe69" />
+          <ScalarProperty Name="AgencyDeluxe35" ColumnName="AgencyDeluxe35" />
+          <ScalarProperty Name="AgencyDeluxe2" ColumnName="AgencyDeluxe2" />
+          <ScalarProperty Name="AgencySuperior69" ColumnName="AgencySuperior69" />
+          <ScalarProperty Name="AgencySuperior35" ColumnName="AgencySuperior35" />
+          <ScalarProperty Name="AgencySuperior2" ColumnName="AgencySuperior2" />
+          <ScalarProperty Name="AgencyStandard69" ColumnName="AgencyStandard69" />
+          <ScalarProperty Name="AgencyStandard35" ColumnName="AgencyStandard35" />
+          <ScalarProperty Name="AgencyStandard2" ColumnName="AgencyStandard2" />
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="Special" ColumnName="Special" />
           <ScalarProperty Name="Remove" ColumnName="Remove" />
-          <ScalarProperty Name="AgencyPrice1" ColumnName="AgencyPrice1" />
-          <ScalarProperty Name="AgencyPrice2" ColumnName="AgencyPrice2" />
-          <ScalarProperty Name="GuestPrice" ColumnName="GuestPrice" />
           <ScalarProperty Name="Detail" ColumnName="Detail" />
           <ScalarProperty Name="SortDescription" ColumnName="SortDescription" />
           <ScalarProperty Name="Date" ColumnName="Date" />
@@ -82,6 +115,15 @@
     <EntitySetMapping Name="SelectTours">
       <EntityTypeMapping TypeName="WebAPPModel.SelectTour">
         <MappingFragment StoreEntitySet="SelectTour">
+          <ScalarProperty Name="GuestSingleSupplementDeluxe" ColumnName="GuestSingleSupplementDeluxe" />
+          <ScalarProperty Name="GuestSingleSupplementSuperior" ColumnName="GuestSingleSupplementSuperior" />
+          <ScalarProperty Name="GuestSingleSupplementStandard" ColumnName="GuestSingleSupplementStandard" />
+          <ScalarProperty Name="Agency2SingleSupplementDeluxe" ColumnName="Agency2SingleSupplementDeluxe" />
+          <ScalarProperty Name="Agency2SingleSupplementSuperior" ColumnName="Agency2SingleSupplementSuperior" />
+          <ScalarProperty Name="Agency2SingleSupplementStandard" ColumnName="Agency2SingleSupplementStandard" />
+          <ScalarProperty Name="Agency1SingleSupplementDeluxe" ColumnName="Agency1SingleSupplementDeluxe" />
+          <ScalarProperty Name="Agency1SingleSupplementSuperior" ColumnName="Agency1SingleSupplementSuperior" />
+          <ScalarProperty Name="Agency1SingleSupplementStandard" ColumnName="Agency1SingleSupplementStandard" />
           <ScalarProperty Name="SortDescription" ColumnName="SortDescription" />
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="GuestDeluxe69" ColumnName="GuestDeluxe69" />

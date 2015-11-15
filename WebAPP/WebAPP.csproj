@@ -1837,6 +1837,11 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Upload\Slide\Slide_10092015093637103_slide1.jpg" />
+    <Content Include="Upload\Slide\Slide_10092015093710143_slide2.jpg" />
+    <Content Include="Upload\Slide\Slide_10092015093720905_slide3.jpg" />
+    <Content Include="Upload\Slide\Tour_10152015212237281_24-New-men-s-women-s-UNISEX-LARGE-LEATHER-DUFFLE-TRAVEL-BAG-LUGGAGE-Carry-On-Overnight.jpg" />
+    <Content Include="Upload\Slide\Tour_10152015212316988_20130925122627.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

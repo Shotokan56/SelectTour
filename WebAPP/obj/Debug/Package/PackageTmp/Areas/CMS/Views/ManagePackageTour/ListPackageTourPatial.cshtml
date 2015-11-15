@@ -1,19 +1,19 @@
 ﻿@model WebAPP.Areas.CMS.Models.PackageTourListViewModel
 
-@Html.HiddenFor(o=>o.TotalPage)
+@Html.HiddenFor(o => o.TotalPage)
 <table class="table table-bordered table-striped">
     <tr>
         <th>
             Package Tour Name
         </th>
         <th>
-           Duration
+            Duration
         </th>
         <th>
             Sort Description
         </th>
         <th>
-           Special
+            Special
         </th>
         <th>Action</th>
     </tr>
@@ -30,9 +30,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.SortDescription)
             </td>
-            <td>
-                @item.Special.ToString()
-            </td>
+            @if (item.Special == true)
+                {
+                <td>
+                    Yes
+                </td>
+            }
+            else
+            {
+                <td>
+                    No
+                </td>
+            }
             <td>
                 @if (item.Remove == true)
                 {
@@ -40,8 +49,8 @@
                 }
                 else
                 {
-                    @(Html.ActionLink("Edit", "Edit", new {id = item.TourId})) @Html.Label(" | ")
-                    @(Html.ActionLink("Delete", "Delete", new {id = item.TourId}, new {onclick = "return confirm('Are you sure to delete this item ?');"}))
+                    @(Html.ActionLink("Edit", "Edit", new { id = item.TourId })) @Html.Label(" | ")
+                    @(Html.ActionLink("Delete", "Delete", new { id = item.TourId }, new { onclick = "return confirm('Are you sure to delete this item ?');" }))
                 }
             </td>
         </tr>

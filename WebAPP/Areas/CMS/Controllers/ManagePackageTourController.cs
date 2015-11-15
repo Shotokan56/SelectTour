@@ -47,9 +47,42 @@ namespace WebAPP.Areas.CMS.Controllers
                     Date = objPackageTour.Date,
                     SortDescription = objPackageTour.SortDescription,
                     Detail = objPackageTour.Detail,
-                    GuestPrice = objPackageTour.GuestPrice,
-                    AgencyPrice2 = objPackageTour.AgencyPrice2,
-                    AgencyPrice1 = objPackageTour.AgencyPrice1,
+                    AgencyStandard2 = objPackageTour.AgencyStandard2,
+                    AgencyStandard35 = objPackageTour.AgencyStandard35,
+                    AgencyStandard69 = objPackageTour.AgencyStandard69,
+                    AgencySuperior2 = objPackageTour.AgencySuperior2,
+                    AgencySuperior35 = objPackageTour.AgencySuperior35,
+                    AgencySuperior69 = objPackageTour.AgencySuperior69,
+                    Agency2Standard2 = objPackageTour.Agency2Standard2,
+                    Agency2Standard35 = objPackageTour.Agency2Standard35,
+                    Agency2Standard69 = objPackageTour.Agency2Standard69,
+                    Agency2Superior2 = objPackageTour.Agency2Superior2,
+                    Agency2Superior35 = objPackageTour.Agency2Superior35,
+                    Agency2Superior69 = objPackageTour.Agency2Superior69,
+                    GuestStandard2 = objPackageTour.GuestStandard2,
+                    GuestStandard35 = objPackageTour.GuestStandard35,
+                    GuestStandard69 = objPackageTour.GuestStandard69,
+                    GuestSuperior2 = objPackageTour.GuestSuperior2,
+                    GuestSuperior35 = objPackageTour.GuestSuperior35,
+                    GuestSuperior69 = objPackageTour.GuestSuperior69,
+                    AgencyDeluxe2 = objPackageTour.AgencyDeluxe2,
+                    AgencyDeluxe35 = objPackageTour.AgencyDeluxe35,
+                    AgencyDeluxe69 = objPackageTour.AgencyDeluxe69,
+                    Agency2Deluxe2 = objPackageTour.Agency2Deluxe2,
+                    Agency2Deluxe35 = objPackageTour.Agency2Deluxe35,
+                    Agency2Deluxe69 = objPackageTour.Agency2Deluxe69,
+                    GuestDeluxe2 = objPackageTour.GuestDeluxe2,
+                    GuestDeluxe35 = objPackageTour.GuestDeluxe35,
+                    GuestDeluxe69 = objPackageTour.GuestDeluxe69,
+                    Agency1SingleSupplementStandard = objPackageTour.Agency1SingleSupplementStandard,
+                    Agency1SingleSupplementSuperior = objPackageTour.Agency1SingleSupplementSuperior,
+                    Agency1SingleSupplementDeluxe = objPackageTour.Agency1SingleSupplementDeluxe,
+                    Agency2SingleSupplementStandard = objPackageTour.Agency2SingleSupplementStandard,
+                    Agency2SingleSupplementSuperior = objPackageTour.Agency2SingleSupplementSuperior,
+                    Agency2SingleSupplementDeluxe = objPackageTour.Agency2SingleSupplementDeluxe,
+                    GuestSingleSupplementStandard = objPackageTour.GuestSingleSupplementStandard,
+                    GuestSingleSupplementSuperior = objPackageTour.GuestSingleSupplementSuperior,
+                    GuestSingleSupplementDeluxe = objPackageTour.GuestSingleSupplementDeluxe,
                     Special = objPackageTour.Special,
                     Image = objPackageTour.Image,
                     LstTourStyle = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.TourStyle).ToList(),
@@ -131,7 +164,7 @@ namespace WebAPP.Areas.CMS.Controllers
 
         public ActionResult ListPackageTourPatial(int currentPage, int itemPerPage, string search, string status)
         {
-            var data = status == "Trashed" ? db.PackageTours.Where(o => o.Remove == true).ToList() 
+            var data = status == "Trashed" ? db.PackageTours.Where(o => o.Remove == true).ToList()
                                        : db.PackageTours.Where(o => o.Remove == null || o.Remove == false).ToList();
 
             return PartialView(GetListData(data, currentPage, itemPerPage, search));
@@ -149,9 +182,9 @@ namespace WebAPP.Areas.CMS.Controllers
                  //|| (o.Date != null && o.Date.Value.ToShortDateString().Contains(search))
                  || o.SortDescription.Contains(search)
                  //|| o.Detail.Contains(search)
-                 || (o.GuestPrice != null && o.GuestPrice.ToString().Contains(search))
-                 || (o.AgencyPrice2 != null && o.AgencyPrice2.ToString().Contains(search))
-                 || (o.AgencyPrice1 != null && o.AgencyPrice1.ToString().Contains(search))
+                 //|| (o.GuestPrice != null && o.GuestPrice.ToString().Contains(search))
+                 //|| (o.AgencyPrice2 != null && o.AgencyPrice2.ToString().Contains(search))
+                 //|| (o.AgencyPrice1 != null && o.AgencyPrice1.ToString().Contains(search))
                  )).ToList();
 
             var total = Math.Round((double)(data.Count()) / itemPerPage, 0) + 1;
@@ -170,7 +203,7 @@ namespace WebAPP.Areas.CMS.Controllers
 
         public ActionResult TrashedPackageTours()
         {
-            return View("AllPackageTour", new StatusModel() {Status = "Trashed"});
+            return View("AllPackageTour", new StatusModel() { Status = "Trashed" });
         }
 
 
@@ -201,7 +234,7 @@ namespace WebAPP.Areas.CMS.Controllers
 
         public ActionResult ListBookedPatial(int currentPage, int itemPerPage)
         {
-            var data = db.BookingEnquiries.Where(o=>o.Remove == null || o.Remove == false);
+            var data = db.BookingEnquiries.Where(o => o.Remove == null || o.Remove == false);
             var total = Math.Round((double)(data.Count()) / itemPerPage, 0) + 1;
 
             var viewModel = new BookedEnquiryViewModel()
@@ -209,7 +242,7 @@ namespace WebAPP.Areas.CMS.Controllers
                 LstBookingEnquiry = data.OrderByDescending(o => o.PackageTourId)
                                 .Skip((currentPage - 1) * itemPerPage)
                                 .Take(itemPerPage).ToList(),
-                TotalPage = (int)total 
+                TotalPage = (int)total
             };
 
             return PartialView(viewModel);

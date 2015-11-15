@@ -30,9 +30,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TourRoute)
             </td>
-            <td>
-                @item.Special.ToString()
-            </td>
+            @if (item.Special == true)
+                {
+                <td>
+                    Yes
+                </td>
+            }
+            else
+            {
+                <td>
+                    No
+                </td>
+            }
             <td>
                 @if (item.Remove == true)
                 {

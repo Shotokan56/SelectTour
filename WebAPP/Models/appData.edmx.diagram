@@ -11,11 +11,11 @@
         <EntityTypeShape EntityType="WebAPPModel.Reference" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="WebAPPModel.ReferenceValue" Width="1.5" PointX="5.375" PointY="3.75" />
         <EntityTypeShape EntityType="WebAPPModel.Slide" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="WebAPPModel.PackageTour" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="WebAPPModel.PackageTour" Width="2.0691580588140104" PointX="5.3213058435081129" PointY="6.4815292175405608" />
         <EntityTypeShape EntityType="WebAPPModel.SelectTour" Width="3" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="WebAPPModel.User" Width="1.5" PointX="3" PointY="3.75" />
-        <EntityTypeShape EntityType="WebAPPModel.SelectTourBooked" Width="1.5" PointX="7.375" PointY="9.75" />
-        <EntityTypeShape EntityType="WebAPPModel.BookingEnquiry" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="WebAPPModel.SelectTourBooked" Width="1.5" PointX="3.6486255394629845" PointY="9.5137457114356927" />
+        <EntityTypeShape EntityType="WebAPPModel.BookingEnquiry" Width="1.5" PointX="10.910652875667992" PointY="9.13788661599248" />
         <EntityTypeShape EntityType="WebAPPModel.CustomizedTour" Width="1.5" PointX="0.75" PointY="9.75" />
         <EntityTypeShape EntityType="WebAPPModel.Contact" Width="1.5" PointX="11.375" PointY="0.75" />
       </Diagram>

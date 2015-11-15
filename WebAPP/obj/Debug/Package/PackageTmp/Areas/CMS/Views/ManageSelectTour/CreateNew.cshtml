@@ -37,9 +37,16 @@
             <div class="col-md-4">
                 @*@Html.EditorFor(model => model.Special, new { htmlAttributes = new { @class = "form-control" } })*@
                 <select class="form-control list-box tri-state" id="Special" name="Special">
-                    @*<option selected="selected" value="">Not Set</option>*@
-                    <option value="true">Yes</option>
-                    <option value="false" selected="selected">No</option>
+                    @if (Model.Special == false)
+                    {
+                        <option value="true">Yes</option>
+                        <option value="false" selected="selected">No</option>
+                    }
+                    else
+                    {
+                        <option value="true" selected="selected">Yes</option>
+                        <option value="false">No</option>
+                    }
                 </select>
                 @Html.ValidationMessageFor(model => model.Special, "", new { @class = "text-danger" })
             </div>
@@ -64,7 +71,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Detail, new { @class = "form-control", @rows = "8" })
+                @Html.TextAreaFor(model => model.Detail, new { @class = "form-control", @rows = "15" })
                 @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -80,6 +87,7 @@
                     <th>2 people</th>
                     <th>3 -> 5 pepple</th>
                     <th>6 -> 9 pepple</th>
+                    <th>Single Supplement</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -88,18 +96,21 @@
                     <td>@Html.EditorFor(model => model.AgencyStandard2, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.AgencyStandard35, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.AgencyStandard69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency1SingleSupplementStandard, new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
                 <tr>
                     <td>Superor</td>
                     <td>@Html.EditorFor(model => model.AgencySuperior2, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.AgencySuperior35, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.AgencySuperior69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency1SingleSupplementSuperior, new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
                 <tr>
                     <td>Deluxe</td>
                     <td>@Html.EditorFor(model => model.AgencyDeluxe2, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.AgencySuperior35, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.AgencySuperior69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency1SingleSupplementDeluxe, new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
                 </tbody>
             </table>
@@ -117,6 +128,7 @@
                     <th>2 people</th>
                     <th>3 -> 5 pepple</th>
                     <th>6 -> 9 pepple</th>
+                    <th>Single Supplement</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -125,18 +137,21 @@
                     <td>@Html.EditorFor(model => model.Agency2Standard2, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.Agency2Standard35, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.Agency2Standard69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency2SingleSupplementStandard, new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
                 <tr>
                     <td>Superor</td>
                     <td>@Html.EditorFor(model => model.Agency2Superior2, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.Agency2Superior35, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.Agency2Superior69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency2SingleSupplementSuperior, new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
                 <tr>
                     <td>Deluxe</td>
                     <td>@Html.EditorFor(model => model.Agency2Deluxe2, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.Agency2Superior35, new {htmlAttributes = new {@class = "form-control"}})</td>
                     <td>@Html.EditorFor(model => model.Agency2Superior69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                    <td>@Html.EditorFor(model => model.Agency2SingleSupplementDeluxe, new { htmlAttributes = new { @class = "form-control" } })</td>
                 </tr>
                 </tbody>
             </table>
@@ -153,6 +168,7 @@
                         <th>2 people</th>
                         <th>3 -> 5 pepple</th>
                         <th>6 -> 9 pepple</th>
+                        <th>Single Supplement</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -160,19 +176,22 @@
                         <td>Standard</td>
                         <td>@Html.EditorFor(model => model.GuestStandard2, new { htmlAttributes = new { @class = "form-control" } })</td>
                         <td>@Html.EditorFor(model => model.GuestStandard35, new { htmlAttributes = new { @class = "form-control" } })</td>
-                        <td>@Html.EditorFor(model => model.GuestStandard69, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td>@Html.EditorFor(model => model.GuestStandard69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                        <td>@Html.EditorFor(model => model.GuestSingleSupplementStandard, new { htmlAttributes = new { @class = "form-control" } })</td>
                     </tr>
                     <tr>
                         <td>Superor</td>
                         <td>@Html.EditorFor(model => model.GuestSuperior2, new { htmlAttributes = new { @class = "form-control" } })</td>
                         <td>@Html.EditorFor(model => model.GuestSuperior35, new { htmlAttributes = new { @class = "form-control" } })</td>
-                        <td>@Html.EditorFor(model => model.GuestSuperior69, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td>@Html.EditorFor(model => model.GuestSuperior69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                        <td>@Html.EditorFor(model => model.GuestSingleSupplementSuperior, new { htmlAttributes = new { @class = "form-control" } })</td>
                     </tr>
                     <tr>
                         <td>Deluxe</td>
                         <td>@Html.EditorFor(model => model.GuestDeluxe2, new { htmlAttributes = new { @class = "form-control" } })</td>
                         <td>@Html.EditorFor(model => model.GuestDeluxe35, new { htmlAttributes = new { @class = "form-control" } })</td>
-                        <td>@Html.EditorFor(model => model.GuestDeluxe69, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td>@Html.EditorFor(model => model.GuestDeluxe69, new {htmlAttributes = new {@class = "form-control"}})</td>
+                        <td>@Html.EditorFor(model => model.GuestSingleSupplementDeluxe, new { htmlAttributes = new { @class = "form-control" } })</td>
                     </tr>
                 </tbody>
             </table>

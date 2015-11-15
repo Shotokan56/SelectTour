@@ -62,7 +62,7 @@ namespace WebAPP.Areas.GUI.Controllers
         {
             var country = "";
             if (!string.IsNullOrEmpty(obj.Country))
-                country = db.ReferenceValues.First(o => o.Id == int.Parse(obj.Country)).Name;
+                country = db.ReferenceValues.AsEnumerable().First(o => o.Id == int.Parse(obj.Country)).Name;
 
             obj.PackageTourName = db.PackageTours.First(o => o.TourId == obj.PackageTourId).TourName;
             obj.TourClassName = db.ReferenceValues.First(o => o.Id == obj.TourClass).Name;

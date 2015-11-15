@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="WebAPPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="WebAPPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="BookingEnquiry">
     <Key>
       <PropertyRef Name="BookId" />
@@ -98,12 +98,45 @@
     <Property Name="Date" Type="datetime" />
     <Property Name="SortDescription" Type="nvarchar(max)" />
     <Property Name="Detail" Type="ntext" />
-    <Property Name="AgencyPrice2" Type="float" />
-    <Property Name="AgencyPrice1" Type="float" />
-    <Property Name="GuestPrice" Type="float" />
     <Property Name="Remove" Type="bit" />
     <Property Name="Special" Type="bit" />
     <Property Name="Image" Type="nvarchar" MaxLength="1000" />
+    <Property Name="AgencyStandard2" Type="float" />
+    <Property Name="AgencyStandard35" Type="float" />
+    <Property Name="AgencyStandard69" Type="float" />
+    <Property Name="AgencySuperior2" Type="float" />
+    <Property Name="AgencySuperior35" Type="float" />
+    <Property Name="AgencySuperior69" Type="float" />
+    <Property Name="AgencyDeluxe2" Type="float" />
+    <Property Name="AgencyDeluxe35" Type="float" />
+    <Property Name="AgencyDeluxe69" Type="float" />
+    <Property Name="Agency2Standard2" Type="float" />
+    <Property Name="Agency2Standard35" Type="float" />
+    <Property Name="Agency2Standard69" Type="float" />
+    <Property Name="Agency2Superior2" Type="float" />
+    <Property Name="Agency2Superior35" Type="float" />
+    <Property Name="Agency2Superior69" Type="float" />
+    <Property Name="Agency2Deluxe2" Type="float" />
+    <Property Name="Agency2Deluxe35" Type="float" />
+    <Property Name="Agency2Deluxe69" Type="float" />
+    <Property Name="GuestStandard2" Type="float" />
+    <Property Name="GuestStandard35" Type="float" />
+    <Property Name="GuestStandard69" Type="float" />
+    <Property Name="GuestSuperior2" Type="float" />
+    <Property Name="GuestSuperior35" Type="float" />
+    <Property Name="GuestSuperior69" Type="float" />
+    <Property Name="GuestDeluxe2" Type="float" />
+    <Property Name="GuestDeluxe35" Type="float" />
+    <Property Name="GuestDeluxe69" Type="float" />
+    <Property Name="Agency1SingleSupplementStandard" Type="float" />
+    <Property Name="Agency1SingleSupplementSuperior" Type="float" />
+    <Property Name="Agency1SingleSupplementDeluxe" Type="float" />
+    <Property Name="Agency2SingleSupplementStandard" Type="float" />
+    <Property Name="Agency2SingleSupplementSuperior" Type="float" />
+    <Property Name="Agency2SingleSupplementDeluxe" Type="float" />
+    <Property Name="GuestSingleSupplementStandard" Type="float" />
+    <Property Name="GuestSingleSupplementSuperior" Type="float" />
+    <Property Name="GuestSingleSupplementDeluxe" Type="float" />
   </EntityType>
   <EntityType Name="Page">
     <Key>
@@ -168,6 +201,15 @@
     <Property Name="Special" Type="bit" />
     <Property Name="Image" Type="nvarchar" MaxLength="1000" />
     <Property Name="SortDescription" Type="nvarchar(max)" />
+    <Property Name="Agency1SingleSupplementStandard" Type="float" />
+    <Property Name="Agency1SingleSupplementSuperior" Type="float" />
+    <Property Name="Agency1SingleSupplementDeluxe" Type="float" />
+    <Property Name="Agency2SingleSupplementStandard" Type="float" />
+    <Property Name="Agency2SingleSupplementSuperior" Type="float" />
+    <Property Name="Agency2SingleSupplementDeluxe" Type="float" />
+    <Property Name="GuestSingleSupplementStandard" Type="float" />
+    <Property Name="GuestSingleSupplementSuperior" Type="float" />
+    <Property Name="GuestSingleSupplementDeluxe" Type="float" />
   </EntityType>
   <EntityType Name="SelectTourBooked">
     <Key>

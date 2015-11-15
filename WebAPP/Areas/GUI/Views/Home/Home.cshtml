@@ -49,18 +49,18 @@
                                     @if (Model.User != null
 && (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
                                     {
-                                        @item.AgencyPrice1
+                                        @item.AgencyStandard2
                                     }
                                     else
                                     {
                                         if (Model.User != null
                                          && Model.User.Roles.Contains(SecurityRoles.Agency2.ToString()))
                                         {
-                                            @item.AgencyPrice2
+                                            @item.Agency2Standard2
                                         }
                                         else
                                         {
-                                            @item.GuestPrice
+                                            @item.GuestStandard2
                                         }
                                     }
                                 </span>
@@ -129,7 +129,7 @@
                             </li>
                         </ul>
 
-                        <a class="button pull-right" href="/SelectTour/DetailSelectTour/@item.SelectTourId">View Detail</a>
+                        <a class="button pull-right" href="/SelectTour/SelectTour/@item.SelectTourId">View Detail</a>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@
                     <th>Class</th>
                     <th>People</th>
                     <th>Price ($)</th>
-                    <th>Single Supplement</th>
+                    @*<th>Single Supplement</th>*@
                 </tr>
             </thead>
             <tbody>
@@ -39,14 +39,14 @@
                         <td>
                             @item.Price
                         </td>
-                        @if (item.SingleSupplement == "True")
+                        @*@if (item.SingleSupplement == "True")
                         {
                             <td>Yes</td>
                         }
                         else
                         {
                             <td>No</td>
-                        }
+                        }*@
                     </tr>
                 }
             </tbody>

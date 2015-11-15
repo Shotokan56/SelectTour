@@ -80,7 +80,7 @@
                             <a href="/Home/PackageTourEnquiry" title="Package Tour">Package Tour Enquiry</a>
                         </li>*@
                     <li id="SelectTour">
-                        <a href="/SelectTour/SelectTour" title="Select Tour">Select Tour</a>
+                        <a href="/SelectTour/SelectTour/0" title="Select Tour">Select Tour</a>
                     </li>
                     <li id="CustomizedTour">
                         <a href="/Customized/CustomizedTour" title="Customized Tour">Customized Tour</a>
@@ -108,7 +108,6 @@
             <div class="col-sm-3">
 
                 <div class="col-sm-12 destinations-item right-block" style="padding: 0px;">
-                    @*<figure class="destinations-img" style="outline: 1px solid #D63C00;"><a href="#" title=""><img src="~/Content/GUI/images/tripadvisor_banner.jpg" alt=""></a></figure>*@
                     <div id="TA_cdsdmo299" class="TA_cdsdmo">
                         <ul id="PNZgTn5YJR" class="TA_links AxpFT3llp">
                             <li id="Ph0JTl7OwMT" class="wM99AEpWa8j">
@@ -132,7 +131,6 @@
                     </div>
                 </div>
 
-
                 <div class="col-sm-12 right-block" style=" padding: 0px;">
                     <div class="col-sm-12 text-center" style="border-bottom: 1px solid #DAD7D7; margin-bottom: 5px; padding: 3px;">Follow us on</div>
 
@@ -144,7 +142,17 @@
                 </div>
             </div>
 
-
+            <!-- Start of LiveChat (www.livechatinc.com) code -->
+            <script type="text/javascript">
+                var __lc = {};
+                __lc.license = 6758271;
+                (function () {
+                    var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+                    lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+                })();
+            </script>
+            <!-- End of LiveChat code -->
         </body>
     </section>
     <footer>
@@ -229,9 +237,9 @@
                 $("#login .modal-body").html(data);
                 if (data === "") {
                     $("#login").modal("hide");
+                    window.location.href = "/Home/Home";
                 }
                 //CheckUser();
-                window.location.href = "/Home/Home";
             }
         });
     });

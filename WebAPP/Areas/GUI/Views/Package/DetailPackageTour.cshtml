@@ -57,7 +57,7 @@
                     <p class="col-md-8">@Model.ActivityLevel</p>
                 </div>
 
-                <div class="row">
+                @*<div class="row">
                     <p class="col-md-4">
                         <b>Price from:</b>
                     </p>
@@ -81,12 +81,103 @@
                             }
                         }
                     </p>
-                </div>
+                </div>*@
 
                 <a class="button pull-right" href="/Package/Enquire/@Model.TourId">Enquire now</a>
             </div>
         </div>
 
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="">Hotel</th>
+                        <th>2 people</th>
+                        <th>3 -> 5 pepple</th>
+                        <th>6 -> 9 pepple</th>
+                        <th>Single Supplement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.User != null
+             && (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
+                    {
+                        <tr>
+                            <td>Standard</td>
+                            <td>@Model.AgencyStandard2</td>
+                            <td>@Model.AgencyStandard35</td>
+                            <td>@Model.AgencyStandard69</td>
+                            <td>@Model.Agency1SingleSupplementStandard</td>
+                        </tr>
+                        <tr>
+                            <td>Superior</td>
+                            <td>@Model.AgencySuperior2</td>
+                            <td>@Model.AgencySuperior35</td>
+                            <td>@Model.AgencySuperior69</td>
+                            <td>@Model.Agency1SingleSupplementSuperior</td>
+                        </tr>
+                        <tr>
+                            <td>Deluxe</td>
+                            <td>@Model.AgencyDeluxe2</td>
+                            <td>@Model.AgencyDeluxe35</td>
+                            <td>@Model.AgencyDeluxe69</td>
+                            <td>@Model.Agency1SingleSupplementDeluxe</td>
+                        </tr>
+                    }
+                    else //Agency2
+                    {
+                        if (Model.User != null && Model.User.Roles.Contains(SecurityRoles.Agency2.ToString()))
+                        {
+                            <tr>
+                                <td>Standard</td>
+                                <td>@Model.Agency2Standard2</td>
+                                <td>@Model.Agency2Standard35</td>
+                                <td>@Model.Agency2Standard69</td>
+                                <td>@Model.Agency2SingleSupplementStandard</td>
+                            </tr>
+                            <tr>
+                                <td>Superior</td>
+                                <td>@Model.Agency2Superior2</td>
+                                <td>@Model.Agency2Superior35</td>
+                                <td>@Model.Agency2Superior69</td>
+                                <td>@Model.Agency2SingleSupplementSuperior</td>
+                            </tr>
+                            <tr>
+                                <td>Deluxe</td>
+                                <td>@Model.Agency2Deluxe2</td>
+                                <td>@Model.Agency2Deluxe35</td>
+                                <td>@Model.Agency2Deluxe69</td>
+                                <td>@Model.Agency2SingleSupplementDeluxe</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>Standard</td>
+                                <td>@Model.GuestStandard2</td>
+                                <td>@Model.GuestStandard35</td>
+                                <td>@Model.GuestStandard69</td>
+                                <td>@Model.GuestSingleSupplementStandard</td>
+                            </tr>
+                            <tr>
+                                <td>Superior</td>
+                                <td>@Model.GuestSuperior2</td>
+                                <td>@Model.GuestSuperior35</td>
+                                <td>@Model.GuestSuperior69</td>
+                                <td>@Model.GuestSingleSupplementSuperior</td>
+                            </tr>
+                            <tr>
+                                <td>Deluxe</td>
+                                <td>@Model.GuestDeluxe2</td>
+                                <td>@Model.GuestDeluxe35</td>
+                                <td>@Model.GuestDeluxe69</td>
+                                <td>@Model.GuestSingleSupplementDeluxe</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
         <div class="row" style="padding: 5px 10px 5px 15px !important">
             @Html.Raw(Model.Detail)
         </div>

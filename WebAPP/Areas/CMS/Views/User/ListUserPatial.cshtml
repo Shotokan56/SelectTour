@@ -36,9 +36,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
-            <td>
-                @item.Lock.ToString()
-            </td>
+            @if (item.Lock != null && item.Lock == true)
+            {
+                <td>
+                    Yes
+                </td>
+            }
+            else
+            {
+                <td>
+                    No
+                </td>
+            }
             <td>
                 @if (item.Remove == true)
                 {

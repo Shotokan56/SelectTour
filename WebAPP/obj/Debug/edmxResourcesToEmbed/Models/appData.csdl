@@ -85,12 +85,45 @@
     <Property Name="Date" Type="DateTime" Precision="3" />
     <Property Name="SortDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="GuestPrice" Type="Double" />
-    <Property Name="AgencyPrice2" Type="Double" />
-    <Property Name="AgencyPrice1" Type="Double" />
     <Property Name="Remove" Type="Boolean" />
     <Property Name="Special" Type="Boolean" />
     <Property Name="Image" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="AgencyStandard2" Type="Double" />
+    <Property Name="AgencyStandard35" Type="Double" />
+    <Property Name="AgencyStandard69" Type="Double" />
+    <Property Name="AgencySuperior2" Type="Double" />
+    <Property Name="AgencySuperior35" Type="Double" />
+    <Property Name="AgencySuperior69" Type="Double" />
+    <Property Name="AgencyDeluxe2" Type="Double" />
+    <Property Name="AgencyDeluxe35" Type="Double" />
+    <Property Name="AgencyDeluxe69" Type="Double" />
+    <Property Name="Agency2Standard2" Type="Double" />
+    <Property Name="Agency2Standard35" Type="Double" />
+    <Property Name="Agency2Standard69" Type="Double" />
+    <Property Name="Agency2Superior2" Type="Double" />
+    <Property Name="Agency2Superior35" Type="Double" />
+    <Property Name="Agency2Superior69" Type="Double" />
+    <Property Name="Agency2Deluxe2" Type="Double" />
+    <Property Name="Agency2Deluxe35" Type="Double" />
+    <Property Name="Agency2Deluxe69" Type="Double" />
+    <Property Name="GuestStandard2" Type="Double" />
+    <Property Name="GuestStandard35" Type="Double" />
+    <Property Name="GuestStandard69" Type="Double" />
+    <Property Name="GuestSuperior2" Type="Double" />
+    <Property Name="GuestSuperior35" Type="Double" />
+    <Property Name="GuestSuperior69" Type="Double" />
+    <Property Name="GuestDeluxe2" Type="Double" />
+    <Property Name="GuestDeluxe35" Type="Double" />
+    <Property Name="GuestDeluxe69" Type="Double" />
+    <Property Name="Agency1SingleSupplementStandard" Type="Double" />
+    <Property Name="Agency1SingleSupplementSuperior" Type="Double" />
+    <Property Name="Agency1SingleSupplementDeluxe" Type="Double" />
+    <Property Name="Agency2SingleSupplementStandard" Type="Double" />
+    <Property Name="Agency2SingleSupplementSuperior" Type="Double" />
+    <Property Name="Agency2SingleSupplementDeluxe" Type="Double" />
+    <Property Name="GuestSingleSupplementStandard" Type="Double" />
+    <Property Name="GuestSingleSupplementSuperior" Type="Double" />
+    <Property Name="GuestSingleSupplementDeluxe" Type="Double" />
   </EntityType>
   <EntityType Name="SelectTour">
     <Key>
@@ -133,6 +166,15 @@
     <Property Name="GuestDeluxe69" Type="Double" />
     <Property Name="Image" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="SortDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Agency1SingleSupplementStandard" Type="Double" />
+    <Property Name="Agency1SingleSupplementSuperior" Type="Double" />
+    <Property Name="Agency1SingleSupplementDeluxe" Type="Double" />
+    <Property Name="Agency2SingleSupplementStandard" Type="Double" />
+    <Property Name="Agency2SingleSupplementSuperior" Type="Double" />
+    <Property Name="Agency2SingleSupplementDeluxe" Type="Double" />
+    <Property Name="GuestSingleSupplementStandard" Type="Double" />
+    <Property Name="GuestSingleSupplementSuperior" Type="Double" />
+    <Property Name="GuestSingleSupplementDeluxe" Type="Double" />
   </EntityType>
   <EntityType Name="User">
     <Key>

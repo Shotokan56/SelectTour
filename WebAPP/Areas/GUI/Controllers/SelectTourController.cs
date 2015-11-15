@@ -14,12 +14,13 @@ namespace WebAPP.Areas.GUI.Controllers
     public class SelectTourController : Controller
     {
         private WebAPPEntities db = new WebAPPEntities();
-        public ActionResult SelectTour()
+        public ActionResult SelectTour(int id)
         {
             var data = new SelectTourViewModel()
             {
                 ListSelectTour = db.SelectTours.Where(o => o.Remove == null || o.Remove == false).ToList(),
-                User = (UserViewModel)Session["User"]
+                User = (UserViewModel)Session["User"],
+                SelectedTour = id
             };
 
             ViewBag.Nationality = db.ReferenceValues.Where(o=>o.ReferenceId == ReferenceId.Nationality).Select(x =>

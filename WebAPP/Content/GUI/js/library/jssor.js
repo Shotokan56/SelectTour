@@ -1666,7 +1666,7 @@ var $Jssor$ = window.$Jssor$ = new function () {
 
     _This.$SetStyleClip = function (elmt, clip) {
         if (clip) {
-            elmt.style.clip = "rect(" + Math.round(clip.$Top) + "px " + Math.round(clip.$Right) + "px " + Math.round(clip.$Bottom) + "px " + Math.round(clip.$Left) + "px)";
+            //elmt.style.clip = "rect(" + Math.round(clip.$Top) + "px " + Math.round(clip.$Right) + "px " + Math.round(clip.$Bottom) + "px " + Math.round(clip.$Left) + "px)";
         }
         else {
             var cssText = elmt.style.cssText;

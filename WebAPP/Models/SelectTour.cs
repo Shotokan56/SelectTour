@@ -51,5 +51,14 @@ namespace WebAPP.Models
         public Nullable<double> GuestDeluxe69 { get; set; }
         public string Image { get; set; }
         public string SortDescription { get; set; }
+        public Nullable<double> Agency1SingleSupplementStandard { get; set; }
+        public Nullable<double> Agency1SingleSupplementSuperior { get; set; }
+        public Nullable<double> Agency1SingleSupplementDeluxe { get; set; }
+        public Nullable<double> Agency2SingleSupplementStandard { get; set; }
+        public Nullable<double> Agency2SingleSupplementSuperior { get; set; }
+        public Nullable<double> Agency2SingleSupplementDeluxe { get; set; }
+        public Nullable<double> GuestSingleSupplementStandard { get; set; }
+        public Nullable<double> GuestSingleSupplementSuperior { get; set; }
+        public Nullable<double> GuestSingleSupplementDeluxe { get; set; }
     }
 }

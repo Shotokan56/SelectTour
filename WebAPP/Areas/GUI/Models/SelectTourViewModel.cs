@@ -8,5 +8,6 @@ namespace WebAPP.Areas.GUI.Models
     {
         public List<SelectTour> ListSelectTour { get; set; }
         public UserViewModel User { get; set; }
-    }
+        public int SelectedTour  { get; set; }
+}
 }
