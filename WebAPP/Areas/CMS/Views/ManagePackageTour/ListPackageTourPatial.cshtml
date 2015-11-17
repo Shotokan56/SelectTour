@@ -15,6 +15,9 @@
         <th>
             Special
         </th>
+        <th>
+            Sort
+        </th>
         <th>Action</th>
     </tr>
 
@@ -42,6 +45,9 @@
                     No
                 </td>
             }
+            <td>
+                @Html.DisplayFor(modelItem => item.Sort)
+            </td>
             <td>
                 @if (item.Remove == true)
                 {

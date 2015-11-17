@@ -26,7 +26,8 @@ namespace WebAPP.Areas.CMS.Controllers
         {
             var objView = new SelectTourViewModel()
             {
-                LstTourStyle = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.TourStyle).ToList()
+                LstTourStyle = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.TourStyle).ToList(),
+                LstAreas = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.Areas).ToList()
             };
             return View(objView);
         }
@@ -53,7 +54,7 @@ namespace WebAPP.Areas.CMS.Controllers
             var viewModel = new SelectTourListViewModel()
             {
                 LstSelectTour = data.OrderByDescending(o => o.Special)
-                                .ThenByDescending(o => o.SelectTourId)
+                                .ThenByDescending(o => o.Sort)
                                 .Skip((currentPage - 1) * itemPerPage)
                                 .Take(itemPerPage).ToList(),
                 TotalPage = (int)total
@@ -121,7 +122,10 @@ namespace WebAPP.Areas.CMS.Controllers
                     GuestSingleSupplementSuperior = objSelectTour.GuestSingleSupplementSuperior,
                     GuestSingleSupplementDeluxe = objSelectTour.GuestSingleSupplementDeluxe,
                     Image = objSelectTour.Image,
+                    Areas = objSelectTour.Areas,
+                    Sort = objSelectTour.Sort,
                     LstTourStyle = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.TourStyle).ToList(),
+                    LstAreas = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.Areas).ToList(),
                 };
                 return View("CreateNew", objSelectTourViewModel);
 

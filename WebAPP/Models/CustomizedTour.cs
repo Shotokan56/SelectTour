@@ -36,5 +36,6 @@ namespace WebAPP.Models
         public string Payment { get; set; }
         public string WhereHear { get; set; }
         public Nullable<bool> Remove { get; set; }
+        public Nullable<int> Sort { get; set; }
     }
 }

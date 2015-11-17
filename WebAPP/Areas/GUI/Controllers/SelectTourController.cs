@@ -18,7 +18,7 @@ namespace WebAPP.Areas.GUI.Controllers
         {
             var data = new SelectTourViewModel()
             {
-                ListSelectTour = db.SelectTours.Where(o => o.Remove == null || o.Remove == false).ToList(),
+                ListSelectTour = db.SelectTours.Where(o => o.Remove == null || o.Remove == false).OrderBy(o=>o.Areas).ThenBy(o=>o.Sort).ToList(),
                 User = (UserViewModel)Session["User"],
                 SelectedTour = id
             };

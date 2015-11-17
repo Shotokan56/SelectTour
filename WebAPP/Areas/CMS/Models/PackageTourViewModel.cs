@@ -9,7 +9,7 @@ namespace WebAPP.Areas.CMS.Models
     public class PackageTourViewModel : PackageTour
     {
         public List<ReferenceValue> LstTourStyle { get; set; }
-
+        public List<ReferenceValue> lstArears { get; set; }
         public string Message { get; set; }
 
     }

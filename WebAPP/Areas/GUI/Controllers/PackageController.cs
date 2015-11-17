@@ -25,7 +25,7 @@ namespace WebAPP.Areas.GUI.Controllers
 
             var viewModel = new PackageTourViewModel()
             {
-                LstPackageTour = data.OrderByDescending(o => o.TourId)
+                LstPackageTour = data.OrderBy(o => o.Sort)
                                .Skip((currentPage - 1) * itemPerPage)
                                .Take(itemPerPage).ToList(),
                 User = (UserViewModel)Session["User"],

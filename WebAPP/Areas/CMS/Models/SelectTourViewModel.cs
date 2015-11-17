@@ -7,6 +7,8 @@ namespace WebAPP.Areas.CMS.Models
     {
         public List<ReferenceValue> LstTourStyle { get; set; }
 
+        public List<ReferenceValue> LstAreas { get; set; }
+
         public string Message { get; set; }
 
     }

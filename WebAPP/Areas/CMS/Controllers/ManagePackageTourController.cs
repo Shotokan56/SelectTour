@@ -25,7 +25,8 @@ namespace WebAPP.Areas.CMS.Controllers
         {
             var objView = new PackageTourViewModel()
             {
-                LstTourStyle = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.TourStyle).ToList()
+                LstTourStyle = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.TourStyle).ToList(),
+                lstArears = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.Areas).ToList()
             };
             return View(objView);
         }
@@ -85,7 +86,11 @@ namespace WebAPP.Areas.CMS.Controllers
                     GuestSingleSupplementDeluxe = objPackageTour.GuestSingleSupplementDeluxe,
                     Special = objPackageTour.Special,
                     Image = objPackageTour.Image,
+                    Areas = objPackageTour.Areas,
+                    Sort = objPackageTour.Sort,
                     LstTourStyle = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.TourStyle).ToList(),
+                    lstArears = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.Areas).ToList(),
+
                 };
                 return View("Addnewtour", objPackageTourViewModel);
 
@@ -179,12 +184,7 @@ namespace WebAPP.Areas.CMS.Controllers
                  || o.Duration.Contains(search)
                  || o.TourRoute.Contains(search)
                  || o.ActivityLevel.Contains(search)
-                 //|| (o.Date != null && o.Date.Value.ToShortDateString().Contains(search))
                  || o.SortDescription.Contains(search)
-                 //|| o.Detail.Contains(search)
-                 //|| (o.GuestPrice != null && o.GuestPrice.ToString().Contains(search))
-                 //|| (o.AgencyPrice2 != null && o.AgencyPrice2.ToString().Contains(search))
-                 //|| (o.AgencyPrice1 != null && o.AgencyPrice1.ToString().Contains(search))
                  )).ToList();
 
             var total = Math.Round((double)(data.Count()) / itemPerPage, 0) + 1;
@@ -192,7 +192,7 @@ namespace WebAPP.Areas.CMS.Controllers
             var viewModel = new PackageTourListViewModel()
             {
                 LstPackageTour = data.OrderByDescending(o => o.Special)
-                                .ThenByDescending(o => o.TourId)
+                                .ThenByDescending(o => o.Sort)
                                 .Skip((currentPage - 1) * itemPerPage)
                                 .Take(itemPerPage).ToList(),
                 TotalPage = (int)total

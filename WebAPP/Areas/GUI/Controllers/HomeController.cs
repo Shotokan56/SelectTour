@@ -22,9 +22,9 @@ namespace WebAPP.Areas.GUI.Controllers
             var model = new HomeViewModel
             {
                 LstPackageTour =
-                    db.PackageTours.Where(o => o.Special == true).OrderByDescending(o => o.TourId).Take(3).ToList(),
+                    db.PackageTours.Where(o => o.Special == true).OrderByDescending(o => o.Sort).Take(3).ToList(),
                 LstSelectTour =
-                    db.SelectTours.Where(o => o.Special == true).OrderByDescending(o => o.SelectTourId).Take(3).ToList(),
+                    db.SelectTours.Where(o => o.Special == true).OrderByDescending(o => o.Sort).Take(3).ToList(),
                 User = (UserViewModel)Session["User"]
             };
             return View(model);

@@ -60,5 +60,7 @@ namespace WebAPP.Models
         public Nullable<double> GuestSingleSupplementStandard { get; set; }
         public Nullable<double> GuestSingleSupplementSuperior { get; set; }
         public Nullable<double> GuestSingleSupplementDeluxe { get; set; }
+        public Nullable<int> Sort { get; set; }
+        public Nullable<int> Areas { get; set; }
     }
 }

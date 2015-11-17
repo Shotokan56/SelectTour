@@ -71,6 +71,7 @@
           <Property Name="Payment" Type="nvarchar" MaxLength="250" />
           <Property Name="WhereHear" Type="nvarchar" MaxLength="250" />
           <Property Name="Remove" Type="bit" />
+          <Property Name="Sort" Type="int" />
         </EntityType>
         <EntityType Name="Label">
           <Key>
@@ -142,6 +143,8 @@
           <Property Name="GuestSingleSupplementStandard" Type="float" />
           <Property Name="GuestSingleSupplementSuperior" Type="float" />
           <Property Name="GuestSingleSupplementDeluxe" Type="float" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Areas" Type="int" />
         </EntityType>
         <EntityType Name="Page">
           <Key>
@@ -215,6 +218,8 @@
           <Property Name="GuestSingleSupplementStandard" Type="float" />
           <Property Name="GuestSingleSupplementSuperior" Type="float" />
           <Property Name="GuestSingleSupplementDeluxe" Type="float" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Areas" Type="int" />
         </EntityType>
         <EntityType Name="SelectTourBooked">
           <Key>
@@ -407,6 +412,8 @@
           <Property Name="GuestSingleSupplementStandard" Type="Double" />
           <Property Name="GuestSingleSupplementSuperior" Type="Double" />
           <Property Name="GuestSingleSupplementDeluxe" Type="Double" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Areas" Type="Int32" />
         </EntityType>
         <EntityType Name="SelectTour">
           <Key>
@@ -458,6 +465,8 @@
           <Property Name="GuestSingleSupplementStandard" Type="Double" />
           <Property Name="GuestSingleSupplementSuperior" Type="Double" />
           <Property Name="GuestSingleSupplementDeluxe" Type="Double" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Areas" Type="Int32" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -543,6 +552,7 @@
           <Property Name="Payment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="WhereHear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Remove" Type="Boolean" />
+          <Property Name="Sort" Type="Int32" />
         </EntityType>
         <EntityType Name="Contact">
           <Key>
@@ -623,6 +633,8 @@
           <EntitySetMapping Name="PackageTours">
             <EntityTypeMapping TypeName="WebAPPModel.PackageTour">
               <MappingFragment StoreEntitySet="PackageTour">
+                <ScalarProperty Name="Areas" ColumnName="Areas" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
                 <ScalarProperty Name="GuestSingleSupplementDeluxe" ColumnName="GuestSingleSupplementDeluxe" />
                 <ScalarProperty Name="GuestSingleSupplementSuperior" ColumnName="GuestSingleSupplementSuperior" />
                 <ScalarProperty Name="GuestSingleSupplementStandard" ColumnName="GuestSingleSupplementStandard" />
@@ -677,6 +689,8 @@
           <EntitySetMapping Name="SelectTours">
             <EntityTypeMapping TypeName="WebAPPModel.SelectTour">
               <MappingFragment StoreEntitySet="SelectTour">
+                <ScalarProperty Name="Areas" ColumnName="Areas" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
                 <ScalarProperty Name="GuestSingleSupplementDeluxe" ColumnName="GuestSingleSupplementDeluxe" />
                 <ScalarProperty Name="GuestSingleSupplementSuperior" ColumnName="GuestSingleSupplementSuperior" />
                 <ScalarProperty Name="GuestSingleSupplementStandard" ColumnName="GuestSingleSupplementStandard" />
@@ -790,6 +804,7 @@
           <EntitySetMapping Name="CustomizedTours">
             <EntityTypeMapping TypeName="WebAPPModel.CustomizedTour">
               <MappingFragment StoreEntitySet="CustomizedTour">
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
                 <ScalarProperty Name="Remove" ColumnName="Remove" />
                 <ScalarProperty Name="WhereHear" ColumnName="WhereHear" />
                 <ScalarProperty Name="Payment" ColumnName="Payment" />
