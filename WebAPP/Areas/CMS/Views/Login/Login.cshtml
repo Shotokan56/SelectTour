@@ -4,7 +4,7 @@
     @model WebAPP.Areas.CMS.Models.UserViewModel
     @{
         var ui = new UI();
-        var lstLabel = ui.GetLabelForPage(Model.LanguaeId, (int)Pages.Login);
+        //var lstLabel = ui.GetLabelForPage(Model.LanguaeId, (int)Pages.Login);
 
     }
     <meta charset="utf-8">
@@ -27,13 +27,13 @@
             @using (Html.BeginForm("Verify", "Login", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form login-form" }))
             {
                 <legend>
-                    @lstLabel.First(o => o.LabelKey == LabelResources.SignInTo).LabelName
-                    <span class="blue">@lstLabel.First(o => o.LabelKey == LabelResources.AppName).LabelName</span>
+                    Sign In To
+                    <span class="blue">Custom VietNam Travel</span>
                 </legend>
                 <div class="body">
-                    <label>@lstLabel.First(o => o.LabelKey == LabelResources.UserName).LabelName</label>
+                    <label>Username</label>
                     @Html.TextBoxFor(m => m.UserName, new { @Style = "height: 30px;" })
-                    <label>@lstLabel.First(o => o.LabelKey == LabelResources.PassWord).LabelName</label>
+                    <label>Password</label>
                     @Html.PasswordFor(m => m.PassWord, new { @Style = "height: 30px;" })
                 </div>
 
@@ -41,9 +41,9 @@
                 <div class="footer">
                     <label class="checkbox inline">
                         @*<input type="checkbox" id="inlineCheckbox1" value="option1"> Remember me*@
-                        @Html.CheckBoxFor(m => m.RememberMe, new { })@lstLabel.First(o => o.LabelKey == LabelResources.Remember).LabelName
+                        @Html.CheckBoxFor(m => m.RememberMe, new {})Remember
                     </label>
-                    <button type="submit" class="btn btn-success">@lstLabel.First(o => o.LabelKey == LabelResources.LoginText).LabelName</button>
+                    <button type="submit" class="btn btn-success">Login</button>
                 </div>
             }
         </div>

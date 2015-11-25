@@ -10,6 +10,7 @@ using WebAPP.Models;
 
 namespace WebAPP.Areas.CMS.Controllers
 {
+    [SessionExpire]
     public class ImageSlideController : Controller
     {
         private WebAPPEntities db = new WebAPPEntities();

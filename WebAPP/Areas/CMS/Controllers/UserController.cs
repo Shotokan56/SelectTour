@@ -12,6 +12,7 @@ using WebAPP.Models;
 
 namespace WebAPP.Areas.CMS.Controllers
 {
+    [SessionExpire]
     public class UserController : Controller
     {
         private WebAPPEntities db = new WebAPPEntities();

@@ -66,6 +66,7 @@
     <Property Name="Payment" Type="nvarchar" MaxLength="250" />
     <Property Name="WhereHear" Type="nvarchar" MaxLength="250" />
     <Property Name="Remove" Type="bit" />
+    <Property Name="Sort" Type="int" />
   </EntityType>
   <EntityType Name="Label">
     <Key>
@@ -137,6 +138,8 @@
     <Property Name="GuestSingleSupplementStandard" Type="float" />
     <Property Name="GuestSingleSupplementSuperior" Type="float" />
     <Property Name="GuestSingleSupplementDeluxe" Type="float" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Areas" Type="int" />
   </EntityType>
   <EntityType Name="Page">
     <Key>
@@ -210,6 +213,8 @@
     <Property Name="GuestSingleSupplementStandard" Type="float" />
     <Property Name="GuestSingleSupplementSuperior" Type="float" />
     <Property Name="GuestSingleSupplementDeluxe" Type="float" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Areas" Type="int" />
   </EntityType>
   <EntityType Name="SelectTourBooked">
     <Key>

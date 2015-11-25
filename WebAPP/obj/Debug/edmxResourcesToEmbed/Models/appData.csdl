@@ -124,6 +124,8 @@
     <Property Name="GuestSingleSupplementStandard" Type="Double" />
     <Property Name="GuestSingleSupplementSuperior" Type="Double" />
     <Property Name="GuestSingleSupplementDeluxe" Type="Double" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Areas" Type="Int32" />
   </EntityType>
   <EntityType Name="SelectTour">
     <Key>
@@ -175,6 +177,8 @@
     <Property Name="GuestSingleSupplementStandard" Type="Double" />
     <Property Name="GuestSingleSupplementSuperior" Type="Double" />
     <Property Name="GuestSingleSupplementDeluxe" Type="Double" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Areas" Type="Int32" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -260,6 +264,7 @@
     <Property Name="Payment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="WhereHear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="Remove" Type="Boolean" />
+    <Property Name="Sort" Type="Int32" />
   </EntityType>
   <EntityType Name="Contact">
     <Key>

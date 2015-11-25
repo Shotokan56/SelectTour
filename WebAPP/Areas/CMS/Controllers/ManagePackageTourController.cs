@@ -10,7 +10,7 @@ using WebAPP.Models;
 
 namespace WebAPP.Areas.CMS.Controllers
 {
-    //[SessionExpire]
+    [SessionExpire]
     public class ManagePackageTourController : Controller
     {
         private WebAPPEntities db = new WebAPPEntities();

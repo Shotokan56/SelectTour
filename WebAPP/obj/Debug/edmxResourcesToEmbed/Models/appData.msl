@@ -61,6 +61,8 @@
     <EntitySetMapping Name="PackageTours">
       <EntityTypeMapping TypeName="WebAPPModel.PackageTour">
         <MappingFragment StoreEntitySet="PackageTour">
+          <ScalarProperty Name="Areas" ColumnName="Areas" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
           <ScalarProperty Name="GuestSingleSupplementDeluxe" ColumnName="GuestSingleSupplementDeluxe" />
           <ScalarProperty Name="GuestSingleSupplementSuperior" ColumnName="GuestSingleSupplementSuperior" />
           <ScalarProperty Name="GuestSingleSupplementStandard" ColumnName="GuestSingleSupplementStandard" />
@@ -115,6 +117,8 @@
     <EntitySetMapping Name="SelectTours">
       <EntityTypeMapping TypeName="WebAPPModel.SelectTour">
         <MappingFragment StoreEntitySet="SelectTour">
+          <ScalarProperty Name="Areas" ColumnName="Areas" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
           <ScalarProperty Name="GuestSingleSupplementDeluxe" ColumnName="GuestSingleSupplementDeluxe" />
           <ScalarProperty Name="GuestSingleSupplementSuperior" ColumnName="GuestSingleSupplementSuperior" />
           <ScalarProperty Name="GuestSingleSupplementStandard" ColumnName="GuestSingleSupplementStandard" />
@@ -228,6 +232,7 @@
     <EntitySetMapping Name="CustomizedTours">
       <EntityTypeMapping TypeName="WebAPPModel.CustomizedTour">
         <MappingFragment StoreEntitySet="CustomizedTour">
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
           <ScalarProperty Name="Remove" ColumnName="Remove" />
           <ScalarProperty Name="WhereHear" ColumnName="WhereHear" />
           <ScalarProperty Name="Payment" ColumnName="Payment" />

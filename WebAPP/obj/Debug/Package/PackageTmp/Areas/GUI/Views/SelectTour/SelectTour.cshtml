@@ -1,116 +1,131 @@
 ﻿@using WebAPP.Common
+@using WebAPP.Models
 @model WebAPP.Areas.GUI.Models.SelectTourViewModel
 @{
     ViewBag.Title = "Select Tour";
     Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
+    var lstArea = new WebAPPEntities().ReferenceValues.Where(o => o.ReferenceId == ReferenceId.Areas).ToList();
 }
 
 <div class="layer1">
-    @foreach (var item in Model.ListSelectTour)
+    @foreach (var area in lstArea)
     {
-        <p class="heading" id="@item.SelectTourId">@item.TourName (@item.Duration)</p>
-        <div class="content">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th class="">Hotel</th>
-                    <th>2 people</th>
-                    <th>3 -> 5 pepple</th>
-                    <th>6 -> 9 pepple</th>
-                    <th>Single Supplement</th>
-                </tr>
-                </thead>
-                <tbody>
-                @if (Model.User != null
-                     && (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
-                {
-                    <tr>
-                        <td>Standard</td>
-                        <td>
-                            @Html.CheckBox("AgencyStandard2", new {@Level = "standard", @People = "2", @price = @item.AgencyStandard2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.AgencyStandard2
-                        </td>
-                        <td>@Html.CheckBox("AgencyStandard35", new {@Level = "standard", @People = "3 - 5", @price = @item.AgencyStandard35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.AgencyStandard35</td>
-                        <td>@Html.CheckBox("AgencyStandard69", new {@Level = "standard", @People = "6 - 9", @price = @item.AgencyStandard69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.AgencyStandard69</td>
-                        <td>@Html.CheckBox("Agency1SingleSupplementStandard", new { @Level = "standard", @People = "Single Supplement", @price = @item.Agency1SingleSupplementStandard, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency1SingleSupplementStandard</td>
-                    </tr>
-                    <tr>
-                        <td>Superior</td>
-                        <td>@Html.CheckBox("AgencySuperior2", new {@Level = "Superior", @People = "2", @price = @item.AgencySuperior2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.AgencySuperior2</td>
-                        <td>@Html.CheckBox("AgencySuperior35", new {@Level = "Superior", @People = "3 - 5", @price = @item.AgencySuperior35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.AgencySuperior35</td>
-                        <td>@Html.CheckBox("AgencySuperior69", new {@Level = "Superior", @People = "6 - 9", @price = @item.AgencySuperior69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.AgencySuperior69</td>
-                        <td>@Html.CheckBox("Agency1SingleSupplementSuperior", new { @Level = "Superior", @People = "Single Supplement", @price = @item.Agency1SingleSupplementSuperior, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency1SingleSupplementSuperior</td>
-                    </tr>
-                    <tr>
-                        <td>Deluxe</td>
-                        <td>@Html.CheckBox("AgencyDeluxe2", new {@Level = "Deluxe", @People = "2", @price = @item.AgencyDeluxe2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.AgencyDeluxe2</td>
-                        <td>@Html.CheckBox("AgencyDeluxe35", new {@Level = "Deluxe", @People = "3 - 5", @price = @item.AgencyDeluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.AgencyDeluxe35</td>
-                        <td>@Html.CheckBox("AgencyDeluxe69", new {@Level = "Deluxe", @People = "6 - 9", @price = @item.AgencyDeluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.AgencyDeluxe69</td>
-                        <td>@Html.CheckBox("Agency1SingleSupplementDeluxe", new { @Level = "Deluxe", @People = "Single Supplement", @price = @item.Agency1SingleSupplementDeluxe, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency1SingleSupplementDeluxe</td>
-                    </tr>
-                }
-                else //Agency2
-                {
-                    if (Model.User != null && Model.User.Roles.Contains(SecurityRoles.Agency2.ToString()))
-                    {
-                        <tr>
-                            <td>Standard</td>
-                            <td>
-                                @Html.CheckBox("Agency2Standard2", new {@Level = "standard", @People = "2", @price = @item.Agency2Standard2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.Agency2Standard2
-                            </td>
-                            <td>@Html.CheckBox("Agency2Standard35", new {@Level = "standard", @People = "3 - 5", @price = @item.Agency2Standard35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.Agency2Standard35</td>
-                            <td>@Html.CheckBox("Agency2Standard69", new {@Level = "standard", @People = "6 - 9", @price = @item.Agency2Standard69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.Agency2Standard69</td>
-                            <td>@Html.CheckBox("Agency2SingleSupplementStandard", new { @Level = "standard", @People = "Single Supplement", @price = @item.Agency2SingleSupplementStandard, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2SingleSupplementStandard</td>
-                        </tr>
-                        <tr>
-                            <td>Superior</td>
-                            <td>@Html.CheckBox("Agency2Superior2", new {@Level = "Superior", @People = "2", @price = @item.Agency2Superior2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.Agency2Superior2</td>
-                            <td>@Html.CheckBox("Agency2Superior35", new {@Level = "Superior", @People = "3 - 5", @price = @item.Agency2Superior35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.Agency2Superior35</td>
-                            <td>@Html.CheckBox("Agency2Superior69", new {@Level = "Superior", @People = "6 - 9", @price = @item.Agency2Superior69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.Agency2Superior69</td>
-                            <td>@Html.CheckBox("Agency2SingleSupplementSuperior", new { @Level = "Superior", @People = "Single Supplement", @price = @item.Agency2SingleSupplementSuperior, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2SingleSupplementSuperior</td>
-                        </tr>
-                        <tr>
-                            <td>Deluxe</td>
-                            <td>@Html.CheckBox("Agency2Deluxe2", new {@Level = "Deluxe", @People = "2", @price = @item.Agency2Deluxe2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.Agency2Deluxe2</td>
-                            <td>@Html.CheckBox("Agency2Deluxe35", new {@Level = "Deluxe", @People = "3 - 5", @price = @item.Agency2Deluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.Agency2Deluxe35</td>
-                            <td>@Html.CheckBox("Agency2Deluxe69", new {@Level = "Deluxe", @People = "6 - 9", @price = @item.Agency2Deluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.Agency2Deluxe69</td>
-                            <td>@Html.CheckBox("Agency2SingleSupplementDeluxe", new { @Level = "Deluxe", @People = "Single Supplement", @price = @item.Agency2SingleSupplementDeluxe, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2SingleSupplementDeluxe</td>
-                        </tr>
-                    }
-                    else
-                    {
-                        <tr>
-                            <td>Standard</td>
-                            <td>
-                                @Html.CheckBox("GuestStandard2", new {@Level = "Standard", @People = "2", @price = @item.GuestStandard2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.GuestStandard2
-                            </td>
-                            <td>@Html.CheckBox("GuestStandard35", new {@Level = "Standard", @People = "3 - 5", @price = @item.GuestStandard35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.GuestStandard35</td>
-                            <td>@Html.CheckBox("GuestStandard69", new {@Level = "Standard", @People = "6 - 9", @price = @item.GuestStandard69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.GuestStandard69</td>
-                            <td>@Html.CheckBox("GuestSingleSupplementStandard", new { @Level = "Standard", @People = "Single Supplement", @price = @item.GuestSingleSupplementStandard, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestSingleSupplementStandard</td>
-                        </tr>
-                        <tr>
-                            <td>Superior</td>
-                            <td>@Html.CheckBox("GuestSuperior2", new {@Level = "Superior", @People = "2", @price = @item.GuestSuperior2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.GuestSuperior2</td>
-                            <td>@Html.CheckBox("GuestSuperior35", new {@Level = "Superior", @People = "3 - 5", @price = @item.GuestSuperior35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.GuestSuperior35</td>
-                            <td>@Html.CheckBox("GuestSuperior69", new {@Level = "Superior", @People = "6 - 9", @price = @item.GuestSuperior69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.GuestSuperior69</td>
-                            <td>@Html.CheckBox("GuestSingleSupplementSuperior", new { @Level = "Superior", @People = "Single Supplement", @price = @item.GuestSingleSupplementSuperior, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestSingleSupplementSuperior</td>
-                        </tr>
-                        <tr>
-                            <td>Deluxe</td>
-                            <td>@Html.CheckBox("GuestDeluxe2", new {@Level = "Deluxe", @People = "2", @price = @item.GuestDeluxe2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.GuestDeluxe2</td>
-                            <td>@Html.CheckBox("GuestDeluxe35", new {@Level = "Deluxe", @People = "3 - 5", @price = @item.GuestDeluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.GuestDeluxe35</td>
-                            <td>@Html.CheckBox("GuestDeluxe69", new {@Level = "Deluxe", @People = "6 - 9", @price = @item.GuestDeluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId}) @item.GuestDeluxe69</td>
-                            <td>@Html.CheckBox("GuestSingleSupplementDeluxe", new { @Level = "Deluxe", @People = "Single Supplement", @price = @item.GuestSingleSupplementDeluxe, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestSingleSupplementDeluxe</td>
-                        </tr>
-                    }
-                }
-                </tbody>
-            </table>
-
-            <div style="max-height: 200px; overflow: auto;">
-                @Html.Raw(item.Detail)
-            </div>
+        <div class="caption">
+            <span>
+                @area.Name
+            </span>
         </div>
+        <article class="post" id="lstReplace">
+            @foreach (var item in Model.ListSelectTour.FindAll(o=>o.Areas == area.Id))
+            {
+                <p class="heading" id="@item.SelectTourId">
+                    <b>@item.TourName (@item.Duration)</b>
+                </p>
+                <div class="content">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="">Hotel</th>
+                                <th>2 people</th>
+                                <th>3 -> 5 pepple</th>
+                                <th>6 -> 9 pepple</th>
+                                <th>Single Supplement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.User != null
+                 && (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
+                            {
+                                <tr>
+                                    <td><b>Standard</b></td>
+                                    <td>
+                                        @Html.CheckBox("AgencyStandard2", new { @Level = "standard", @People = "2", @price = @item.AgencyStandard2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencyStandard2
+                                    </td>
+                                    <td>@Html.CheckBox("AgencyStandard35", new { @Level = "standard", @People = "3 - 5", @price = @item.AgencyStandard35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencyStandard35</td>
+                                    <td>@Html.CheckBox("AgencyStandard69", new { @Level = "standard", @People = "6 - 9", @price = @item.AgencyStandard69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencyStandard69</td>
+                                    <td>@Html.CheckBox("Agency1SingleSupplementStandard", new { @Level = "standard", @People = "Single Supplement", @price = @item.Agency1SingleSupplementStandard, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency1SingleSupplementStandard</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Superior</b></td>
+                                    <td>@Html.CheckBox("AgencySuperior2", new { @Level = "Superior", @People = "2", @price = @item.AgencySuperior2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencySuperior2</td>
+                                    <td>@Html.CheckBox("AgencySuperior35", new { @Level = "Superior", @People = "3 - 5", @price = @item.AgencySuperior35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencySuperior35</td>
+                                    <td>@Html.CheckBox("AgencySuperior69", new { @Level = "Superior", @People = "6 - 9", @price = @item.AgencySuperior69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencySuperior69</td>
+                                    <td>@Html.CheckBox("Agency1SingleSupplementSuperior", new { @Level = "Superior", @People = "Single Supplement", @price = @item.Agency1SingleSupplementSuperior, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency1SingleSupplementSuperior</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Deluxe</b></td>
+                                    <td>@Html.CheckBox("AgencyDeluxe2", new { @Level = "Deluxe", @People = "2", @price = @item.AgencyDeluxe2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencyDeluxe2</td>
+                                    <td>@Html.CheckBox("AgencyDeluxe35", new { @Level = "Deluxe", @People = "3 - 5", @price = @item.AgencyDeluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencyDeluxe35</td>
+                                    <td>@Html.CheckBox("AgencyDeluxe69", new { @Level = "Deluxe", @People = "6 - 9", @price = @item.AgencyDeluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencyDeluxe69</td>
+                                    <td>@Html.CheckBox("Agency1SingleSupplementDeluxe", new { @Level = "Deluxe", @People = "Single Supplement", @price = @item.Agency1SingleSupplementDeluxe, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency1SingleSupplementDeluxe</td>
+                                </tr>
+                            }
+                            else //Agency2
+                            {
+                                if (Model.User != null && Model.User.Roles.Contains(SecurityRoles.Agency2.ToString()))
+                                {
+                                    <tr>
+                                        <td><b>Standard</b></td>
+                                        <td>
+                                            @Html.CheckBox("Agency2Standard2", new { @Level = "standard", @People = "2", @price = @item.Agency2Standard2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Standard2
+                                        </td>
+                                        <td>@Html.CheckBox("Agency2Standard35", new { @Level = "standard", @People = "3 - 5", @price = @item.Agency2Standard35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Standard35</td>
+                                        <td>@Html.CheckBox("Agency2Standard69", new { @Level = "standard", @People = "6 - 9", @price = @item.Agency2Standard69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Standard69</td>
+                                        <td>@Html.CheckBox("Agency2SingleSupplementStandard", new { @Level = "standard", @People = "Single Supplement", @price = @item.Agency2SingleSupplementStandard, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2SingleSupplementStandard</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Superior</b></td>
+                                        <td>@Html.CheckBox("Agency2Superior2", new { @Level = "Superior", @People = "2", @price = @item.Agency2Superior2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Superior2</td>
+                                        <td>@Html.CheckBox("Agency2Superior35", new { @Level = "Superior", @People = "3 - 5", @price = @item.Agency2Superior35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Superior35</td>
+                                        <td>@Html.CheckBox("Agency2Superior69", new { @Level = "Superior", @People = "6 - 9", @price = @item.Agency2Superior69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Superior69</td>
+                                        <td>@Html.CheckBox("Agency2SingleSupplementSuperior", new { @Level = "Superior", @People = "Single Supplement", @price = @item.Agency2SingleSupplementSuperior, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2SingleSupplementSuperior</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Deluxe</b></td>
+                                        <td>@Html.CheckBox("Agency2Deluxe2", new { @Level = "Deluxe", @People = "2", @price = @item.Agency2Deluxe2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Deluxe2</td>
+                                        <td>@Html.CheckBox("Agency2Deluxe35", new { @Level = "Deluxe", @People = "3 - 5", @price = @item.Agency2Deluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Deluxe35</td>
+                                        <td>@Html.CheckBox("Agency2Deluxe69", new { @Level = "Deluxe", @People = "6 - 9", @price = @item.Agency2Deluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Deluxe69</td>
+                                        <td>@Html.CheckBox("Agency2SingleSupplementDeluxe", new { @Level = "Deluxe", @People = "Single Supplement", @price = @item.Agency2SingleSupplementDeluxe, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2SingleSupplementDeluxe</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td><b>Standard</b></td>
+                                        <td>
+                                            @Html.CheckBox("GuestStandard2", new { @Level = "Standard", @People = "2", @price = @item.GuestStandard2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestStandard2
+                                        </td>
+                                        <td>@Html.CheckBox("GuestStandard35", new { @Level = "Standard", @People = "3 - 5", @price = @item.GuestStandard35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestStandard35</td>
+                                        <td>@Html.CheckBox("GuestStandard69", new { @Level = "Standard", @People = "6 - 9", @price = @item.GuestStandard69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestStandard69</td>
+                                        <td>@Html.CheckBox("GuestSingleSupplementStandard", new { @Level = "Standard", @People = "Single Supplement", @price = @item.GuestSingleSupplementStandard, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestSingleSupplementStandard</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Superior</b></td>
+                                        <td>@Html.CheckBox("GuestSuperior2", new { @Level = "Superior", @People = "2", @price = @item.GuestSuperior2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestSuperior2</td>
+                                        <td>@Html.CheckBox("GuestSuperior35", new { @Level = "Superior", @People = "3 - 5", @price = @item.GuestSuperior35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestSuperior35</td>
+                                        <td>@Html.CheckBox("GuestSuperior69", new { @Level = "Superior", @People = "6 - 9", @price = @item.GuestSuperior69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestSuperior69</td>
+                                        <td>@Html.CheckBox("GuestSingleSupplementSuperior", new { @Level = "Superior", @People = "Single Supplement", @price = @item.GuestSingleSupplementSuperior, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestSingleSupplementSuperior</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Deluxe</b></td>
+                                        <td>@Html.CheckBox("GuestDeluxe2", new { @Level = "Deluxe", @People = "2", @price = @item.GuestDeluxe2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestDeluxe2</td>
+                                        <td>@Html.CheckBox("GuestDeluxe35", new { @Level = "Deluxe", @People = "3 - 5", @price = @item.GuestDeluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestDeluxe35</td>
+                                        <td>@Html.CheckBox("GuestDeluxe69", new { @Level = "Deluxe", @People = "6 - 9", @price = @item.GuestDeluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestDeluxe69</td>
+                                        <td>@Html.CheckBox("GuestSingleSupplementDeluxe", new { @Level = "Deluxe", @People = "Single Supplement", @price = @item.GuestSingleSupplementDeluxe, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestSingleSupplementDeluxe</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+
+                    <div style="max-height: 200px; overflow: auto;">
+                        @Html.Raw(item.Detail)
+                    </div>
+                </div>
+            }
+        </article>
     }
+   
 </div>
 
 

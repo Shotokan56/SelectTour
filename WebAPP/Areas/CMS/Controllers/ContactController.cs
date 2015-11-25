@@ -11,6 +11,7 @@ using WebAPP.Models;
 
 namespace WebAPP.Areas.CMS.Controllers
 {
+    [SessionExpire]
     public class ContactController : Controller
     {
         private WebAPPEntities db = new WebAPPEntities();

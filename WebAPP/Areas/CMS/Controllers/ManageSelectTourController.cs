@@ -13,6 +13,7 @@ using SelectTourViewModel = WebAPP.Areas.CMS.Models.SelectTourViewModel;
 
 namespace WebAPP.Areas.CMS.Controllers
 {
+    [SessionExpire]
     public class ManageSelectTourController : Controller
     {
         private WebAPPEntities db = new WebAPPEntities();

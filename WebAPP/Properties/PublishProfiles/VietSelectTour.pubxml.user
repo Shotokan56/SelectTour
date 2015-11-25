@@ -64,7 +64,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/31/2015 13:31:45</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManagePackageTour/Addnewtour.cshtml">
-      <publishTime>11/11/2015 21:14:05</publishTime>
+      <publishTime>11/17/2015 21:20:38</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManagePackageTour/AllBookedTours.cshtml">
       <publishTime>10/29/2015 20:15:34</publishTime>
@@ -79,7 +79,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/29/2015 21:46:07</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManagePackageTour/ListPackageTourPatial.cshtml">
-      <publishTime>10/31/2015 22:39:05</publishTime>
+      <publishTime>11/17/2015 21:15:21</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManagePackageTour/TrashedPackageTours.cshtml">
       <publishTime>09/24/2015 22:13:09</publishTime>
@@ -91,7 +91,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/29/2015 22:05:40</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManageSelectTour/CreateNew.cshtml">
-      <publishTime>11/11/2015 21:11:43</publishTime>
+      <publishTime>11/17/2015 21:22:54</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManageSelectTour/DetailBooked.cshtml">
       <publishTime>09/24/2015 22:26:27</publishTime>
@@ -103,7 +103,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/29/2015 22:05:18</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManageSelectTour/ListSelectTourPatial.cshtml">
-      <publishTime>10/31/2015 22:38:43</publishTime>
+      <publishTime>11/17/2015 21:17:37</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManageSelectTour/TrashedSelectTours.cshtml">
       <publishTime>09/24/2015 22:14:35</publishTime>
@@ -163,7 +163,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2015 14:13:28</publishTime>
     </File>
     <File Include="Areas/GUI/Views/Package/DetailPackageTour.cshtml">
-      <publishTime>11/11/2015 21:05:36</publishTime>
+      <publishTime>11/17/2015 18:49:49</publishTime>
     </File>
     <File Include="Areas/GUI/Views/Package/Enquire.cshtml">
       <publishTime>10/29/2015 21:41:02</publishTime>
@@ -178,13 +178,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2015 23:52:55</publishTime>
     </File>
     <File Include="Areas/GUI/Views/SelectTour/SelectTour.cshtml">
-      <publishTime>11/11/2015 22:13:24</publishTime>
+      <publishTime>11/17/2015 21:45:48</publishTime>
     </File>
     <File Include="Areas/GUI/Views/SelectTour/TotalTable.cshtml">
       <publishTime>11/11/2015 22:08:51</publishTime>
     </File>
     <File Include="Areas/GUI/Views/Shared/GuiLayOut.cshtml">
-      <publishTime>11/15/2015 22:02:23</publishTime>
+      <publishTime>11/17/2015 20:07:49</publishTime>
     </File>
     <File Include="Areas/GUI/Views/Shared/SlideBanner.cshtml">
       <publishTime>11/11/2015 22:52:45</publishTime>
@@ -313,10 +313,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/31/2015 10:44:33</publishTime>
     </File>
     <File Include="bin/WebAPP.dll">
-      <publishTime>11/15/2015 22:08:26</publishTime>
+      <publishTime>11/17/2015 21:57:39</publishTime>
     </File>
     <File Include="bin/WebAPP.pdb">
-      <publishTime>11/15/2015 22:08:26</publishTime>
+      <publishTime>11/17/2015 21:57:39</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/31/2015 10:44:34</publishTime>
@@ -1042,7 +1042,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2015 13:47:05</publishTime>
     </File>
     <File Include="Content/GUI/css/style.css">
-      <publishTime>10/12/2015 15:02:43</publishTime>
+      <publishTime>11/17/2015 20:14:56</publishTime>
     </File>
     <File Include="Content/GUI/css/StyleSheet1.css">
       <publishTime>09/17/2015 14:09:10</publishTime>

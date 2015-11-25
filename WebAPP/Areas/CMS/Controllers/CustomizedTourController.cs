@@ -5,10 +5,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebAPP.Areas.CMS.Models;
+using WebAPP.Common;
 using WebAPP.Models;
 
 namespace WebAPP.Areas.CMS.Controllers
 {
+    [SessionExpire]
     public class CustomizedTourController : Controller
     {
         private WebAPPEntities db = new WebAPPEntities();
