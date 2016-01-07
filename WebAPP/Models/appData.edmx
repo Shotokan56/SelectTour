@@ -145,6 +145,7 @@
           <Property Name="GuestSingleSupplementDeluxe" Type="float" />
           <Property Name="Sort" Type="int" />
           <Property Name="Areas" Type="int" />
+          <Property Name="TitleUrl" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Page">
           <Key>
@@ -220,6 +221,7 @@
           <Property Name="GuestSingleSupplementDeluxe" Type="float" />
           <Property Name="Sort" Type="int" />
           <Property Name="Areas" Type="int" />
+          <Property Name="TitleUrl" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="SelectTourBooked">
           <Key>
@@ -332,8 +334,8 @@
           <EntitySet Name="Users" EntityType="WebAPPModel.User" />
           <EntitySet Name="SelectTourBookeds" EntityType="WebAPPModel.SelectTourBooked" />
           <EntitySet Name="BookingEnquiries" EntityType="WebAPPModel.BookingEnquiry" />
-          <EntitySet Name="CustomizedTours" EntityType="WebAPPModel.CustomizedTour" />
           <EntitySet Name="Contacts" EntityType="WebAPPModel.Contact" />
+          <EntitySet Name="CustomizedTours" EntityType="WebAPPModel.CustomizedTour" />
         </EntityContainer>
         <EntityType Name="Reference">
           <Key>
@@ -414,6 +416,7 @@
           <Property Name="GuestSingleSupplementDeluxe" Type="Double" />
           <Property Name="Sort" Type="Int32" />
           <Property Name="Areas" Type="Int32" />
+          <Property Name="TitleUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="SelectTour">
           <Key>
@@ -467,6 +470,7 @@
           <Property Name="GuestSingleSupplementDeluxe" Type="Double" />
           <Property Name="Sort" Type="Int32" />
           <Property Name="Areas" Type="Int32" />
+          <Property Name="TitleUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -526,6 +530,19 @@
           <Property Name="PackageTourName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="TourClassName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remove" Type="Boolean" />
+        </EntityType>
         <EntityType Name="CustomizedTour">
           <Key>
             <PropertyRef Name="BookingId" />
@@ -553,19 +570,6 @@
           <Property Name="WhereHear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Remove" Type="Boolean" />
           <Property Name="Sort" Type="Int32" />
-        </EntityType>
-        <EntityType Name="Contact">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Remove" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -633,6 +637,7 @@
           <EntitySetMapping Name="PackageTours">
             <EntityTypeMapping TypeName="WebAPPModel.PackageTour">
               <MappingFragment StoreEntitySet="PackageTour">
+                <ScalarProperty Name="TitleUrl" ColumnName="TitleUrl" />
                 <ScalarProperty Name="Areas" ColumnName="Areas" />
                 <ScalarProperty Name="Sort" ColumnName="Sort" />
                 <ScalarProperty Name="GuestSingleSupplementDeluxe" ColumnName="GuestSingleSupplementDeluxe" />
@@ -689,6 +694,7 @@
           <EntitySetMapping Name="SelectTours">
             <EntityTypeMapping TypeName="WebAPPModel.SelectTour">
               <MappingFragment StoreEntitySet="SelectTour">
+                <ScalarProperty Name="TitleUrl" ColumnName="TitleUrl" />
                 <ScalarProperty Name="Areas" ColumnName="Areas" />
                 <ScalarProperty Name="Sort" ColumnName="Sort" />
                 <ScalarProperty Name="GuestSingleSupplementDeluxe" ColumnName="GuestSingleSupplementDeluxe" />
@@ -801,6 +807,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="WebAPPModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="Remove" ColumnName="Remove" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CustomizedTours">
             <EntityTypeMapping TypeName="WebAPPModel.CustomizedTour">
               <MappingFragment StoreEntitySet="CustomizedTour">
@@ -827,20 +847,6 @@
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="BookingId" ColumnName="BookingId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Contacts">
-            <EntityTypeMapping TypeName="WebAPPModel.Contact">
-              <MappingFragment StoreEntitySet="Contact">
-                <ScalarProperty Name="Remove" ColumnName="Remove" />
-                <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

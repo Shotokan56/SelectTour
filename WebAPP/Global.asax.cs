@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
+using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -19,10 +21,10 @@ namespace WebAPP
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //Database.SetInitializer<ApplicationDbContext>(null);
 
             ClientDataTypeModelValidatorProvider.ResourceClassKey = "ModelBinders";
             DefaultModelBinder.ResourceClassKey = "ModelBinders";
         }
+      
     }
 }

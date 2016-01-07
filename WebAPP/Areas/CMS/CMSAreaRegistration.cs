@@ -11,8 +11,14 @@ namespace WebAPP.Areas.CMS
             context.MapRoute(
                 "CMS_default",
                 "CMS/{controller}/{action}/{id}",
-                new { controller = "Login",action = "Index", id = UrlParameter.Optional }
+                new { controller = "Login", action = "Index", id = UrlParameter.Optional }
             );
+
+            //context.MapRoute(
+            //    "CMS_default",
+            //    "CMS/{controller}/{action}/{id}",
+            //    new { action = "Index", id = UrlParameter.Optional }
+            //);
         }
     }
 }

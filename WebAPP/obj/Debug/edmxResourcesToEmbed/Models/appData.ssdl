@@ -140,6 +140,7 @@
     <Property Name="GuestSingleSupplementDeluxe" Type="float" />
     <Property Name="Sort" Type="int" />
     <Property Name="Areas" Type="int" />
+    <Property Name="TitleUrl" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="Page">
     <Key>
@@ -215,6 +216,7 @@
     <Property Name="GuestSingleSupplementDeluxe" Type="float" />
     <Property Name="Sort" Type="int" />
     <Property Name="Areas" Type="int" />
+    <Property Name="TitleUrl" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="SelectTourBooked">
     <Key>

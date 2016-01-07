@@ -840,6 +840,8 @@
     <Content Include="Areas\CMS\Views\CustomizedTour\CustomizedPatial.cshtml" />
     <Content Include="Areas\CMS\Views\CustomizedTour\Details.cshtml" />
     <Content Include="Areas\CMS\Views\Contact\ListContactPatial.cshtml" />
+    <Content Include="Areas\GUI\Views\Home\AboutUs.cshtml" />
+    <Content Include="Areas\GUI\Views\Home\TermCondition.cshtml" />
     <None Include="Properties\PublishProfiles\VietSelectTour.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af-ZA.js" />

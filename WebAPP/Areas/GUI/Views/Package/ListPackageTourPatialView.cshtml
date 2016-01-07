@@ -1,16 +1,17 @@
 ﻿@using WebAPP.Common
 @model WebAPP.Areas.GUI.Models.PackageTourViewModel
 @Html.HiddenFor(o => o.TotalPage)
+<title>Package Tour</title>
 @foreach (var item in Model.LstPackageTour)
 {
     <div class=" row">
         <div class="postimg col-md-4 shrink img">
-            <a href="/Package/DetailPackageTour/@item.TourId"><img alt="" src="@item.Image"></a>
+            <a href="/Package-Tour/@item.TitleUrl/@item.TourId"><img alt="" src="@item.Image"></a>
 </div>
         <div class="col-md-8">
             <div class="entry-content">
                 <span class="posttitle">
-                    <a href="/Package/DetailPackageTour/@item.TourId">@item.TourName</a>
+                    <a href="/Package-Tour/@item.TitleUrl/@item.TourId">@item.TourName</a>
                 </span>
                 <ul>
                     <li>
@@ -44,7 +45,7 @@
                     </li>
                 </ul>
 
-                <a class="button pull-right" href="/Package/DetailPackageTour/@item.TourId">View Detail</a>
+                <a class="button pull-right" href="/Package-Tour/@item.TitleUrl/@item.TourId">View Detail</a>
             </div>
         </div>
     </div>

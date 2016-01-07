@@ -27,8 +27,8 @@ html {
 }
 
 body {
-    font-family: Lato,Arial,Verdana;
-    font-size: 14px;
+    font-family: Verdana, helvetica !important;
+    font-size: 12.caption spanpx;
     background-color: #f7f7f7;
 }
 
@@ -12567,7 +12567,8 @@ footer .copyright {
 }
 
     .caption span {
-        font-size: 25px;
+        font-size: 16px;
+        font-weight: bold;
         text-transform: uppercase;
     }
 
@@ -12599,7 +12600,7 @@ ul {
 .button, .button:visited, input[type="submit"], button {
     padding: 6px 13px 9px 13px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 12px;
     line-height: normal;
 }
 
@@ -12642,7 +12643,8 @@ ul {
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
-    font-size: 25px;
+    font-size: 13px;
+    font-weight: bold;
 }
 
     .posttitle a:hover {

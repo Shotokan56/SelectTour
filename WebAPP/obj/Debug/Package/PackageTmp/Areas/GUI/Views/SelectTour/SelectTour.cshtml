@@ -2,11 +2,10 @@
 @using WebAPP.Models
 @model WebAPP.Areas.GUI.Models.SelectTourViewModel
 @{
-    ViewBag.Title = "Select Tour";
     Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
     var lstArea = new WebAPPEntities().ReferenceValues.Where(o => o.ReferenceId == ReferenceId.Areas).ToList();
 }
-
+<title>Select Tour</title>
 <div class="layer1">
     @foreach (var area in lstArea)
     {
@@ -16,7 +15,7 @@
             </span>
         </div>
         <article class="post" id="lstReplace">
-            @foreach (var item in Model.ListSelectTour.FindAll(o=>o.Areas == area.Id))
+            @foreach (var item in Model.ListSelectTour.FindAll(o => o.Areas == area.Id))
             {
                 <p class="heading" id="@item.SelectTourId">
                     <b>@item.TourName (@item.Duration)</b>
@@ -34,7 +33,7 @@
                         </thead>
                         <tbody>
                             @if (Model.User != null
-                 && (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
+         && (Model.User.Roles.Contains(SecurityRoles.Admin.ToString()) || Model.User.Roles.Contains(SecurityRoles.Agency1.ToString())))
                             {
                                 <tr>
                                     <td><b>Standard</b></td>
@@ -125,7 +124,7 @@
             }
         </article>
     }
-   
+
 </div>
 
 
@@ -226,11 +225,17 @@
 
 
         $("input[type=checkbox]").change(function () {
-            //if ($(this).attr("id") != "SingleSupplement")// bỏ qua single
-            if ($(this).is(':checked'))
-                $(this).parent().siblings().find("input:not(input[id=SingleSupplement])").attr("disabled", "disabled");
-            else
-                $(this).parent().siblings().find("input:not(input[id=SingleSupplement])").removeAttr("disabled");
+            if ($(this).attr("id").indexOf("SingleSupplement") === -1)// bỏ qua single
+                if ($(this).is(':checked'))
+                {
+                    $(this).parent().siblings().find("input:not(input[id*=SingleSupplement])").attr("disabled", "disabled");
+                    $(this).parent().parent().siblings().find("td>input").attr("disabled", "disabled");
+                }
+                else
+                {
+                    $(this).parent().siblings().find("input:not(input[id*=SingleSupplement])").removeAttr("disabled");
+                    $(this).parent().parent().siblings().find("td>input").removeAttr("disabled");
+                }
 
             var selected = [];
             var tourId = "";

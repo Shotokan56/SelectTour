@@ -25,7 +25,7 @@
     jQuery(document).ready(function($) {
         LoadDataList(0, 1);
     });
-    
+
 
     function LoadDataList(oldPage, newPage) {
         var itemPerPage = 6;
@@ -35,8 +35,9 @@
             itemPerPage: itemPerPage
         }
 
+        var url = '@Url.Action("ListPackageTourPatialView", "Package")';
         $.ajax({
-            url: "ListPackageTourPatialView",
+            url: url,
             type: "POST",
             data: inputData,
             success: function (result) {

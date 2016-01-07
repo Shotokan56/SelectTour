@@ -56,7 +56,7 @@ namespace WebAPP.Areas.GUI.Controllers
         {
             ModelState.Clear();
             if (string.IsNullOrEmpty(obj.FullName))
-                ModelState.AddModelError("FullName", "FullName is required !");
+                ModelState.AddModelError("FullName", "Full name is required !");
             if (string.IsNullOrEmpty(obj.Email))
                 ModelState.AddModelError("Email", "Email is required !");
             if (string.IsNullOrEmpty(obj.Nationality))

@@ -1,10 +1,9 @@
 ﻿@using WebAPP.Common
 @model WebAPP.Areas.GUI.Models.HomeViewModel
 @{
-    ViewBag.Title = "Index";
     Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
 }
-
+<title>Home</title>
 <div class="pa">
     <h4>About Us</h4>
     <div class="">
@@ -31,12 +30,12 @@
         {
             <div class=" row">
                 <div class="postimg col-md-4 shrink img">
-                    <a href="/Package/DetailPackageTour/@item.TourId"><img alt="" src="@item.Image"></a>
+                    <a href="/Package-Tour/@item.TitleUrl/@item.TourId"><img alt="" src="@item.Image"></a>
                 </div>
                 <div class="col-md-8">
                     <div class="entry-content">
                         <span class="posttitle">
-                            <a href="/Package/DetailPackageTour/@item.TourId">@item.TourName</a>
+                            <a href="/Package-Tour/@item.TitleUrl/@item.TourId">@item.TourName</a>
                         </span>
                         <ul>
                             <li>
@@ -70,7 +69,7 @@
                             </li>
                         </ul>
 
-                        <a class="button pull-right" href="/Package/DetailPackageTour/@item.TourId">View Detail</a>
+                        <a class="button pull-right" href="/Package-Tour/@item.TitleUrl/@item.TourId">View Detail</a>
                     </div>
                 </div>
             </div>
@@ -90,12 +89,12 @@
         {
             <div class=" row">
                 <div class="postimg col-md-4 shrink img">
-                    <a href="/SelectTour/DetailSelectTour/@item.SelectTourId"><img alt="" src="@item.Image"></a>
+                    <a href="/Select-Tour/@item.TitleUrl/@item.SelectTourId"><img alt="" src="@item.Image"></a>
                 </div>
                 <div class="col-md-8">
                     <div class="entry-content">
                         <span class="posttitle">
-                            <a href="/SelectTour/DetailSelectTour/@item.SelectTourId">@item.TourName</a>
+                            <a href="/Select-Tour/@item.TitleUrl/@item.SelectTourId">@item.TourName</a>
                         </span>
                         <ul>
                             <li>
@@ -129,7 +128,7 @@
                             </li>
                         </ul>
 
-                        <a class="button pull-right" href="/SelectTour/SelectTour/@item.SelectTourId">View Detail</a>
+                        <a class="button pull-right" href="/Select-Tour/@item.TitleUrl/@item.SelectTourId">View Detail</a>
                     </div>
                 </div>
             </div>

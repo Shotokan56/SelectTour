@@ -179,5 +179,15 @@ namespace WebAPP.Areas.GUI.Controllers
 
             return ModelState.IsValid;
         }
+
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public ActionResult TermCondition()
+        {
+            return View();
+        }
     }
 }

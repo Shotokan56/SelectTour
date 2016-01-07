@@ -51,14 +51,14 @@
     <header id="header" class="header">
         <div class="container">
             <div class="logo float-left" style="z-index: 1;">
-                <a href="/Home/Home" title=""><img src="~/Content/GUI/images/logo-header.gif" alt=""></a>
+                <a href="/" title=""><img src="~/Content/GUI/images/logo-header.gif" alt=""></a>
             </div>
 
             <div class="float-right">
                 <div class="ul-ft">
                     <ul class="pull-right">
-                        <li class="pull-left"><a href="contact.html" title="">About us</a></li>
-                        <li class="pull-left"><a href="#" title="">Term & Condition</a></li>
+                        <li class="pull-left"><a href="/About-us" title="">About us</a></li>
+                        <li class="pull-left"><a href="/Terms-Conditions" title="">Term & Condition</a></li>
                         <li class="pull-left"><a href="/Home/Register" title="">Register</a></li>
                         <li class="pull-left" id="loginli"><a href="Javascript:ViewLogin()" title="">Login</a></li>
                     </ul>
@@ -71,22 +71,22 @@
             <nav class="nav-desktop nav-c" id="navigation" data-menu-type="1200">
                 <ul class="menu-list text-uppercase">
                     <li id="Home">
-                        <a href="/Home/Home" title="Home">Home</a>
+                        <a href="/" title="Home">Home</a>
                     </li>
                     <li id="PackageTour">
-                        <a href="/Package/PackageTour" title="Package Tour">Package Tour</a>
+                        <a href="/Package-Tour" title="Package Tour">Package Tour</a>
                     </li>
                     @*<li id="PackageTourEnquiry">
                             <a href="/Home/PackageTourEnquiry" title="Package Tour">Package Tour Enquiry</a>
                         </li>*@
                     <li id="SelectTour">
-                        <a href="/SelectTour/SelectTour/0" title="Select Tour">Select Tour</a>
+                        <a href="/Select-Tour" title="Select Tour">Select Tour</a>
                     </li>
                     <li id="CustomizedTour">
-                        <a href="/Customized/CustomizedTour" title="Customized Tour">Customized Tour</a>
+                        <a href="/Customized-Tour" title="Customized Tour">Customized Tour</a>
                     </li>
                     <li id="Contact">
-                        <a href="/Home/Contact" title="Contact">Contact</a>
+                        <a href="/Contact" title="Contact">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -95,8 +95,8 @@
     </header>
 
     @*------------------SLIDE -----------------------*@
-    <section class="container">
-        @{ Html.RenderAction("GetSlide", "Home"); }
+    <section id="SectionSlide" class="container">
+       @{ Html.RenderAction("GetSlide", "Home"); }
     </section>
     @*------------------END SLIDE------------------*@
 

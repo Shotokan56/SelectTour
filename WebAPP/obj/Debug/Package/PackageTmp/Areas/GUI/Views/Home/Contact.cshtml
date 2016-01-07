@@ -1,8 +1,9 @@
 ﻿@model WebAPP.Models.Contact
 @{
-    ViewBag.Title = "Contact";
     Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
 }
+
+<title>Contact</title>
 @using (Html.BeginForm("SaveContact", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 { 
 <section class="content">

@@ -1,9 +1,9 @@
 ﻿@using WebAPP.Common
 @model WebAPP.Areas.GUI.Models.PackageTourDetailViewModel
 @{
-    ViewBag.Title = "Select Tour Detail";
     Layout = "~/Areas/GUI/Views/Shared/GuiLayOut.cshtml";
 }
+<title>@Model.TourName</title>
 
 <section class="content">
     <div class="caption">
@@ -188,16 +188,19 @@
             <b style="text-decoration: underline;">Delailed Itinerary</b>
         </div>
 
-        <div class="row" style="padding: 5px 10px 5px 15px !important">
+        <div class="row" id="content" style="padding: 5px 10px 5px 15px !important">
                 @Html.Raw(Model.Detail)
             </div>
 </article>
 </section>
 
 <style>
-    p {
-        padding: 0px;
+    #content p {
+        margin: 0px;
     }
+     p {
+         padding: 0px;
+     }
 
     .row {
         padding: 0px !important;

@@ -131,6 +131,7 @@ namespace WebAPP.Areas.CMS.Controllers
         [ValidateInput(false)]
         public ActionResult CreateAndEdit(PackageTourViewModel obj)
         {
+            
             try
             {
                 Validate(obj);
@@ -138,6 +139,7 @@ namespace WebAPP.Areas.CMS.Controllers
                 {
                     Mapper.CreateMap<PackageTourViewModel, PackageTour>();
                     var objSave = Mapper.Map<PackageTour>(obj);
+                    objSave.TitleUrl = new BaseController().RewriteTitle(obj.TourName);
                     db.PackageTours.Add(objSave);
 
                     if (obj.TourId > 0)
@@ -146,6 +148,7 @@ namespace WebAPP.Areas.CMS.Controllers
                     }
 
                     db.SaveChanges();
+                    
                     return RedirectToAction("AllPackageTour");
                 }
                 obj.LstTourStyle = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.TourStyle).ToList();
@@ -154,6 +157,7 @@ namespace WebAPP.Areas.CMS.Controllers
             catch (Exception ex)
             {
                 obj.Message = ex.ToString();
+                return JavaScript("<script>alert(\"" + obj.Message + "\")</script>");
                 return View("Addnewtour", obj);
             }
         }

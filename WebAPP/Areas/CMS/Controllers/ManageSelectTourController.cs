@@ -150,6 +150,7 @@ namespace WebAPP.Areas.CMS.Controllers
                 {
                     Mapper.CreateMap<SelectTourViewModel, SelectTour>();
                     var objSave = Mapper.Map<SelectTour>(obj);
+                    objSave.TitleUrl = new BaseController().RewriteTitle(objSave.TourName);
                     db.SelectTours.Add(objSave);
 
                     if (obj.SelectTourId > 0)
