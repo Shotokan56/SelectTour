@@ -1,4 +1,5 @@
-﻿@model  WebAPP.Areas.GUI.Models.TotalTable
+﻿@using System.Web.UI.WebControls
+@model  WebAPP.Areas.GUI.Models.TotalTable
 <section class="layer1" style="margin-top: 20px;">
     <div class="caption">
         <span>
@@ -6,46 +7,67 @@
         </span>
     </div>
     <div class="">
-        <table class="table table-bordered">
+        <table class="table table-bordered notbottom">
             <thead>
-                <tr>
-                    <th>Tour Name</th>
-                    <th>Class</th>
-                    <th>People</th>
-                    <th>Price ($)</th>
-                    @*<th>Single Supplement</th>*@
-                </tr>
+            <tr>
+                <th>Tour Name</th>
+                <th>Class</th>
+                <th>People</th>
+                <th>Price ($)</th>
+                <th>Single Supplement</th>
+            </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.DataRows)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.TourName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Level)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.People)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Price)
-                        </td>
-                        @*@if (item.SingleSupplement == "True")
-                        {
-                            <td>Yes</td>
-                        }
-                        else
-                        {
-                            <td>No</td>
-                        }*@
-                    </tr>
-                }
+            @foreach (var item in Model.DataRows)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TourName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Level)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.People)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    @if (item.SingleSupplement > 0)
+                    {
+                        <td>@Html.DisplayFor(modelItem => item.SingleSupplement)</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                </tr>
+            }
+            <tr class="totalrow">
+                <td><b>TOTAL</b>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td><b>$@Model.TotalPrice</b></td>
+                <td><b>$@Model.TotalPriceSingle</b></td>
+            </tr>
             </tbody>
         </table>
     </div>
-    <div class="row" style="padding-right: 14px;">
+    @*<div class="row" style="padding-right: 14px;">
         <span class="pull-right"><b>Total</b>: $@Model.TotalPrice</span>
-    </div>
+    </div>*@
+    @Html.HiddenFor(o=>o.StrResultTable)
 </section>
+<style>
+    .totalrow > td {
+        border: 1px solid #F7F7F7 !important;
+        border-top: none; 
+    }
+
+    /*.notbottom {
+        border-bottom: none !important;
+    }*/
+</style>

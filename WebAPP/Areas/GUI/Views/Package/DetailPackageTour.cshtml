@@ -185,11 +185,11 @@
             </div>
 
 
-            <div class="row" style="padding: 5px 10px 5px 15px !important">
+            <div class="row" style="padding: 5px 0px 5px 0px !important">
                 <b style="text-decoration: underline;">Delailed Itinerary</b>
             </div>
 
-            <div class="row" id="content" style="padding: 5px 10px 5px 15px !important">
+            <div class="row" id="content" style="padding: 5px 0px 5px 0px !important">
                 @Html.Raw(Model.Detail)
             </div>
         </div>
@@ -211,5 +211,9 @@
     .nopadding * {
         padding: 0px !important;
         margin: 0px !important;
+    }
+
+    .nopadding .row {
+        
     }
 </style>

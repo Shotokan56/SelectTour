@@ -30,11 +30,11 @@ namespace WebAPP.Areas.GUI.Controllers
             return View(model);
         }
 
-        public ActionResult PackageTour()
-        {
-            ViewBag.Page = "PackageTour";
-            return View();
-        }
+        //public ActionResult PackageTour()
+        //{
+        //    ViewBag.Page = "PackageTour";
+        //    return View();
+        //}
 
        public ActionResult Contact()
         {

@@ -13,7 +13,7 @@ namespace WebAPP.Areas.GUI.Models
         public string TourId { get; set; }
         public string TourName { get; set;}
         public double Price { get; set; }
-        //public string SingleSupplement { get; set; }
+        public double SingleSupplement { get; set; }
     }
 
 
@@ -21,5 +21,7 @@ namespace WebAPP.Areas.GUI.Models
     {
         public IEnumerable<TotalRow> DataRows { get; set; }
         public double TotalPrice { get; set; }
+        public double TotalPriceSingle { get; set; }
+        public string StrResultTable { get; set; }
     }
 }

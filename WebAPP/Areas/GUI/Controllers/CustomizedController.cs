@@ -26,6 +26,7 @@ namespace WebAPP.Areas.GUI.Controllers
                 ListMealsIncluded = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.MealsIncluded).ToList(),
                 ListWhereDidHear = db.ReferenceValues.Where(o => o.ReferenceId == ReferenceId.WhereDidHear).ToList()
             };
+            ViewBag.Page = "CustomizedTour";
             return View(viewModel);
         }
 

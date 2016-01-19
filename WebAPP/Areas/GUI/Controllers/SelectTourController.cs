@@ -22,7 +22,7 @@ namespace WebAPP.Areas.GUI.Controllers
                 User = (UserViewModel)Session["User"],
                 SelectedTour = id
             };
-
+            ViewBag.Page = "SelectTour";
             ViewBag.Nationality = db.ReferenceValues.Where(o=>o.ReferenceId == ReferenceId.Nationality).Select(x =>
                                   new SelectListItem()
                                   {
@@ -39,11 +39,30 @@ namespace WebAPP.Areas.GUI.Controllers
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             var table = serializer.Deserialize<List<TotalRow>>(tbString);
 
+            foreach (var row in table.FindAll(o=>o.People == "Single Supplement"))
+            {
+                if (table.Any(o => o.Level == row.Level && o.TourId == row.TourId && o.People != "Single Supplement"))
+                {
+                    table.First(o => o.Level == row.Level && o.TourId == row.TourId).SingleSupplement = row.Price;
+                }
+                else
+                {
+                    var newRow = row;
+                    newRow.People = "";
+                    newRow.SingleSupplement = newRow.Price;
+                    newRow.Price = 0;
+                }
+            }
+
+            table.RemoveAll(o => o.People == "Single Supplement");
+
             var returnObj = new TotalTable()
             {
                 DataRows = table,
-                TotalPrice = table.Sum(i => i.Price)
-            };
+                TotalPrice = table.Sum(i => i.Price),
+                TotalPriceSingle = table.Sum(u=>u.SingleSupplement),
+                StrResultTable = serializer.Serialize(table)
+        };
 
             return PartialView("TotalTable", returnObj);
         }

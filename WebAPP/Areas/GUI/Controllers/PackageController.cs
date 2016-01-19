@@ -15,6 +15,7 @@ namespace WebAPP.Areas.GUI.Controllers
         private WebAPPEntities db = new WebAPPEntities();
         public ActionResult PackageTour()
         {
+            ViewBag.Page = "PackageTour";
             return View();
         }
 

@@ -9,7 +9,7 @@
 <div class="layer1">
     @foreach (var area in lstArea)
     {
-        <div class="caption">
+        <div class="caption area">
             <span>
                 @area.Name
             </span>
@@ -54,8 +54,8 @@
                                 <tr>
                                     <td><b>Deluxe</b></td>
                                     <td>@Html.CheckBox("AgencyDeluxe2", new { @Level = "Deluxe", @People = "2", @price = @item.AgencyDeluxe2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencyDeluxe2</td>
-                                    <td>@Html.CheckBox("AgencyDeluxe35", new { @Level = "Deluxe", @People = "3 - 5", @price = @item.AgencyDeluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @*@item.AgencyDeluxe35*@</td>
-                                    <td>@Html.CheckBox("AgencyDeluxe69", new { @Level = "Deluxe", @People = "6 - 9", @price = @item.AgencyDeluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @*@item.AgencyDeluxe69*@</td>
+                                    <td>@Html.CheckBox("AgencyDeluxe35", new { @Level = "Deluxe", @People = "3 - 5", @price = @item.AgencyDeluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencyDeluxe35</td>
+                                    <td>@Html.CheckBox("AgencyDeluxe69", new { @Level = "Deluxe", @People = "6 - 9", @price = @item.AgencyDeluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.AgencyDeluxe69</td>
                                     <td>@Html.CheckBox("Agency1SingleSupplementDeluxe", new { @Level = "Deluxe", @People = "Single Supplement", @price = @item.Agency1SingleSupplementDeluxe, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency1SingleSupplementDeluxe</td>
                                 </tr>
                             }
@@ -82,8 +82,8 @@
                                     <tr>
                                         <td><b>Deluxe</b></td>
                                         <td>@Html.CheckBox("Agency2Deluxe2", new { @Level = "Deluxe", @People = "2", @price = @item.Agency2Deluxe2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Deluxe2</td>
-                                        <td>@Html.CheckBox("Agency2Deluxe35", new { @Level = "Deluxe", @People = "3 - 5", @price = @item.Agency2Deluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @*@item.Agency2Deluxe35*@</td>
-                                        <td>@Html.CheckBox("Agency2Deluxe69", new { @Level = "Deluxe", @People = "6 - 9", @price = @item.Agency2Deluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @*@item.Agency2Deluxe69*@</td>
+                                        <td>@Html.CheckBox("Agency2Deluxe35", new { @Level = "Deluxe", @People = "3 - 5", @price = @item.Agency2Deluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Deluxe35</td>
+                                        <td>@Html.CheckBox("Agency2Deluxe69", new { @Level = "Deluxe", @People = "6 - 9", @price = @item.Agency2Deluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2Deluxe69</td>
                                         <td>@Html.CheckBox("Agency2SingleSupplementDeluxe", new { @Level = "Deluxe", @People = "Single Supplement", @price = @item.Agency2SingleSupplementDeluxe, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.Agency2SingleSupplementDeluxe</td>
                                     </tr>
                                 }
@@ -108,8 +108,8 @@
                                     <tr>
                                         <td><b>Deluxe</b></td>
                                         <td>@Html.CheckBox("GuestDeluxe2", new { @Level = "Deluxe", @People = "2", @price = @item.GuestDeluxe2, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestDeluxe2</td>
-                                        <td>@Html.CheckBox("GuestDeluxe35", new { @Level = "Deluxe", @People = "3 - 5", @price = @item.GuestDeluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @*@item.GuestDeluxe35*@</td>
-                                        <td>@Html.CheckBox("GuestDeluxe69", new { @Level = "Deluxe", @People = "6 - 9", @price = @item.GuestDeluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @*@item.GuestDeluxe69*@</td>
+                                        <td>@Html.CheckBox("GuestDeluxe35", new { @Level = "Deluxe", @People = "3 - 5", @price = @item.GuestDeluxe35, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestDeluxe35</td>
+                                        <td>@Html.CheckBox("GuestDeluxe69", new { @Level = "Deluxe", @People = "6 - 9", @price = @item.GuestDeluxe69, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestDeluxe69</td>
                                         <td>@Html.CheckBox("GuestSingleSupplementDeluxe", new { @Level = "Deluxe", @People = "Single Supplement", @price = @item.GuestSingleSupplementDeluxe, @TourName = @item.TourName + " (" + @item.Duration + ")", @TourId = @item.SelectTourId }) @item.GuestSingleSupplementDeluxe</td>
                                     </tr>
                                 }
@@ -206,10 +206,16 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         jQuery(".content").hide();
-        //toggle the componenet with class msg_body
+        jQuery("article").hide();
+        //toggle the componenet with class 
         jQuery(".heading").click(function() {
             $(".content").not($(this).next(".content")).hide(500);
             jQuery(this).next(".content").slideToggle(500);
+        });
+
+        jQuery(".area").click(function() {
+            $("article").not($(this).next("article")).hide(500);
+            jQuery(this).next("article").slideToggle(500);
         });
 
 
@@ -241,8 +247,8 @@
                     People: $(this).attr('People'),
                     TourId: $(this).attr('TourId'),
                     TourName: $(this).attr('TourName'),
-                    Price: $(this).attr('Price') == "" ? "0" : $(this).attr('Price'),
-                    SingleSupplement: $(this).parent().parent().find("input[id=SingleSupplement]").is(':checked')
+                    Price: $(this).attr('Price') == "" ? "0" : $(this).attr('Price')
+                    //SingleSupplement: $(this).parent().parent().find("input[id=SingleSupplement]").is(':checked')
                 });
                 tourId += $(this).attr('TourId') + ";";
             });
@@ -285,7 +291,7 @@
                     nationality: $("#Nationality").val(),
                     address: $("#Address").val(),
                     phone: $("#Phone").val(),
-                    selected: $("#selected").val()
+                    selected: $("#StrResultTable").val()//$("#selected").val()
                 },
                 success: function(result) {
                     $("#TotalReplace").html(result);

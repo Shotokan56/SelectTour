@@ -158,7 +158,6 @@ namespace WebAPP.Areas.CMS.Controllers
             {
                 obj.Message = ex.ToString();
                 return JavaScript("<script>alert(\"" + obj.Message + "\")</script>");
-                return View("Addnewtour", obj);
             }
         }
 
