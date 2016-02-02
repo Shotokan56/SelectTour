@@ -6,7 +6,7 @@
     vertical-align: top;
     background: 0 0;
     text-decoration: none;
-    color: #333;
+    color: #4d2a00;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     text-shadow: none;
@@ -689,7 +689,7 @@ body .mce-abs-layout-item, .mce-abs-end {
 }
 
     .mce-btn:hover, .mce-btn:focus {
-        color: #333;
+        color: #4d2a00;
         background-color: #e3e3e3;
         border-color: #ccc;
     }
@@ -717,7 +717,7 @@ body .mce-abs-layout-item, .mce-abs-end {
         line-height: 20px;
         ;
         cursor: pointer;
-        color: #333;
+        color: #4d2a00;
         text-align: center;
         overflow: visible;
         -webkit-appearance: none;
@@ -798,7 +798,7 @@ body .mce-abs-layout-item, .mce-abs-end {
     width: 0;
     height: 0;
     vertical-align: top;
-    border-top: 4px solid #333;
+    border-top: 4px solid #4d2a00;
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
     content: "";
@@ -809,7 +809,7 @@ body .mce-abs-layout-item, .mce-abs-end {
 }
 
 .mce-caret.mce-up {
-    border-bottom: 4px solid #333;
+    border-bottom: 4px solid #4d2a00;
     border-top: 0;
 }
 
@@ -885,7 +885,7 @@ i.mce-i-checkbox {
 }
 
 .mce-checked i.mce-i-checkbox {
-    color: #333;
+    color: #4d2a00;
     font-size: 16px;
     line-height: 16px;
     text-indent: 0;
@@ -1095,7 +1095,7 @@ i.mce-i-checkbox {
     top: 0;
     left: -1px;
     width: 100%;
-    border: 1px solid #333;
+    border: 1px solid #4d2a00;
     background: #fff;
     height: 4px;
     z-index: 100;
@@ -1123,7 +1123,7 @@ i.mce-i-checkbox {
     ;
     ;
     cursor: pointer;
-    color: #333;
+    color: #4d2a00;
 }
 
     .mce-path-item:hover {
@@ -1245,7 +1245,7 @@ i.mce-i-checkbox {
 }
 
     .mce-menubar .mce-menubtn button {
-        color: #333;
+        color: #4d2a00;
     }
 
 .mce-menubar {
@@ -1253,11 +1253,11 @@ i.mce-i-checkbox {
 }
 
     .mce-menubar .mce-menubtn button span {
-        color: #333;
+        color: #4d2a00;
     }
 
     .mce-menubar .mce-caret {
-        border-top-color: #333;
+        border-top-color: #4d2a00;
     }
 
     .mce-menubar .mce-menubtn:hover, .mce-menubar .mce-menubtn.mce-active, .mce-menubar .mce-menubtn:focus {
@@ -1267,7 +1267,7 @@ i.mce-i-checkbox {
     }
 
 .mce-menubtn button {
-    color: #333;
+    color: #4d2a00;
 }
 
 .mce-menubtn.mce-btn-small span {
@@ -1296,7 +1296,7 @@ i.mce-i-checkbox {
     clear: both;
     font-weight: 400;
     line-height: 20px;
-    color: #333;
+    color: #4d2a00;
     white-space: nowrap;
     cursor: pointer;
     line-height: normal;
@@ -1305,7 +1305,7 @@ i.mce-i-checkbox {
 }
 
     .mce-menu-item .mce-ico, .mce-menu-item .mce-text {
-        color: #333;
+        color: #4d2a00;
     }
 
     .mce-menu-item.mce-disabled .mce-text, .mce-menu-item.mce-disabled .mce-ico {
@@ -1346,7 +1346,7 @@ i.mce-i-checkbox {
     margin-right: 6px;
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
-    border-left: 4px solid #333;
+    border-left: 4px solid #4d2a00;
 }
 
 .mce-menu-item.mce-selected .mce-caret, .mce-menu-item:focus .mce-caret, .mce-menu-item:hover .mce-caret {
@@ -1418,7 +1418,7 @@ div.mce-menu .mce-menu-item-sep, .mce-menu-item-sep:hover {
 .mce-rtl .mce-menu-item .mce-caret {
     margin-left: 6px;
     margin-right: 0;
-    border-right: 4px solid #333;
+    border-right: 4px solid #4d2a00;
     border-left: 0;
 }
 
@@ -1509,7 +1509,7 @@ div.mce-menu .mce-menu-item-sep, .mce-menu-item-sep:hover {
 }
 
 i.mce-i-resize {
-    color: #333;
+    color: #4d2a00;
 }
 
 .mce-slider {
@@ -1641,7 +1641,7 @@ i.mce-i-resize {
     padding: 0 4px 0 4px;
     white-space: pre-wrap;
     ;
-    color: #333;
+    color: #4d2a00;
 }
 
     .mce-textbox:focus, .mce-textbox.mce-focus {
@@ -1714,7 +1714,7 @@ i.mce-i-resize {
     background-size: cover;
     width: 16px;
     height: 16px;
-    color: #333;
+    color: #4d2a00;
 }
 
 .mce-btn-small .mce-ico {

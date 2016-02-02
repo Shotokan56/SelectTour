@@ -971,7 +971,7 @@ var mouse = $.widget("ui.mouse", {
 	_mouseMove: function(event) {
 		// Only check for mouseups outside the document if you've moved inside the document
 		// at least once. This prevents the firing of mouseup in the case of IE<9, which will
-		// fire a mousemove event if content is placed under the cursor. See #7778
+		// fire a mousemove event if content is placed under the cursor. See #4d2a008
 		// Support: IE <9
 		if ( this._mouseMoved ) {
 			// IE mouseup check - mouseup happened when mouse was out of window
@@ -6032,7 +6032,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 		}
 
 		// Reset helper's right/bottom css if they're set and set explicit width/height instead
-		// as this prevents resizing of elements with right/bottom set (see #7772)
+		// as this prevents resizing of elements with right/bottom set (see #4d2a002)
 		this._normalizeRightBottom();
 
 		this._mouseDrag(event, true); //Execute the drag once - this causes the helper not to be visible before getting its correct position

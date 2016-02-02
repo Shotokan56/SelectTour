@@ -8,7 +8,7 @@
 
 <section class="layer1" style="margin-top: 20px;">
     <div class="caption">
-        <h3 class="attribute" style="color: #DB531A">
+        <h3 class="attribute" style="color: #ffbf00">
             Tour Summary
         </h3>
     </div>
@@ -20,7 +20,7 @@
                     <th>Class</th>
                     <th>People</th>
                     <th>Price ($)</th>
-                    @*<th>Single Supplement</th>*@
+                    <th>Single Supplement</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,38 +28,47 @@
                 {
                     <tr>
                         <td>
-                            @item.TourName
+                            @Html.DisplayFor(modelItem => item.TourName)
                         </td>
                         <td>
-                            @item.Level
+                            @Html.DisplayFor(modelItem => item.Level)
                         </td>
                         <td>
-                            @item.People
+                            @Html.DisplayFor(modelItem => item.People)
                         </td>
                         <td>
-                            @item.Price
+                            @Html.DisplayFor(modelItem => item.Price)
                         </td>
-                        @*@if (item.SingleSupplement == "True")
+                        @if (item.SingleSupplement > 0)
                         {
-                            <td>Yes</td>
+                            <td>@Html.DisplayFor(modelItem => item.SingleSupplement)</td>
                         }
                         else
                         {
-                            <td>No</td>
-                        }*@
+                            <td></td>
+                        }
                     </tr>
                 }
+                <tr class="totalrow">
+                    <td>
+                        <b>TOTAL</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td><b>$@totalTable.TotalPrice</b></td>
+                    <td><b>$@totalTable.TotalPriceSingle</b></td>
+                </tr>
             </tbody>
         </table>
     </div>
-    <div class="row" style="padding-right: 14px;">
+    @*<div class="row" style="padding-right: 14px;">
         <span class="pull-right"><b>Total</b>: $@totalTable.TotalPrice</span>
-    </div>
+    </div>*@
 </section>
 
 <article class="post">
     <div class="caption">
-        <h3 class="attribute" style="color: #DB531A">
+        <h3 class="attribute" style="color: #ffbf00">
             Booking Information
         </h3>
     </div>
@@ -117,3 +126,9 @@
     </div>
 </article>
 
+<style>
+     .totalrow > td {
+        border: 1px solid #FFFFFF !important;
+        border-top: none; 
+    }
+</style>

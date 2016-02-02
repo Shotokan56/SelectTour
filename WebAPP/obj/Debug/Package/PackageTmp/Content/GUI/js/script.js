@@ -68,7 +68,7 @@
             })) : (t.removeClass("nav").addClass("nav-desktop").closest(".header"), i.css("background-color", "#fff").find(".logo").css({
                 opacity: "1",
                 visibility: "visible"
-            }), i.next().css("margin-top", a(".header").height()), a(".bars, .bars-close, .logo-banner").hide(), a(".navigation .sub-menu").each(function () {
+            }), i.next().css("margin-top", 0), a(".bars, .bars-close, .logo-banner").hide(), a(".navigation .sub-menu").each(function () {
                 var e = a(this).offset().left,
                     n = a(this).width(),
                     t = D - (e + n);

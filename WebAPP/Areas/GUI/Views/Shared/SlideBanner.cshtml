@@ -1,30 +1,20 @@
 ﻿@model List<WebAPP.Models.Slide>
-<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 1170px; height: 250px; overflow: hidden; border: 1px solid #eb5100">
+<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 1170px; height: 400px; overflow: hidden; border: 1px solid #ffbf00">
 
-    <!-- Loading Screen -->
-    @*<div u="loading" style="position: absolute; top: 0px; left: 0px;">
-        <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
-                background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
-        </div>
-        <div style="position: absolute; display: block; background: url(../../Content/images/loading.gif) no-repeat center center;
-                top: 0px; left: 0px;width: 100%;height:100%;">
-        </div>
-    </div>*@
-
-    <!-- Slides Container -->
-    <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;">
+ <!-- Slides Container -->
+    <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 400px; overflow: hidden;">
         @foreach (var item in Model)
         {
             <div>
                 <img u="image" src="@item.Link"/>
-                <div u=caption t="*" class="captionOrange" style="position: absolute; left: 20px; top: 30px; width: 300px; height: 30px;">
+                <div u=caption t="*" class="captionOrange" style="position: absolute; left: 20px; top: 30px; width: 400px; height: 30px;">
                     @item.Text
                 </div>
             </div>
 
             @*<div>
                 <img u="image" src="~/Upload/Slide/Slide_10092015093710143_slide2.jpg" />
-                <div u=caption t="*" class="captionOrange" style="position:absolute; left:20px; top: 30px; width:300px; height:30px;">
+                <div u=caption t="*" class="captionOrange" style="position:absolute; left:20px; top: 30px; width:400px; height:30px;">
                     mobile ready, touch swipe
                 </div>
             </div>*@
@@ -91,7 +81,7 @@
             $SlideDuration: 500, //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
             $MinDragOffsetToSlide: 20, //[Optional] Minimum drag offset to trigger slide , default value is 20
             $SlideWidth: 1200, //[Optional] Width of every slide in pixels, default value is width of 'slides' container
-            $SlideHeight: 300, //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+            $SlideHeight: 400, //[Optional] Height of every slide in pixels, default value is height of 'slides' container
             $SlideSpacing: 0, //[Optional] Space between each slide in pixels, default value is 0
             $DisplayPieces: 1, //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
             $ParkingPosition: 0, //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.

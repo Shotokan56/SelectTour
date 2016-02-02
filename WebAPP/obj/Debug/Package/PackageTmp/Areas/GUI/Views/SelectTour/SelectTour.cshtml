@@ -9,7 +9,7 @@
 <div class="layer1">
     @foreach (var area in lstArea)
     {
-        <div class="caption">
+        <div class="caption area">
             <span>
                 @area.Name
             </span>
@@ -26,8 +26,8 @@
                             <tr>
                                 <th class="">Hotel</th>
                                 <th>2 people</th>
-                                <th>3 -> 5 pepple</th>
-                                <th>6 -> 9 pepple</th>
+                                <th>3 -> 5 people</th>
+                                <th>6 -> 9 people</th>
                                 <th>Single Supplement</th>
                             </tr>
                         </thead>
@@ -204,35 +204,36 @@
 
 
 <script type="text/javascript">
-    jQuery(document).ready(function () {
+    jQuery(document).ready(function() {
         jQuery(".content").hide();
-        //toggle the componenet with class msg_body
-        jQuery(".heading").click(function () {
+        jQuery("article").hide();
+        //toggle the componenet with class 
+        jQuery(".heading").click(function() {
             $(".content").not($(this).next(".content")).hide(500);
             jQuery(this).next(".content").slideToggle(500);
         });
 
+        jQuery(".area").click(function() {
+            $("article").not($(this).next("article")).hide(500);
+            jQuery(this).next("article").slideToggle(500);
+        });
 
 
         if (@Html.Raw(Model.SelectedTour) > 0) {
             $("#@Html.Raw(Model.SelectedTour)").next(".content").slideToggle(500);
             $('html, body').animate({
-                scrollTop:  $("#@Html.Raw(Model.SelectedTour)").offset().top
+                scrollTop: $("#@Html.Raw(Model.SelectedTour)").offset().top
             }, 2000);
         }
 
 
-
-
-        $("input[type=checkbox]").change(function () {
-            if ($(this).attr("id").indexOf("SingleSupplement") === -1)// bỏ qua single
-                if ($(this).is(':checked'))
-                {
+        $("input[type=checkbox]").change(function() {
+            if ($(this).attr("id").indexOf("SingleSupplement") === -1) // bỏ qua single
+                if ($(this).is(':checked')) {
                     $(this).parent().siblings().find("input:not(input[id*=SingleSupplement])").attr("disabled", "disabled");
                     $(this).parent().parent().siblings().find("td>input").attr("disabled", "disabled");
-                }
-                else
-                {
+                    $(this).parent().parent().siblings().find("td>input").prop("checked", false);
+                } else {
                     $(this).parent().siblings().find("input:not(input[id*=SingleSupplement])").removeAttr("disabled");
                     $(this).parent().parent().siblings().find("td>input").removeAttr("disabled");
                 }
@@ -240,13 +241,13 @@
             var selected = [];
             var tourId = "";
             //$('.content input:checked:not(input[id=SingleSupplement])').each(function () {//loại bỏ single
-            $('.content input:checked').each(function () {
+            $('.content input:checked').each(function() {
                 selected.push({
                     Level: $(this).attr('Level'),
                     People: $(this).attr('People'),
                     TourId: $(this).attr('TourId'),
                     TourName: $(this).attr('TourName'),
-                    Price: $(this).attr('Price') == ""?"0": $(this).attr('Price')
+                    Price: $(this).attr('Price') == "" ? "0" : $(this).attr('Price')
                     //SingleSupplement: $(this).parent().parent().find("input[id=SingleSupplement]").is(':checked')
                 });
                 tourId += $(this).attr('TourId') + ";";
@@ -255,7 +256,7 @@
             //alert($("#selected").val());
             $("#TourId").val(tourId);
 
-            var url = '@Url.Action("GetTotalTable","SelectTour")';
+            var url = '@Url.Action("GetTotalTable", "SelectTour")';
 
             $.ajax({
                 url: url,
@@ -263,17 +264,17 @@
                 data: {
                     tbString: $("#selected").val()
                 },
-                success: function (result) {
+                success: function(result) {
                     $("#TotalReplace").html(result);
 
                 },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
                     alert(errorThrown);
                 }
             });
         });
 
-        $("#btnBook").on("click", function () {
+        $("#btnBook").on("click", function() {
             if ($("#Name").val() == "" || $("#Email").val() == "" || $("#Address").val() == "" || $("#Phone").val() == "" || $("#selected").val() == "") {
                 alert("you must complete booking information");
                 return;
@@ -290,21 +291,21 @@
                     nationality: $("#Nationality").val(),
                     address: $("#Address").val(),
                     phone: $("#Phone").val(),
-                    selected: $("#selected").val()
+                    selected: $("#StrResultTable").val()//$("#selected").val()
                 },
-                success: function (result) {
+                success: function(result) {
                     $("#TotalReplace").html(result);
                     alert("Success");
 
                 },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
                     alert(errorThrown);
                 }
             });
         });
 
 
-        $("#btPrint").on("click", function () {
+        $("#btPrint").on("click", function() {
             if ($("#TourId").val() != "") {
                 $.ajax({
                     url: "Print",
@@ -312,13 +313,13 @@
                     data: {
                         tourId: $("#TourId").val()
                     },
-                    success: function (result) {
+                    success: function(result) {
                         var printWindow = window.open('', '', 'height=400,width=800');
                         printWindow.document.write(result);
                         printWindow.document.close();
                         printWindow.print();
                     },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
                         alert(errorThrown);
                     }
                 });
@@ -326,3 +327,10 @@
         });
     });
 </script>
+
+<style>
+    .post>.content * {
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+</style>

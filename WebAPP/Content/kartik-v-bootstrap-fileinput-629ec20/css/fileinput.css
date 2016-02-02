@@ -99,7 +99,7 @@
 }
 
 .file-preview-frame:not(.file-preview-error):hover {
-    box-shadow: 3px 3px 5px 0 #333;
+    box-shadow: 3px 3px 5px 0 #4d2a00;
 }
 
 .file-preview-image {
@@ -182,7 +182,7 @@
     text-align: center;
     padding-top: 4px;
     font-size: 11px;
-    color: #777;
+    color: #4d2a00;
     margin: 5px auto 10px auto;
 }
 

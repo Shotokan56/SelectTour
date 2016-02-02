@@ -6348,7 +6348,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 
 			// Support: Android 2.3
 			// Div with explicit width and no margin-right incorrectly
-			// gets computed margin-right based on width of container (#3333)
+			// gets computed margin-right based on width of container (#4d2a003)
 			// WebKit Bug 13343 - getComputedStyle returns wrong value for margin-right
 			contents = div.appendChild( document.createElement( "div" ) );
 

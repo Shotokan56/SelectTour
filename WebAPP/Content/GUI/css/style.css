@@ -28,7 +28,7 @@ html {
 
 body {
     font-family: Verdana, helvetica !important;
-    font-size: 12.caption spanpx;
+    font-size: 12px;
     background-color: #f7f7f7;
 }
 
@@ -64,7 +64,7 @@ body {
     width: 40px;
     height: 40px;
     margin: auto;
-    border-right: 3px solid #DB531A;
+    border-right: 3px solid #ffbf00;
     border-bottom: 3px solid transparent;
     border-radius: 100%;
     -webkit-animation: spin .9s linear infinite;
@@ -333,7 +333,7 @@ body.menu-active {
     text-decoration: none;
     background-color: transparent;
     border: 1px solid #dedede;
-    color: #333;
+    color: #4d2a00;
     font-weight: 600;
     outline: 0;
     background-repeat: no-repeat;
@@ -424,7 +424,7 @@ body.menu-active {
         }
 
     .awe-btn.awe-btn-3 {
-        color: #333;
+        color: #4d2a00;
         background-color: #fff;
     }
 
@@ -438,7 +438,7 @@ body.menu-active {
             }
 
     .awe-btn.awe-btn-5 {
-        color: #333;
+        color: #4d2a00;
         font-family: Lato;
         letter-spacing: 1px;
         font-weight: 400;
@@ -488,7 +488,7 @@ body.menu-active {
 }
 
 .breadcrumb li.active, .breadcrumb li.active a {
-    color: #DB531A;
+    color: #ffbf00;
 }
 
 .tabs-head {
@@ -633,7 +633,7 @@ body.menu-active {
                     float: right;
                     line-height: 44px;
                     font-size: 14px;
-                    color: #333;
+                    color: #4d2a00;
                 }
 
                     .panel-group .panel .panel-heading .panel-title a .icon:before {
@@ -691,7 +691,7 @@ body.menu-active {
 
 .alert-box h6, .alert-box span {
     font-family: 'Open Sans';
-    color: #333;
+    color: #4d2a00;
 }
 
 .alert-box {
@@ -821,7 +821,7 @@ body.menu-active {
         }
 
         .ui-datepicker .ui-datepicker-header .ui-datepicker-title {
-            color: #333;
+            color: #4d2a00;
             font-family: 'Open sans';
             font-weight: 600;
             font-size: 18px;
@@ -853,7 +853,7 @@ body.menu-active {
                 padding: 0;
                 line-height: 35px;
                 text-align: center;
-                color: #333;
+                color: #4d2a00;
                 font-size: 14px;
                 font-weight: 300;
                 font-family: 'Open sans';
@@ -866,7 +866,7 @@ body.menu-active {
             }
 
             .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today a, .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today.ui-datepicker-current-day a {
-                background-color: #DB531A;
+                background-color: #ffbf00;
                 border-width: 0;
                 color: #fff;
             }
@@ -977,7 +977,7 @@ blockquote {
 
         .title-wrap .travel-title span.span-departure {
             font-family: 'Open sans';
-            color: #333;
+            color: #4d2a00;
             font-size: 16px;
             font-weight: 400;
             margin: 0 5px;
@@ -1046,7 +1046,7 @@ blockquote {
                 border-bottom: 1px dashed #d7d7d7;
                 display: block;
                 min-width: 115px;
-                color: #333;
+                color: #4d2a00;
             }
 
                 .sort-view .sort-by .sort-select span:after {
@@ -1070,7 +1070,7 @@ blockquote {
                 display: block;
                 line-height: 30px;
                 padding: 0 10px;
-                color: #333;
+                color: #4d2a00;
                 font-weight: 600;
                 font-size: 14px;
                 text-decoration: none;
@@ -1119,7 +1119,7 @@ blockquote {
         .search-result p ins {
             font-size: 30px;
             text-decoration: none;
-            color: #DB531A;
+            color: #ffbf00;
         }
 
         .search-result p span {
@@ -1153,7 +1153,7 @@ blockquote {
 
     .narrow-results .narrow-form .narrow-input {
         width: 100%;
-        color: #333;
+        color: #4d2a00;
         font-size: 14px;
         padding: 9px 10px 9px 0;
         background-color: #fff;
@@ -1162,15 +1162,15 @@ blockquote {
     }
 
         .narrow-results .narrow-form .narrow-input:-moz-placeholder {
-            color: #333;
+            color: #4d2a00;
         }
 
         .narrow-results .narrow-form .narrow-input:-ms-input-placeholder {
-            color: #333;
+            color: #4d2a00;
         }
 
         .narrow-results .narrow-form .narrow-input::-webkit-input-placeholder {
-            color: #333;
+            color: #4d2a00;
         }
 
     .narrow-results .narrow-form .submit-narrow {
@@ -1363,7 +1363,7 @@ blockquote {
             line-height: 35px;
             padding-left: 13px;
             padding-right: 13px;
-            color: #333;
+            color: #4d2a00;
             -webkit-transition: all .1s linear;
             -moz-transition: all .1s linear;
             -ms-transition: all .1s linear;
@@ -1510,8 +1510,8 @@ blockquote {
 }
 
 .post-share a:hover {
-    border: 1px solid #DB531A;
-    color: #DB531A;
+    border: 1px solid #ffbf00;
+    color: #ffbf00;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -1524,7 +1524,7 @@ blockquote {
 }
 
     .form-contact .form-field label {
-        color: #333;
+        color: #4d2a00;
         font-size: 14px;
         font-family: 'Open sans';
         font-weight: 400;
@@ -1655,8 +1655,8 @@ blockquote {
 }
 
     .follow-group a:hover {
-        border-color: #DB531A;
-        color: #DB531A;
+        border-color: #ffbf00;
+        color: #ffbf00;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
@@ -1840,7 +1840,7 @@ blockquote {
     }
 
         .header .logo img {
-            height: 72px;
+            height: 130px;
             margin-top: 5px;
             margin-bottom: 5px;
         }
@@ -1934,7 +1934,7 @@ blockquote {
 
     .sign-in-up a {
         text-decoration: none;
-        color: #333;
+        color: #4d2a00;
         -webkit-transition: all .3s linear;
         -moz-transition: all .3s linear;
         -ms-transition: all .3s linear;
@@ -2003,7 +2003,7 @@ blockquote {
     top: 10px;
     left: 15px;
     z-index: 1;
-    color: #DB531A;
+    color: #ffbf00;
 }
 
     .banner-video-control span {
@@ -2038,12 +2038,12 @@ blockquote {
 .form-cn {
     background-color: rgba(255,255,255,.85);
     padding: 20px 30px 30px;
-    border-top: 5px solid #DB531A;
+    border-top: 5px solid #ffbf00;
 }
 
     .form-cn h2 {
         margin: 0;
-        color: #333;
+        color: #4d2a00;
         font-size: 32px;
     }
 
@@ -2243,7 +2243,7 @@ blockquote {
             bottom: -17px;
             left: 50%;
             border: 17px solid transparent;
-            border-bottom-color: #DB531A;
+            border-bottom-color: #ffbf00;
             -webkit-transform: translate(-50%,0);
             -moz-transform: translate(-50%,0);
             -ms-transform: translate(-50%,0);
@@ -2280,7 +2280,7 @@ blockquote {
         }
 
 .category-singer {
-    border-bottom: 5px solid #DB531A;
+    border-bottom: 5px solid #ffbf00;
     padding-bottom: 40px;
     position: relative;
 }
@@ -2294,7 +2294,7 @@ blockquote {
     .category-singer:before {
         left: 80px;
         border: 17px solid transparent;
-        border-bottom-color: #DB531A;
+        border-bottom-color: #ffbf00;
     }
 
     .category-singer .cate-singer-icon {
@@ -2486,7 +2486,7 @@ blockquote {
             }
 
                 .sales-item .home-sales-text .home-sales-name-places .home-sales-name a:hover {
-                    color: #DB531A;
+                    color: #ffbf00;
                 }
 
             .sales-item .home-sales-text .home-sales-name-places .home-sales-places {
@@ -2619,11 +2619,11 @@ blockquote {
         }
 
             .destinations-item .destinations-text .destinations-name a:hover {
-                color: #DB531A;
+                color: #ffbf00;
             }
 
         .destinations-item .destinations-text .properties-nb {
-            color: #777;
+            color: #4d2a00;
             font-size: 14px;
             line-height: 25px;
         }
@@ -2715,7 +2715,7 @@ blockquote {
     .magazine-item .magazine-header ul li {
         float: left;
         font-size: 16px;
-        color: #333;
+        color: #4d2a00;
         line-height: 30px;
         font-family: Georgia;
         font-style: italic;
@@ -2731,7 +2731,7 @@ blockquote {
         }
 
         .magazine-item .magazine-header ul li a {
-            color: #333;
+            color: #4d2a00;
             text-decoration: none;
             -webkit-transition: all .2s linear;
             -moz-transition: all .2s linear;
@@ -2740,7 +2740,7 @@ blockquote {
         }
 
             .magazine-item .magazine-header ul li a:hover {
-                color: #DB531A;
+                color: #ffbf00;
             }
 
 .magazine-item .magazine-header .hr {
@@ -2749,7 +2749,7 @@ blockquote {
 
 .magazine-item .magazine-body {
     margin: 20px 0 0;
-    color: #333;
+    color: #4d2a00;
     font-size: 14px;
     line-height: 25px;
     font-family: 'Open sans';
@@ -2805,7 +2805,7 @@ blockquote {
         .thumnail-item figure:before {
             left: 0;
             right: 0;
-            border: 6px solid #DB531A;
+            border: 6px solid #ffbf00;
         }
 
         .thumnail-item figure:after {
@@ -2814,7 +2814,7 @@ blockquote {
             right: -30px;
             margin: auto;
             border: 15px solid transparent;
-            border-left-color: #DB531A;
+            border-left-color: #ffbf00;
         }
 
     .thumnail-item .thumnail-text {
@@ -2857,13 +2857,13 @@ blockquote {
         }
 
         .confidence-subscribe.no-bg .confidence h3, .confidence-subscribe.no-bg .confidence ul li span {
-            color: #333;
+            color: #4d2a00;
             border-color: #d7d7d7;
         }
 
             .confidence-subscribe.no-bg .confidence ul li span:after {
-                border-bottom-color: #333;
-                border-right-color: #333;
+                border-bottom-color: #4d2a00;
+                border-right-color: #4d2a00;
             }
 
         .confidence-subscribe.no-bg .confidence ul li h5 {
@@ -2871,7 +2871,7 @@ blockquote {
         }
 
         .confidence-subscribe.no-bg .confidence ul li p {
-            color: #333;
+            color: #4d2a00;
         }
 
     .confidence-subscribe .row {
@@ -2984,7 +2984,7 @@ blockquote {
     }
 
     .subscribe p {
-        color: #333;
+        color: #4d2a00;
         margin: 20px 0 0;
         line-height: 25px;
         font-size: 14px;
@@ -3216,7 +3216,7 @@ blockquote {
             }
 
                 .hotel-item .hotel-text .hotel-name a:hover {
-                    color: #DB531A;
+                    color: #ffbf00;
                 }
 
         .hotel-item .hotel-text .hotel-places {
@@ -3329,7 +3329,7 @@ blockquote {
                 line-height: 32px;
                 display: inline-block;
                 margin: 0 0 0 5px;
-                color: #333;
+                color: #4d2a00;
                 font-family: 'Open sans';
                 font-size: 14px;
             }
@@ -3545,7 +3545,7 @@ blockquote {
 
         .maps-item .maps-text address {
             display: inline-block;
-            color: #333;
+            color: #4d2a00;
             margin: 0 0 0 5px;
         }
 
@@ -3617,7 +3617,7 @@ blockquote {
 }
 
     .top-list-car span {
-        color: #333;
+        color: #4d2a00;
     }
 
     .top-list-car .navigation-car p {
@@ -3677,7 +3677,7 @@ blockquote {
 
             .car-list-cn .car-list-table td.td-car figure figcaption {
                 margin-top: 2px;
-                color: #333;
+                color: #4d2a00;
                 font-family: 'Open sans';
                 line-height: 25px;
             }
@@ -3691,7 +3691,7 @@ blockquote {
                 }
 
                     .car-list-cn .car-list-table td.td-price .price-box .price {
-                        color: #333;
+                        color: #4d2a00;
                         font-family: 'Open sans';
                         display: block;
                         line-height: 30px;
@@ -3777,7 +3777,7 @@ blockquote {
             }
 
         .package-item .package-text .package-address {
-            color: #333;
+            color: #4d2a00;
             font-family: 'Open sans';
             margin: 0;
         }
@@ -3835,7 +3835,7 @@ blockquote {
 }
 
     .package-item .package-text .price-box .price ins {
-        color: #333;
+        color: #4d2a00;
         font-size: 18px;
         font-weight: 400;
         text-decoration: none;
@@ -4022,7 +4022,7 @@ blockquote {
         }
 
             .cruise-deal-item .cruise-text .cruise-name a:hover {
-                color: #DB531A;
+                color: #ffbf00;
             }
 
         .cruise-deal-item .cruise-text .cruise-night {
@@ -4033,7 +4033,7 @@ blockquote {
         }
 
             .cruise-deal-item .cruise-text .cruise-night span {
-                color: #333;
+                color: #4d2a00;
             }
 
         .cruise-deal-item .cruise-text .hr {
@@ -4134,7 +4134,7 @@ blockquote {
                     font-weight: 400;
                     font-family: 'Open sans';
                     font-size: 13px;
-                    color: #333;
+                    color: #4d2a00;
                     margin: 0;
                 }
 
@@ -4182,7 +4182,7 @@ blockquote {
                 }
 
                     .cruise-item .cruise-text .price-box .price.night ins {
-                        color: #333;
+                        color: #4d2a00;
                         font-size: 18px;
                         font-family: 'Open sans';
                     }
@@ -4315,7 +4315,7 @@ blockquote {
 }
 
     .flight-deal-item .flight-text .flight-name a:hover {
-        color: #DB531A;
+        color: #ffbf00;
     }
 
 .flight-deal-item .flight-text .flight-price {
@@ -4496,7 +4496,7 @@ blockquote {
 
                     .chart .chart-bar .ul-bar li .date-day .date {
                         display: block;
-                        color: #333;
+                        color: #4d2a00;
                     }
 
                     .chart .chart-bar .ul-bar li .date-day .short-day {
@@ -4602,7 +4602,7 @@ blockquote {
 
     .flight-statis h5 {
         margin: 0;
-        color: #333;
+        color: #4d2a00;
         font-size: 14px;
         font-weight: 600;
         line-height: 30px;
@@ -4620,7 +4620,7 @@ blockquote {
         }
 
         .flight-statis p span {
-            color: #333;
+            color: #4d2a00;
         }
 
 .flight-list-head {
@@ -4750,7 +4750,7 @@ blockquote {
         }
 
             .flight-list-cn .flight-table td.td-stop .stop-cn label {
-                color: #333;
+                color: #4d2a00;
                 font-size: 12px;
                 position: absolute;
                 left: 50%;
@@ -4901,7 +4901,7 @@ blockquote {
 
         .head-detail .start-address .address {
             padding-left: 10px;
-            color: #333;
+            color: #4d2a00;
             display: inline-block;
             margin: 0;
             font-family: 'Open sans';
@@ -4929,7 +4929,7 @@ blockquote {
             }
 
             .head-detail ul li span {
-                color: #333;
+                color: #4d2a00;
             }
 
 .price-book {
@@ -4944,7 +4944,7 @@ blockquote {
     }
 
 .support {
-    color: #333;
+    color: #4d2a00;
     font-size: 16px;
     font-family: 'Open sans';
     right: 15px;
@@ -4960,7 +4960,7 @@ blockquote {
     }
 
 .head-detail .see-other-room {
-    color: #333;
+    color: #4d2a00;
     font-size: 14px;
     text-transform: uppercase;
     text-decoration: none;
@@ -5016,7 +5016,7 @@ blockquote {
 }
 
 .detail-footer .detail-footer-cn .review-more a {
-    color: #333;
+    color: #4d2a00;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -5024,7 +5024,7 @@ blockquote {
 }
 
     .detail-footer .detail-footer-cn .review-more a:hover {
-        color: #DB531A;
+        color: #ffbf00;
     }
 
 .detail-slider {
@@ -5095,7 +5095,7 @@ blockquote {
 }
 
     .detail-sidebar .scroll-heading h2 {
-        color: #333;
+        color: #4d2a00;
         margin: 0;
         font-size: 30px;
         line-height: 44px;
@@ -5110,7 +5110,7 @@ blockquote {
     .detail-sidebar .scroll-heading a {
         display: block;
         clear: both;
-        color: #333;
+        color: #4d2a00;
         font-size: 24px;
         text-decoration: none;
         line-height: 28px;
@@ -5235,7 +5235,7 @@ blockquote {
             float: left;
             width: 25%;
             display: block;
-            color: #333;
+            color: #4d2a00;
             font-family: 'Open sans';
             font-weight: 600;
         }
@@ -5321,7 +5321,7 @@ blockquote {
 }
 
     .service-check-rate h2 {
-        color: #333;
+        color: #4d2a00;
         font-size: 18px;
         font-family: 'Open Sans';
         margin: 0;
@@ -5346,7 +5346,7 @@ blockquote {
                 border-width: 0;
                 padding: 12px;
                 font-weight: 600;
-                color: #333;
+                color: #4d2a00;
                 font-family: 'Open Sans';
             }
 
@@ -5365,7 +5365,7 @@ blockquote {
 }
 
     .hl-availability .table-availability th {
-        color: #333;
+        color: #4d2a00;
         font-size: 14px;
         font-weight: 600;
         padding: 20px 10px;
@@ -5417,7 +5417,7 @@ blockquote {
     }
 
     .hl-availability .table-availability .avai-td-text a {
-        color: #333;
+        color: #4d2a00;
         text-decoration: none;
         font-style: italic;
     }
@@ -5532,7 +5532,7 @@ blockquote {
 
             .featured-service .service-list li figure figcaption {
                 display: inline-block;
-                color: #333;
+                color: #4d2a00;
                 font-family: 'Open sans';
             }
 
@@ -5546,7 +5546,7 @@ blockquote {
 
         .featured-service .service-spoken li {
             margin-top: 15px;
-            color: #333;
+            color: #4d2a00;
             font-size: 14px;
         }
 
@@ -5579,7 +5579,7 @@ blockquote {
     }
 
     .policies-item p {
-        color: #333;
+        color: #4d2a00;
         font-size: 14px;
         line-height: 25px;
         margin-top: 20px;
@@ -5594,7 +5594,7 @@ blockquote {
 }
 
 .hotel-detail-map p {
-    background-color: #333;
+    background-color: #4d2a00;
     color: #fff;
     padding: 15px 20px;
     margin-bottom: 0;
@@ -5617,7 +5617,7 @@ blockquote {
     }
 
     .about-area-text p {
-        color: #333;
+        color: #4d2a00;
         font-family: 'Open sans';
         line-height: 1.8em;
     }
@@ -5658,7 +5658,7 @@ blockquote {
 }
 
 .review-st .lable-st {
-    color: #333;
+    color: #4d2a00;
     font-size: 14px;
     line-height: 25px;
 }
@@ -5693,7 +5693,7 @@ blockquote {
 
     .review-st .progress-rv div, .review-st .progress-rv div span {
         position: absolute;
-        background-color: #DB531A;
+        background-color: #ffbf00;
         top: 50%;
         -webkit-transform: translate(0,-50%);
         -moz-transform: translate(0,-50%);
@@ -5802,7 +5802,7 @@ blockquote {
 
     .review-vote p {
         background: url(../images/bg-border-v.png) top left repeat-x;
-        color: #333;
+        color: #4d2a00;
         font-size: 14px;
         margin-top: 15px;
         padding-top: 10px;
@@ -5829,7 +5829,7 @@ blockquote {
 }
 
 .review-h {
-    color: #333;
+    color: #4d2a00;
     font-size: 14px;
     font-weight: 600;
     margin: 0;
@@ -5940,7 +5940,7 @@ blockquote {
         text-align: center;
         text-decoration: none;
         background-color: #dfdfdf;
-        color: #333;
+        color: #4d2a00;
         font-size: 30px;
         line-height: 90px;
         margin: 10px auto;
@@ -5990,7 +5990,7 @@ blockquote {
     }
 
         .review-item .review-text ul li {
-            color: #333;
+            color: #4d2a00;
             font-size: 13px;
             line-height: 22px;
             font-weight: 600;
@@ -6068,7 +6068,7 @@ blockquote {
 
     .cruise-itinerary-cn .table-itinerary {
         margin: 0;
-        color: #333;
+        color: #4d2a00;
     }
 
         .cruise-itinerary-cn .table-itinerary th {
@@ -6298,7 +6298,7 @@ blockquote {
 }
 
     .popup-room-desc p {
-        color: #333;
+        color: #4d2a00;
         line-height: 1.7em;
     }
 
@@ -6319,14 +6319,14 @@ blockquote {
                 width: 3px;
                 height: 3px;
                 margin-right: 5px;
-                background-color: #333;
+                background-color: #4d2a00;
                 display: inline-block;
                 -webkit-transition: all .25s ease;
                 transition: all .25s ease;
             }
 
             .popup-room-desc ul li a {
-                color: #333;
+                color: #4d2a00;
                 text-decoration: none;
                 -webkit-transition: all .25s ease;
                 transition: all .25s ease;
@@ -6367,7 +6367,7 @@ blockquote {
     }
 
         .cabin-type-cn .cabin-type-tabel th {
-            color: #333;
+            color: #4d2a00;
             font-weight: 600;
             line-height: 40px;
             border: 0;
@@ -6526,7 +6526,7 @@ blockquote {
     }
 
         .balcony-desk .ul-desk li label {
-            color: #333;
+            color: #4d2a00;
         }
 
 .stateroom-available {
@@ -6565,7 +6565,7 @@ blockquote {
     }
 
         .available-cabins .available-cabins-table th {
-            color: #333;
+            color: #4d2a00;
             font-weight: 600;
             line-height: 40px;
             padding-left: 15px;
@@ -6634,7 +6634,7 @@ blockquote {
 
                 .available-cabins .available-cabins-table td.td-select span {
                     font-style: italic;
-                    color: #333;
+                    color: #4d2a00;
                     padding-right: 0;
                     font-size: 13px;
                 }
@@ -6646,7 +6646,7 @@ blockquote {
                 .available-cabins .available-cabins-table td.td-select select {
                     font-size: 13px;
                     font-style: italic;
-                    color: #333;
+                    color: #4d2a00;
                 }
 
 .cruise-overview .detail-sidebar .scroll-heading {
@@ -6662,7 +6662,7 @@ blockquote {
 }
 
 .cruise-overview-item .text {
-    color: #333;
+    color: #4d2a00;
     line-height: 25px;
     padding-top: 25px;
 }
@@ -6706,7 +6706,7 @@ blockquote {
     }
 
 .tour-detail-text {
-    color: #333;
+    color: #4d2a00;
     line-height: 25px;
 }
 
@@ -6757,7 +6757,7 @@ blockquote {
 }
 
     .optional-list h4 {
-        color: #333;
+        color: #4d2a00;
         font-size: 14px;
         font-weight: 700;
         margin-top: 25px;
@@ -6774,7 +6774,7 @@ blockquote {
         .optional-list p span {
             display: block;
             width: 155px;
-            color: #333;
+            color: #4d2a00;
             position: absolute;
             top: 0;
             left: 0;
@@ -6826,7 +6826,7 @@ blockquote {
         margin: 0;
         font-weight: 900;
         font-size: 28px;
-        color: #333;
+        color: #4d2a00;
         text-transform: uppercase;
         line-height: 1.4em;
     }
@@ -6841,7 +6841,7 @@ blockquote {
 
     .room-detail .room-desc p {
         line-height: 1.8em;
-        color: #333;
+        color: #4d2a00;
     }
 
 .check-room > .row > [class*=col-], .check-room > .row > [class*=col-]:last-child, .room-detail > .row > [class*=col-], .room-detail > .row > [class*=col-]:last-child {
@@ -6854,7 +6854,7 @@ blockquote {
 
 .date-picker-price .date-head {
     text-align: center;
-    color: #333;
+    color: #4d2a00;
     font-family: 'Open Sans';
     border: 1px solid #dedede;
     margin-top: 30px;
@@ -6918,7 +6918,7 @@ blockquote {
         border: 1px solid #dedede;
         text-align: center;
         font-family: 'Open Sans';
-        color: #333;
+        color: #4d2a00;
         font-size: 13px;
     }
 
@@ -7084,7 +7084,7 @@ blockquote {
             .widget_archive ul li a, .widget_categories ul li a {
                 padding-left: 25px;
                 display: inline-block;
-                color: #333;
+                color: #4d2a00;
                 line-height: 25px;
             }
 
@@ -7127,7 +7127,7 @@ blockquote {
 }
 
 .widget_recent_entries ul li a {
-    color: #333;
+    color: #4d2a00;
     font-size: 14px;
 }
 
@@ -7161,7 +7161,7 @@ blockquote {
         .widget_tag_cloud .tagcloud a {
             display: block;
             float: left;
-            color: #333;
+            color: #4d2a00;
             font-family: 'Open sans';
             border: 1px solid #dedede;
             padding: 5px 9px;
@@ -7315,7 +7315,7 @@ blockquote {
 
         .post .post-text p {
             line-height: 25px;
-            color: #333;
+            color: #4d2a00;
             font-size: 14px;
             font-family: 'Open sans';
             margin: 40px 0 0;
@@ -7426,7 +7426,7 @@ blockquote {
 .post-single .post-content {
     margin-top: 30px;
     font-family: 'Open sans';
-    color: #333;
+    color: #4d2a00;
     font-size: 14px;
     line-height: 25px;
 }
@@ -7511,7 +7511,7 @@ blockquote {
             margin: 0 10px 0 0;
             display: inline-block;
             font-size: 18px;
-            color: #333;
+            color: #4d2a00;
             font-family: 'Open sans';
             font-weight: 700;
         }
@@ -7521,14 +7521,14 @@ blockquote {
         }
 
             .post-single .author-about .author-info .author-social a {
-                color: #DB531A;
+                color: #ffbf00;
                 font-size: 18px;
                 text-decoration: none;
                 padding: 0 7px;
             }
 
         .post-single .author-about .author-info p {
-            color: #333;
+            color: #4d2a00;
             line-height: 28px;
             font-family: 'Open sans';
             margin: 15px 0 0;
@@ -7612,7 +7612,7 @@ blockquote {
 
             .commentlist .comment .comment-body p {
                 font-weight: 300;
-                color: #333;
+                color: #4d2a00;
                 line-height: 25px;
                 margin: 10px 0 0;
             }
@@ -7665,7 +7665,7 @@ blockquote {
     .about-cn .about-searved {
         font-family: Georgia;
         font-style: italic;
-        color: #333;
+        color: #4d2a00;
         line-height: 1;
         float: left;
         margin-right: 30px;
@@ -7683,14 +7683,14 @@ blockquote {
         }
 
         .about-cn .about-searved:after {
-            border: 8px solid #DB531A;
+            border: 8px solid #ffbf00;
             border-top: 0;
             bottom: 0;
             height: 34%;
         }
 
         .about-cn .about-searved:before {
-            border: 8px solid #DB531A;
+            border: 8px solid #ffbf00;
             border-bottom: 0;
             top: 0;
             height: 35%;
@@ -7727,7 +7727,7 @@ blockquote {
 }
 
 .about-cn .about-text .about-description {
-    color: #333;
+    color: #4d2a00;
     line-height: 25px;
     margin-top: 35px;
 }
@@ -7747,7 +7747,7 @@ blockquote {
     }
 
     .team .team-head p {
-        color: #333;
+        color: #4d2a00;
         line-height: 25px;
         margin: 20px 0 0;
     }
@@ -7962,7 +7962,7 @@ blockquote {
     }
 
         .payment-step li.step-select:after, .payment-step li.step-select:before {
-            background-color: #DB531A;
+            background-color: #ffbf00;
         }
 
         .payment-step li.step-select span {
@@ -7987,7 +7987,7 @@ blockquote {
             }
 
         .payment-step li.step-part:after {
-            background-color: #DB531A;
+            background-color: #ffbf00;
         }
 
         .payment-step li:after, .payment-step li:before {
@@ -8059,7 +8059,7 @@ blockquote {
     }
 
     .payment-room .payment-info .star-room {
-        color: #DB531A;
+        color: #ffbf00;
         font-size: 12px;
         display: block;
         margin-top: 10px;
@@ -8077,7 +8077,7 @@ blockquote {
 
         .payment-room .payment-info ul li {
             position: relative;
-            color: #333;
+            color: #4d2a00;
             padding-left: 90px;
             line-height: 30px;
         }
@@ -8111,7 +8111,7 @@ blockquote {
     }
 
         .payment-room .payment-price .total-trip span {
-            color: #333;
+            color: #4d2a00;
             font-weight: 600;
             line-height: 26px;
             display: block;
@@ -8188,7 +8188,7 @@ blockquote {
 }
 
 .payment-form span {
-    color: #333;
+    color: #4d2a00;
     font-weight: 700;
     line-height: 25px;
     margin: 0;
@@ -8206,7 +8206,7 @@ blockquote {
     .payment-form .form-field .field-input {
         border: 1px solid #dedede;
         padding: 14px 20px;
-        color: #333;
+        color: #4d2a00;
         width: 100%;
         outline: 0;
     }
@@ -8216,15 +8216,15 @@ blockquote {
 }
 
 .payment-form .form-field .field-input:-moz-placeholder {
-    color: #333;
+    color: #4d2a00;
 }
 
 .payment-form .form-field .field-input:-ms-input-placeholder {
-    color: #333;
+    color: #4d2a00;
 }
 
 .payment-form .form-field .field-input::-webkit-input-placeholder {
-    color: #333;
+    color: #4d2a00;
 }
 
 .payment-form .radio-checkbox {
@@ -8253,7 +8253,7 @@ blockquote {
 }
 
 .payment-form ul li .radio-checkbox label {
-    color: #333;
+    color: #4d2a00;
     padding-left: 28px;
 }
 
@@ -8393,7 +8393,7 @@ blockquote {
         }
 
         .cart-cn .tb-cart .date {
-            color: #333;
+            color: #4d2a00;
             display: block;
             font-family: 'Open sans';
         }
@@ -8413,7 +8413,7 @@ blockquote {
         .cart-cn .tb-cart .price {
             font-family: Lato;
             font-size: 24px;
-            color: #333;
+            color: #4d2a00;
             display: block;
             text-align: center;
         }
@@ -8472,7 +8472,7 @@ blockquote {
 }
 
     .cart-room ul li {
-        color: #333;
+        color: #4d2a00;
         font-size: 13px;
         padding: 2px 0;
     }
@@ -8511,7 +8511,7 @@ blockquote {
 }
 
     .cart-flight .stop-cn label {
-        color: #333;
+        color: #4d2a00;
         font-size: 12px;
         position: absolute;
         font-weight: 400;
@@ -8634,7 +8634,7 @@ blockquote {
 
 .cart-car p, .cart-car ul li, .cart-cruise ul li {
     font-size: 13px;
-    color: #333;
+    color: #4d2a00;
     margin-top: 5px;
     font-family: 'Open sans';
 }
@@ -8735,7 +8735,7 @@ blockquote {
 
         .element-sc .element-cn .tab-pane {
             padding-top: 25px;
-            color: #333;
+            color: #4d2a00;
             font-family: 'Open sans';
             line-height: 25px;
         }
@@ -8960,7 +8960,7 @@ blockquote {
 
         .user-profile__navigation li a {
             font-size: 16px;
-            color: #333;
+            color: #4d2a00;
             display: block;
             text-decoration: none;
             padding: 15px 0;
@@ -8988,7 +8988,7 @@ blockquote {
 }
 
     .user-profile .user-profile__count-number span {
-        color: #333;
+        color: #4d2a00;
         font-size: 60px;
         display: inline-block;
         text-align: center;
@@ -9041,7 +9041,7 @@ blockquote {
     }
 
         .user-profile .user-profile__total li.has-number {
-            color: #333;
+            color: #4d2a00;
         }
 
         .user-profile .user-profile__total li span {
@@ -9070,7 +9070,7 @@ blockquote {
     .user-profile__my-booking .table td {
         border-top-width: 0;
         padding: 15px;
-        color: #333;
+        color: #4d2a00;
         font-family: 'Open sans';
         border-bottom: 1px dotted #999;
         vertical-align: middle;
@@ -9133,7 +9133,7 @@ blockquote {
         position: relative;
         padding-left: 150px;
         padding-top: 15px;
-        color: #333;
+        color: #4d2a00;
         font-family: 'Open sans';
     }
 
@@ -9145,7 +9145,7 @@ blockquote {
         }
 
 .my-profile p {
-    color: #333;
+    color: #4d2a00;
     font-size: 16px;
     font-family: Georgia;
     margin-bottom: 0;
@@ -9158,7 +9158,7 @@ blockquote {
 }
 
 .user-profile .check-box label {
-    color: #333;
+    color: #4d2a00;
     font-family: 'Open sans';
     font-weight: 400;
     font-size: 14px;
@@ -9185,7 +9185,7 @@ blockquote {
         background-color: #f2f2f2;
         text-align: center;
         font-size: 10px;
-        color: #333;
+        color: #4d2a00;
         font-family: FontAwesome;
         line-height: 13px;
         cursor: pointer;
@@ -9233,7 +9233,7 @@ blockquote {
         background-color: transparent;
         padding: 14px 10px;
         width: 100%;
-        color: #333;
+        color: #4d2a00;
         font-family: 'Open sans';
     }
 
@@ -9369,7 +9369,7 @@ footer .currency-lang-bottom {
 
         footer .currency-lang-bottom .dropdown-head span {
             float: right;
-            color: #DB531A;
+            color: #ffbf00;
             position: relative;
             line-height: 40px;
             margin-left: 0;
@@ -9397,7 +9397,7 @@ footer .currency-lang-bottom {
 
         footer .currency-lang-bottom ul li a {
             padding: 0 15px;
-            color: #333;
+            color: #4d2a00;
             line-height: 30px;
             display: block;
         }
@@ -10661,7 +10661,7 @@ footer .copyright {
     }
 
     .tabs-cat .cate-item.active, .tabs-cat .cate-item:hover {
-        background-color: #DB531A;
+        background-color: #ffbf00;
     }
 
     .form-hotel .form-search .form-field {
@@ -12159,7 +12159,7 @@ footer .copyright {
 
 
 .caption {
-    border-bottom: 1px dotted #D63D00;
+    border-bottom: 1px dotted #ffbf00;
     margin: 0px 5px 15px 0px;
 }
 
@@ -12167,10 +12167,11 @@ footer .copyright {
         font-size: 16px;
         font-weight: bold;
         text-transform: uppercase;
+        color: #4d2a00;
     }
 
 .content {
-    /*border-bottom: 1px solid #D63D00;*/
+    /*border-bottom: 1px solid #ffbf00;*/
 }
 
 .row {
@@ -12188,7 +12189,7 @@ ul {
 }
 
 .posttitle a, .posttitle a:visited {
-    color: #393A00;
+    color: #4d2a00;
     font-weight: bold;
 }
 
@@ -12202,7 +12203,7 @@ ul {
 }
 
     .button, .button:visited, input[type="submit"] {
-        background: #d63d00;
+        background: #ffbf00;
         color: #fff;
         border: 0;
     }
@@ -12230,7 +12231,7 @@ ul {
 }
 
     .shrink img:hover {
-        border: solid 1px #d63d00;
+        border: solid 1px #ffbf00;
         box-shadow: 2px 2px 2px 2px;
     }
 
@@ -12245,7 +12246,7 @@ ul {
 }
 
     .posttitle a:hover {
-        color: #d63d00;
+        color: #ffbf00;
         cursor: pointer;
     }
 
@@ -12287,8 +12288,8 @@ ul {
 }
 
 .captionOrange {
-    background: #EB5100;
-    background-color: rgba(235, 81, 0, 0.6);
+    background: #ffbf00;
+    background-color: #ffbf00;
 }
 
 .captionBlack {
@@ -12303,7 +12304,7 @@ a.captionOrange, A.captionOrange:active, A.captionOrange:visited {
 }
 
     a.captionOrange:hover {
-        color: #eb5100;
+        color: #ffbf00;
         text-decoration: underline;
         background-color: #eeeeee;
         background-color: rgba(238, 238, 238, 0.7);
@@ -12383,8 +12384,8 @@ a.captionOrange, A.captionOrange:active, A.captionOrange:visited {
 
 
 .current-menu-parent {
-    background-color: #DB531A;
-    border-color: #DB531A;
+    background-color: #ffbf00;
+    border-color: #ffbf00;
 }
 
 .current-menu-parent > a {
@@ -12435,11 +12436,11 @@ button, input, optgroup, select, textarea {
 
 .heading {
     margin: 1px;
-    color: #fff;
+    color: #4d2a00;
     padding: 3px 10px;
     cursor: pointer;
     position: relative;
-    background-color: #c30;
+    background-color: #ffbf00;
 }
 
 .content {
@@ -12453,7 +12454,7 @@ p {
 
 .pa {
     margin-bottom: 20px;
-    background-color: rgba(255, 165, 0, 0.48);
+    background-color: #ffbf00;
     padding: 10px;
     border-radius: 15px;
     -webkit-box-shadow: 7px 9px 28px -6px rgba(255,162,0,0.78);
@@ -12467,7 +12468,7 @@ p {
 
 .container-fluid ul > li > a {
                 display: block;
-                color: #333;
+                color: #4d2a00;
                 font-size: 16px;
                 line-height: 40px;
                 text-decoration: none;

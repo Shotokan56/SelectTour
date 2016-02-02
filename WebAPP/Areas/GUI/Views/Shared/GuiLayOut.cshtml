@@ -7,10 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <link rel="stylesheet" href="~/Content/GUI/css/library/bootstrap.min.css">
-    @*<link rel="stylesheet" href="~/Content/GUI/css/library/font-awesome.min.css">*@
-    @*<link rel="stylesheet" href="~/Content/GUI/css/library/jquery-ui.min.css">*@
     <link rel="stylesheet" href="~/Content/GUI/css/library/owl.carousel.css">
-    @*<link rel="stylesheet" href="~/Content/GUI/css/library/jquery.mb.YTPlayer.min.css">*@
     <link rel="stylesheet" href="~/Content/GUI/css/style.css">
 
     <link rel="stylesheet" href="~/Content/BootstrapPaginator/css/bootstrap-responsive.css" />
@@ -46,58 +43,50 @@
 <div id="wrap" class="background">
     <header id="header" class="header">
         <div class="container">
-            <div class="logo float-left" style="z-index: 1;">
+            <div class="logo float-left" style="z-index: 1; margin-right: 65px;">
                 <a href="/" title=""><img src="~/Content/GUI/images/logo-header.gif" alt=""></a>
             </div>
 
             <div class="float-right">
                 <div class="ul-ft">
-                   <ul class="pull-right">
-                            <li class="pull-left"><a href="/About-us" title="">About us</a></li>
-                            <li class="pull-left"><a href="/Terms-Conditions" title="">Term & Condition</a></li>
-                            <li class="pull-left"><a href="/Home/Register" title="">Register</a></li>
-                            <li class="pull-left" id="loginli"><a href="Javascript:ViewLogin()" title="">Login</a></li>
-                        </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-    @*--------------MENU------------------*@
-    <div class="container">
-        <nav class="navbar navbar-default" id="navigation" data-menu-type="1200" style="margin-bottom: 0px;">
-            <div class="container-fluid">
-                <ul class="menu-list text-uppercase nav navbar-nav pull-right">
-                    <li id="Home">
-                        <a href="/" title="Home">Home</a>
-                    </li>
-                    <li id="PackageTour">
-                        <a href="/Package-Tour" title="Package Tour">Package Tour</a>
-                    </li>
-                    <li id="SelectTour">
-                        <a href="/Select-Tour" title="Select Tour">Select Tour</a>
-                    </li>
-                    <li id="CustomizedTour">
-                        <a href="/Customized-Tour" title="Customized Tour">Customized Tour</a>
-                    </li>
-                    <li id="Contact">
-                        <a href="/Contact" title="Contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        @*<nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Page 1</a></li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
+                    <ul class="pull-right">
+                        <li class="pull-left"><a title="">HOTLINE: +84 904558345</a></li>
+                        <li class="pull-left"><a href="mailto:info@vietselecttours.com" target="_blank">info@vietselecttours.com</a></li>
+                        <li class="pull-left"><a href="/About-us" title="">About us</a></li>
+                        <li class="pull-left"><a href="/Terms-Conditions" title="">Term & Condition</a></li>
+                        <li class="pull-left"><a href="/Home/Register" title="">Register</a></li>
+                        <li class="pull-left" id="loginli"><a href="Javascript:ViewLogin()" title="">Login</a></li>
                     </ul>
                 </div>
-            </nav>*@
-    </div>
-    @*--------------END MENU------------------*@
+            </div>
+            @*--------------MENU------------------*@
+                <nav class="navbar navbar-default" id="navigation" data-menu-type="1200" style="top: 36px; font-weight: bold;">
+                    <div class="container-fluid " style="background-color: white;">
+                        <ul class="menu-list text-uppercase nav navbar-nav pull-right">
+                            <li id="Home">
+                                <a href="/" title="Home">Home</a>
+                            </li>
+                            <li id="PackageTour">
+                                <a href="/Package-Tour" title="Package Tour">Package Tour</a>
+                            </li>
+                            <li id="SelectTour">
+                                <a href="/Select-Tour" title="Select Tour">Select Tour</a>
+                            </li>
+                            <li id="CustomizedTour">
+                                <a href="/Customized-Tour" title="Customized Tour">Customized Tour</a>
+                            </li>
+                            <li id="Contact">
+                                <a href="/Contact" title="Contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            @*--------------END MENU------------------*@
+        </div>
+    </header>
+    
+    
+    
 
 
     @*------------------SLIDE -----------------------*@
@@ -127,13 +116,14 @@
                 <div class="col-sm-12 right-block" style="padding: 0px;">
                     <div class="col-sm-12 text-center" style="border-bottom: 1px solid #DAD7D7; margin-bottom: 5px; padding: 3px;">Meet Our Experts</div>
 
-                    <div class=" col-sm-4" style="padding: 5px">
-                        <span class="glyphicon glyphicon-earphone" style="font-size: 50px; margin: 17px 0px 0px 15px;"></span>
+                    <div class=" col-sm-3" style="padding: 5px">
+                        <span class="glyphicon glyphicon-earphone" style="font-size: 40px; margin: 17px 0px 0px 9px;"></span>
                     </div>
-                    <div class="col-sm-8" style="padding: 10px">
-                        <div class="row">MS. Minh</div>
-                        <div class="row">Tel: (+84) 6886 999</div>
-                        <div class="row">Email: abc@Examle.com</div>
+                    <div class="col-sm-9" style="padding: 10px">
+                        <div class="row">MS. Cathy</div>
+                        <div class="row">Tel: (+84) 904558345</div>
+                        <div class="row">Email: <a href="mailto:info@vietselecttours.com" target="_blank">info@vietselecttours.com</a></div>
+                        <div class="row">Skype: vietselecttours</div>
                     </div>
                 </div>
 
@@ -167,7 +157,8 @@
                     Copyright 2015
                 </div>
                 <div class="col-md-4 pull-right">
-                    <span class="pull-right">Viet Select Tour CO., LTD. All Rights Reserved </span>
+                    <span class="pull-right">HOTLINE: +84 904558345 <br/>
+                        <a href="mailto:info@vietselecttours.com" target="_blank">info@vietselecttours.com</a> </span>
                 </div>
             </div>
         </div>
@@ -209,8 +200,8 @@
                 @*CONTENT HERE*@
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn" data-dismiss="modal" style="background: #d63d00; border: none; color:white">Close</button>
-                <button type="button" class="btn" id="loginbtn" style="background: #d63d00; border: none; color:white">Login</button>
+                <button type="button" class="btn" data-dismiss="modal" style="background: #ffbf00; border: none; color:white">Close</button>
+                <button type="button" class="btn" id="loginbtn" style="background: #ffbf00; border: none; color:white">Login</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

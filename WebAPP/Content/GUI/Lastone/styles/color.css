@@ -56,8 +56,8 @@ em{ color:#888; font-weight:normal;}
 
 #navigation{background:#fff; border-top:1px solid #f2f2f2; border-bottom:5px solid #f9f9f9;}
 .sf-menu a, .sf-menu a:visited{color:#666;}/* 1st level */
-.sf-menu a:hover, .sf-menu li.current > a{color:#333;   }/* 1st level */
-.sf-menu li:hover, .sf-menu li.current{border-top:1px solid #333;}
+.sf-menu a:hover, .sf-menu li.current > a{color:#4d2a00;   }/* 1st level */
+.sf-menu li:hover, .sf-menu li.current{border-top:1px solid #4d2a00;}
 
 
 /* dropdown */
@@ -320,7 +320,7 @@ input.searchbutton { background:#666 url("../images/search.png") no-repeat scrol
 
 #footer{ color:#666}
 #footer a, #footer a:visited{color:#666;}
-#footer a:hover{color:#333;}
+#footer a:hover{color:#4d2a00;}
 
 /*=== Elastislide Style ===*/
 .es-carousel-wrapper{ background:#f7f7f7; border:1px solid #ececec; border-width:1px 0px}

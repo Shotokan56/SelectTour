@@ -24,6 +24,8 @@ namespace WebAPP
 
             ClientDataTypeModelValidatorProvider.ResourceClassKey = "ModelBinders";
             DefaultModelBinder.ResourceClassKey = "ModelBinders";
+
+            GlobalFilters.Filters.Add(new HandleErrorAttribute());
         }
       
     }

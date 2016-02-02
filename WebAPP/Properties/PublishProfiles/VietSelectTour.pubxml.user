@@ -73,7 +73,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/16/2015 13:44:06</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManagePackageTour/DetailsBooked.cshtml">
-      <publishTime>10/29/2015 21:44:45</publishTime>
+      <publishTime>01/30/2016 21:00:06</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManagePackageTour/ListBookedPatial.cshtml">
       <publishTime>10/29/2015 21:46:07</publishTime>
@@ -91,13 +91,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/29/2015 22:05:40</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManageSelectTour/CreateNew.cshtml">
-      <publishTime>11/17/2015 21:22:54</publishTime>
+      <publishTime>01/13/2016 20:27:45</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManageSelectTour/DetailBooked.cshtml">
       <publishTime>09/24/2015 22:26:27</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManageSelectTour/DetailsBooked.cshtml">
-      <publishTime>11/11/2015 22:13:44</publishTime>
+      <publishTime>01/30/2016 21:00:06</publishTime>
     </File>
     <File Include="Areas/CMS/Views/ManageSelectTour/ListBookedPatial.cshtml">
       <publishTime>10/29/2015 22:05:18</publishTime>
@@ -148,7 +148,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/15/2015 15:33:21</publishTime>
     </File>
     <File Include="Areas/GUI/Views/Home/Home.cshtml">
-      <publishTime>12/08/2015 09:41:31</publishTime>
+      <publishTime>01/30/2016 19:03:16</publishTime>
     </File>
     <File Include="Areas/GUI/Views/Home/PackageTour.cshtml">
       <publishTime>09/18/2015 00:16:42</publishTime>
@@ -169,10 +169,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2015 14:13:28</publishTime>
     </File>
     <File Include="Areas/GUI/Views/Package/DetailPackageTour.cshtml">
-      <publishTime>12/08/2015 09:48:00</publishTime>
+      <publishTime>01/13/2016 20:06:30</publishTime>
     </File>
     <File Include="Areas/GUI/Views/Package/Enquire.cshtml">
-      <publishTime>10/29/2015 21:41:02</publishTime>
+      <publishTime>01/30/2016 21:00:06</publishTime>
     </File>
     <File Include="Areas/GUI/Views/Package/ListPackageTourPatialView.cshtml">
       <publishTime>12/08/2015 09:41:10</publishTime>
@@ -184,16 +184,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/27/2015 23:52:55</publishTime>
     </File>
     <File Include="Areas/GUI/Views/SelectTour/SelectTour.cshtml">
-      <publishTime>12/08/2015 09:41:56</publishTime>
+      <publishTime>01/13/2016 22:21:46</publishTime>
     </File>
     <File Include="Areas/GUI/Views/SelectTour/TotalTable.cshtml">
-      <publishTime>11/11/2015 22:08:51</publishTime>
+      <publishTime>01/13/2016 21:47:06</publishTime>
     </File>
     <File Include="Areas/GUI/Views/Shared/GuiLayOut.cshtml">
-      <publishTime>12/03/2015 16:03:29</publishTime>
+      <publishTime>01/30/2016 21:01:24</publishTime>
     </File>
     <File Include="Areas/GUI/Views/Shared/SlideBanner.cshtml">
-      <publishTime>11/26/2015 22:03:52</publishTime>
+      <publishTime>01/30/2016 21:01:25</publishTime>
     </File>
     <File Include="Areas/GUI/Views/web.config">
       <publishTime>08/31/2015 13:31:45</publishTime>
@@ -297,6 +297,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
       <publishTime>08/31/2015 10:44:40</publishTime>
     </File>
+    <File Include="bin/System.Security.dll">
+      <publishTime>04/11/2014 23:08:06</publishTime>
+    </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>08/31/2015 10:44:33</publishTime>
     </File>
@@ -319,10 +322,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/31/2015 10:44:33</publishTime>
     </File>
     <File Include="bin/WebAPP.dll">
-      <publishTime>12/08/2015 09:48:32</publishTime>
+      <publishTime>02/02/2016 22:14:33</publishTime>
     </File>
     <File Include="bin/WebAPP.pdb">
-      <publishTime>12/08/2015 09:48:32</publishTime>
+      <publishTime>02/02/2016 22:14:32</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/31/2015 10:44:34</publishTime>
@@ -331,19 +334,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:43</publishTime>
     </File>
     <File Include="Content/bootstrap-3.3.2-dist/css/bootstrap-theme.css.map">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:45</publishTime>
     </File>
     <File Include="Content/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
       <publishTime>08/08/2015 20:42:43</publishTime>
     </File>
     <File Include="Content/bootstrap-3.3.2-dist/css/bootstrap.css">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:45</publishTime>
     </File>
     <File Include="Content/bootstrap-3.3.2-dist/css/bootstrap.css.map">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:45</publishTime>
     </File>
     <File Include="Content/bootstrap-3.3.2-dist/css/bootstrap.min.css">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:45</publishTime>
     </File>
     <File Include="Content/bootstrap-3.3.2-dist/fonts/glyphicons-halflings-regular.eot">
       <publishTime>08/08/2015 20:42:44</publishTime>
@@ -370,7 +373,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:44</publishTime>
     </File>
     <File Include="Content/Bootstrap-DateTime/bootstrap-datetimepicker.css">
-      <publishTime>09/18/2015 14:47:09</publishTime>
+      <publishTime>01/30/2016 20:58:45</publishTime>
     </File>
     <File Include="Content/Bootstrap-DateTime/bootstrap-datetimepicker.js">
       <publishTime>09/18/2015 14:47:09</publishTime>
@@ -379,22 +382,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/18/2015 14:47:09</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/bootstrap-responsive.css">
-      <publishTime>09/22/2015 20:47:39</publishTime>
+      <publishTime>01/30/2016 20:58:45</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/bootstrap-responsive.min.css">
-      <publishTime>09/24/2013 05:03:08</publishTime>
+      <publishTime>01/30/2016 20:58:45</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/bootstrap.min.css">
-      <publishTime>09/24/2013 05:03:08</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/bootstrapv3.css">
-      <publishTime>09/24/2013 05:03:08</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/bootstrapv3.min.css">
-      <publishTime>09/24/2013 05:03:08</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/documentation.css">
-      <publishTime>09/24/2013 05:03:08</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/highlight.js/arta.css">
       <publishTime>09/24/2013 05:03:08</publishTime>
@@ -409,7 +412,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2013 05:03:08</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/highlight.js/dark.css">
-      <publishTime>09/24/2013 05:03:08</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/highlight.js/default.css">
       <publishTime>09/24/2013 05:03:08</publishTime>
@@ -418,7 +421,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2013 05:03:08</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/highlight.js/github.css">
-      <publishTime>09/24/2013 05:03:08</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/highlight.js/googlecode.css">
       <publishTime>09/24/2013 05:03:08</publishTime>
@@ -430,7 +433,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2013 05:03:08</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/highlight.js/magula.css">
-      <publishTime>09/24/2013 05:03:08</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/BootstrapPaginator/css/highlight.js/monokai.css">
       <publishTime>09/24/2013 05:03:08</publishTime>
@@ -523,7 +526,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:43</publishTime>
     </File>
     <File Include="Content/CMS/Script/bootstrap.min.css">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/CMS/Script/jquery.js">
       <publishTime>08/08/2015 20:42:43</publishTime>
@@ -538,19 +541,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:43</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/bootstrap/css/bootstrap-theme.css.map">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/bootstrap/css/bootstrap-theme.min.css">
       <publishTime>08/08/2015 20:42:43</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/bootstrap/css/bootstrap.css">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/bootstrap/css/bootstrap.css.map">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/bootstrap/css/bootstrap.min.css">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/bootstrap/fonts/glyphicons-halflings-regular.eot">
       <publishTime>08/08/2015 20:42:43</publishTime>
@@ -592,7 +595,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:43</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/flot/examples/annotating.html">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/flot/examples/arrow-down.gif">
       <publishTime>08/08/2015 20:42:43</publishTime>
@@ -946,7 +949,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:43</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/fullcalendar-1.6.4/fullcalendar/fullcalendar.css">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:46</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/fullcalendar-1.6.4/fullcalendar/fullcalendar.js">
       <publishTime>08/08/2015 20:42:43</publishTime>
@@ -973,10 +976,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:43</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/jQuery-Knob/index.html">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/jQuery-Knob/js/jquery.knob.js">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/18/2016 22:42:51</publishTime>
     </File>
     <File Include="Content/CMS/Script/lib/jQuery-Knob/knob.jquery.json">
       <publishTime>08/08/2015 20:42:43</publishTime>
@@ -997,7 +1000,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:43</publishTime>
     </File>
     <File Include="Content/CMS/Style/bootstrap-responsive.min.css">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/CMS/Style/Layout.css">
       <publishTime>08/08/2015 20:42:43</publishTime>
@@ -1015,16 +1018,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:43</publishTime>
     </File>
     <File Include="Content/CMS/Style/stylesheets/premium.css">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/CMS/Style/stylesheets/theme.css">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/CMS/Style/typica-login.css">
-      <publishTime>08/08/2015 20:42:43</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/GUI/css/library/bootstrap.min.css">
-      <publishTime>08/07/2015 13:47:02</publishTime>
+      <publishTime>01/30/2016 20:59:01</publishTime>
     </File>
     <File Include="Content/GUI/css/library/font-awesome.min.css">
       <publishTime>08/07/2015 13:47:03</publishTime>
@@ -1039,16 +1042,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2015 13:47:04</publishTime>
     </File>
     <File Include="Content/GUI/css/library/jquery.mb.YTPlayer.min.css">
-      <publishTime>08/07/2015 13:47:04</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/GUI/css/library/magnific-popup.css">
-      <publishTime>08/07/2015 13:47:05</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/GUI/css/library/owl.carousel.css">
       <publishTime>08/07/2015 13:47:05</publishTime>
     </File>
     <File Include="Content/GUI/css/style.css">
-      <publishTime>11/17/2015 20:14:56</publishTime>
+      <publishTime>01/30/2016 21:01:25</publishTime>
     </File>
     <File Include="Content/GUI/css/StyleSheet1.css">
       <publishTime>09/17/2015 14:09:10</publishTime>
@@ -1582,7 +1585,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2015 13:47:47</publishTime>
     </File>
     <File Include="Content/GUI/images/logo-header.gif">
-      <publishTime>09/15/2015 21:53:31</publishTime>
+      <publishTime>01/30/2016 18:55:17</publishTime>
     </File>
     <File Include="Content/GUI/images/logo-header.png">
       <publishTime>08/07/2015 13:47:48</publishTime>
@@ -1726,13 +1729,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2015 13:59:52</publishTime>
     </File>
     <File Include="Content/GUI/js/script.js">
-      <publishTime>09/15/2015 22:41:27</publishTime>
+      <publishTime>01/18/2016 22:46:05</publishTime>
     </File>
     <File Include="Content/GUI/Lastone/styles/color.css">
-      <publishTime>02/07/2013 11:37:24</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/GUI/Lastone/styles/flexslider.css">
-      <publishTime>02/06/2013 13:15:34</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/GUI/Lastone/styles/inner.css">
       <publishTime>02/07/2013 17:04:40</publishTime>
@@ -1834,10 +1837,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/29/2015 00:48:34</publishTime>
     </File>
     <File Include="Content/kartik-v-bootstrap-fileinput-629ec20/css/fileinput.css">
-      <publishTime>09/29/2015 00:48:34</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/kartik-v-bootstrap-fileinput-629ec20/css/fileinput.min.css">
-      <publishTime>09/29/2015 00:48:34</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/kartik-v-bootstrap-fileinput-629ec20/examples/index.html">
       <publishTime>09/29/2015 00:48:34</publishTime>
@@ -2149,10 +2152,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/31/2015 09:43:52</publishTime>
     </File>
     <File Include="Content/tinymce/skins/lightgray/content.inline.min.css">
-      <publishTime>08/31/2015 09:43:52</publishTime>
+      <publishTime>01/30/2016 20:58:47</publishTime>
     </File>
     <File Include="Content/tinymce/skins/lightgray/content.min.css">
-      <publishTime>08/31/2015 09:43:52</publishTime>
+      <publishTime>01/30/2016 20:58:48</publishTime>
     </File>
     <File Include="Content/tinymce/skins/lightgray/fonts/tinymce-small.eot">
       <publishTime>08/31/2015 09:43:52</publishTime>
@@ -2191,10 +2194,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/31/2015 09:43:52</publishTime>
     </File>
     <File Include="Content/tinymce/skins/lightgray/skin.ie7.min.css">
-      <publishTime>08/31/2015 09:43:52</publishTime>
+      <publishTime>01/30/2016 20:58:48</publishTime>
     </File>
     <File Include="Content/tinymce/skins/lightgray/skin.min.css">
-      <publishTime>09/24/2015 13:11:18</publishTime>
+      <publishTime>01/30/2016 20:58:48</publishTime>
     </File>
     <File Include="Content/tinymce/themes/modern/theme.min.js">
       <publishTime>08/31/2015 09:43:52</publishTime>
@@ -3295,7 +3298,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:49</publishTime>
     </File>
     <File Include="Scripts/jquery-1.11.1.js">
-      <publishTime>08/08/2015 20:42:49</publishTime>
+      <publishTime>01/30/2016 20:58:48</publishTime>
     </File>
     <File Include="Scripts/jquery-1.11.1.min.js">
       <publishTime>08/08/2015 20:42:49</publishTime>
@@ -3307,7 +3310,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:49</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-1.11.2/jquery-ui.js">
-      <publishTime>08/08/2015 20:42:49</publishTime>
+      <publishTime>01/30/2016 20:58:48</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-1.11.2/jquery-ui.min.js">
       <publishTime>08/08/2015 20:42:49</publishTime>
@@ -4399,7 +4402,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:45</publishTime>
     </File>
     <File Include="Scripts/Kendo/kendo.all.min.js">
-      <publishTime>08/08/2015 20:42:45</publishTime>
+      <publishTime>01/30/2016 20:58:48</publishTime>
     </File>
     <File Include="Scripts/Kendo/kendo.all.min.js.map">
       <publishTime>08/08/2015 20:42:45</publishTime>
@@ -4555,13 +4558,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:45</publishTime>
     </File>
     <File Include="Scripts/Kendo/kendo.dataviz.min.js">
-      <publishTime>08/08/2015 20:42:46</publishTime>
+      <publishTime>01/30/2016 20:58:49</publishTime>
     </File>
     <File Include="Scripts/Kendo/kendo.dataviz.min.js.map">
       <publishTime>08/08/2015 20:42:46</publishTime>
     </File>
     <File Include="Scripts/Kendo/kendo.dataviz.mobile.min.js">
-      <publishTime>08/08/2015 20:42:46</publishTime>
+      <publishTime>01/30/2016 20:58:49</publishTime>
     </File>
     <File Include="Scripts/Kendo/kendo.dataviz.mobile.min.js.map">
       <publishTime>08/08/2015 20:42:46</publishTime>
@@ -4591,7 +4594,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 20:42:46</publishTime>
     </File>
     <File Include="Scripts/Kendo/kendo.dataviz.themes.min.js">
-      <publishTime>08/08/2015 20:42:46</publishTime>
+      <publishTime>01/30/2016 20:58:49</publishTime>
     </File>
     <File Include="Scripts/Kendo/kendo.dataviz.themes.min.js.map">
       <publishTime>08/08/2015 20:42:46</publishTime>
@@ -5146,7 +5149,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/15/2015 21:23:16</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/08/2015 09:48:58</publishTime>
+      <publishTime>02/02/2016 22:35:30</publishTime>
     </File>
   </ItemGroup>
 </Project>

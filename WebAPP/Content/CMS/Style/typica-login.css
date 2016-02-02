@@ -44,7 +44,7 @@ body {
 }
 /* line 33, ../sass/typica-login.scss */
 .btn-black:hover {
-  background: #333333;
+  background: #4d2a00333;
   color: white;
 }
 
@@ -71,7 +71,7 @@ body {
 /* line 56, ../sass/typica-login.scss */
 .navbar .nav > li > a {
   padding: 10px 10px 11px;
-  color: #333;
+  color: #4d2a00;
   text-shadow: none;
 }
 /* line 63, ../sass/typica-login.scss */
@@ -263,7 +263,7 @@ footer.white {
   font-family: "Comic Sans MS", cursive, sans-serifsans-serif;
   font-size: 36px;
   font-weight: 300;
-  color: #333333;
+  color: #4d2a00333;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -271,7 +271,7 @@ footer.white {
 .login-form label {
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
-  color: #333333;
+  color: #4d2a00333;
   font-weight: 300;
 }
 
@@ -281,14 +281,14 @@ footer.white {
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 36px;
   font-weight: 300;
-  color: #333333;
+  color: #4d2a00333;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 /* line 39, D:/DropBox/bootstrap/typica-login/sass/includes/_fonts.scss */
 #register-form label {
   font-family: 'Lato', Helvetica, sans-serif;
   font-size: 18px;
-  color: #333333;
+  color: #4d2a00333;
   font-weight: 300;
 }
 

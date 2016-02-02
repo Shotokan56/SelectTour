@@ -211,3 +211,4 @@ D:\1LUU_TRU\CODE\SelectTour\WebAPP\bin\Microsoft.Owin.Security.MicrosoftAccount.
 D:\1LUU_TRU\CODE\SelectTour\WebAPP\obj\Debug\WebAPP.dll
 D:\1LUU_TRU\CODE\SelectTour\WebAPP\obj\Debug\WebAPP.pdb
 D:\1LUU_TRU\CODE\SelectTour\WebAPP\obj\Debug\WebAPP.csprojResolveAssemblyReference.cache
+D:\1LUU_TRU\CODE\SelectTour\WebAPP\bin\System.Security.dll
